@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Servmanity</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
-<%= yield %>
+	<head>
 
-</body>
+		<title>Servmanity</title>
+
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+		<%= csrf_meta_tags %>
+
+	</head>
+
+	<body>
+
+		<%= render 'headers/main_header' %>
+
+		<div class="content-container">
+			
+			<%= yield %>
+			
+		</div>
+
+	</body>
+
 </html>

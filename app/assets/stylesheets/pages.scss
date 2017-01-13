@@ -1,0 +1,30 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ul.horizontal{
+
+	list-style-type: none;
+    margin: 0;
+    margin-bottom: -1px;
+    padding: 0;
+    display: block;
+	
+	li{
+
+		display: inline-block;
+        text-align: center;
+        vertical-align: top;
+
+		a{
+
+			display: block;
+            font-size: 18px;
+            padding: 10px;
+           	letter-spacing: 1.5px;
+		}
+
+	}
+
+}

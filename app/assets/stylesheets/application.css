@@ -13,3 +13,98 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body, div, span, ul, li, a, p, h1, h2, h3, h4, h5, h6{
+ 	
+ 	margin:0px;
+ 	padding:0px;
+ 	border:0px;
+
+}
+
+html, body{
+ 	
+ 	min-width:100%;
+ 	min-height:100%;
+  	height:100%;
+  	width:100%;
+    
+ 	
+}
+
+html{
+	
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+
+	font-family: 'Montserrat', sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+
+
+
+ .content-container{
+ 	padding: 60px 0px;
+ 	margin-bottom: -60px;
+ 	position: relative;
+ 	
+ 	min-height: 100%;
+ 	
+ }
+
+ .content-container.all-white-background{
+ 	background: #fff;
+ }
+
+.mobile-only{
+	display: inherit !important;
+}
+
+ .full-screen-only{
+ 	display: none !important;
+ }
+
+ .no-scroll{
+  overflow: hidden;
+}
+
+.blurred{
+	-webkit-filter: blur(3px);
+  	-moz-filter: blur(3px);
+  	-o-filter: blur(3px);
+  	-ms-filter: blur(3px);
+  	filter: blur(3px);
+}
+
+.brand-gradient{
+
+ 	background: #1e3c72; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #1e3c72 , #2a5298); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #1e3c72 , #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+ }
+
+.default-off{
+	display: none;
+}
+
+.underlined{
+	border-bottom: 2px solid #999;
+}
+
+.clickable:hover{
+
+	cursor: pointer;
+}
