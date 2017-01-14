@@ -9,41 +9,54 @@
 			<ul class="horizontal">
 
 				<!-- <li><a class="logo"><div class="header-logo"></div></a></li> -->
+				<span class="mobile-only">
+					<li><a class="cheeseburger-container"><span class="cheeseburger modal-cta" data-modal-id="main-menu"></span></a></li>
+				</span>
 
-				<li><%= link_to "Home", root_path %></li>
-
-			</ul>
-
-		</div>
-
-
-		<div class="header-options right">
-
-
-			<ul class="horizontal">
-
-				<% unless user_signed_in?%>
-
-					<li><%= link_to "Login", login_path %></li>
-
-					<li><%= link_to "How it Works", how_it_works_path %></li>
-
-					<li><%= link_to "Signup", signup_path, class:'signup-cta' %></li>
-
-				<%else%>
-
-					<li><%= link_to "Account", root_path %></li>
-
-					<li><%= link_to "How it Works", how_it_works_path %></li>
-
-					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-
-					
-				<%end%>
+				<span class="full-screen-only">
+					<li><a class="logo" href="<%= root_path %>"><span class="brand-blue">SERV</span><span class="brand-yellow">MANITY</span></a></li>
+				</span>
 
 			</ul>
 
 		</div>
+
+		<span class="mobile-only">
+			
+			<a class="mobile-logo" href="<%= root_path %>"><span class="brand-blue">SERV</span><span class="brand-yellow">MANITY</span></a>
+
+		</span>
+
+		<span class="full-screen-only">
+
+			<div class="header-options right">
+
+				<ul class="horizontal">
+
+					<% unless user_signed_in?%>
+
+						<li><%= link_to "Login", login_path %></li>
+
+						<li><%= link_to "How it Works", how_it_works_path %></li>
+
+						<li><%= link_to "Signup", signup_path, class:'signup-cta' %></li>
+
+					<%else%>
+
+						<li><%= link_to "Account", root_path %></li>
+
+						<li><%= link_to "How it Works", how_it_works_path %></li>
+
+						<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+						
+					<%end%>
+
+				</ul>
+
+			</div>
+
+		</span>
 
 	</div>
 

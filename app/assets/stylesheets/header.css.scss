@@ -46,12 +46,17 @@ nav.header-container{
     		
 		}
 
+		a.cheeseburger-container{
+			line-height: 12px;
+			padding: 21px 8px;
+		}
+
 		a.header-image{
 			padding: 10px 15px;
 		}
 
 		a.logo{
-			padding: 10px;
+			font-size: 24px;
     		
 		}
 
@@ -88,6 +93,19 @@ nav.header-container{
 	.header-options.right{
 		float: right;
 		
+	}
+
+	a.mobile-logo{
+		position: absolute;
+	    width: 100%;
+	    display: block;
+	    left: 0px;
+	    right: 0px;
+	    text-align: center;
+	    line-height: 24px;
+	    font-size: 24px;
+	    padding: 18px;
+	    font-weight: 800;
 	}
 }
 

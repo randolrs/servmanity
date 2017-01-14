@@ -1,0 +1,23 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media only screen and (min-width: 825px) {
+	
+	html {
+
+		body {
+
+			.mobile-only{
+				display: none !important;
+			}
+
+			.full-screen-only{
+				display: inherit !important;
+			}
+
+		}
+
+	}
+
+}
