@@ -11,16 +11,27 @@
 
 		<%= csrf_meta_tags %>
 
+
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="description" content="Servmanity is a community services marketplace where trusted professionals are empowered to meet the needs of their neighbors.">
+
+
 	</head>
 
 	<body>
 
-		<%= render 'headers/main_header' %>
+		<% unless @hide_header %>
+			<%= render 'headers/main_header' %>
+			<%# render 'modals/main_menu' %>
+		<%end%>
 
 		<div class="content-container">
 			
 			<%= yield %>
-			
+
 		</div>
 
 	</body>

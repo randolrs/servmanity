@@ -1,0 +1,38 @@
+
+<% if flash[:login_prompt] %>
+
+	<div class="login-prompt notice">
+
+		<p><%= flash[:login_prompt] %></p>
+
+	</div>
+
+<%end%>
+
+<h1 class="centered mega light-text-shadow login-header">Servmanity</h1>
+
+<div class="form-container medium clear">
+
+	<%= form_for(:user, :url => session_path(:user)) do |f| %>
+
+		<div class="field">
+		  <label>Email</label>
+		  <br>
+		  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
+		</div>
+
+		<div class="field">
+		  <label>Password</label>
+		  <br>
+		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
+		</div>
+
+		<div class="actions">
+		  <%= f.submit "Login", class: "button medium blue-background" %>
+		</div>
+
+	<% end %>
+
+</div>
+
+<p class="centered"><%= link_to "Signup", signup_path %></p>
