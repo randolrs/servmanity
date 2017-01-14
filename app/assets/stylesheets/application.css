@@ -56,15 +56,20 @@ a{
 	text-align:center;
 }
 
+h1{
+	font-size: 3rem;
+}
 
 
 
- .content-container{
+
+.content-container{
  	padding: 60px 0px;
  	margin-bottom: -60px;
  	position: relative;
  	
  	min-height: 100%;
+ 	font-family: 'Lato', sans-serif;
  	
  }
 

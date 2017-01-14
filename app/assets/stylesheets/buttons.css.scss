@@ -1,0 +1,30 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'styles';
+
+$button-gradient: inset 0px 1px 3px 0px rgba(240, 240, 240, 0.7), $material-shadow;
+
+.button{
+	padding: 10px 25px;
+    border-radius: 2px;
+    
+    display: inline-block;
+    margin: 0px;
+    text-align: center;
+    z-index: 99;
+    position: relative;
+    border: none;
+
+    box-shadow: $button-gradient;
+    -webkit-box-shadow: $button-gradient;
+    -moz-box-shadow: $button-gradient;
+
+}
+
+.button.dark-red-background{
+	background: $brand-dark-red;
+	color: #fff;
+
+}

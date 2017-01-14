@@ -28,7 +28,7 @@ nav.header-container{
 	right:0px;
 	height: 60px;
 	z-index: 960;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 
 	.header-content{
 		padding: 0px 0px;
@@ -106,7 +106,7 @@ nav.header-container{
     position: relative;
     display: inline-block;
     width: 1em;
-    height: 19px;
+    height: 17px;
     margin-right: 0.3em;
     border-top: 3px solid #333;
     border-bottom: 3px solid #333;
@@ -115,7 +115,7 @@ nav.header-container{
 .cheeseburger:before {
     content: "";
     position: absolute;
-    top: 5px;
+    top: 4px;
     left: 0px;
     width: 100%;
     border-top: 3px solid #333;
