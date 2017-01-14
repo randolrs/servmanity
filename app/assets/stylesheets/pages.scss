@@ -28,3 +28,36 @@ ul.horizontal{
 	}
 
 }
+
+.home-hero{
+	background: #111;
+
+	.home-hero-content{
+		width: 100%;
+		max-width: 800px;
+		padding: 100px 50px;
+		text-align:center;
+		margin: 0 auto;
+	}
+
+	header{
+		color: #fff;
+		font-size: 3rem;
+	}
+}
+
+.home-about{
+	
+	.home-about-content{
+		width: 100%;
+		max-width: 800px;
+		padding: 25px;
+		text-align:center;
+		margin: 0 auto;
+	}
+
+	header{
+		color: #222;
+		font-size: 2rem;
+	}
+}
