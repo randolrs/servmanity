@@ -49,6 +49,7 @@ nav.header-container{
 		a.cheeseburger-container{
 			line-height: 12px;
 			padding: 21px 8px;
+			z-index: 9000;
 		}
 
 		a.header-image{
@@ -106,6 +107,7 @@ nav.header-container{
 	    font-size: 24px;
 	    padding: 18px;
 	    font-weight: 800;
+	    z-index: 8999;
 	}
 }
 

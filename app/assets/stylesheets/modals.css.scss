@@ -1,0 +1,96 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal-container{
+	background: rgba(0,0,0,.6);
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 9990;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+.modal-content-container{
+	padding: 100px 10px 10px 10px;
+}
+
+.modal-content{
+
+	max-width: 100%;
+	width: 500px;
+	margin: 0 auto;
+	padding: 15px 50px;
+	border-radius: 3px;
+	background: #fff;
+	box-shadow: 0px 2px 0px rgba(0,0,0,0.2);
+	z-index: 9991;
+
+	.modal-header{
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+
+	select{
+		font-size: 24px;
+		width: 100%;
+	}
+	
+}
+
+.menu-content{
+	height: 100%;
+	background: #fff;
+	width: 300px;
+	max-width: 100%;
+	box-shadow: 2px 0px 1px rgba(0, 0, 0, 0.3);
+
+	background: #eee;
+    
+    li.menu-header{
+    	padding: 20px 0px;
+    	font-size: 1.5em;
+    	background: #fff;
+    	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    li{
+
+    }
+
+	a{
+		padding: 15px 30px;
+		font-size: 1.2em;
+		display: block;
+	}
+
+	a:hover{
+		background: #aaa;
+		
+	}
+}
+
+.modal-cta{
+	
+}
+
+.modal-cta:hover{
+	cursor: pointer;
+}
+
+.modal-dropdown{
+	font-size: 30px;	
+}
+
+span.dismiss-modal{
+	float: right;
+    font-weight: 800;
+    position: relative;
+    right: -40px;
+    top: -15px;
+    font-size: 20px;
+}
+
