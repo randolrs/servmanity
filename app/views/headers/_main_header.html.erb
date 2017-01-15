@@ -23,11 +23,11 @@
 
 		</div>
 
-		<span class="full-screen-only">
+		<div class="header-options right">
 
-			<div class="header-options right">
+			<ul class="horizontal">
 
-				<ul class="horizontal">
+				<span class="full-screen-only">
 
 					<% unless user_signed_in?%>
 
@@ -48,11 +48,27 @@
 						
 					<%end%>
 
-				</ul>
+				</span>
 
-			</div>
+				<span class="mobile-only">
 
-		</span>
+					<% unless user_signed_in?%>
+
+						<li><%= link_to "Signup", signup_path, class:'signup-cta' %></li>
+
+					<%else%>
+
+						<li><%= link_to "Account", root_path %></li>
+						
+					<%end%>
+
+				</span>
+
+			</ul>
+
+		</div>
+
+		
 
 	</div>
 
