@@ -1,28 +1,14 @@
 <h1 class="centered light-text-shadow"><span class="brand-blue">SERV</span><span class="brand-yellow">MANITY</span></h1>
 
 
-<div class="form-container medium clear">
+<div class="form-container medium clear centered">
 
-	<%= form_for(:user, :url => registration_path(:user)) do |f| %>
+	<%= link_to "I Want To Hire Someone", non_tasker_signup_path, class:"button medium purple-background" %>
 
-		<div class="field">
-		  <label>Email</label>
-		  <br>
-		  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
-		</div>
+	<br><br>
 
-		<div class="field">
-		  <label>Password</label>
-		  <br>
-		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
-		</div>
-
-		<div class="actions">
-		  <%= f.submit "Signup", class: "button medium dark-red-background" %>
-		</div>
-
-	<% end %>
+	<%= link_to "I Want To be Hired", tasker_signup_path, class:"button medium purple-frame" %>
 
 </div>
 
-<p class="centered"><%= link_to "Login", login_path %></p>
+<p class="centered"><%= link_to "I Already Have an Account (go to Login).", login_path %></p>

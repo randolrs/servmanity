@@ -16,6 +16,7 @@ $button-gradient: inset 0px 1px 3px 0px rgba(240, 240, 240, 0.7), $material-shad
     z-index: 99;
     position: relative;
     border: none;
+    cursor: pointer;
 
     box-shadow: $button-gradient;
     -webkit-box-shadow: $button-gradient;
@@ -27,4 +28,31 @@ $button-gradient: inset 0px 1px 3px 0px rgba(240, 240, 240, 0.7), $material-shad
 	background: $brand-dark-red;
 	color: #fff;
 
+}
+
+.button.medium{
+    max-width: 500px;
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 20px;
+}
+
+.button.orange-background{
+    background: #88e;
+    color: #fff;
+}
+
+.button.green-background{
+    background: $brand-green;
+    color: #fff;
+}
+
+.button.purple-background{
+    background: $brand-dark-purple;
+    color: #fff;
+}
+
+.button.purple-frame{
+    border: 2px solid $brand-dark-purple;
+    color: $brand-dark-purple;
 }

@@ -1,0 +1,66 @@
+<% if flash[:login_prompt] %>
+
+	<div class="login-prompt notice">
+
+		<p><%= flash[:login_prompt] %></p>
+
+	</div>
+
+<%end%>
+
+<h1 class="centered light-text-shadow"><span class="brand-blue">SERV</span><span class="brand-yellow">MANITY</span></h1>
+
+<div class="form-container medium clear">
+
+	<%= form_for(:user, :url => registration_path(:user)) do |f| %>
+
+		<div class="field">
+		  
+		  <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", :required => true %>
+
+		</div>
+
+
+		<div class="field">
+		  
+		  <%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+
+		</div>
+
+
+		<div class="field">
+		  
+		  <%= f.email_field :email, placeholder: "Email", :required => true %>
+
+		</div>
+
+		<div class="field">
+		  
+		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
+
+		</div>
+
+		<div class="field">
+		  
+		  <%= f.text_field :phone_number, placeholder: "Phone Number", :required => true %>
+
+		</div>
+
+
+		<div class="field">
+		  
+		  <%= f.text_field :zip_code, placeholder: "Zip Code", :required => true %>
+
+		</div>
+
+		
+
+		<div class="actions">
+		  <%= f.submit "Signup", class: "button medium dark-red-background" %>
+		</div>
+
+	<% end %>
+
+</div>
+
+<p class="centered"><%= link_to "Login", login_path %></p>
