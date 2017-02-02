@@ -30,6 +30,21 @@ $brand-purple: #7B1FA2;
 
 $brand-dark-red: #D50000;
 
+$brand-dark-grey: #333;
+
+
+//backgrounds
+
+.white-background{
+	background: #fff;
+	color: #222;
+}
+
+.dark-grey-background{
+	background: $brand-dark-grey;
+	color: #fff;
+}
+
 
 //shadows
 
@@ -47,5 +62,9 @@ $light-text-shadow: 0px 2px 1px #ccc, 0px -1px 0px #fff;
 // MATERIAL
 
 $material-shadow: 0 2px 2px 0 rgba(0,0,0,0.14) ,0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+
+.material-box-shadow{
+	box-shadow: $material-shadow;
+}
 
 

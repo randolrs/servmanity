@@ -12,6 +12,7 @@
 	.footer-content{
 		max-width: 900px;
 		margin: 0 auto;
+		text-align: center;
 	}
 
 	section{
@@ -19,7 +20,9 @@
 		padding: 25px;
 		width: 300px;
 
-		display: table-cell;
+		display: block;
+    	text-align: center;
+    	margin: 0 auto;
 
 		header{
 			margin-bottom: 40px;
@@ -45,6 +48,7 @@
 		            font-size: 18px;
 		            padding: 5px;
 		           	letter-spacing: 1.5px;
+		           	color: #aaa;
 				}
 
 			}
