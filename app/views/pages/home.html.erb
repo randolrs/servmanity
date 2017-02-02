@@ -3,9 +3,10 @@
 	<div class="home-hero-content">
 		<header>We Do Chores.<br>You Live Life.</header>
 
-		<br>
+		<br><br>
 		
-		<input type="text" placeholder="What do you need help with?"></input>
+		<%= link_to "Get Started", signup_path, class:"button purple-background medium" %>
+
 	</div>
 
 </section>
@@ -19,18 +20,22 @@
 
 		<section>
 
-			<div class="material-box-shadow white-background">
+			<%= link_to root_path do %>
 
-				<div class="image-container">
+				<div class="material-box-shadow white-background clickable">
 
+					<div class="image-container">
+
+
+					</div>
+
+					<header>Car Repair</header>
+
+					<p>$78/hour & Up</p>
 
 				</div>
 
-				<header>Car Repair</header>
-
-				<p>$78/hour & Up</p>
-
-			</div>
+			<%end%>
 
 			
 
@@ -38,35 +43,43 @@
 
 		<section>
 
-			<div class="material-box-shadow white-background">
+			<%= link_to root_path do %>
 
-				<div class="image-container">
+				<div class="material-box-shadow white-background clickable">
 
+					<div class="image-container">
+
+
+					</div>
+
+					<header>General Handyman</header>
+
+					<p>$28/hour & Up</p>
 
 				</div>
 
-				<header>General Handyman</header>
-
-				<p>$28/hour & Up</p>
-
-			</div>
+			<%end%>
 
 		</section>
 
 		<section>
 
-			<div class="material-box-shadow white-background">
+			<%= link_to root_path do %>
+				
+				<div class="material-box-shadow white-background clickable">
 
-				<div class="image-container">
+					<div class="image-container">
 
+
+					</div>
+
+					<header>Delivery</header>
+
+					<p>$25/hour & Up</p>
 
 				</div>
 
-				<header>Delivery</header>
-
-				<p>$25/hour & Up</p>
-
-			</div>
+			<%end%>
 
 		</section>
 
@@ -92,13 +105,7 @@
 
 			<header>Pick a Task</header>
 
-			<div class="material-box-shadow white-background">
-
-				
-
-			</div>
-
-			
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt, lorem eget molestie dapibus, eros leo hendrerit ante, sit amet blandit dolor risus id mi.</p>
 
 		</section>
 
@@ -110,11 +117,7 @@
 			
 			<header>Get Matched</header>
 
-			<div class="material-box-shadow white-background">
-
-				
-
-			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt, lorem eget molestie dapibus, eros leo hendrerit ante, sit amet blandit dolor risus id mi.</p>
 
 		</section>
 
@@ -126,13 +129,12 @@
 			
 			<header>Get it Done</header>
 
-			<div class="material-box-shadow white-background">
-
-				
-
-			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt, lorem eget molestie dapibus, eros leo hendrerit ante, sit amet blandit dolor risus id mi.</p>
 
 		</section>
+
+		<br><br>
+		<%= link_to "Create an Account", signup_path, class:"button purple-background medium" %>
 
 	</div>
 
@@ -144,7 +146,7 @@
 
 	<div class="home-about-content">
 		
-		<header class="section-header">We are Skilled Professionals</header>
+		<header class="section-header">Reliable, Professional Service Gauranteed</header>
 
 	</div>
 
