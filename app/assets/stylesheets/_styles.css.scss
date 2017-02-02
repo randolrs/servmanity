@@ -32,6 +32,12 @@ $brand-dark-red: #D50000;
 
 $brand-dark-grey: #333;
 
+$brand-black: #111;
+
+.black-text{
+	color: $brand-black;
+}
+
 
 //backgrounds
 
@@ -43,6 +49,10 @@ $brand-dark-grey: #333;
 .dark-grey-background{
 	background: $brand-dark-grey;
 	color: #fff;
+}
+
+.yellow-background{
+	background: $brand-yellow;
 }
 
 

@@ -31,6 +31,7 @@ ul.horizontal{
 }
 
 .home-hero{
+	
 	background: #111;
 
 	.home-hero-content{
@@ -43,35 +44,49 @@ ul.horizontal{
 
 	header{
 		color: #fff;
-		font-size: 3rem;
+		font-size: 4rem;
 	}
 }
 
 .home-about{
-
-	
 	
 	.home-about-content{
+		
 		width: 100%;
 		max-width: 825px;
-		padding: 25px;
+		padding: 3rem 1rem;
 		text-align:center;
 		margin: 0 auto;
 
 		section{
-			width: 266px;
-			display: table-cell;
+			max-width: 600px;
+			display: block;
+			margin: 0 auto;
 			padding: 15px;
 
-			header{
-
+			div.image-container{
+				background: red;
+				padding: 60px 30px;
 			}
+			
 		}
 	}
 
-	header{
-		color: #222;
+	header.section-header{
+		
 		font-size: 2rem;
+		margin-bottom: 3rem;
 	}
+}
+
+span.number-badge{
+	border-radius: 50%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 30px;
 }
 
