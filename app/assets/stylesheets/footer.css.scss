@@ -1,0 +1,55 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'styles';
+
+.footer-container{
+	padding: 50px;
+	background: #222;
+	color: #fff;
+
+	.footer-content{
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	section{
+
+		padding: 25px;
+		width: 300px;
+
+		display: table-cell;
+
+		header{
+			margin-bottom: 40px;
+			font-size: 1.5em;
+		}
+
+		ul{
+		
+			list-style-type: none;
+		    margin: 0;
+		    margin-bottom: -1px;
+		    padding: 0;
+		    display: block;
+		
+			li{
+
+				display: block;
+		        vertical-align: top;
+
+				a{
+
+					display: inline-block;
+		            font-size: 18px;
+		            padding: 5px;
+		           	letter-spacing: 1.5px;
+				}
+
+			}
+
+		}
+
+	}
+}
