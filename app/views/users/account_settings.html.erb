@@ -1,0 +1,74 @@
+<div class="content">
+
+	<header>Profile Settings</header>
+
+	<div class="options-content-container">
+
+
+		<div class="options-sidebar">
+			<ul>
+				<li><a>Profile</a></li>
+				<li><a>Login</a></li>
+				<li><a>Payments</a></li>
+				
+
+			</ul>
+		</div>
+
+
+		<div class="options-content">
+			<header>Header Section</header>
+		</div>
+
+
+	</div>
+
+	<div class="form-container medium clear">
+
+		<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+
+			<div class="field">
+
+			  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
+			
+			</div>
+
+
+			<div class="field">
+
+				<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+
+			</div>
+
+
+			<div class="field">
+
+				<%= f.email_field :email, placeholder: "Email", :required => true %>
+
+			</div>
+
+
+			<div class="field">
+
+				<%= f.text_field :phone_number, placeholder: "Phone Number", :required => true %>
+
+			</div>
+
+
+			<div class="field">
+
+				<%= f.text_field :zip_code, placeholder: "Zip Code", :required => true %>
+
+			</div>
+
+			<div class="actions">
+			
+				<%= f.submit "Update Profile", class: "button medium dark-red-background" %>
+			
+			</div>
+
+		<%end%>
+
+	</div>
+
+</div>

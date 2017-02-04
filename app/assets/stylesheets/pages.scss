@@ -4,6 +4,59 @@
 
 @import 'styles';
 
+.content{
+ 	margin: 0 auto;
+ 	display: block;
+ 	max-width: 825px;
+ 	padding: 50px 25px;
+
+ 	header{
+ 		font-size: 2.5rem;
+    	line-height: 1.2;
+    	margin-bottom: 1rem;
+ 	}
+ }
+
+.options-content-container{
+	
+	border: 1px solid #ddd;
+	background: #fff;
+	margin: 0px auto;
+
+	.options-sidebar, .options-content{
+		
+		display: table-cell;
+		vertical-align: top;
+		
+	}
+
+	.options-sidebar{
+		border-right: 1px solid #ddd;
+		width: 250px;
+
+		ul{
+			list-style: none;
+
+
+			a{
+				display: block;
+				padding: 15px 20px;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.options-content{
+		
+		width: 550px;
+
+		padding: 15px;
+		
+	}
+
+
+}
+
 ul.horizontal{
 
 	list-style-type: none;

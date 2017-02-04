@@ -47,7 +47,7 @@ body{
 
 	font-family: 'Montserrat', sans-serif;
 
-	background: #eee;
+	background: #f9f9f9;
 }
 
 a{
@@ -78,6 +78,8 @@ h1{
  .content-container.all-white-background{
  	background: #fff;
  }
+
+
 
 .mobile-only{
 	display: inherit !important;

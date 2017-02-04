@@ -25,9 +25,19 @@
 
 			<ul>
 
-				<li><%= link_to "Signup", non_tasker_signup_path %></li>
+				<% unless user_signed_in? %>
+					
+					<li><%= link_to "Signup", non_tasker_signup_path %></li>
 
-				<li><%= link_to "Become a Mobile Professional", tasker_signup_path %></li>
+					<li><%= link_to "Become a Mobile Professional", tasker_signup_path %></li>
+
+				<%else%>
+
+					<li><%= link_to "Account Settings", account_settings_path %></li>
+
+					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+				<%end%>
 
 				<li><%= link_to "How it Works", root_path %></li>
 
@@ -41,11 +51,11 @@
 
 			<ul>
 
-				<li><%= link_to "Twitter", root_path %></li>
+				<li><a href="https://twitter.com/_servmanity">Twitter</a></li>
 
-				<li><%= link_to "Twitter", root_path %></li>
+				<li><a href="https://www.facebook.com/servmanity/">Facebook</a></li>
 
-				<li><%= link_to "Twitter", root_path %></li>
+				<li><a href="https://www.instagram.com/servmanity/">Instagram</a></li>
 
 			</ul>
 
