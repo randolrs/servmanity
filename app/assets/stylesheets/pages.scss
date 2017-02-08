@@ -19,8 +19,6 @@
 
 .options-content-container{
 	
-	border: 1px solid #ddd;
-	background: #fff;
 	margin: 0px auto;
 
 	.options-sidebar, .options-content{
@@ -31,7 +29,8 @@
 	}
 
 	.options-sidebar{
-		border-right: 1px solid #ddd;
+		border-top: 1px solid #ddd;
+		
 		width: 250px;
 
 		ul{
@@ -42,6 +41,9 @@
 				display: block;
 				padding: 15px 20px;
 				cursor: pointer;
+				border-bottom: 1px solid #ddd;
+				border-left: 1px solid #ddd;
+
 			}
 		}
 	}
@@ -49,8 +51,9 @@
 	.options-content{
 		
 		width: 550px;
-
+		background: #fff;
 		padding: 15px;
+		border: 1px solid #ddd;
 		
 	}
 
