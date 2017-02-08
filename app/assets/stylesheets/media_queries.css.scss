@@ -45,6 +45,55 @@
 
 			}
 
+
+			.options-content-container{
+
+				.options-sidebar, .options-content{
+					
+					display: table-cell;
+					vertical-align: top;
+					
+				}
+
+				.options-sidebar{
+					
+					border-top: 1px solid #ddd;
+					
+					width: 250px;
+
+					ul{
+						list-style: none;
+
+
+						a{
+							display: block;
+							padding: 15px 20px;
+							cursor: pointer;
+							border-bottom: 1px solid #ddd;
+							border-left: 1px solid #ddd;
+
+						}
+					}
+				}
+
+				.options-content{
+					
+					width: 550px;
+					background: #fff;
+					padding: 25px 40px 70px 40px;
+					border: 1px solid #ddd;
+
+					.option-content-container{
+						padding: 15px;
+					}
+					
+				}
+
+
+			}
+
+
+
 			.footer-content{
 				
 

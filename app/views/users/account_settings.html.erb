@@ -1,14 +1,14 @@
 <div class="content">
 
-	<header>Profile Settings</header>
+	<header>Account Settings</header>
 
 	<div class="options-content-container">
 
 
 		<div class="options-sidebar">
 			<ul>
-				<li><a class="click-to-reveal active" data-reveal-panel-id="profile">Profile</a></li>
 				<li><a class="click-to-reveal" data-reveal-panel-id="login">Login</a></li>
+				<li><a class="click-to-reveal active" data-reveal-panel-id="profile">Personal Information</a></li>
 				<li><a class="click-to-reveal" data-reveal-panel-id="payments">Payments</a></li>
 				
 
@@ -18,104 +18,139 @@
 
 		<div class="options-content">
 
-			<div class="reveal-panel" id="profile">
+			<div class="reveal-panel" id="login">
 
-				<header>Profile</header>
+				<header>Login</header>
+
+				<div class="option-content-container">
 				
-				<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
-
-					<div class="field">
-
-					  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
-					
-					</div>
+					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
 
-					<div class="field">
+						<div class="field">
+		  					
+		  					<label>Email</label><br>
 
-						<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+						  	<%= f.email_field :email, placeholder: "Email", :required => true %>
 
-					</div>
+						</div>
+
+						<div class="field">
+							
+							<label>Password</label><br>
+
+						  	<%= f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
+
+						</div>
 
 
-					<div class="actions">
-					
-						<%= f.submit "Update Profile", class: "button medium dark-red-background" %>
-					
-					</div>
 
-				<%end%>
+						<div class="actions">
+						
+							<%= f.submit "Update Profile", class: "button dark-red-background" %>
+						
+						</div>
+
+					<%end%>
+
+				</div>
 
 			</div>
 
-			<div class="reveal-panel" id="login" style="display: none;">
+			<div class="reveal-panel" id="profile" style="display: none;">
 
-				<header>Login</header>
-				
-				<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+				<header>Personal Information</header>
 
-					<div class="field">
+				<div class="option-content-container">
+
+					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+
+						<div class="field">
+
+							<label>First Name</label><br>
+
+						  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %><br>
 						
-						<label>First Name</label><br>
-
-					  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
-					
-					</div>
+						</div>
 
 
-					<div class="field">
+						<div class="field">
 
-						<label>Last Name</label><br>
+							<label>Last Name</label><br>
 
-						<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+							<%= f.text_field :last_name, placeholder: "Last Name", :required => true %><br>
 
-					</div>
+						</div>
+
+						<div class="field">
+		  					
+		  					<label>Phone Number</label><br>
+
+						  	<%= f.text_field :phone_number, placeholder: "Phone Number", :required => true %>
+
+						</div>
 
 
-					<div class="actions">
-					
-						<%= f.submit "Update Profile", class: "button medium dark-red-background" %>
-					
-					</div>
+						<div class="field">
+						  	
+						  	<label>Zip Code</label><br>
 
-				<%end%>
+							<%= f.text_field :zip_code, placeholder: "Zip Code", :required => true %>
+
+						</div>
+
+
+
+
+						<div class="button-container">
+							<br>
+							<%= f.submit "Update Profile", class: "button dark-red-background" %>
+						
+						</div>
+
+					<%end%>
+
+				</div>
 
 			</div>
 
 			<div class="reveal-panel" id="payments" style="display: none;">
 
 				<header>Payments</header>
+
+				<div class="option-content-container">
 				
-				<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
-					<div class="field">
+						<div class="field">
 
-						<label>First Name</label><br>
+							<label>First Name</label><br>
 
-					  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
-					
-					</div>
-
-
-					<div class="field">
-
-						<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
-
-					</div>
+						  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
+						
+						</div>
 
 
-					<div class="actions">
-					
-						<%= f.submit "Update Profile", class: "button medium dark-red-background" %>
-					
-					</div>
+						<div class="field">
 
-				<%end%>
+							<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+
+						</div>
+
+
+						<div class="actions">
+						
+							<%= f.submit "Update Profile", class: "button dark-red-background" %>
+						
+						</div>
+
+					<%end%>
+
+				</div>
 
 			</div>
 
 		</div>
-
 
 	</div>
 

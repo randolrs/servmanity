@@ -13,7 +13,8 @@
  	header{
  		font-size: 2.5rem;
     	line-height: 1.2;
-    	margin-bottom: 1rem;
+    	margin-bottom: 2rem;
+    	font-weight: 800;
  	}
  }
 
@@ -23,15 +24,16 @@
 
 	.options-sidebar, .options-content{
 		
-		display: table-cell;
+		display: block;
 		vertical-align: top;
 		
 	}
 
 	.options-sidebar{
+		
 		border-top: 1px solid #ddd;
 		
-		width: 250px;
+		
 
 		ul{
 			list-style: none;
@@ -46,14 +48,75 @@
 
 			}
 		}
+
+		ul{
+
+			list-style-type: none;
+		    margin: 0;
+		    margin-bottom: -1px;
+		    padding: 0;
+		    display: block;
+			
+			li{
+
+				display: inline-block;
+		        text-align: center;
+		        vertical-align: top;
+
+				a{
+
+					display: block;
+		            font-size: 18px;
+		            padding: 10px;
+		           	letter-spacing: 1.5px;
+				}
+
+			}
+
+		}
 	}
 
 	.options-content{
 		
-		width: 550px;
+		
 		background: #fff;
-		padding: 15px;
+		padding: 25px 40px 70px 40px;
 		border: 1px solid #ddd;
+
+		.option-content-container{
+			padding: 15px;
+		}
+
+		header{
+	 		font-size: 2rem;
+	    	line-height: 1.2;
+	    	margin-bottom: 2rem;
+	    	border-bottom: 1px solid #ccc;
+    		padding-bottom: 10px;
+    		font-weight: 500;
+ 		}
+
+ 		label{
+ 			font-size: 1.5rem;
+ 			margin-bottom: 1rem;
+ 		}
+
+ 		input[type="text"], input[type="email"], input[type="password"]{
+ 			margin-bottom: 1rem;
+ 			border: 2px solid #aaa;
+ 			padding: 10px 0px;
+			text-indent: 15px;
+			font-size: 1.25em;
+			border-radius: 2px;
+	    	color: #333;
+	    	width: 300px;
+	    	max-width: 100%;
+ 		}
+
+ 		input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus, input[type="password"]:focus{
+			border: 2px solid #2a5298;
+			outline: none;
+		}
 		
 	}
 
