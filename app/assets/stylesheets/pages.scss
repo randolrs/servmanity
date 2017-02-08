@@ -31,10 +31,6 @@
 
 	.options-sidebar{
 		
-		border-top: 1px solid #ddd;
-		
-		
-
 		ul{
 			list-style: none;
 
@@ -46,6 +42,12 @@
 				border-bottom: 1px solid #ddd;
 				border-left: 1px solid #ddd;
 
+				border: 1px solid #ddd;
+    			border-bottom: none;
+			}
+
+			a.active{
+				border-bottom: 2px solid blue;
 			}
 		}
 

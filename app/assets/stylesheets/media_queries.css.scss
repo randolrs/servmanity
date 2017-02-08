@@ -64,13 +64,24 @@
 					ul{
 						list-style: none;
 
+						li{
 
-						a{
 							display: block;
-							padding: 15px 20px;
-							cursor: pointer;
-							border-bottom: 1px solid #ddd;
-							border-left: 1px solid #ddd;
+							text-align: left;
+
+							a{
+								display: block;
+								padding: 15px 20px;
+								cursor: pointer;
+								border-bottom: 1px solid #ddd;
+								border-left: 1px solid #ddd;
+
+							}
+
+							a.active{
+								border-right: 2px solid blue;
+								border-bottom: 1px solid #ddd;
+							}
 
 						}
 					}
