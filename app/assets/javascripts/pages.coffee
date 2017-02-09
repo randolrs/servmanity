@@ -17,6 +17,9 @@ ready = ->
 			$('body').removeClass('no-scroll')
 			$('.menu-content').animate({width:'hide'},350);
 
+		$(".menu-content").click (window.event), ->
+			window.event.stopPropagation()
+
 		$(".click-to-reveal").click (window.event), ->
 			$('a.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()

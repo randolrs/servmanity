@@ -13,8 +13,40 @@
  	header{
  		font-size: 2.5rem;
     	line-height: 1.2;
-    	margin-bottom: 2rem;
+    	margin-bottom: 3rem;
     	font-weight: 800;
+ 	}
+
+ 	section.content-section{
+ 		margin-bottom: 2rem;
+
+ 		header{
+ 			margin-bottom: 1.5rem;
+ 			font-size: 1.5rem;
+ 		}
+ 	}
+
+ 	.content-column-container{
+
+ 		.content-column{
+ 			display: table-cell;
+ 			padding: 20px 10px;
+ 			vertical-align: top;
+
+ 			.image-container{
+ 				display: block;
+ 				width: 100%;
+ 				padding: 30px;
+ 				background: red;
+ 			}
+
+ 		}
+
+ 		.content-column.spread-box{
+ 			max-width: 500px;
+ 			margin: 0 auto;
+ 			display: block;
+ 		}
  	}
  }
 
@@ -85,8 +117,9 @@
 		padding: 25px 40px 70px 40px;
 		border: 1px solid #ddd;
 
-		.option-content-container{
+		.option-content-box{
 			padding: 15px;
+
 		}
 
 		header{
@@ -215,6 +248,6 @@ span.number-badge{
     line-height: 40px;
     font-size: 20px;
     font-weight: 800;
-    margin-bottom: 30px;
+    text-align: center;
 }
 

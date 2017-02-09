@@ -1,0 +1,115 @@
+<div class="content">
+
+	<header class="centered">Welcome to Servmanity, <%= current_user.first_name %></header>
+
+	<% if @has_tasks %>
+
+		<h2>Upcoming Tasks</h2>
+
+		<h2>Previous Tasks</h2>
+
+	<% else %>
+
+		<section class="content-section">
+
+			<header>How to Get Started</header>
+
+			<div class="content-column-container">
+				<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">1</span></div>
+				<div class="content-column">
+					<h3>Pick a Service</h3>
+					<p>Choose from our list of popular chores and errands below or <a href="#">see a list of all available services</a> (link).</p>
+				</div>
+			</div>
+
+			<div class="content-column-container">
+				
+				<div class="content-column">
+					<span class="number-badge material-box-shadow yellow-background black-text">2</span>
+				</div>
+				
+				<div class="content-column">
+					<h3>Get Matched</h3>
+					<p>Some kind of service or something.</p>
+				</div>
+
+			</div>
+
+			<div class="content-column-container">
+				
+				<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">3</span></div>
+				
+				<div class="content-column">
+					<h3>Get it Done</h3>
+					<p>Some kind of service or something.</p>
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="content-section">
+
+			<header>How Can We Help?</header>
+
+			<div class="content-column-container">
+				
+				<div class="content-column spread-box">
+					
+					<div class="spread-box material-box-shadow white-background clickable">
+
+						<div class="image-container">
+
+
+						</div>
+
+						<h4>Car Repair</h4>
+
+						<p>$78/hour &amp; Up</p>
+
+					</div>
+
+				</div>
+
+				<div class="content-column spread-box">
+					
+					<div class="spread-box material-box-shadow white-background clickable">
+
+						<div class="image-container">
+
+
+						</div>
+
+						<h4>Car Repair</h4>
+
+						<p>$78/hour &amp; Up</p>
+
+					</div>
+
+				</div>
+
+				<div class="content-column spread-box">
+					
+					<div class="material-box-shadow white-background clickable">
+
+						<div class="image-container">
+
+
+						</div>
+
+						<h4>Car Repair</h4>
+
+						<p>$78/hour &amp; Up</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</section>
+
+	<%end%>
+
+</div>

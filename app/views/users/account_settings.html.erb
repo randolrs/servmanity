@@ -22,7 +22,7 @@
 
 				<header>Login</header>
 
-				<div class="option-content-container">
+				<div class="option-content-box">
 				
 					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
@@ -46,8 +46,8 @@
 
 
 						<div class="actions">
-						
-							<%= f.submit "Update Profile", class: "button dark-red-background" %>
+							<br>
+							<%= f.submit "Update Profile", class: "button small dark-red-background" %>
 						
 						</div>
 
@@ -61,7 +61,7 @@
 
 				<header>Personal Information</header>
 
-				<div class="option-content-container">
+				<div class="option-content-box">
 
 					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
@@ -104,7 +104,7 @@
 
 						<div class="button-container">
 							<br>
-							<%= f.submit "Update Profile", class: "button dark-red-background" %>
+							<%= f.submit "Update Profile", class: "button small dark-red-background" %>
 						
 						</div>
 
@@ -118,7 +118,7 @@
 
 				<header>Payments</header>
 
-				<div class="option-content-container">
+				<div class="option-content-box">
 				
 					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
@@ -139,8 +139,8 @@
 
 
 						<div class="actions">
-						
-							<%= f.submit "Update Profile", class: "button dark-red-background" %>
+							<br>
+							<%= f.submit "Update Profile", class: "button small dark-red-background" %>
 						
 						</div>
 

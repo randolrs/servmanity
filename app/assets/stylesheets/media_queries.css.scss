@@ -103,6 +103,23 @@
 
 			}
 
+			.content{
+			
+				.content-column-container{
+
+			 		.content-column{
+			 			display: table-cell;
+
+			 		}
+
+			 		.content-column.spread-box{
+			 			width: 300px;
+			 			display: table-cell;
+			 		}
+			 	}
+
+		 	}
+
 
 
 			.footer-content{
