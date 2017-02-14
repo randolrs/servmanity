@@ -65,6 +65,23 @@
 
 					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
+
+
+						<div class="field">
+
+					      <label>Profile Photo</label><br>
+
+					      <div class="image-field-container">
+					        
+					        <%= image_tag current_user.image.url(:small), class:"small-image rounded" %>
+
+					        <%= f.file_field :image, class: "small-image-overlay-input" %><br><br>
+
+					      </div>
+
+					    </div>
+
+
 						<div class="field">
 
 							<label>First Name</label><br>

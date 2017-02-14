@@ -134,4 +134,29 @@ h2.form-section-header{
 
 }
 
+.image-field-container{
+	position: relative;	
+	display: inline-block;
+}
+
+.small-image{
+	width: 70px;
+	height: 70px;	
+}
+
+.rounded{
+	display: inline-block;
+	border-radius: 50%;	
+}
+
+.small-image-overlay-input{
+	position: absolute;
+    display: inline-block;
+    left: 0px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    opacity: 0;
+}
+
 
