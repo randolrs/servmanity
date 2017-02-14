@@ -3,8 +3,17 @@
 	<%= render 'pages/basic_landing_page' %>
 
 <%else%>
+	
+	<% if current_user.is_tasker %>
 
-	<%= render 'users/non_tasker_dashboard' %>
+		<%= render 'users/tasker_dashboard' %>
+
+	<%else%>
+
+		non_tasker
+		<%= render 'users/non_tasker_dashboard' %>
+
+	<%end%>
 	
 <%end%>
 
