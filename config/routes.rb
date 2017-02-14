@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'account_settings' => 'users#account_settings', as: 'account_settings'
 
+  get '/services/:category_url' => 'service_categories#tasker_index', as: 'service_category_home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

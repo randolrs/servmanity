@@ -54,71 +54,32 @@
 
 			<div class="content-column-container">
 				
-				<%= link_to root_path do %>
+				<% ServiceCategory.last(3).each do |category| %>
 
-					<div class="content-column spread-box">
-						
-						<div class="spread-box material-box-shadow white-background clickable">
+					<%= link_to service_category_home_path(category.url_name) do %>
 
-							<div class="image-container">
+						<div class="content-column spread-box">
+							
+							<div class="spread-box material-box-shadow white-background clickable">
+
+								<div class="image-container">
 
 
-							</div>
+								</div>
 
-							<h4>Car Repair</h4>
+								<h4><%= category.name %></h4>
 
-							<p>$78/hour &amp; Up</p>
-
-						</div>
-
-					</div>
-
-				<%end%>
-
-				<%= link_to root_path do %>
-
-					<div class="content-column spread-box">
-						
-						<div class="spread-box material-box-shadow white-background clickable">
-
-							<div class="image-container">
-
+								<p>$78/hour &amp; Up</p>
 
 							</div>
 
-							<h4>Car Repair</h4>
-
-							<p>$78/hour &amp; Up</p>
-
 						</div>
 
-					</div>
-
-				<%end%>
-
-				<%= link_to root_path do %>
-
-					<div class="content-column spread-box">
-						
-						<div class="material-box-shadow white-background clickable">
-
-							<div class="image-container">
-
-
-							</div>
-
-							<h4>Car Repair</h4>
-
-							<p>$78/hour &amp; Up</p>
-
-						</div>
-
-					</div>
+					<%end%>
 
 				<%end%>
 
 			</div>
-
 
 		</section>
 

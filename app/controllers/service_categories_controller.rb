@@ -12,6 +12,18 @@ class ServiceCategoriesController < ApplicationController
   def show
   end
 
+  def tasker_index
+
+    @service_category = ServiceCategory.where(:url_name => params[:category_url]).last
+
+    unless @service_category
+
+      redirect_to root_path
+
+    end
+
+  end
+
   # GET /service_categories/new
   def new
     @service_category = ServiceCategory.new
