@@ -22,10 +22,17 @@
 
 						<div class="content-column spread-box">
 							
-							<div class="spread-box material-box-shadow white-background clickable">
+							<div class="spread-box">
 
 								<div class="image-container">
 
+									<%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
+
+									<div class="image-overlay">
+
+										<h2><%= category.name%></h2>
+
+									</div>
 
 								</div>
 
