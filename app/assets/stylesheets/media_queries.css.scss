@@ -113,6 +113,24 @@
 			 		}
 			 	}
 
+			 	.profile-content{
+				 	
+				 	.main-profile-content{
+				 		display: table-cell;
+				 		width: 500px;
+				 		vertical-align: top;
+				 		margin-bottom: 0rem;
+				 	}
+
+				 	.side-profile-content{
+				 		display: table-cell;
+				 		vertical-align: top;
+				 		width: 300px;
+				 		text-align: left;
+				 	}
+
+			 	}
+
 			
 				.content-column-container{
 

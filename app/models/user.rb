@@ -15,4 +15,29 @@ class User < ActiveRecord::Base
 	has_many :user_service_categories
 	has_many :service_categories, :through => :user_service_categories
 
+
+	def member_since_string
+
+		year = self.created_at.strftime("%Y")
+
+		if Time.now.strftime("%Y") == year
+
+			string = "since " + self.created_at.strftime("%B")
+			
+		else
+
+			string = "since " + self.created_at.strftime("%Y")
+
+		end
+
+		return string
+
+	end
+
+	def last_seen_at_string
+
+
+
+	end
+
 end

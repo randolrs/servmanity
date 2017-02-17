@@ -69,6 +69,31 @@
  			display: block;
  		}
  	}
+
+ 	.profile-content{
+ 		
+ 		margin-bottom: 1rem;
+ 	
+	 	.main-profile-content{
+	 		display: block;
+	 		width: 100%;
+	 		margin-bottom: 1rem;
+	 		vertical-align: top;
+
+	 		h2{
+	 			font-size: 36px;
+	 			margin-bottom: 1rem;
+	 		}
+	 	}
+
+	 	.side-profile-content{
+	 		display: block;
+	 		width: 100%;
+	 		vertical-align: top;
+	 		text-align: center;
+	 	}
+
+ 	}
  }
 
 .options-content-container{

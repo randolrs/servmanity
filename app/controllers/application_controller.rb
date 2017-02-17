@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
+	before_action :set_last_seen_at, if: proc { user_signed_in? }
+
 
 	def after_sign_in_path_for(user)
 
@@ -39,4 +41,11 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.permit(:account_update, keys: registration_params)
 
 	end
+
+	private
+		def set_last_seen_at
+		  current_user.update_attribute(:last_seen_at, Time.now)
+		end
+
+
 end

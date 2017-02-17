@@ -6,7 +6,7 @@
 
 		<header><%= current_user.first_name + " " + current_user.last_name.first(1) + "."%></header>
 
-		<p>Last Online: </p>
+		<p>Last Online: <%= time_ago_in_words(current_user.last_seen_at) %> ago</p>
 
 		<p>100% Approval Rating</p>
 
@@ -32,10 +32,23 @@
 
 		<% @user.user_service_categories.each do |category| %>
 			
-			<h2><%= category.service_category.name %></h2>
+			<section class="profile-content">
 
-			<p><%= category.description %></p>
+				<div class="main-profile-content">
+					
+					<h2><%= category.service_category.name %></h2>
 
+					<p><%= category.description %></p>
+
+				</div>
+
+				<div class="side-profile-content">
+					
+					<a class="button green-background medium">Hire Me for <%= number_to_currency(category.hourly_rate, precision: 0) %> / Hour </a>
+
+				</div>
+
+			</section>
 
 		<%end%>
 
@@ -51,7 +64,7 @@
 
 		<h2>About me:</h2>
 
-		<p>I've been a mobile professional [since 2015]</p>
+		<p>I've been a mobile professional <b><%= current_user.member_since_string %>.</b></p>
 
 		<p>I've completed [300 jobs]</p>
 
