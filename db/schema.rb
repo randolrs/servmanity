@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217074404) do
+ActiveRecord::Schema.define(version: 20170217104417) do
 
   create_table "service_categories", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 20170217074404) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "service_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "service_category_id"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.text     "additional_information"
+    t.datetime "scheduled_date"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "user_service_categories", force: :cascade do |t|

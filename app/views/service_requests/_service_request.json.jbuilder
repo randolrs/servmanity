@@ -1,0 +1,2 @@
+json.extract! service_request, :id, :user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :created_at, :updated_at
+json.url service_request_url(service_request, format: :json)

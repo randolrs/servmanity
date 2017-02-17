@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @service_request.user_id %>
+</p>
+
+<p>
+  <strong>Service category:</strong>
+  <%= @service_request.service_category_id %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @service_request.address %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @service_request.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @service_request.latitude %>
+</p>
+
+<p>
+  <strong>Additional information:</strong>
+  <%= @service_request.additional_information %>
+</p>
+
+<p>
+  <strong>Scheduled date:</strong>
+  <%= @service_request.scheduled_date %>
+</p>
+
+<%= link_to 'Edit', edit_service_request_path(@service_request) %> |
+<%= link_to 'Back', service_requests_path %>
