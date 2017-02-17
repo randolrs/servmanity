@@ -12,6 +12,13 @@ class ServiceRequestsController < ApplicationController
   def show
   end
 
+  def request_details
+
+    @service_request = ServiceRequest.new
+
+  end
+
+
   # GET /service_requests/new
   def new
     @service_request = ServiceRequest.new

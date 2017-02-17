@@ -10,25 +10,29 @@
 
 <div class="content">
 
-	<header>Enter Task Details</header>
+	<%= form_for(@service_request) do |f| %>
 
-	<div class="form-container medium">
+		<header><%= @service_category %> Service Request</header>
 
-		Date
-	</div>
+		<div class="form-container medium">
 
-	<div class="form-container medium">
+			Date
+		</div>
+		<br>
+		<div class="form-container medium">
 
-		Address
-	</div>
+			Address
+		</div>
+		<br>
+		<div class="form-container medium">
 
-	<div class="form-container medium">
+			Additional Details
+		</div>
+		<br>
+		<div class="centered">
+			<a class="button medium dark-red-background">Next</a>
+		</div>
 
-		Additional Details
-	</div>
-
-	<div class="centered">
-		<a class="button medium dark-red-background">Next</a>
-	</div>
+	<%end%>
 
 </div>
