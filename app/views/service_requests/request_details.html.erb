@@ -16,19 +16,30 @@
 
 		<div class="form-container medium">
 
-			Date
+			<label>Date</label>
+			<br>
+			<label>Time of Day (morning)</label>
 		</div>
-		<br>
-		<div class="form-container medium">
 
-			Address
-		</div>
 		<br>
-		<div class="form-container medium">
 
-			Additional Details
+		<div class="form-container medium">
+			<label>Address</label>
+			
 		</div>
+
 		<br>
+
+		<div class="form-container medium">
+			
+			<label>Additional Information</label><br>
+
+			<%= f.text_area :additional_information %>
+
+		</div>
+
+		<br>
+
 		<div class="centered">
 			<a class="button medium dark-red-background">Next</a>
 		</div>
