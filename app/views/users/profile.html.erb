@@ -18,9 +18,9 @@
 		
 		<div class="profile-header-nav-content">
 			<ul class="horizontal">
-				<li><a class="active">Hire Me</a></li>
-				<li><a>Reviews</a></li>
-				<li><a>About Me</a></li>
+				<li><a class="active clickable click-to-reveal" data-reveal-panel-id="hire-me">Hire Me</a></li>
+				<li><a class="clickable click-to-reveal" data-reveal-panel-id="reviews">Reviews</a></li>
+				<li><a class="clickable click-to-reveal" data-reveal-panel-id="about-me">About Me</a></li>
 			</ul>
 		</div>
 
@@ -30,14 +30,48 @@
 
 <section class="content">
 
-	<% @user.service_categories.each do |category| %>
-		
-		<header><%= category.name %></header>
+	<div class="reveal-panel" id="hire-me">
 
-	<%end%>
+		<% @user.user_service_categories.each do |category| %>
+			
+			<h2><%= category.service_category.name %></h2>
 
-	<h4>About</h4>
+			<p><%= category.description %></p>
 
-	<h4>Reviews</h4>
+
+		<%end%>
+
+	</div>
+
+	<div class="reveal-panel" id="reviews" style="display:none;">
+
+		<h2>Reviews</h2>
+
+	</div>
+
+	<div class="reveal-panel" id="about-me" style="display:none;">
+
+		<h2>About me:</h2>
+
+		<p>I've been a mobile professional [since 2015]</p>
+
+		<p>I've completed [300 jobs]</p>
+
+		<p>I respond [quickly]</p>
+
+		<br>
+
+		<h2>Why I'm a Great Professional</h2>
+
+		<p><b>I'm the right person for your job because...</b></p>
+		<p>I respond [quickly]</p>
+
+		<p><b>When I'm not Working...</b></p>
+		<p>I respond [quickly]</p>
+
+		<p><b>When I'm working I always make sure to...</b></p>
+		<p>I respond [quickly]</p>
+
+	</div>
 
 </section>
