@@ -22,6 +22,10 @@ $brand-yellow: #fcbe07;
 	color: $brand-yellow;
 }
 
+.brand-yellow-background{
+	background: $brand-yellow;
+}
+
 $brand-red: #F61C3B;
 
 $brand-dark-red: #A61605;
@@ -36,6 +40,10 @@ $brand-black: #111;
 
 .black-text{
 	color: $brand-black;
+}
+
+.black-background{
+	background: $brand-black;
 }
 
 

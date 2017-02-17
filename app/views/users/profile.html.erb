@@ -1,0 +1,37 @@
+<section class="profile-header black-background">
+
+	<div class="profile-header-content">
+
+		<%= image_tag current_user.image.url(:medium), class:"medium-image rounded white-border" %>
+
+		<header><%= current_user.first_name + " " + current_user.last_name.first(1) + "."%></header>
+
+		<p>Last Online: </p>
+
+		<p>100% Approval Rating</p>
+
+		<p>Hourly Rates or something</p>
+
+	</div>
+
+	<nav class="profile-header-nav brand-yellow-background material-box-shadow">
+		
+		<div class="profile-header-nav-content">
+			<ul class="horizontal">
+				<li><a class="active">Hire Me</a></li>
+				<li><a>Reviews</a></li>
+				<li><a>About Me</a></li>
+			</ul>
+		</div>
+
+	</nav>
+
+</section>
+
+<section class="content">
+
+	<h4>About</h4>
+
+	<h4>Reviews</h4>
+
+</section>

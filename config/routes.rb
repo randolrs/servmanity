@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   get '/user/add_services' => 'user_service_categories#new', as: 'add_service_to_user'
 
+  get '/user/profile/:id' => 'users#profile', as: 'user_profile'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

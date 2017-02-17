@@ -1,3 +1,47 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-header{
+	display: block;
+	width: 100%;
+	
+	.profile-header-content{
+		max-width: 825px;
+		padding: 50px;
+		margin: 0 auto;
+		color: #fff;
+		text-align: center;
+
+		header{
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+	}
+
+	.profile-header-nav{
+		width: 100%;
+		display: block;
+
+		.profile-header-nav-content{
+			max-width: 825px;
+			margin: 0 auto;
+
+			ul{
+				li{
+					a{
+
+					}
+
+					a.active{
+						border-bottom: 2px solid blue;
+					}
+				}
+			}
+		}
+	}
+
+
+}
+

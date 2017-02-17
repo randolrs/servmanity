@@ -3,4 +3,8 @@
 
   <header class="centered"><%= @service_category.name %> Professionals</header>
 
+  <% @service_category.users.each do |user| %>
+  	<%= user.id %>
+  <% end %>
+
 </div>
