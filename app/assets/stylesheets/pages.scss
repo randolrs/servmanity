@@ -104,6 +104,17 @@
  	}
  }
 
+.content-fixed-header{
+	position: fixed;	
+	display: block;
+	width: 100%;
+
+	.nav-content{
+		margin: 0 auto;
+		max-width: 900px;
+	}
+}
+
 .options-content-container{
 	
 	margin: 0px auto;
@@ -239,6 +250,19 @@ ul.horizontal{
 	}
 
 }
+
+ul.horizontal.spread{
+
+	
+	
+	li{
+	
+		width: 33.3%;
+
+	}
+
+}
+
 
 .home-hero{
 

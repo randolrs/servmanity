@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get 'account_settings' => 'users#account_settings', as: 'account_settings'
 
+  get 's/service_requests/initiate' => 'service_requests#request_details', as: 'initiate_service_request'
+
   get '/services/:category_url' => 'service_categories#tasker_index', as: 'service_category_home'
 
   get '/user/add_services' => 'user_service_categories#new', as: 'add_service_to_user'
