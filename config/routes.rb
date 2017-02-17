@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'how_it_works' => 'pages#how_it_works'
 
+  get 'our_team' => 'pages#our_team'
+
   get 'about' => 'pages#about'
 
   get 'signup/user' => 'users#non_tasker_signup', as: 'non_tasker_signup'

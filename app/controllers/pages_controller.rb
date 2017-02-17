@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  
+
   def home
   end
 
@@ -15,10 +17,18 @@ class PagesController < ApplicationController
   	
   end
 
+  
+
   def about
 
 
   end
 
+
+  
+  def our_team
+
+
+  end
 
 end

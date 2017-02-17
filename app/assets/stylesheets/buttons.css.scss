@@ -4,7 +4,7 @@
 
 @import 'styles';
 
-$button-gradient: inset 0px 1px 3px 0px rgba(240, 240, 240, 0.7), $material-shadow;
+$button-gradient: $material-shadow;
 
 .button{
 	padding: 10px 25px;
@@ -21,6 +21,8 @@ $button-gradient: inset 0px 1px 3px 0px rgba(240, 240, 240, 0.7), $material-shad
     box-shadow: $button-gradient;
     -webkit-box-shadow: $button-gradient;
     -moz-box-shadow: $button-gradient;
+    
+    border: 1px solid rgba(0,0,0,0.3);
 
 }
 
