@@ -4,6 +4,10 @@
 
 @import 'styles';
 
+.content.no-padding{
+	padding: 0px;	
+}
+
 .content{
  	margin: 0 auto;
  	display: block;
