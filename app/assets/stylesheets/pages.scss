@@ -18,7 +18,7 @@
  	}
 
  	section.content-section{
- 		margin-bottom: 2rem;
+ 		margin-bottom: 3rem;
 
  		header{
  			margin-bottom: 1.5rem;
@@ -42,8 +42,9 @@
  				img{
  					position: relative;
  					z-index: 29;
- 					width: 340px;
- 					height: 340px;
+ 					width: 370px;
+ 					height: 370px;
+ 				
  				}
 
  				.image-overlay{
@@ -52,8 +53,8 @@
 				    background: rgba(50,50,50,0.7);
 				    color: #fff;
 				    z-index: 30;
-				    width: 340px;
-				    height: 340px;
+				    width: 370px;
+				    height: 370px;
 				    text-align: center;
 				    line-height: 340px;
 				    font-size: 16px;
@@ -72,7 +73,7 @@
 
  	.profile-content{
  		
- 		margin-bottom: 1rem;
+ 		margin-bottom: 2.5rem;
  	
 	 	.main-profile-content{
 	 		display: block;
