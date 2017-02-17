@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   	if params[:id]
 
-  		@user = User.where(:id => params[:id])
+  		@user = User.where(:id => params[:id]).last
 
   		unless @user
   			redirect_to root_path

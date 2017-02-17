@@ -30,6 +30,12 @@
 
 <section class="content">
 
+	<% @user.service_categories.each do |category| %>
+		
+		<header><%= category.name %></header>
+
+	<%end%>
+
 	<h4>About</h4>
 
 	<h4>Reviews</h4>
