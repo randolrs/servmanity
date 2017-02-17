@@ -19,76 +19,47 @@
 
 <section class="home-about">
 
+	<header class="section-header">How Can We Help You Today?</header>
+
 	<div class="home-about-content">
-		
-		<header class="section-header">How Can We Help You?</header>
 
-		<section>
+		<div class="content">
 
-			<%= link_to root_path do %>
-
-				<div class="material-box-shadow white-background clickable">
-
-					<div class="image-container">
-
-
-					</div>
-
-					<header>Car Repair</header>
-
-					<p>$78/hour & Up</p>
-
-				</div>
-
-			<%end%>
-
-			
-
-		</section>
-
-		<section>
-
-			<%= link_to root_path do %>
-
-				<div class="material-box-shadow white-background clickable">
-
-					<div class="image-container">
-
-
-					</div>
-
-					<header>General Handyman</header>
-
-					<p>$28/hour & Up</p>
-
-				</div>
-
-			<%end%>
-
-		</section>
-
-		<section>
-
-			<%= link_to root_path do %>
+			<div class="content-column-container">
 				
-				<div class="material-box-shadow white-background clickable">
+				<% ServiceCategory.last(3).each do |category| %>
 
-					<div class="image-container">
+					<%= link_to service_category_home_path(category.url_name) do %>
 
+						<div class="content-column spread-box">
+							
+							<div class="spread-box">
 
-					</div>
+								<div class="image-container">
 
-					<header>Delivery</header>
+									<div class="image-overlay">
 
-					<p>$25/hour & Up</p>
+										<h2><%= category.name%></h2>
+
+									</div>
+
+									<%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					<%end%>
+
+				<%end%>
 
 				</div>
 
-			<%end%>
-
-		</section>
-
-		<%= link_to "See All Categories", root_path %>
+			</div>
+			
+		</div>
 
 	</div>
 
