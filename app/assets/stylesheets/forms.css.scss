@@ -40,6 +40,8 @@
 	}
 
 	select {
+		width:100%;
+		display: block;
 		padding: 10px 0px;
 		text-indent: 5px;
 		font-size: 1.5em;
@@ -78,6 +80,7 @@
 
 	textarea{
 		resize: none;
+		height: 180px;
 	}
 
 	.clickable-toggle-option.active{

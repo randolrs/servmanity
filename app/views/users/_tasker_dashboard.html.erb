@@ -50,13 +50,13 @@
 
 		<section class="content-section">
 
-			<header>How Can We Help?</header>
+			<header>Can You Perform Any of These Services?</header>
 
 			<div class="content-column-container">
 				
 				<% ServiceCategory.last(3).each do |category| %>
 
-					<%= link_to service_category_home_path(category.url_name) do %>
+					<%= link_to add_service_to_user_path(:category => category.url_name) do %>
 
 						<div class="content-column spread-box">
 							
@@ -78,6 +78,8 @@
 					<%end%>
 
 				<%end%>
+
+				<p class="centered">See More Services</p>
 
 			</div>
 

@@ -12,6 +12,42 @@
 
 		<section class="content-section">
 
+			<header class="centered">How Can We Help You Today?</header>
+
+			<div class="content-column-container">
+				
+				<% ServiceCategory.last(3).each do |category| %>
+
+					<%= link_to service_category_home_path(category.url_name) do %>
+
+						<div class="content-column spread-box">
+							
+							<div class="spread-box material-box-shadow white-background clickable">
+
+								<div class="image-container">
+
+
+								</div>
+
+								<h4><%= category.name %></h4>
+
+								<p>$78/hour &amp; Up</p>
+
+							</div>
+
+						</div>
+
+					<%end%>
+
+				<%end%>
+
+			</div>
+
+		</section>
+
+
+		<section class="content-section">
+
 			<header>How to Get Started</header>
 
 			<div class="content-column-container">
@@ -48,40 +84,7 @@
 
 		</section>
 
-		<section class="content-section">
 
-			<header>How Can We Help?</header>
-
-			<div class="content-column-container">
-				
-				<% ServiceCategory.last(3).each do |category| %>
-
-					<%= link_to service_category_home_path(category.url_name) do %>
-
-						<div class="content-column spread-box">
-							
-							<div class="spread-box material-box-shadow white-background clickable">
-
-								<div class="image-container">
-
-
-								</div>
-
-								<h4><%= category.name %></h4>
-
-								<p>$78/hour &amp; Up</p>
-
-							</div>
-
-						</div>
-
-					<%end%>
-
-				<%end%>
-
-			</div>
-
-		</section>
 
 	<%end%>
 

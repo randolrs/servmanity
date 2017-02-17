@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_service_categories
   resources :service_categories
   devise_for :users, controllers: {registrations: 'registrations'}
 
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'how_it_works' => 'pages#how_it_works'
 
+  get 'about' => 'pages#about'
+
   get 'signup/user' => 'users#non_tasker_signup', as: 'non_tasker_signup'
 
   get 'signup/tasker' => 'users#tasker_signup', as: 'tasker_signup'
@@ -20,6 +23,8 @@ Rails.application.routes.draw do
   get 'account_settings' => 'users#account_settings', as: 'account_settings'
 
   get '/services/:category_url' => 'service_categories#tasker_index', as: 'service_category_home'
+
+  get '/user/add_services' => 'user_service_categories#new', as: 'add_service_to_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

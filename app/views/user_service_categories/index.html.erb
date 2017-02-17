@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Service Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Service category</th>
+      <th>Description</th>
+      <th>Hourly rate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_service_categories.each do |user_service_category| %>
+      <tr>
+        <td><%= user_service_category.user_id %></td>
+        <td><%= user_service_category.service_category_id %></td>
+        <td><%= user_service_category.description %></td>
+        <td><%= user_service_category.hourly_rate %></td>
+        <td><%= link_to 'Show', user_service_category %></td>
+        <td><%= link_to 'Edit', edit_user_service_category_path(user_service_category) %></td>
+        <td><%= link_to 'Destroy', user_service_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User service category', new_user_service_category_path %>

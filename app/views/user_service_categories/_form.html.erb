@@ -1,0 +1,45 @@
+<div class="form-container medium clear">
+
+  <%= form_for(@user_service_category) do |f| %>
+    <% if @user_service_category.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user_service_category.errors.count, "error") %> prohibited this user_service_category from being saved:</h2>
+
+        <ul>
+        <% @user_service_category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% unless @service_category %>
+      
+      <div class="field">
+        <label>Service Category</label><br>
+        <%= f.collection_select(:service_category_id, ServiceCategory.all, :id, :name, :prompt => 'Select Service Category') %>
+      </div>
+
+    <%else%>
+
+      <%= hidden_field :service_category_id, value: @service_category.id %>
+
+    <%end%>
+
+
+    <div class="field">
+      <label>A Brief Description of Your Qualifications and Expertise</label><br>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+      <label>Your Hourly Rate</label><br>
+      <%= f.text_field :hourly_rate %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update Resume", class: 'button medium dark-red-background' %>
+    </div>
+  <% end %>
+
+</div>

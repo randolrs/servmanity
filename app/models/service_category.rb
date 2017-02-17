@@ -7,4 +7,6 @@ class ServiceCategory < ActiveRecord::Base
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+	has_many :user_service_categories
+	has_many :users, :through => :user_service_categories
 end

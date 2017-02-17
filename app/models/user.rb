@@ -12,5 +12,7 @@ class User < ActiveRecord::Base
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+	has_many :user_service_categories
+	has_many :service_categories, :through => :user_service_categories
 
 end
