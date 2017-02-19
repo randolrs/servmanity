@@ -141,3 +141,113 @@ nav.header-container{
     width: 100%;
     border-top: 3px solid #222;
 }
+
+//////////////////STEP HEADER
+
+.step-header{
+	max-width: 100%;
+	margin: 0 auto;
+	display:block;
+	margin-bottom: 3em;
+	position: fixed;
+    width: 100%;
+
+    z-index: 99;
+
+	table{
+
+		width: 100%;
+		box-shadow: 0px 1px 1px rgba(100, 100, 100, 0.3);
+
+		tr{
+
+			width:100%;
+
+			td{
+				text-align: center;
+				width: 33.3%;
+				
+				background: #fff;
+				font-weight: bold;
+    			color: #264d85;
+    			position: relative;
+
+    			a{
+    				display: block;
+    				padding: 1em 2em;
+    				color: #264d85;
+    			}
+
+    			a:hover{
+    				cursor: pointer;
+    				text-decoration: none;
+    			}
+			}
+
+			td.inactive{
+				
+				background: #ddd;
+
+				a{
+					color: #333;
+				}
+
+				a:hover{
+
+				}
+			}
+
+			td:before{
+				border-left-color: #ddd;
+    			margin-left: 1px;
+    			z-index: 1;
+
+
+			}
+
+			td:after{
+				border-left-color: #fff;
+			}
+
+			td:before, td:after{
+				position: absolute;
+			    top: 0px;
+			    right: auto;
+			    bottom: 0px;
+			    left: 100%;
+			    border-bottom: 25px solid transparent;
+    			border-left: 15px solid transparent;
+    			border-top: 25px solid transparent;
+			    content: "";
+			    margin: auto;
+			    z-index: 2;
+			}
+
+			td:last-child{
+				
+			}
+
+			td.active{
+				
+    			
+    			color: #52b46d;
+    			background: $brand-yellow;
+
+    			a{
+    				color: #222;
+    			}
+			}
+
+			td.active:before{
+				border-left-color: $brand-yellow;;
+			}
+
+			td.active:after{
+				border-left-color: $brand-yellow;;
+			}
+		
+		}
+	
+	}
+
+}

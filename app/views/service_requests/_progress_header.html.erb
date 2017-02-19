@@ -1,0 +1,27 @@
+<!-- <nav class="content-fixed-header material-box-shadow yellow-background">
+
+	<ul class="horizontal spread">
+
+		<li><a><span class="number-badge material-box-shadow">1</span><br>Details</a></li><li><a><span class="number-badge material-box-shadow">2</span><br>Prices</a></li><li><a><span class="number-badge material-box-shadow">3</span><br>Confirm</a></li>
+
+	</ul>
+
+</nav> -->
+
+<div class="step-header">
+
+  <table>
+
+    <tr>
+
+      <td class="<%# if @request_step=="tank_details" %>active<%#end%>"><a><% if @tank_details_completed == true%><span class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right: 5px;"></span><%end%>Task Details</a></td>
+
+      <td class="<% if @request_step=="contact_information" %>active<%end%> <% unless @contact_information_completed == true%> inactive <%end%>"><a><% if @contact_information_completed == true%><span class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right: 5px;"></span><%end%>Choose Service Provider</a></td>
+
+      <td class="<% if @request_step=="service_quotes" %> active <%else%> inactive <%end%>"><a>Confirm & Book</a></td>
+
+    </tr>
+
+  </table>
+
+</div>
