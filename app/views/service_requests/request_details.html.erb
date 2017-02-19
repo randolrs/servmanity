@@ -12,19 +12,32 @@
 
 	<%= form_for(@service_request) do |f| %>
 
-		<header><%= @service_category %> Service Request</header>
+		<header><%if @service_category %><%= @service_category.name %><%end%> Service Request</header>
 
-		<div class="form-container medium">
+		<%if @service_category%>
 
-			<label>Date</label>
+			<%= f.hidden_field :service_category_id, :value => @service_request.id %>
+
+		<%else%>
+
+			<div class="form-container medium">
+
+				<label>Which Service?</label>
+
+				<%= f.collection_select :service_category_id, ServiceCategory.all, :id, :name, :prompt=>"Select a Service"%>
+			
+			</div>
+
 			<br>
-			<label>Time of Day (morning)</label>
-		</div>
 
-		<br>
+
+		<%end%>
 
 		<div class="form-container medium">
-			<label>Address</label>
+
+			<label>When?</label>
+
+			<ul class="horizontal centered button-list spread"><li><a class="button purple-background">Today</a></li><li><a class="button purple-background">Tomorrow</a></li><li><a class="button purple-background">Other</a></li></ul>
 			
 		</div>
 
@@ -32,9 +45,20 @@
 
 		<div class="form-container medium">
 			
-			<label>Additional Information</label><br>
+			<label>Where?</label>
 
-			<%= f.text_area :additional_information %>
+			<%= f.text_field :address, placeholder:"Enter Your Address" %>
+			
+		</div>
+
+		<br>
+
+		<div class="form-container medium">
+			
+			<label>Additional Details</label><br>
+
+			<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
+			
 
 		</div>
 

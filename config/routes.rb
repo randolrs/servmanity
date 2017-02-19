@@ -25,7 +25,11 @@ Rails.application.routes.draw do
 
   get 'account_settings' => 'users#account_settings', as: 'account_settings'
 
-  get 's/service_requests/initiate' => 'service_requests#request_details', as: 'initiate_service_request'
+  get 's/service_requests/initiate/' => 'service_requests#request_details', as: 'initiate_service_request_no_category'
+
+
+  get 's/service_requests/initiate/:service_category_url' => 'service_requests#request_details', as: 'initiate_service_request'
+
 
   get 'service_requests/choose_professional/:id' => 'service_requests#service_request_tasker_index', as: 'service_request_tasker_index'
 

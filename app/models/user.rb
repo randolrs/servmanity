@@ -40,4 +40,11 @@ class User < ActiveRecord::Base
 
 	end
 
+	def public_display_name
+
+		@public_display_name = self.first_name + " " + self.last_name.first(1) + "."
+
+		return @public_display_name
+	end
+
 end

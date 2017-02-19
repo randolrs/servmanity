@@ -29,7 +29,7 @@
 				
 				<% ServiceCategory.last(3).each do |category| %>
 
-					<%= link_to service_category_home_path(category.url_name) do %>
+					<%= link_to initiate_service_request_path(category.url_name) do %>
 
 						<div class="content-column spread-box">
 							

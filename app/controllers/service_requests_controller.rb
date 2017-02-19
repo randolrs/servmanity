@@ -16,6 +16,26 @@ class ServiceRequestsController < ApplicationController
 
     @service_request = ServiceRequest.new
 
+    if params[:service_category_url]
+      
+      @service_cat_url_string = params[:service_category_url]
+      
+      if @service_cat_url_string.len > 2
+
+        @service_category = ServiceCategory.where(:url_name => params[:service_category_url]).last
+      
+      else
+
+        @service_category = nil
+      end
+
+    else
+
+        @service_category = nil
+    end
+
+    @additional_information_example_text = "EXAMPLE: I need help"
+
   end
 
 

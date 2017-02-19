@@ -10,22 +10,19 @@
 
 <div class="content has_fixed_header">
 
-	<%= form_for(@service_request) do |f| %>
+	<header>Choose a <%= @service_category %> Professional</header>
 
-		<header><%= @service_category %> Service Request</header>
+	<% @service_request.recommended_taskers.each do |tasker| %>
 
-		<div class="form-container medium">
+		<div class="material-box-shadow">
 
-			<label>Date</label>
+			<%= image_tag tasker.image.url(:medium), class:"medium-image" %>
 			<br>
-			<label>Time of Day (morning)</label>
-		</div>
-
-		<br>
-
-		<div class="centered">
-
-			<%= f.submit "Next", class:"button medium dark-red-background"%>
+			<h3><%= tasker.public_display_name %></h3>
+			<br>
+			<h4>4.5/5 Rating</h4>
+			<br>
+			<h4>30 Reviews</h4>
 
 		</div>
 
