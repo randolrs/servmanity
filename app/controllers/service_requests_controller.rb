@@ -31,17 +31,40 @@ class ServiceRequestsController < ApplicationController
   # POST /service_requests
   # POST /service_requests.json
   def create
-    @service_request = ServiceRequest.new(service_request_params)
+    
+    if user_signed_in?
 
-    respond_to do |format|
-      if @service_request.save
-        format.html { redirect_to @service_request, notice: 'Service request was successfully created.' }
-        format.json { render :show, status: :created, location: @service_request }
-      else
-        format.html { render :new }
-        format.json { render json: @service_request.errors, status: :unprocessable_entity }
+      @service_request = ServiceRequest.new(service_request_params)
+
+      respond_to do |format|
+        if @service_request.save
+
+          @service_request.update(:user_id => current_user.id)
+
+          format.html { redirect_to service_request_tasker_index_path(@service_request.id), notice: 'Service request was successfully created.' }
+          format.json { render :show, status: :created, location: @service_request }
+        else
+          format.html { render :new }
+          format.json { render json: @service_request.errors, status: :unprocessable_entity }
+        end
       end
+
+    else
+
+      redirect_to root_path
+
     end
+
+  end
+
+  def service_request_tasker_index
+
+    if params[:id]
+
+      @service_request = ServiceRequest.find(params[:id])
+
+    end
+
   end
 
   # PATCH/PUT /service_requests/1

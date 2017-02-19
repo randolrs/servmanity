@@ -19,7 +19,7 @@
 
 nav.header-container{
 	position: fixed;
-	background: #111;
+	background: #fff;
 	box-shadow: 0 2px 5px rgba(0,0,0,.26);
 	width: 100%;
 	display: block;
@@ -40,7 +40,7 @@ nav.header-container{
 			line-height: 30px;
 			padding: 15px 12px;
     		font-size: 14px;
-    		color: #fff;
+    		color: #222;
     		font-weight: 600;
     		text-transform: uppercase;
     		
@@ -58,7 +58,7 @@ nav.header-container{
 
 		a.logo{
 			font-size: 24px;
-			text-shadow: 0px 2px 2px #000;
+			text-shadow: 0px 1px 0px rgba(0,0,0,0.9);
     		
 		}
 
@@ -129,8 +129,8 @@ nav.header-container{
     width: 1em;
     height: 15px;
     margin-right: 0.3em;
-    border-top: 3px solid #fff;
-    border-bottom: 3px solid #fff;
+    border-top: 3px solid #222;
+    border-bottom: 3px solid #222;
 }
 
 .cheeseburger:before {
@@ -139,5 +139,5 @@ nav.header-container{
     top: 3px;
     left: 0px;
     width: 100%;
-    border-top: 3px solid #fff;
+    border-top: 3px solid #222;
 }

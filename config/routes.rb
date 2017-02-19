@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get 's/service_requests/initiate' => 'service_requests#request_details', as: 'initiate_service_request'
 
+  get 'service_requests/choose_professional/:id' => 'service_requests#service_request_tasker_index', as: 'service_request_tasker_index'
+
   get '/services/:category_url' => 'service_categories#tasker_index', as: 'service_category_home'
 
   get '/user/add_services' => 'user_service_categories#new', as: 'add_service_to_user'
