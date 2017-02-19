@@ -20,7 +20,7 @@ class ServiceRequestsController < ApplicationController
       
       @service_cat_url_string = params[:service_category_url]
       
-      if @service_cat_url_string.len > 2
+      if @service_cat_url_string.length > 2
 
         @service_category = ServiceCategory.where(:url_name => params[:service_category_url]).last
       
