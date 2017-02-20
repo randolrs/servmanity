@@ -4,6 +4,12 @@ class PagesController < ApplicationController
   def home
 
     @hide_return_to_home = true
+    
+    if user_signed_in?
+      @message_cta = "Please update your profile before being matched."
+      @top_of_page_message = "Welcome to Servmanity, " + current_user.first_name + "."
+    end
+
   end
 
   def login

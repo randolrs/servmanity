@@ -353,8 +353,9 @@ span.number-badge{
     text-align: center;
 }
 
-.flash-prompt{
-	background: $brand-blue;
+
+.top-of-page-message, .flash-prompt{
+
 	color: #fff;
 	padding: 15px;
 
@@ -362,6 +363,8 @@ span.number-badge{
 		max-width: 900px;
 		margin: 0 auto;
 		text-align: center;
+		font-size: 18px;
 	}
 }
+
 

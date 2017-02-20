@@ -1,16 +1,24 @@
 <% if flash[:error_prompt] %>
 
-	<div class="flash-prompt notice">
+	<div class="flash-prompt notice dark-red-background">
 
 		<p><%= flash[:error_prompt] %></p>
 
 	</div>
 
-<%end%>
+<%else%>
+
+	<%if @top_of_page_message %>
+	
+		<div class="top-of-page-message brand-blue-background">
+			<p><%= @top_of_page_message %></p>
+		</div>
+
+	<%end%>
+
+<% end %>
 
 <div class="content">
-
-	<header class="centered">Welcome to Servmanity, <%= current_user.first_name %></header>
 
 	<% if @has_tasks %>
 
