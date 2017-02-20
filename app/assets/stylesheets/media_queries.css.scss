@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'styles';
+
 @media only screen and (min-width: 825px) {
 	
 	html {
@@ -74,6 +76,7 @@
 
 							display: block;
 							text-align: left;
+							box-shadow: $material-shadow;
 
 							a{
 								display: block;
