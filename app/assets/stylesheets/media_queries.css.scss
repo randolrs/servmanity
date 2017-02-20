@@ -51,11 +51,26 @@
 
 			}
 
+			.dashboard-header{
+				
+				ul{
+					li{
+						a{
+							padding: 10px 40px;
+						}
+					}
+				}
+				
+				
+			}
+
 			ul.horizontal.spread-on-mobile{
 	
 				li{
 				
 					width: inherit;
+
+
 
 				}
 
