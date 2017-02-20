@@ -14,13 +14,17 @@ class UsersController < ApplicationController
 
   		@user = User.where(:id => params[:id]).last
 
-      @navigation_title = @user.public_display_name.possessive + " Profile"
-
   		unless @user
+        flash[:error_prompt] = 'Error: Cannot Find Profile'
   			redirect_to root_path
+
+      else
+
+        @navigation_title = @user.public_display_name.possessive + " Profile"
+
   		end
   	else
-
+      flash[:error_prompt] = 'Error: Cannot Find Profile'
   		redirect_to root_path
   	end
 

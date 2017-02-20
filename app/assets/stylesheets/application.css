@@ -54,6 +54,17 @@ body{
 
 }
 
+.background-overlay{
+	position: fixed;
+	padding: 50px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    min-height: 100%;
+}
+
+
 a{
 	text-decoration: none;
 }

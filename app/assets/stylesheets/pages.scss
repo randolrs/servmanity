@@ -353,3 +353,15 @@ span.number-badge{
     text-align: center;
 }
 
+.flash-prompt{
+	background: $brand-blue;
+	color: #fff;
+	padding: 15px;
+
+	p{
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+

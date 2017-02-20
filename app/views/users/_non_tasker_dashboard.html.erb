@@ -1,3 +1,13 @@
+<% if flash[:error_prompt] %>
+
+	<div class="flash-prompt notice">
+
+		<p><%= flash[:error_prompt] %></p>
+
+	</div>
+
+<%end%>
+
 <div class="content">
 
 	<header class="centered">Welcome to Servmanity, <%= current_user.first_name %></header>

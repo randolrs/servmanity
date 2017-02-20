@@ -16,9 +16,9 @@
 
       <td class="<%# if @request_step=="tank_details" %>active<%#end%>"><a><% if @tank_details_completed == true%><span class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right: 5px;"></span><%end%>Task Details</a></td>
 
-      <td class="<% if @request_step=="contact_information" %>active<%end%> <% unless @contact_information_completed == true%> inactive <%end%>"><a><% if @contact_information_completed == true%><span class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right: 5px;"></span><%end%>Choose Service Provider</a></td>
+      <td class="<% if @request_step=="contact_information" %>active<%end%> <% unless @contact_information_completed == true%> inactive <%end%>"><a><% if @contact_information_completed == true%><span class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right: 5px;"></span><%end%>Professsionals</a></td>
 
-      <td class="<% if @request_step=="service_quotes" %> active <%else%> inactive <%end%>"><a>Confirm & Book</a></td>
+      <td class="<% if @request_step=="service_quotes" %> active <%else%> inactive <%end%>"><a>Confirm</a></td>
 
     </tr>
 

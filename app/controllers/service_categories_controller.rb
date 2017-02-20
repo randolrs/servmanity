@@ -18,7 +18,7 @@ class ServiceCategoriesController < ApplicationController
 
     unless @service_category
 
-      redirect_to root_path
+      redirect_to root_path, :error_prompt => "Error: No Such Service Category"
 
     end
 
