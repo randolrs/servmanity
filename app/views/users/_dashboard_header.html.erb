@@ -1,0 +1,49 @@
+<% unless @default_dashboard %>
+
+	<div class="dashboard-header brand-blue-background material-box-shadow">
+
+		<ul class="horizontal spread-on-mobile">
+
+			<% if current_user.is_tasker %>
+				
+				<li><a class="click-to-reveal clickable active" data-reveal-panel-id="home">Home</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="my-tasks">My Tasks</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="balance">Balance</a></li>
+			
+			<%else%>
+
+				<li><a class="click-to-reveal clickable active" data-reveal-panel-id="home">Home</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="my-tasks">My Tasks</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="balance">Balance</a></li>
+
+
+			<%end%>
+
+		</ul>
+		
+	</div>
+
+	<br>
+
+<% else %>
+	
+	XXX
+
+	<% if flash[:error_prompt] %>
+
+		<div class="flash-prompt notice dark-red-background">
+
+			<p><%= flash[:error_prompt] %></p>
+
+		</div>
+
+	<%else%>
+
+		<%if @top_of_page_message %>
+		
+			<div class="top-of-page-message brand-blue-background">
+				<p><%= @top_of_page_message %></p>
+			</div>
+
+		<%end%>
+
+	<% end %>
+
+
+<% end %>

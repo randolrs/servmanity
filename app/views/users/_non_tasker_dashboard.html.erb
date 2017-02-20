@@ -1,32 +1,10 @@
-<% if flash[:error_prompt] %>
 
-	<div class="flash-prompt notice dark-red-background">
 
-		<p><%= flash[:error_prompt] %></p>
-
-	</div>
-
-<%else%>
-
-	<%if @top_of_page_message %>
-	
-		<div class="top-of-page-message brand-blue-background">
-			<p><%= @top_of_page_message %></p>
-		</div>
-
-	<%end%>
-
-<% end %>
+<%= render 'users/dashboard_header' %>
 
 <div class="content">
 
-	<% if @has_tasks %>
-
-		<h2>Upcoming Tasks</h2>
-
-		<h2>Previous Tasks</h2>
-
-	<% else %>
+	<% if @default_dashboard %>
 
 		<section class="content-section">
 
@@ -105,7 +83,19 @@
 
 		</section>
 
+	<%else%>
 
+		<div class="reveal-panel" id="home">
+			home
+		</div>
+
+		<div class="reveal-panel" id="my-tasks" style="display: none;">
+			tasks
+		</div>
+
+		<div class="reveal-panel" id="balance" style="display: none;">
+			payments
+		</div>
 
 	<%end%>
 

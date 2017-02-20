@@ -6,8 +6,18 @@ class PagesController < ApplicationController
     @hide_return_to_home = true
     
     if user_signed_in?
-      @message_cta = "Please update your profile before being matched."
-      @top_of_page_message = "Welcome to Servmanity, " + current_user.first_name + "."
+
+      if current_user.default_dashboard
+
+        @default_dashboard = true
+        
+      else
+
+        @message_cta = "Please update your profile before being matched."
+        @top_of_page_message = "Welcome to Servmanity, " + current_user.first_name + "."
+
+      end
+      
     end
 
   end

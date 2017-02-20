@@ -4,6 +4,30 @@
 
 @import 'styles';
 
+html{
+	body{
+
+		.dashboard-header{
+			position: fixed;
+			display: block;
+			width: 100%;	
+			z-index: 999;
+
+			a{
+				color: #fff;
+				padding: 10px 40px;
+			}
+
+			a.active{
+				background: rgba(0,0,0,0.2);
+			}
+
+		}
+
+	}
+}
+
+
 .profile-header{
 	display: block;
 	width: 100%;

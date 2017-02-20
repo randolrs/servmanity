@@ -47,4 +47,11 @@ class User < ActiveRecord::Base
 		return @public_display_name
 	end
 
+	def default_dashboard
+
+
+		return false
+
+	end
+
 end
