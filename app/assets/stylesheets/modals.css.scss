@@ -43,34 +43,40 @@
 
 .menu-content{
 	height: 100%;
-	background: #fff;
+	background: #222;
 	width: 300px;
 	max-width: 100%;
 	box-shadow: 2px 0px 1px rgba(0, 0, 0, 0.3);
 	z-index: 10003;
-	background: #eee;
+	background: #333;
     
     li.menu-header{
-    	padding: 20px 0px;
+    	padding: 15px 0px;
     	font-size: 1.5em;
-    	background: #fff;
+    	background: #111;
     	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
     }
 
     li{
 
+    	a{
+			padding: 15px 30px;
+			font-size: 1.2em;
+			display: block;
+			color: #fff;
+		}
+		
+		a:hover{
+			
+			background: #fff;
+		
+		}
+
     }
 
-	a{
-		padding: 15px 30px;
-		font-size: 1.2em;
-		display: block;
-	}
+	
 
-	a:hover{
-		background: #aaa;
-		
-	}
+	
 }
 
 .modal-cta{
