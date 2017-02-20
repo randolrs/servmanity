@@ -14,6 +14,8 @@ class ServiceRequestsController < ApplicationController
 
   def request_details
 
+    @navigation_title = "Service Request"
+
     @service_request = ServiceRequest.new
 
     if params[:service_category_url]
@@ -23,7 +25,7 @@ class ServiceRequestsController < ApplicationController
       if @service_cat_url_string.length > 2
 
         @service_category = ServiceCategory.where(:url_name => params[:service_category_url]).last
-      
+        @navigation_title = @service_category.name + " Service Request"
       else
 
         @service_category = nil
@@ -82,6 +84,12 @@ class ServiceRequestsController < ApplicationController
     if params[:id]
 
       @service_request = ServiceRequest.find(params[:id])
+
+      @navigation_title = " Service Request"
+
+    else
+
+      redirect_to root_path
 
     end
 

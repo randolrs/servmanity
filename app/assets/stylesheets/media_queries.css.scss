@@ -16,6 +16,10 @@
 				display: inherit !important;
 			}
 
+			.content{
+				padding: 50px 25px;
+			}
+
 		}
 
 	}
@@ -48,6 +52,8 @@
 
 			.options-content-container{
 
+				    max-width: none;
+
 				.options-sidebar, .options-content{
 					
 					display: table-cell;
@@ -57,7 +63,7 @@
 
 				.options-sidebar{
 					
-					border-top: 1px solid #ddd;
+					border-top: 1px solid #bbb;
 					
 					width: 250px;
 
@@ -73,14 +79,18 @@
 								display: block;
 								padding: 15px 20px;
 								cursor: pointer;
-								border-bottom: 1px solid #ddd;
-								border-left: 1px solid #ddd;
+								
+								border-left: 1px solid #bbb;
+								border-bottom: 1px solid #bbb;
+								border-top: none;
+								border-right: none;
+
 
 							}
 
 							a.active{
-								border-right: 2px solid blue;
-								border-bottom: 1px solid #ddd;
+								
+								
 							}
 
 						}
@@ -92,10 +102,14 @@
 					width: 550px;
 					background: #fff;
 					padding: 25px 40px 70px 40px;
-					border: 1px solid #ddd;
+					border: 1px solid #bbb;
 
 					.option-content-container{
 						padding: 15px;
+					}
+
+					header{
+						display: block;
 					}
 					
 				}

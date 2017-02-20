@@ -16,10 +16,9 @@
 }
 
 
-
 nav.header-container{
 	position: fixed;
-	background: #fff;
+	background: #222;
 	box-shadow: 0 2px 5px rgba(0,0,0,.26);
 	width: 100%;
 	display: block;
@@ -39,10 +38,10 @@ nav.header-container{
 		a{
 			line-height: 30px;
 			padding: 15px 12px;
-    		font-size: 14px;
-    		color: #222;
-    		font-weight: 600;
-    		text-transform: uppercase;
+    		font-size: 16px;
+    		color: #fff;
+    		font-weight: 500;
+    		
     		
 		}
 
@@ -52,13 +51,23 @@ nav.header-container{
 			z-index: 9000;
 		}
 
-		a.header-image{
-			padding: 10px 15px;
+		a.header-profile-cta{
+	
+			padding: 7px 15px;
+
+			img{
+				width: 45px;
+				height: 45px;
+				border-radius: 50%;
+				border:2px solid #fff;	
+			}
+
 		}
 
 		a.logo{
-			font-size: 24px;
-			text-shadow: 0px 1px 0px rgba(0,0,0,0.9);
+			font-size: 28px;
+			text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+			letter-spacing: -1px;
     		
 		}
 
@@ -113,12 +122,6 @@ nav.header-container{
 }
 
 
-.header-profile-image{
-	width:40px;
-	height: 40px;
-	border-radius: 50%;
-	border:2px solid #fff;	
-}
 
 .cheeseburger {
 	font-weight: 800;
@@ -129,8 +132,8 @@ nav.header-container{
     width: 1em;
     height: 15px;
     margin-right: 0.3em;
-    border-top: 3px solid #222;
-    border-bottom: 3px solid #222;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
 }
 
 .cheeseburger:before {
@@ -139,7 +142,7 @@ nav.header-container{
     top: 3px;
     left: 0px;
     width: 100%;
-    border-top: 3px solid #222;
+    border-top: 3px solid #fff;
 }
 
 //////////////////STEP HEADER
@@ -152,7 +155,7 @@ nav.header-container{
 	position: fixed;
     width: 100%;
 
-    z-index: 99;
+    z-index: 99999;
 
 	table{
 

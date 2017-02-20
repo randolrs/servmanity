@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   
 
   def home
+
+    @hide_return_to_home = true
   end
 
   def login
@@ -30,5 +32,7 @@ class PagesController < ApplicationController
 
 
   end
+
+ 
 
 end

@@ -105,6 +105,7 @@ GEM
       mimemagic (= 0.3.0)
     pg (0.18.4-x86-mingw32)
     pkg-config (1.1.7)
+    possessive (1.0.1)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -193,6 +194,7 @@ DEPENDENCIES
   jquery-turbolinks
   paperclip (~> 4.2)
   pg
+  possessive
   rails (= 4.2.5.1)
   rails_12factor
   sass-rails (~> 5.0)

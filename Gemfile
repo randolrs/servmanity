@@ -36,6 +36,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 
 
+gem 'possessive'
 
 gem 'paperclip', '~> 4.2'
 

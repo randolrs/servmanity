@@ -9,4 +9,6 @@ class ServiceCategory < ActiveRecord::Base
 
 	has_many :user_service_categories
 	has_many :users, :through => :user_service_categories
+
+	has_many :service_requests
 end

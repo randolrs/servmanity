@@ -10,13 +10,25 @@
 
 				<!-- <li><a class="logo"><div class="header-logo"></div></a></li> -->
 				<span class="mobile-only">
-					<li><a class="cheeseburger-container modal-cta" data-modal-id="main-menu"><span class="cheeseburger"></span></a></li>
 
-					<li><a class="logo" href="<%= root_path %>"><span class="brand-blue">SERV</span><span class="brand-yellow">MANITY</span></a></li>
+					<% if @hide_return_to_home %>
+
+						<li><a class="cheeseburger-container modal-cta" data-modal-id="main-menu"><span class="cheeseburger"></span></a></li>
+
+						<li><a class="logo" href="<%= root_path %>"><span class="brand-yellow">SERV</span><span class="brand-yellow">MANITY</span></a></li>
+
+					<%else%>
+
+						<li><a href="<%= root_path %>"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
+
+						<li><a><%= @navigation_title %></a></li>
+
+					<%end%>
+
 				</span>
 
 				<span class="full-screen-only">
-					<li><a class="logo" href="<%= root_path %>"><span class="brand-blue">SERV</span><span class="brand-yellow">MANITY</span></a></li>
+					<li><a class="logo" href="<%= root_path %>"><span class="brand-yellow">SERVMANITY</span></a></li>
 				</span>
 
 			</ul>
@@ -31,21 +43,11 @@
 
 					<% unless user_signed_in?%>
 
-						<li><%= link_to "Login", login_path %></li>
-
-						<li><%= link_to "How it Works", how_it_works_path %></li>
-
-						<li><%= link_to "Signup", signup_path, class:'signup-cta' %></li>
+						<li><%= link_to "Login", login_path %></li><li><%= link_to "How it Works", how_it_works_path %></li><li><%= link_to "Signup", signup_path, class:'signup-cta' %></li>
 
 					<%else%>
 
-						<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li>
-
-						<li><%= link_to "Account", account_settings_path %></li>
-
-						<li><%= link_to "How it Works", how_it_works_path %></li>
-
-						<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+						<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li><li><%= link_to "Account", account_settings_path %></li><li><%= link_to "How it Works", how_it_works_path %></li><li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 
 						
 					<%end%>
@@ -60,7 +62,7 @@
 
 					<%else%>
 
-						<li><%= link_to "Account", account_settings_path %></li>
+						<li><a class="header-profile-cta" href="<%= account_settings_path %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li>
 						
 					<%end%>
 
