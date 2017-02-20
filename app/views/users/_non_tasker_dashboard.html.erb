@@ -85,21 +85,25 @@
 
 	<%else%>
 
-		<div class="reveal-panel" id="home">
-
-			<section class="content-section">
-
-
-			</section>
-
-		</div>
-
-		<div class="reveal-panel" id="my-requests" style="display: none;">
+		<div class="reveal-panel" id="my-requests">
 			
 			<section class="content-section">
 
-				<header>My Requests</header>
-				</header>
+				<header class="full-screen-only">My Requests</header>
+
+				<span style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button purple-background full-screen-only medium" %></span>
+
+				<% current_user.service_requests.each do |request| %>
+					
+					<div class="service-request-index material-box-shadow">
+						<p><a>A <%= request.service_category.name %> Service Request <%= time_ago_in_words(request.created_at) %> Ago</a></p>
+
+						<p><a>Status: </a></p>
+
+						<p><a>Cost?</a></p>
+					</div>
+
+				<%end%>
 
 			</section>
 

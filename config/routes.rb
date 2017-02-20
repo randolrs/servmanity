@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'how_it_works' => 'pages#how_it_works'
 
+  get 'how_can_we_help' => 'service_categories#formatted_index', as: 'service_category_formatted_index'
+
   get 'our_team' => 'pages#our_team'
 
   get 'about' => 'pages#about'

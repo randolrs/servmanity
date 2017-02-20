@@ -9,7 +9,7 @@
 			<ul class="horizontal">
 
 				<!-- <li><a class="logo"><div class="header-logo"></div></a></li> -->
-				
+
 				<span class="mobile-only">
 
 					<% if @hide_return_to_home %>
@@ -20,7 +20,7 @@
 
 					<%else%>
 
-						<li><a href="<%= root_path %>"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
+						<li><a class="big-glyph" href="<%= root_path %>"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
 
 						<li><a><%= @navigation_title %></a></li>
 
@@ -48,7 +48,7 @@
 
 					<%else%>
 
-						<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li><li><%= link_to "Account", account_settings_path %></li><li><%= link_to "How it Works", how_it_works_path %></li><li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+						<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li><li><%= link_to "Account", account_settings_path %></li><li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 
 						
 					<%end%>
@@ -62,8 +62,9 @@
 						<li><%= link_to "Signup", signup_path, class:'signup-cta' %></li>
 
 					<%else%>
-
-						<li><a class="header-profile-cta" href="<%= account_settings_path %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li>
+						
+						<li><a class="header-profile-cta" href="<%= user_profile_path(current_user.id) %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li>
+						<li><a class="big-glyph" href="<%= account_settings_path %>"><span class="glyphicon glyphicon-cog" aria-hidden="true"></a></li>
 						
 					<%end%>
 

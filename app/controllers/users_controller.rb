@@ -20,7 +20,11 @@ class UsersController < ApplicationController
 
       else
 
-        @navigation_title = @user.public_display_name.possessive + " Profile"
+        unless @user.id == current_user.id
+          @navigation_title = @user.public_display_name.possessive + " Profile"
+        else
+          @navigation_title = "Your Profile"
+        end
 
   		end
   	else

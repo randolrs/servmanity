@@ -7,6 +7,14 @@ class ServiceRequestsController < ApplicationController
     @service_requests = ServiceRequest.all
   end
 
+  def formatted_index
+
+    @service_requests = ServiceRequest.all
+
+    @navigation_title = "How Can We help?"
+
+  end
+
   # GET /service_requests/1
   # GET /service_requests/1.json
   def show

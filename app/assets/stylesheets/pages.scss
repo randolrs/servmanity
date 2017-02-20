@@ -32,6 +32,7 @@
  		header{
  			margin-bottom: 1.5rem;
  			font-size: 1.5rem;
+ 			display: inline-block;
  			
  		}
  	}
@@ -273,6 +274,18 @@ ul.horizontal.spread, ul.horizontal.spread-on-mobile{
 	li{
 	
 		width: 33.3%;
+
+	}
+
+}
+
+ul.horizontal.spread-on-mobile.two{
+
+	
+	
+	li{
+	
+		width: 50.0%;
 
 	}
 

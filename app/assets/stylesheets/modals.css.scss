@@ -100,3 +100,12 @@ span.dismiss-modal{
     font-size: 20px;
 }
 
+.fixed-bottom-modal{
+	position: fixed;
+	display: block;
+	width: 100%;
+	background: rgba(200,200,200,0.8);
+	bottom: 0px;
+	padding: 20px;
+}
+

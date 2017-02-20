@@ -37,12 +37,16 @@ nav.header-container{
 
 		a{
 			line-height: 30px;
-			padding: 15px 12px;
+			padding: 15px 20px;
     		font-size: 16px;
     		color: #fff;
     		font-weight: 500;
     		
     		
+		}
+
+		a.big-glyph{
+			font-size: 24px;
 		}
 
 		a.cheeseburger-container{

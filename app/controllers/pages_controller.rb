@@ -10,7 +10,7 @@ class PagesController < ApplicationController
       if current_user.default_dashboard
 
         @default_dashboard = true
-        
+
       else
 
         @message_cta = "Please update your profile before being matched."
@@ -39,7 +39,7 @@ class PagesController < ApplicationController
 
   def about
 
-    navigation_title = "About Servmanity"
+    @navigation_title = "About Servmanity"
 
   end
 
@@ -47,13 +47,13 @@ class PagesController < ApplicationController
   
   def our_team
 
-    navigation_title = "Our Team"
+    @navigation_title = "Our Team"
 
   end
 
   def how_it_works
 
-    navigation_title = "How it Works"
+    @navigation_title = "How it Works"
 
   end
  

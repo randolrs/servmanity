@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 
 	has_many :user_service_categories
 	has_many :service_categories, :through => :user_service_categories
+	has_many :service_requests
 
 
 	def member_since_string
@@ -49,8 +50,23 @@ class User < ActiveRecord::Base
 
 	def default_dashboard
 
+		if self.is_tasker
 
-		return false
+			if self.service_requests.count > 0
+				
+				return false
+			
+			else
+				
+				return true
+
+			end
+
+		else
+
+			return false
+
+		end
 
 	end
 
