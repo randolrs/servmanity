@@ -36,6 +36,8 @@
 
 		body {
 
+			
+
 			.home-about{
 
 				.home-about-content{
@@ -146,6 +148,10 @@
 
 			.content{
 
+				header{
+					text-align: justify;
+				}
+
 				section.content-section{
 
 			 		header{
@@ -243,4 +249,21 @@
 
 	}
 
+}
+
+@media only screen and (min-width: 550px){
+	html{
+		body{
+
+			.card{
+				.right-corner{
+					line-height: 2.5em;
+					display: inline-block;
+					float: right;
+				}
+
+			}
+
+		}
+	}
 }

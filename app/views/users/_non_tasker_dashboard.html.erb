@@ -2,11 +2,11 @@
 
 <%= render 'users/dashboard_header' %>
 
-<div class="content">
+<div class="content has_fixed_header">
 
 	<% if @default_dashboard %>
 
-		<section class="content-section">
+		<section class="content-section material-box-shadow white-background">
 
 			<header class="centered">How Can We Help You Today?</header>
 
@@ -45,7 +45,7 @@
 		</section>
 
 
-		<section class="content-section">
+		<section class="content-section material-box-shadow white-background">
 
 			<header class="centered">How to Get Started</header>
 
@@ -89,28 +89,34 @@
 			
 			<section class="content-section">
 
-				<header class="full-screen-only">My Requests</header>
+				<!-- <header class="full-screen-only">My Requests</header> -->
 
-				<span style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button purple-background full-screen-only medium" %></span>
+				<!-- <span style="float: right; display: inline-block;"><%# link_to "Hire Someone", service_category_formatted_index_path, class: "button purple-background full-screen-only medium" %></span> -->
 
 				<% current_user.service_requests.each do |request| %>
 					
-					<%# link_to about_path do %>
+					<%= link_to about_path do %>
 						
 						<div class="service-request-index card">
 							
-							<h3><%= request.service_category.name %> Request</h3><span class="right-corner">2/28 (Morning)</span>
+							<h3><%= request.service_category.name %> Request</h3>
 
-							<p>Submitted <%= time_ago_in_words(request.created_at) %> ago</p>
-							<p>Location: 616 N. 7th St. (St. Louis.)</p>
+							<p class="right-corner">Morning of 2/22</p>
 
-							<p>Additional Notes:<i> <%= request.additional_information.first(20) %><% if request.additional_information.length > 20 %>...<%end%></i></p>
+							<p>616 N. 7th St. (St. Louis.)</p>
+
+							<p>Status: </p>
+
+							<!-- <p>Submitted <%# time_ago_in_words(request.created_at) %> ago</p> -->
+
+
+							<!-- <p>Additional Notes:<i> <%# request.additional_information.first(20) %><%# if request.additional_information.length > 20 %>...<%#end%></i></p> -->
 							<!-- <br>
 							<ul class="horizontal spread button-list "><li><a class="button dark-blue-background">Details</a></li><li><a class="button yellow-background">Edit</a></li><li><a class="button dark-red-background">Cancel</a></li></ul> -->
 			
 						</div>
 
-					<%#end%>
+					<%end%>
 
 				<%end%>
 

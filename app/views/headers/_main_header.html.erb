@@ -16,7 +16,7 @@
 
 						<!-- <li><a class="cheeseburger-container modal-cta" data-modal-id="main-menu"><span class="cheeseburger"></span></a></li> -->
 
-						<li><a class="logo" href="<%= root_path %>"><span class="brand-yellow">SERV</span><span class="brand-yellow">MANITY</span></a></li>
+						<li><a class="logo" href="<%= root_path %>"><!-- <span aria-hidden="true" class="glyphicon glyphicon-home" style="margin-right:15px;"></span> --><span class="brand-yellow">SERVMANITY</span></a></li>
 
 					<%else%>
 
@@ -66,7 +66,12 @@
 
 					<%else%>
 						
-						<% if current_user.is_tasker %><li><a class="header-profile-cta" href="<%= user_profile_path(current_user.id) %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li><%else%><li><a class="header-cta" href="<%= account_settings_path %>"><span class= "button green-background">Hire Someone</span></a></li><%end%>
+						<% if current_user.is_tasker %>
+
+							<li><a class="header-profile-cta" href="<%= user_profile_path(current_user.id) %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li>
+						<%else%>
+
+						<%end%>
 						
 						<li><a class="big-glyph" href="<%= account_settings_path %>"><span class="glyphicon glyphicon-cog" aria-hidden="true"></a></li>
 						
