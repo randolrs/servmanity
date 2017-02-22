@@ -22,7 +22,11 @@
 
 					<li><%= link_to "Account Settings", account_settings_path %></li>
 
-					<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li>
+					<% if current_user.is_tasker %>
+
+						<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li>
+						
+					<%end%>
 
 					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 
