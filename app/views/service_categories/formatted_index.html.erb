@@ -37,6 +37,38 @@
 
     </div>
 
+    <div class="content-column-container">
+      
+      <% ServiceCategory.last(3).each do |category| %>
+
+        <%= link_to initiate_service_request_path(category.url_name) do %>
+
+          <div class="content-column spread-box">
+            
+            <div class="spread-box">
+
+              <div class="image-container">
+
+                <div class="image-overlay">
+
+                  <h2><%= category.name%></h2>
+
+                </div>
+
+                <%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        <%end%>
+
+      <%end%>
+
+    </div>
+
   </section>
 
 </div>

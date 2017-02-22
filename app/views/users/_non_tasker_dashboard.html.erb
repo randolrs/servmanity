@@ -95,13 +95,18 @@
 
 				<% current_user.service_requests.each do |request| %>
 					
-					<div class="service-request-index material-box-shadow">
-						<p><a>A <%= request.service_category.name %> Service Request <%= time_ago_in_words(request.created_at) %> Ago</a></p>
+					<%= link_to about_path do %>
+						
+						<div class="service-request-index card">
+							
+							<h3>A <%= request.service_category.name %> Service Request <span style="float:right;"><%= time_ago_in_words(request.created_at) %> Ago</span></h3>
 
-						<p><a>Status: </a></p>
+							<p>Status:</p>
 
-						<p><a>Cost?</a></p>
-					</div>
+							<p>Cost?</p>
+						</div>
+
+					<%end%>
 
 				<%end%>
 
@@ -109,11 +114,11 @@
 
 		</div>
 
-		<div class="reveal-panel" id="balance" style="display: none;">
+		<div class="reveal-panel" id="messages" style="display: none;">
 			
 			<section class="content-section">
 
-				<header>Payments</header>
+				<header class="full-screen-only">Messages</header>
 				</header>
 
 			</section>

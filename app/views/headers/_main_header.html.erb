@@ -47,8 +47,9 @@
 						<li><%= link_to "Login", login_path %></li><li><%= link_to "How it Works", how_it_works_path %></li><li><%= link_to "Signup", signup_path, class:'signup-cta' %></li>
 
 					<%else%>
-
-						<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li><li><%= link_to "Account", account_settings_path %></li><li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+						<% if current_user.is_tasker%>
+							<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li>
+						<%end%><li><%= link_to "Account", account_settings_path %></li><li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 
 						
 					<%end%>
@@ -63,7 +64,7 @@
 
 					<%else%>
 						
-						<li><a class="header-profile-cta" href="<%= user_profile_path(current_user.id) %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li>
+						<% if current_user.is_tasker %><li><a class="header-profile-cta" href="<%= user_profile_path(current_user.id) %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li><%end%>
 						<li><a class="big-glyph" href="<%= account_settings_path %>"><span class="glyphicon glyphicon-cog" aria-hidden="true"></a></li>
 						
 					<%end%>

@@ -70,4 +70,13 @@ class User < ActiveRecord::Base
 
 	end
 
+	def hourly_rate_for_category(category_id)
+
+		record = UserServiceCategory.where(:user_id => self.id, :service_category_id => category_id).last
+
+		return record.hourly_rate
+
+
+	end
+
 end

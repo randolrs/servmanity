@@ -4,7 +4,7 @@
 
 	<%= form_for(@service_request) do |f| %>
 
-		<header class="full-screen-only"><%if @service_category %><%= @service_category.name %><%end%> Service Request</header>
+		<header class="full-screen-only"><%if @service_category %><%= @service_category.name %><%end%></header>
 
 		<%if @service_category%>
 
@@ -57,7 +57,7 @@
 		<br>
 
 		<div class="centered">
-			<%= f.submit "Next", class:"button medium dark-red-background"%>
+			<%= f.submit "Find Local Professionals", class:"button medium dark-red-background"%>
 		</div>
 
 	<%end%>

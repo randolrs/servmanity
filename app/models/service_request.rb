@@ -6,9 +6,10 @@ class ServiceRequest < ActiveRecord::Base
 	
 	def recommended_taskers
 
-		@users = User.all
-		
-		return @users
+		service_category = ServiceCategory.find(self.service_category_id)
 
+		taskers_for_this_category = service_category.users
+		
+		return taskers_for_this_category
 	end
 end

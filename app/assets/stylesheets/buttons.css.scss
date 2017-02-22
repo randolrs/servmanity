@@ -24,7 +24,7 @@ $button-gradient: $material-shadow;
     
     border: 1px solid rgba(0,0,0,0.3);
 
-    text-shadow: 0px 2px 1px rgba(0,0,0,0.5);
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
     letter-spacing: 1px;
 
 }
@@ -58,12 +58,13 @@ $button-gradient: $material-shadow;
 }
 
 .button.purple-background{
-    background: $brand-dark-purple;
+    background: $brand-dark-blue;
     color: #fff;
 }
 
 .button.purple-frame{
-    border: 2px solid $brand-dark-purple;
-    color: $brand-dark-purple;
+    border: 2px solid $brand-dark-blue;
+    color: $brand-dark-blue;
     background: #fff;
+    text-shadow: none;
 }

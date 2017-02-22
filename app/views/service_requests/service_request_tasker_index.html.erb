@@ -6,7 +6,7 @@
 
 	<% @service_request.recommended_taskers.each do |tasker| %>
 
-		<div class="material-box-shadow">
+		<div class="card">
 
 			<%= image_tag tasker.image.url(:medium), class:"medium-image" %>
 			<br>
@@ -15,6 +15,8 @@
 			<h4>4.5/5 Rating</h4>
 			<br>
 			<h4>30 Reviews</h4>
+
+			<a class="button medium green-background">Hire Me for <%= number_to_currency(tasker.hourly_rate_for_category(@service_request.service_category_id), precision: 0) %>/hour</a>
 
 		</div>
 

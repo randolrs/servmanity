@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217104417) do
+ActiveRecord::Schema.define(version: 20170221031245) do
+
+  create_table "markets", force: :cascade do |t|
+    t.string   "display_name"
+    t.string   "url_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "service_categories", force: :cascade do |t|
     t.string   "name"

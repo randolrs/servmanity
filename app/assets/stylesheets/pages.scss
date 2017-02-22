@@ -381,3 +381,21 @@ span.number-badge{
 }
 
 
+.card{
+	box-shadow: $material-shadow;
+	background: #fff;
+
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+
+	h3{
+		margin-bottom: 10px;
+	}
+
+	p{
+		color: #777;
+		line-height: 2;
+	}
+
+}
