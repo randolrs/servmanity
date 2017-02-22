@@ -33,7 +33,7 @@ class ServiceRequestsController < ApplicationController
       if @service_cat_url_string.length > 2
 
         @service_category = ServiceCategory.where(:url_name => params[:service_category_url]).last
-        @navigation_title = @service_category.name
+        @navigation_title = @service_category.name + " Request"
       else
 
         @service_category = nil
