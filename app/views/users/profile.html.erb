@@ -32,11 +32,11 @@
 
 		<% @user.user_service_categories.each do |category| %>
 			
-			<section class="profile-content">
+			<section class="card">
 
 				<div class="main-profile-content">
 					
-					<h2><%= category.service_category.name %></h2>
+					<h3><%= category.service_category.name %></h3>
 
 					<p><%= category.description %></p>
 
@@ -44,7 +44,10 @@
 
 				<div class="side-profile-content">
 					
-					<a class="button green-background medium" href="<%= initiate_service_request_path(category.service_category.url_name) %>">Hire Me for <%= number_to_currency(category.hourly_rate, precision: 0) %>/Hour</a>
+					<div class="centered">
+
+						<a class="button green-background medium" href="<%= initiate_service_request_path(category.service_category.url_name) %>">Hire Me for <%= number_to_currency(category.hourly_rate, precision: 0) %>/Hour</a>
+					</div>
 
 				</div>
 
