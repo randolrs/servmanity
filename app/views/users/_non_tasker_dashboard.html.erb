@@ -99,7 +99,9 @@
 						
 						<div class="service-request-index card">
 							
-							<h3>A <%= request.service_category.name %> Service Request <span style="float:right;"><%= time_ago_in_words(request.created_at) %> Ago</span></h3>
+							<h3><%= request.service_category.name %> Request</h3><span class="right-corner"><%= time_ago_in_words(request.created_at) %> Ago</span>
+
+							<p>Address: 616 N. 7th St.</p>
 
 							<p>Status:</p>
 
