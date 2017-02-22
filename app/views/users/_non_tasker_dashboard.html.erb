@@ -99,13 +99,13 @@
 						
 						<div class="service-request-index card">
 							
-							<h3><%= request.service_category.name %> Request</h3><span class="right-corner"><%= time_ago_in_words(request.created_at) %> Ago</span>
+							<h3><%= request.service_category.name %> Request</h3><span class="right-corner">Complete</span>
 
-							<p>Address: 616 N. 7th St.</p>
+							<p>Submitted <%= time_ago_in_words(request.created_at) %> Ago</p>
+							<p>Location: 616 N. 7th St., St. Louis.</p>
 
-							<p>Status:</p>
-
-							<p>Cost?</p>
+							<p>Notes:</p>
+							<p><%= request.additional_information %></p>
 						</div>
 
 					<%end%>
