@@ -64,7 +64,11 @@ class User < ActiveRecord::Base
 
 		else
 
-			return false
+			if self.service_requests.count > 0
+				return false
+			else
+				return true
+			end
 
 		end
 

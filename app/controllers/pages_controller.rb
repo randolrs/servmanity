@@ -10,12 +10,13 @@ class PagesController < ApplicationController
       if current_user.default_dashboard
 
         @default_dashboard = true
+        @top_of_page_message = "Welcome to Servmanity, " + current_user.first_name + "."
+
 
       else
 
         @message_cta = "Please update your profile before being matched."
-        @top_of_page_message = "Welcome to Servmanity, " + current_user.first_name + "."
-
+       
       end
       
     end
