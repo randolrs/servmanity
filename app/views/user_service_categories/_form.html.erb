@@ -1,4 +1,6 @@
-<div class="form-container medium">
+<div class="form-container medium card">
+
+  <h3 class="mobile-only"><% if @service_category %><%= @service_category.name%> <%end%></h3>
 
   <%= form_for(@user_service_category) do |f| %>
     <% if @user_service_category.errors.any? %>

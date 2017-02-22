@@ -2,8 +2,6 @@
 
 	<header class="full-screen-only centered">Add <% unless @service_category %>A Service <%else%><span style="color:green;"><%= @service_category.name%></span> <%end%> To Your Profile</header>
 
-	<header class="mobile-only"><% if @service_category %><%= @service_category.name%> <%end%></header>
-
 	<%= render 'form' %>
 
 </div>

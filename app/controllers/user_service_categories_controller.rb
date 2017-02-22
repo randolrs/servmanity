@@ -19,7 +19,7 @@ class UserServiceCategoriesController < ApplicationController
     if params[:category]
 
       @service_category = ServiceCategory.where(:url_name => params[:category]).last
-      @navigation_title = "Add Services to My Profile"
+      @navigation_title = "Add Services"
     end
 
 
