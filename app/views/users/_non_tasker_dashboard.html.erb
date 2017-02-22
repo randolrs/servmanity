@@ -95,20 +95,22 @@
 
 				<% current_user.service_requests.each do |request| %>
 					
-					<%= link_to about_path do %>
+					<%# link_to about_path do %>
 						
 						<div class="service-request-index card">
 							
 							<h3><%= request.service_category.name %> Request</h3><span class="right-corner">2/28 (Morning)</span>
 
-							<p>Submitted <%= time_ago_in_words(request.created_at) %> Ago</p>
+							<p>Submitted <%= time_ago_in_words(request.created_at) %> ago</p>
 							<p>Location: 616 N. 7th St. (St. Louis.)</p>
 
-							<p>Notes:</p>
-							<p><%= request.additional_information %></p>
+							<p>Additional Notes:<i> <%= request.additional_information.first(20) %><% if request.additional_information.length > 20 %>...<%end%></i></p>
+							<br>
+							<ul class="horizontal spread button-list "><li><a class="button dark-blue-background">Edit</a></li><li><a class="button dark-blue-background">Cancel</a></li><li><a class="button dark-red-background">Cancel</a></li></ul>
+			
 						</div>
 
-					<%end%>
+					<%#end%>
 
 				<%end%>
 
