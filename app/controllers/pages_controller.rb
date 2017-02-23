@@ -5,6 +5,8 @@ class PagesController < ApplicationController
 
     @hide_return_to_home = true
     
+    @fixed_bottom_cta = true
+
     if user_signed_in?
 
       if current_user.default_dashboard
