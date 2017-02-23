@@ -163,6 +163,7 @@
 
 			}
 
+
 			.content{
 
 				header{
@@ -286,6 +287,10 @@
 
 			.mobile-device-only{
 				display: none;
+			}
+
+			.content.with-fixed-header{
+				padding-top: 80px;
 			}
 
 
