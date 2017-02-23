@@ -41,7 +41,7 @@ class PagesController < ApplicationController
 
   def about
 
-    @navigation_title = "About Servmanity"
+    @navigation_title = "About"
 
   end
 
