@@ -9,7 +9,7 @@
 }
 
 .content.has_fixed_header{
-	padding-top: 110px;
+	padding-top: 80px;
 }
 
 .content{
@@ -286,8 +286,6 @@ ul.horizontal{
 
 ul.horizontal.spread, ul.horizontal.spread-on-mobile{
 
-	
-	
 	li{
 	
 		width: 33.3%;
@@ -298,7 +296,15 @@ ul.horizontal.spread, ul.horizontal.spread-on-mobile{
 
 ul.horizontal.spread-on-mobile.two{
 
+	li{
 	
+		width: 50.0%;
+
+	}
+
+}
+
+ul.horizontal.spread.two{
 	
 	li{
 	
@@ -307,6 +313,7 @@ ul.horizontal.spread-on-mobile.two{
 	}
 
 }
+
 
 ul.horizontal.button-list{
 	li{

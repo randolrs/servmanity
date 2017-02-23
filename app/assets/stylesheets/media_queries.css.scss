@@ -289,7 +289,9 @@
 		body {
 
 
-
+			.hide-on-mobile-device{
+				display: none !important;
+			}
 
 			.shrink-screen-only{
 				display: none !important;
@@ -301,22 +303,19 @@
 
 }
 
+@media only screen and (min-device-width: 825px) {
+	
+	html {
+
+		body {
 
 
-@media only screen and (min-width: 550px){
-	html{
-		body{
-
-			.card{
-				.right-corner{
-					line-height: 2.5em;
-					display: inline-block;
-					float: right;
-				}
-
-			}
-
+			
 
 		}
+
 	}
+
 }
+
+

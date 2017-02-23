@@ -12,7 +12,7 @@
 
 		<%else%>
 
-			<div class="form-container medium">
+			<div class="form-container large card">
 
 				<label>Which Service?</label>
 
@@ -25,17 +25,17 @@
 
 		<%end%>
 
-		<div class="form-container medium">
+		<div class="form-container large card">
 
 			<label>When?</label>
 
-			<ul class="horizontal centered button-list spread"><li><a class="button purple-background">Today</a></li><li><a class="button purple-background">Tomorrow</a></li><li><a class="button purple-background">Other</a></li></ul>
+			<ul class="horizontal centered button-list spread two"><li><a class="button purple-background"><span><%= Time.now.strftime("%A")%>, </span><%= Time.now.strftime("%b %d")%></a></li><li><a class="button purple-background">Time of Day</a></li></ul>
 			
 		</div>
 
 		<br>
 
-		<div class="form-container medium">
+		<div class="form-container large card">
 			
 			<label>Where?</label>
 
@@ -45,7 +45,7 @@
 
 		<br>
 
-		<div class="form-container medium">
+		<div class="form-container large card">
 			
 			<label>Additional Details</label><br>
 
@@ -57,7 +57,9 @@
 		<br>
 
 		<div class="centered">
-			<%= f.submit "Find Local Professionals", class:"button medium dark-red-background"%>
+			<%= f.submit "Next", class:"button medium dark-red-background hide-on-mobile-device"%>
+
+			<%= f.submit "Next", class:"button medium dark-red-background mobile-device-only"%>
 		</div>
 
 	<%end%>
