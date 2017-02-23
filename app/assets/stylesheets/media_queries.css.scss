@@ -18,8 +18,12 @@
 				display: inherit !important;
 			}
 
-			.content{
-				padding: 50px 25px;
+			.content, .content-container{
+				padding-bottom: 20px;
+			}
+
+			.content-container{
+				margin-bottom: -20px;
 			}
 
 		}
@@ -72,7 +76,7 @@
 					a.logo{
 						
 						font-size: 24px;
-						
+
 					}
 
 				}	
@@ -301,7 +305,6 @@
 	html {
 
 		body {
-
 
 			.hide-on-mobile-device{
 				display: none !important;
