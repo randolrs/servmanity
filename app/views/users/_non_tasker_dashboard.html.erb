@@ -89,9 +89,9 @@
 			
 			<section class="content-section">
 
-				<h2 class="centered">How Can We Help You Today?</h2>
+				<h1 class="centered">How Can We Help You Today?</h1>
 
-				<div class="content-column-container">
+				<div class="content-column-container mobile-only">
 					
 					<% ServiceCategory.last(3).each do |category| %>
 
@@ -100,6 +100,38 @@
 							<div class="card yellow-background">
 								<h4 style="display: inline-block;"><%= category.name %></h4>
 								<span class="glyphicon glyphicon-chevron-right" aria-hidden=true style="float:right;"></span>
+							</div>
+
+						<%end%>
+
+					<%end%>
+
+				</div>
+
+				<div class="content-column-container full-screen-only">
+				
+					<% ServiceCategory.last(3).each do |category| %>
+
+						<%= link_to initiate_service_request_path(category.url_name) do %>
+
+							<div class="content-column spread-box">
+								
+								<div class="spread-box">
+
+									<div class="image-container">
+
+										<div class="image-overlay">
+
+											<h2><%= category.name%></h2>
+
+										</div>
+
+										<%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
+
+									</div>
+
+								</div>
+
 							</div>
 
 						<%end%>
