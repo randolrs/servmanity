@@ -26,8 +26,10 @@
 		<div class="form-container medium card">
 
 			<label>When?</label>
-
-			<ul class="horizontal centered button-list spread two"><li><a class="button purple-background"><span><%= Time.now.strftime("%A")%>, </span><%= Time.now.strftime("%b %d")%></a></li><li><a class="button purple-background">Time of Day</a></li></ul>
+			<br><br>
+			<a class="button grey-background medium"><span><%= Time.now.strftime("%A")%>, </span><%= Time.now.strftime("%b %d")%></a>
+			<br><br>
+			<ul class="horizontal centered button-list spread three"><li><a class="button grey-background">Morning<br>(8a - 12p)</a></li><li><a class="button grey-background">Afternoon<br>(12p - 5p)</a></li><li><a class="button grey-background">Evening<br>(5p - 9p)</a></li></ul>
 			
 		</div>
 

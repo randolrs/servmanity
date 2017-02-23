@@ -71,6 +71,11 @@ $button-gradient: $material-shadow;
     color: #fff;
 }
 
+.button.grey-background{
+    background: $brand-grey;
+    color: #222;
+}
+
 .button.purple-frame{
     border: 2px solid $brand-dark-blue;
     color: $brand-dark-blue;
