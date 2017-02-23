@@ -26,6 +26,7 @@ class PagesController < ApplicationController
   def login
 
   	@hide_header = true
+    flash[:message_at_top] = "Login to your Servmanity account"
 
   end
 

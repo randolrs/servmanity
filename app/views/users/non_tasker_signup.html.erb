@@ -1,13 +1,13 @@
+<% if flash[:message_at_top] %>
 
-<% if flash[:login_prompt] %>
+	<div class="message-at-top notice brand-blue-background">
 
-	<div class="login-prompt notice">
-
-		<p><%= flash[:login_prompt] %></p>
+		<p><%= flash[:message_at_top] %></p>
 
 	</div>
 
 <%end%>
+
 
 <h1 class="centered dark-text-shadow"><span class="brand-yellow">SERVMANITY</span></h1>
 

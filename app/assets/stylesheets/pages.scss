@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'styles';
+@import 'variables';
 
 .content.no-padding{
 	padding: 0px;	
@@ -32,11 +32,22 @@
  		padding: 1.5em 1em;
 
  		header{
- 			margin-bottom: 1.5rem;
+ 			margin-bottom: 1.5em;
  			font-size: 2.0rem;
  			
  			
  		}
+
+ 		header.underlined{
+
+ 			border-bottom: 1px solid #999;
+    		padding-bottom: 10px;
+    		margin-bottom: 1.5em;
+ 		}
+ 	}
+
+ 	section.content-section:last-child{
+ 		margin-bottom: 0px;
  	}
 
  	section.content-section.white-background{
@@ -428,4 +439,20 @@ span.number-badge{
     text-align: center;
     height: 26px;
     font-weight: 600;
+}
+
+.message-at-top{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	padding: 10px;
+	z-index: 999999999;
+
+	p{
+		max-width: 900px;
+		margin: 0 auto;
+		color: #fff;
+		text-align: center;
+		font-size: 1.25em;
+	}
 }

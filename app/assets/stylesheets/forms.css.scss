@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
+
 .form-container, .form-content{
 
 	max-width: 800px;
@@ -39,6 +41,10 @@
     	color: #333;
 	}
 
+	input.button{
+		color: #fff;
+	}
+
 	select {
 		width:100%;
 		display: block;
@@ -59,7 +65,7 @@
 	}
 
 	input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select{
-		border: 2px solid #aaa;
+		border: 2px solid #777;
 		margin-top: 0.5em;
 	}
 
@@ -69,7 +75,7 @@
     }
 
 	input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus, input[type="password"]:focus{
-		border: 2px solid #2a5298;
+		border: 2px solid $brand-blue;
 		outline: none;
 	}
 

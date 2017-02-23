@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'styles';
+@import 'variables';
 
 @media only screen and (min-width: 825px) {
 	
@@ -36,7 +36,6 @@
 
 		body {
 
-			
 
 			.home-about{
 
@@ -245,6 +244,28 @@
 					display: table-cell;
 					text-align: left;
 				}
+			}
+
+		}
+
+	}
+
+}
+
+@media only screen and (min-device-width: 825px) {
+	
+	html {
+
+		body {
+
+			.button.bottom-cta{
+			    
+			    display: none;
+			    
+			}
+
+			.mobile-device-only{
+				display: none;
 			}
 
 		}

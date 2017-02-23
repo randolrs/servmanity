@@ -2,7 +2,7 @@
 
 <%= render 'users/dashboard_header' %>
 
-<div class="content has_fixed_header">
+<div class="content">
 
 	<% if @default_dashboard %>
 
@@ -89,9 +89,9 @@
 			
 			<section class="content-section">
 
-				<!-- <header class="full-screen-only">My Requests</header> -->
+				<header class="full-screen-only">My Requests <span style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
 
-				<!-- <span style="float: right; display: inline-block;"><%# link_to "Hire Someone", service_category_formatted_index_path, class: "button purple-background full-screen-only medium" %></span> -->
+				
 
 				<% current_user.service_requests.each do |request| %>
 					
@@ -128,7 +128,7 @@
 			
 			<section class="content-section">
 
-				<header class="full-screen-only">Messages</header>
+				<header class="full-screen-only underlined">Messages</header>
 				</header>
 
 			</section>
@@ -138,3 +138,5 @@
 	<%end%>
 
 </div>
+
+<%= link_to "Hire Someone", service_category_formatted_index_path, class:"button bottom-cta green-background" %>

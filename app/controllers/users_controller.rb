@@ -2,10 +2,12 @@ class UsersController < ApplicationController
   
   def non_tasker_signup
   	@hide_header = true
+    flash[:message_at_top] = "Signup for Servmanity"
   end
 
   def tasker_signup
   	@hide_header = true
+    flash[:message_at_top] = "Signup for Servmanity"
   end
 
   def profile
