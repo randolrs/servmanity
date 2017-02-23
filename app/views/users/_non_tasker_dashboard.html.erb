@@ -2,13 +2,13 @@
 
 <%= render 'users/dashboard_header' %>
 
-<div class="content">
+<div class="content with-fixed-header">
 
 	<% if @default_dashboard %>
 
-		<section class="content-section material-box-shadow white-background">
+		<header class="centered">How Can We Help You Today?</header>
 
-			<header class="centered">How Can We Help You Today?</header>
+		<section class="content-section material-box-shadow white-background">
 
 			<div class="content-column-container">
 				
@@ -131,7 +131,7 @@
 			
 			<section class="content-section">
 
-				<header class="full-screen-only">My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
+				<header>My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
 
 				<% current_user.service_requests.each do |request| %>
 					
@@ -147,12 +147,6 @@
 
 							<p>Status: </p>
 
-							<!-- <p>Submitted <%# time_ago_in_words(request.created_at) %> ago</p> -->
-
-
-							<!-- <p>Additional Notes:<i> <%# request.additional_information.first(20) %><%# if request.additional_information.length > 20 %>...<%#end%></i></p> -->
-							<!-- <br>
-							<ul class="horizontal spread button-list "><li><a class="button dark-blue-background">Details</a></li><li><a class="button yellow-background">Edit</a></li><li><a class="button dark-red-background">Cancel</a></li></ul> -->
 			
 						</div>
 
@@ -168,7 +162,7 @@
 			
 			<section class="content-section">
 
-				<header class="full-screen-only underlined">Messages</header>
+				<header>Messages</header>
 				</header>
 
 			</section>

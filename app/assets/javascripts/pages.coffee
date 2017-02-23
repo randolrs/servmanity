@@ -25,6 +25,6 @@ ready = ->
 			$('div.reveal-panel').hide()
 			$(@).addClass('active')
 			targetId = "#" + $(@).data("reveal-panel-id")
-			$('body').find(targetId).show()
+			$('body').find(targetId).slideDown()
 
 $(document).on('turbolinks:load', ready)
