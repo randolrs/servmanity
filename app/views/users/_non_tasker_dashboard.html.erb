@@ -89,7 +89,7 @@
 			
 			<section class="content-section">
 
-				<header class="centered">How Can We Help You Today?</header>
+				<h2 class="centered">How Can We Help You Today?</h2>
 
 				<div class="content-column-container">
 					
@@ -97,24 +97,9 @@
 
 						<%= link_to initiate_service_request_path(category.url_name) do %>
 
-							<div class="content-column spread-box">
-								
-								<div class="spread-box">
-
-									<div class="image-container">
-
-										<div class="image-overlay">
-
-											<h2><%= category.name%></h2>
-
-										</div>
-
-										<%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
-
-									</div>
-
-								</div>
-
+							<div class="card yellow-background">
+								<h4 style="display: inline-block;"><%= category.name %></h4>
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden=true style="float:right;"></span>
 							</div>
 
 						<%end%>
