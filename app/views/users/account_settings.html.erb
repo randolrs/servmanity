@@ -2,7 +2,7 @@
 
 		<ul class="horizontal spread-on-mobile">
 				
-			<li><a class="click-to-reveal clickable active" data-reveal-panel-id="login">Login</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="personal">Personal</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="payments">Payments</a></li>
+			<li><a class="click-to-reveal clickable active" data-reveal-panel-id="profile">Profile</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="login">Login</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="payments">Payments</a></li>
 
 		</ul>
 		
@@ -17,10 +17,9 @@
 
 		<div class="options-sidebar">
 			<ul>
-				<li><a class="click-to-reveal active" data-reveal-panel-id="login">Login</a></li>
-				<li><a class="click-to-reveal" data-reveal-panel-id="profile">Personal</a></li>
+				<li><a class="click-to-reveal active" data-reveal-panel-id="profile">Profile</a></li>
+				<li><a class="click-to-reveal" data-reveal-panel-id="login">Login</a></li>
 				<li><a class="click-to-reveal" data-reveal-panel-id="payments">Payments</a></li>
-				
 
 			</ul>
 		</div>
@@ -28,53 +27,13 @@
 
 		<div class="options-content card clear-on-mobile-device">
 
-			<div class="reveal-panel" id="login">
+			<div class="reveal-panel" id="profile">
 
-				<header>Login</header>
-
-				<div class="option-content-box">
-				
-					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
-
-						<div class="field">
-		  					
-		  					<label>Email</label><br>
-
-						  	<%= f.email_field :email, placeholder: "Email", :required => true %>
-
-						</div>
-
-						<div class="field">
-							
-							<label>Password</label><br>
-
-						  	<%= f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
-
-						</div>
-
-
-
-						<div class="actions centered">
-							<br>
-							<%= f.submit "Update", class: "button medium dark-red-background" %>
-						
-						</div>
-
-					<%end%>
-
-				</div>
-
-			</div>
-
-			<div class="reveal-panel" id="profile" style="display: none;">
-
-				<header>Personal Information</header>
+				<header>Profile</header>
 
 				<div class="option-content-box">
 
 					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
-
-
 
 						<div class="field">
 
@@ -125,9 +84,6 @@
 
 						</div>
 
-
-
-
 						<div class="button-container centered">
 							<br>
 							<%= f.submit "Update", class: "button medium dark-red-background" %>
@@ -139,6 +95,47 @@
 				</div>
 
 			</div>
+
+
+			<div class="reveal-panel" id="login" style="display: none;">
+
+				<header>Login</header>
+
+				<div class="option-content-box">
+				
+					<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+
+						<div class="field">
+		  					
+		  					<label>Email</label><br>
+
+						  	<%= f.email_field :email, placeholder: "Email", :required => true %>
+
+						</div>
+
+						<div class="field">
+							
+							<label>Password</label><br>
+
+						  	<%= f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
+
+						</div>
+
+
+
+						<div class="actions centered">
+							<br>
+							<%= f.submit "Update", class: "button medium dark-red-background" %>
+						
+						</div>
+
+					<%end%>
+
+				</div>
+
+			</div>
+
+
 
 			<div class="reveal-panel" id="payments" style="display: none;">
 
