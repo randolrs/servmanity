@@ -286,12 +286,32 @@
 				display: none;
 			}
 
+
 			.shrink-screen-only.inline{
 				display: inline-block;
 			}
 
 			.shrink-screen-only{
 				display: inherit;
+			}
+
+			.content{
+			 	margin: 0 auto;
+			 	display: block;
+			 	max-width: 875px;
+			 	padding: 50px 5px 10px 5px;
+
+
+			 	section.content-section{
+			 		margin-bottom: 3rem;
+			 		padding: 1em 0em;
+
+			 	}
+
+			}
+
+			.card{
+				margin-bottom: 30px;
 			}
 
 		}

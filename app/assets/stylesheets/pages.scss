@@ -16,7 +16,7 @@
  	margin: 0 auto;
  	display: block;
  	max-width: 875px;
- 	padding: 50px 5px 10px 5px;
+ 	padding: 50px 0px 0px 0px;
 
  	header{
  		font-size: 2.5rem;
@@ -28,8 +28,9 @@
  	}
 
  	section.content-section{
+ 		
  		margin-bottom: 3rem;
- 		padding: 1em 0em;
+ 		padding: 0em 0em;
 
  		header{
  			margin-bottom: 1.5em;
@@ -413,7 +414,7 @@ span.number-badge{
 	z-index: 8888;
 	
 	margin: 0 auto;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 	padding: 15px;
 
 	h3{

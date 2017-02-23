@@ -85,11 +85,53 @@
 
 	<%else%>
 
-		<div class="reveal-panel" id="my-requests">
+		<div class="reveal-panel" id="home">
 			
 			<section class="content-section">
 
-				<header class="full-screen-only">My Requests <span style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
+				<header class="centered">How Can We Help You Today?</header>
+
+				<div class="content-column-container">
+					
+					<% ServiceCategory.last(3).each do |category| %>
+
+						<%= link_to initiate_service_request_path(category.url_name) do %>
+
+							<div class="content-column spread-box">
+								
+								<div class="spread-box">
+
+									<div class="image-container">
+
+										<div class="image-overlay">
+
+											<h2><%= category.name%></h2>
+
+										</div>
+
+										<%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						<%end%>
+
+					<%end%>
+
+				</div>
+
+			</section>
+
+		</div>
+		
+		<div class="reveal-panel" id="my-requests" style="display: none;">
+			
+			<section class="content-section">
+
+				<header class="full-screen-only">My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
 
 				<% current_user.service_requests.each do |request| %>
 					
