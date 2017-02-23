@@ -13,6 +13,8 @@ class ServiceRequestsController < ApplicationController
 
     @navigation_title = "How Can We help?"
 
+    @hide_footer = true
+
   end
 
   # GET /service_requests/1
@@ -28,6 +30,8 @@ class ServiceRequestsController < ApplicationController
     @navigation_title = "Service Request"
 
     @service_request = ServiceRequest.new
+
+    @hide_footer = true
 
     if params[:service_category_url]
       
