@@ -271,6 +271,8 @@
 
 }
 
+////IF DEVICE IS BIGGER THAN MOBILE
+
 @media only screen and (min-device-width: 825px) {
 	
 	html {
@@ -330,6 +332,7 @@
 			.card{
 				margin-bottom: 30px;
 				box-shadow: $material-shadow;
+				border-radius: 2px;
 			}
 
 		}
