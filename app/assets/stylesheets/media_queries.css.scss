@@ -35,7 +35,7 @@
 	html {
 
 		body {
-
+			
 
 			.home-about{
 
@@ -63,6 +63,20 @@
 				}
 				
 				
+			}
+
+			nav.header-container {
+				
+				.header-options { 
+					
+					a.logo{
+						
+						font-size: 24px;
+						
+					}
+
+				}	
+
 			}
 
 			ul.horizontal.spread-on-mobile, ul.horizontal.spread-on-mobile.two{
@@ -231,7 +245,7 @@
 		 	.form-container, .form-content{
 
 				max-width: 800px;
-				margin: 0px auto;
+				
 			    position: relative;
 				padding: 2rem;
 
