@@ -1,39 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
 
-<p>
-  <strong>User:</strong>
-  <%= @service_request.user_id %>
-</p>
+  <div class="service-request-index card">
+              
+    <h3><%= @service_request.service_category.name %> Request</h3>
 
-<p>
-  <strong>Service category:</strong>
-  <%= @service_request.service_category_id %>
-</p>
+    <p class="right-corner">Morning of 2/22</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @service_request.address %>
-</p>
+    <p>616 N. 7th St. (St. Louis.)</p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @service_request.longitude %>
-</p>
+    <p>Status: </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @service_request.latitude %>
-</p>
+    <p>Submitted <%= time_ago_in_words(@service_request.created_at) %> ago</p>
 
-<p>
-  <strong>Additional information:</strong>
-  <%= @service_request.additional_information %>
-</p>
 
-<p>
-  <strong>Scheduled date:</strong>
-  <%= @service_request.scheduled_date %>
-</p>
+   <p>Additional Notes:<i> <%= @service_request.additional_information.first(20) %><% if @service_request.additional_information.length > 20 %>...<%end%></i></p>
 
-<%= link_to 'Edit', edit_service_request_path(@service_request) %> |
-<%= link_to 'Back', service_requests_path %>
+    <ul class="horizontal spread button-list "><li><a class="button dark-blue-background">Details</a></li><li><a class="button yellow-background">Edit</a></li><li><a class="button dark-red-background">Cancel</a></li></ul>
+
+  </div>
+
+
+</div>

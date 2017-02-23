@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get 's/service_requests/initiate/' => 'service_requests#request_details', as: 'initiate_service_request_no_category'
 
+  get '/service_request/:id/' => 'service_requests#show', as: 'show_service_request'
+
 
   get 's/service_requests/initiate/:service_category_url' => 'service_requests#request_details', as: 'initiate_service_request'
 

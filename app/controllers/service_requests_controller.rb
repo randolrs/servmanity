@@ -18,6 +18,9 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests/1
   # GET /service_requests/1.json
   def show
+
+    @navigation_title = "Your Request"
+
   end
 
   def request_details

@@ -91,11 +91,9 @@
 
 				<header class="full-screen-only">My Requests <span style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
 
-				
-
 				<% current_user.service_requests.each do |request| %>
 					
-					<%= link_to about_path do %>
+					<%= link_to show_service_request_path(request.id) do %>
 						
 						<div class="service-request-index card">
 							
