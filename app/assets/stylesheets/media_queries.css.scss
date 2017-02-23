@@ -166,7 +166,7 @@
 			.content{
 
 				header{
-					text-align: justify;
+					text-align: justify !important;
 				}
 
 				section.content-section{
@@ -302,6 +302,16 @@
 			 	display: block;
 			 	max-width: 875px;
 			 	padding: 50px 15px 10px 15px;
+
+			 	header{
+			 		font-size: 2.5rem;
+			    	line-height: 1.2;
+			    	margin-bottom: 2rem;
+			    	display: block;
+			    	font-weight: 600;
+			    	color: #111;
+			    	text-align: center;
+			 	}
 
 
 			 	section.content-section{
