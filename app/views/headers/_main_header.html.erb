@@ -71,8 +71,10 @@
 							<li><a class="header-profile-cta" href="<%= user_profile_path(current_user.id) %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li>
 						<%else%>
 
+							<li><a class="header-cta" href="<%= service_category_formatted_index_path %>"><span class="button green-background">Hire Someone</span></a></li>
+
 						<%end%>
-						
+
 						<li><a class="big-glyph" href="<%= account_settings_path %>"><span class="glyphicon glyphicon-cog" aria-hidden="true"></a></li>
 						
 					<%end%>
