@@ -276,6 +276,8 @@
 
 		body {
 
+			background-color: #eee;
+
 			.button.bottom-cta{
 			    
 			    display: none;
@@ -299,7 +301,7 @@
 			 	margin: 0 auto;
 			 	display: block;
 			 	max-width: 875px;
-			 	padding: 50px 5px 10px 5px;
+			 	padding: 50px 10px 10px 10px;
 
 
 			 	section.content-section{
@@ -312,6 +314,7 @@
 
 			.card{
 				margin-bottom: 30px;
+				box-shadow: $material-shadow;
 			}
 
 		}
