@@ -268,11 +268,21 @@
 				display: none;
 			}
 
+			.shrink-screen-only.inline{
+				display: inline-block;
+			}
+
+			.shrink-screen-only{
+				display: inherit;
+			}
+
 		}
 
 	}
 
 }
+
+
 
 @media only screen and (min-width: 550px){
 	html{
