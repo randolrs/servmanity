@@ -18,7 +18,7 @@
  	display: block;
  	max-width: 875px;
  	padding: 0px;
- 	background: #fff;
+
 
  	header{
  		display: none;
@@ -149,6 +149,8 @@
 	}
 
 	.options-sidebar{
+
+		display: none;
 		
 		ul{
 			list-style: none;
