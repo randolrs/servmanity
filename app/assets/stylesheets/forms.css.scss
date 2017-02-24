@@ -177,4 +177,19 @@ h2.form-section-header{
     opacity: 0;
 }
 
+.form-controller{
+	font-size: 28px;	
+
+	.padded-arrow{
+		padding: 10px;
+		border-radius: 50%;
+		background: $brand-orange;
+		color: #fff;
+		margin: 0 20px;
+		text-shadow: 0px 1px 1px rgba(0,0,0,0.6);
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+
+	}
+}
+
 

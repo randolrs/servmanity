@@ -27,4 +27,21 @@ ready = ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).slideDown()
 
+		$(".fill-input").click (window.event), ->
+			$(@).parent().parent().find('.fill-input').removeClass('active')
+			$(@).addClass('active')
+			targetId = "#" + $(@).data("input-id")
+			value = $(@).data("input-value")
+			$('body').find(targetId).val(value)
+
+		$('.change-time-label').click (window.event), ->
+			dt = new Date
+			new_date = new Date
+			label_date = new Date
+			today = new Date
+			label_date = $(@).parent().find('.time-label').data("label-time")
+			dt = today.getDate() + 1
+			change_interval = $(@).data("change-interval")
+			alert(label_date)
+
 $(document).on('turbolinks:load', ready)

@@ -77,6 +77,12 @@ $button-gradient: $material-shadow;
     text-shadow: none;
 }
 
+.button.grey-background.active{
+    background: $brand-orange;
+    font-weight: 600;
+    box-shadow: none;
+}
+
 .button.purple-frame{
     border: 2px solid $brand-dark-blue;
     color: $brand-dark-blue;

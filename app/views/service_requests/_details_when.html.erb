@@ -11,11 +11,17 @@
 
 		<div class="content centered">
 
-			<a class="button grey-background medium"><!-- <span><%# Time.now.strftime("%A")%>, </span><%# Time.now.strftime("%b %d")%> -->Select a Day</a>
-			<br><br>
-			<ul class="horizontal centered button-list spread three"><li><a class="button grey-background">Morning<br>(8a - 12p)</a></li><li><a class="button grey-background">Afternoon<br>(12p - 5p)</a></li><li><a class="button grey-background">Evening<br>(5p - 9p)</a></li></ul>
+			<div class="form-controller">
+				<span class="glyphicon glyphicon-chevron-left padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="-1"></span><a class="time-label" data-label-time="<%= Date.tomorrow %>"><span class="full-screen-only"><%= Date.tomorrow.strftime("%A")%>, </span><%= Date.tomorrow.strftime("%b %d")%></a><span class="glyphicon glyphicon-chevron-right padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="1"></span>
+			</div>
 
-			<br>
+			<br><br>
+			
+			<ul class="horizontal centered button-list spread three"><li><a class="button grey-background fill-input" data-input-id="time_of_day" data-input-value="Morning">Morning<br>(8a - 12p)</a></li><li><a class="button grey-background fill-input" data-input-id="time_of_day" data-input-value="Afternoon">Afternoon<br>(12p - 5p)</a></li><li><a class="button grey-background fill-input" data-input-id="time_of_day" data-input-value="Evening">Evening<br>(5p - 9p)</a></li></ul>
+
+			<%= f.hidden_field :time_of_day, :value => "Afternoon", :id => "time_of_day" %>
+
+			<br><br><br>
 
 			<a class="button green-background medium click-to-reveal hide-on-mobile-device" data-reveal-panel-id="where">Next</a>
 
