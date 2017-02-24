@@ -1,18 +1,18 @@
 <%# render 'service_requests/progress_header' %>
 
-<% if flash[:message_at_top] %>
-
-	<div class="top-of-page-message notice brand-blue-background">
-
-		<p><%= flash[:message_at_top] %></p>
-
-	</div>
-
-<%end%>
-
 <%= form_for(@service_request) do |f| %>
 
 	<div class="full-screen-content">
+
+		<% if flash[:message_at_top] %>
+
+			<div class="top-of-page-message notice brand-blue-background">
+
+				<p><%= flash[:message_at_top] %></p>
+
+			</div>
+
+		<%end%>
 
 		<%if @service_category%>
 
@@ -39,7 +39,9 @@
 			<br><br>
 			<ul class="horizontal centered button-list spread three"><li><a class="button grey-background">Morning<br>(8a - 12p)</a></li><li><a class="button grey-background">Afternoon<br>(12p - 5p)</a></li><li><a class="button grey-background">Evening<br>(5p - 9p)</a></li></ul>
 
-			<a class="button dark-red-background medium click-to-reveal" data-reveal-panel-id="where">Next</a>
+			<br>
+
+			<a class="button green-background medium click-to-reveal" data-reveal-panel-id="where">Next</a>
 
 		</div>
 
@@ -49,7 +51,7 @@
 
 			<%= f.text_field :address, placeholder:"Enter Your Address" %>
 
-			<a class="button dark-red-background medium click-to-reveal" data-reveal-panel-id="details">Next</a>
+			<a class="button green-background medium click-to-reveal" data-reveal-panel-id="details">Next</a>
 
 		</div>
 
@@ -61,9 +63,9 @@
 
 			<div class="centered">
 				
-				<%= f.submit "Next", class:"button medium dark-red-background hide-on-mobile-device"%>
+				<%= f.submit "Next", class:"button medium green-background hide-on-mobile-device"%>
 
-				<%= f.submit "Next", class:"button medium dark-red-background bottom-cta"%>
+				<%= f.submit "Next", class:"button medium green-background bottom-cta"%>
 
 			</div>
 
