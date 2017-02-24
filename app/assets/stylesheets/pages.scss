@@ -481,7 +481,7 @@ span.number-badge{
 	display: none;
 }
 
-.full-screen-content{
+.full-screen-container{
 	width: 100%;
 	display: block;
 	background: #fff;
@@ -490,8 +490,15 @@ span.number-badge{
 	top: 0px;
 	padding-top: 70px;
 
-	h2{
-		font-size: 2em;
-		margin-bottom: 1em;
+	.full-screen-content{
+		
+		h2{
+			font-size: 2em;
+			margin-bottom: 1em;
+		}
+
+		padding: 10px;
+
 	}
+	
 }
