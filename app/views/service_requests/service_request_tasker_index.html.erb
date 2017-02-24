@@ -1,8 +1,18 @@
-<%= render 'service_requests/progress_header' %>
+<%# render 'service_requests/progress_header' %>
 
-<div class="content has_fixed_header">
+<% if flash[:message_at_top] %>
 
-	<header class="full-screen-only">Choose a <%= @service_category %> Professional</header>
+	<div class="top-of-page-message notice brand-blue-background">
+
+		<p><%= flash[:message_at_top] %></p>
+
+	</div>
+
+<%end%>
+
+
+
+<div class="content">
 
 	<% @service_request.recommended_taskers.each do |tasker| %>
 

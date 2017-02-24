@@ -29,6 +29,8 @@ class ServiceRequestsController < ApplicationController
 
     @navigation_title = "Service Request"
 
+    flash[:message_at_top] = "Enter Service Request Details"
+
     @service_request = ServiceRequest.new
 
     @hide_footer = true
@@ -41,6 +43,7 @@ class ServiceRequestsController < ApplicationController
 
         @service_category = ServiceCategory.where(:url_name => params[:service_category_url]).last
         @navigation_title = @service_category.name + " Request"
+        flash[:message_at_top] = "Enter Details for Your " + @service_category.name + " Request"
       else
 
         @service_category = nil
@@ -101,6 +104,8 @@ class ServiceRequestsController < ApplicationController
       @service_request = ServiceRequest.find(params[:id])
 
       @navigation_title = " Service Request"
+
+      flash[:message_at_top] = "Select a " + @service_request.service_category.name + " Professional"
 
     else
 
