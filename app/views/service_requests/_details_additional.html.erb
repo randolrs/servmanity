@@ -1,0 +1,26 @@
+
+<div class="full-screen-container reveal-panel" id="details" style="display: none;">
+
+	<div class="top-of-page-message notice brand-yellow-background">
+
+		<p>Please Provide Any Additional Details</p>
+
+	</div>
+
+	<div class="content centered">
+
+		<h2>Additional Details</h2>
+
+		<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
+
+		<div class="centered">
+			
+			<%= f.submit "Next", class:"button medium green-background hide-on-mobile-device"%>
+
+			<%= f.submit "Next", class:"button medium green-background bottom-cta"%>
+
+		</div>
+
+	</div>
+
+</div>

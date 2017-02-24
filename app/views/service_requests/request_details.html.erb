@@ -1,92 +1,9 @@
-<%# render 'service_requests/progress_header' %>
 
 <%= form_for(@service_request) do |f| %>
-
-	<div class="full-screen-container">
-
-		<% if flash[:message_at_top] %>
-
-			<div class="top-of-page-message notice brand-yellow-background">
-
-				<p><%= flash[:message_at_top] %></p>
-
-			</div>
-
-		<%end%>
-
-		<div class="full-screen-content">
-
-			<%if @service_category%>
-
-				<%= f.hidden_field :service_category_id, :value => @service_category.id %>
-
-			<%else%>
-
-				<div class="form-container medium card">
-
-					<label>Which Service?</label>
-
-					<%= f.collection_select :service_category_id, ServiceCategory.all, :id, :name, :prompt=>"Select a Service"%>
-				
-				</div>
-
-
-			<%end%>
-
-			<div class="content centered reveal-panel">
-
-				<h2 class="centered">Please select a day and time for your request.</h2>
-
-				<a class="button grey-background medium"><!-- <span><%# Time.now.strftime("%A")%>, </span><%# Time.now.strftime("%b %d")%> -->Select a Day</a>
-				<br><br>
-				<ul class="horizontal centered button-list spread three"><li><a class="button grey-background">Morning<br>(8a - 12p)</a></li><li><a class="button grey-background">Afternoon<br>(12p - 5p)</a></li><li><a class="button grey-background">Evening<br>(5p - 9p)</a></li></ul>
-
-				<br>
-
-				<a class="button green-background medium click-to-reveal hide-on-mobile-device" data-reveal-panel-id="where">Next</a>
-
-				<a class="button green-background medium click-to-reveal bottom-cta" data-reveal-panel-id="where">Next</a>
-
-			</div>
-
-			<div class="content centered reveal-panel" id="where" style="display: none;">
-
-				<h2>Where?</h2>
-
-				<%= f.text_field :address, placeholder:"Enter Your Address" %>
-
-				<a class="button green-background medium click-to-reveal hide-on-mobile-device" data-reveal-panel-id="details">Next</a>
-
-				<a class="button green-background medium click-to-reveal bottom-cta" data-reveal-panel-id="details">Next</a>
-
-			</div>
-
-			<div class="content centered reveal-panel" id="details" style="display: none;">
-
-				<h2>Additional Details</h2>
-
-				<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
-
-				<div class="centered">
-					
-					<%= f.submit "Next", class:"button medium green-background hide-on-mobile-device"%>
-
-					<%= f.submit "Next", class:"button medium green-background bottom-cta"%>
-
-				</div>
-
-			</div>
-
-		</div>
 	
-	</div>
-
-<%end%>
-
-###LEGACY
-
-<%= form_for(@service_request) do |f| %>
-
-	
+	<%= render 'service_requests/details_category', f: f %>
+	<%= render 'service_requests/details_when', f: f %>
+	<%= render 'service_requests/details_where', f: f %>
+	<%= render 'service_requests/details_additional', f: f %>
 
 <%end%>
