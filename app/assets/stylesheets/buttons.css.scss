@@ -73,7 +73,7 @@ $button-gradient: $material-shadow;
 
 .button.grey-background{
     background: $brand-grey;
-    color: #222;
+    color: #444;
     text-shadow: none;
 }
 
@@ -81,6 +81,7 @@ $button-gradient: $material-shadow;
     background: $brand-orange;
     font-weight: 600;
     box-shadow: none;
+    color: #fff;
 }
 
 .button.purple-frame{
