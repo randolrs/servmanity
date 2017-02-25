@@ -1,10 +1,16 @@
-<ul id="rig">
-	
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="img/1.jpg">
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Lorem Ipsum Dolor</span>
-        </a>
-    </li>
+<ul class="" id="rig">
+
+	<% service_categories.each do |category| %>
+
+		<li>
+		    <a class="rig-cell" href="<%= initiate_service_request_path(category.url_name) %>">
+		        
+		        <%= image_tag category.image(:medium), class:"rig-img" %>
+		        <span class="rig-overlay"></span>
+		        <span class="rig-text"><%= category.name %></span>
+		    </a>
+		</li>
+
+	<%end%>
+
 </ul>
