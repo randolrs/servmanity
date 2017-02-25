@@ -91,7 +91,7 @@
 
 				<h1 class="centered">How Can We Help You Today?</h1>
 
-				<div class="content-column-container mobile-only">
+				<div class="content-column-container<%# mobile-only %>" style="display: none;">
 					
 					<% ServiceCategory.last(3).each do |category| %>
 
@@ -108,35 +108,26 @@
 
 				</div>
 
-				<div class="content-column-container full-screen-only">
-				
-					<% ServiceCategory.last(3).each do |category| %>
+				<div class="content-column-container <%# full-screen-only %>">
+					
+					<%# render 'service_categories/grid' %>
 
-						<%= link_to initiate_service_request_path(category.url_name) do %>
+					<ul class="" id="rig">
 
-							<div class="content-column spread-box">
-								
-								<div class="spread-box">
+					<% ServiceCategory.last(4).each do |category| %>
 
-									<div class="image-container">
-
-										<div class="image-overlay">
-
-											<h2><%= category.name%></h2>
-
-										</div>
-
-										<%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
-
-									</div>
-
-								</div>
-
-							</div>
-
-						<%end%>
+					    <li>
+					        <a class="rig-cell" href="<%= initiate_service_request_path(category.url_name) %>">
+					            
+					            <%= image_tag category.image(:medium), class:"rig-img" %>
+					            <span class="rig-overlay"></span>
+					            <span class="rig-text"><%= category.name %></span>
+					        </a>
+					    </li>
 
 					<%end%>
+
+					</ul>
 
 				</div>
 

@@ -192,4 +192,107 @@ h2.form-section-header{
 	}
 }
 
+form{
+
+	
+
+	.input-table{
+		width:100%;
+		block: block;
+	}
+
+	label{
+		font-weight: 300;
+        font-size: 1.5em;
+	}
+
+	.field{
+
+		margin-bottom: 2em;
+		
+	}
+
+	input, textarea {
+		width:100%;
+		display: block;
+		padding: 10px 0px;
+		text-indent: 15px;
+		font-size: 1.25em;
+		border-radius: 2px;
+    	color: #333;
+	}
+
+	input.button{
+		color: #fff;
+	}
+
+	select {
+		width:100%;
+		display: block;
+		padding: 10px 0px;
+		text-indent: 5px;
+		font-size: 1.5em;
+    	color: #333;
+	}
+
+	select.wide{
+		width:100%;
+		display: block;
+	}
+
+	input.short{
+		width: 100px;
+		display: inline-block;
+	}
+
+	input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select{
+		border: 2px solid #777;
+		margin-top: 0.5em;
+	}
+
+    input[type="radio"]{
+        width: auto;
+        display: inline-block;
+    }
+
+	input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus, input[type="password"]:focus{
+		border: 2px solid $brand-blue;
+		outline: none;
+	}
+
+	input[type="submit"]{
+		text-indent: 0px;
+	}
+
+
+	textarea{
+		resize: none;
+		height: 180px;
+	}
+
+	.clickable-toggle-option.active{
+		color: #fff;
+		background-color: #4173c9;
+
+	    border: 1px solid #4173c9;
+	}
+
+	.clickable-toggle-option{
+		color: #666;
+		background-color: #eee;
+		border: 1px solid #ccc;
+
+		font-size: 1.5em;
+    	display: inline-block;
+    	width: 100px;
+	}
+
+	.clickable-toggle-option:hover{
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+
+}
+
 
