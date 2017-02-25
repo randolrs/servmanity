@@ -13,6 +13,9 @@
 
 			<div class="form-controller centered">
 				<span class="glyphicon glyphicon-chevron-left padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="-1"></span><a class="time-label" data-label-time="<%= Date.tomorrow %>"><span class="full-screen-only"><%= Date.tomorrow.strftime("%A")%>, </span><%= Date.tomorrow.strftime("%b %d")%></a><span class="glyphicon glyphicon-chevron-right padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="1"></span>
+
+				<%= f.hidden_field :scheduled_day, :value => Date.today, :id => "scheduled_day", class: "form-controller-input" %>
+
 			</div>
 
 			<br><br>

@@ -4,11 +4,11 @@
               
     <h3><%= @service_request.service_category.name %> Request</h3>
 
-    <p class="right-corner"><%= @service_request.time_of_day %> of 2/22</p>
+    <p class="right-corner"><%= @service_request.time_of_day %> of <%= @service_request.scheduled_day.strftime("%B %d") %></p>
 
     <p>616 N. 7th St. (St. Louis.)</p>
 
-    <p>Status: </p>
+    <p>Status:</p>
 
     <p>Submitted <%= time_ago_in_words(@service_request.created_at) %> ago</p>
 

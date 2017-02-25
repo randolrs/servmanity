@@ -36,6 +36,13 @@ ready = ->
 
 		$('.change-time-label').click (window.event), ->
 			dt = new Date
+			hidden_input = $(@).parent().find('.form-controller-input')
+			alert(hidden_input.val() + 1)
+			input_date = new Date
+			current_date = new Date
+			current_date.setDate(current_date.getDate() + 1)
+			hidden_input.val(current_date)
+			alert(current_date)
 			new_date = new Date
 			label_date = new Date
 			today = new Date

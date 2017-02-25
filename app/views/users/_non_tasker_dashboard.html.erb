@@ -106,7 +106,7 @@
 							
 							<h3><%= request.service_category.name %> Request</h3>
 
-							<p class="right-corner">Morning of 2/22</p>
+							<p class="right-corner"><%= request.time_of_day %> of <%= request.scheduled_day.strftime("%B %d") %></p>
 
 							<p>616 N. 7th St. (St. Louis.)</p>
 
