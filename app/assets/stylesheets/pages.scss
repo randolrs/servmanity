@@ -14,7 +14,7 @@
 
 .content.medium{
 		max-width: 500px;
-		padding: 25px
+		padding: 20px
 }
 
 
@@ -406,6 +406,7 @@ span.number-badge{
 .top-of-page-message, .flash-prompt{
 
 	padding: 25px 10px;
+	border: 1px solid rgba(0,0,0,0.1);
 
 	p{
 		max-width: 900px;
