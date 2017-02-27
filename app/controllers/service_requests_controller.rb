@@ -17,6 +17,36 @@ class ServiceRequestsController < ApplicationController
 
   end
 
+  def add_tasker
+
+    if params[:tasker_id] && params[:service_request_id]
+
+      if User.where(:id => params[:tasker_id]).exists?
+
+        tasker = User.find(params[:tasker_id])
+
+        redirect_to pay_and_confirm_path(params[:service_request_id])
+      else
+
+        redirect_to root_path
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+  end
+
+  def pay_and_confirm
+
+
+
+  end
+
   # GET /service_requests/1
   # GET /service_requests/1.json
   def show

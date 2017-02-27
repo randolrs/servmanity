@@ -40,6 +40,26 @@
 
 		body {
 
+			.card{
+
+				.card-content-column{
+					display: table-cell;
+					vertical-align: top;
+				}
+
+				.card-content-column.side{
+					text-align: center;
+					width: 150px;
+					padding: 0px 10px;
+					min-width: 100px;
+				}
+				.card-content-column.main{
+					padding: 0px 25px;
+					width: 700px;
+					text-align: justify;
+				}
+			}
+
 			.top-of-page-message, .flash-prompt{
 
 				padding: 25px 10px;

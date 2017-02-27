@@ -432,6 +432,21 @@ span.number-badge{
 	margin-bottom: -1px;
 	padding: 15px;
 
+	.card-content-column{
+		display: block;
+		vertical-align: top;
+		text-align: center;
+	}
+
+	.card-content-column.side{
+		
+		margin: 0 auto;
+		
+	}
+	.card-content-column.main{
+		
+	}
+
 	h3{
 		margin-bottom: 10px;
 		font-size: 1.75em;

@@ -80,6 +80,13 @@ class User < ActiveRecord::Base
 
 		return record.hourly_rate
 
+	end
+
+	def qualifications_for_category(category_id)
+
+		record = UserServiceCategory.where(:user_id => self.id, :service_category_id => category_id).last
+
+		return record.description
 
 	end
 

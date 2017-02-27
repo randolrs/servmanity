@@ -43,6 +43,11 @@ $button-gradient: $material-shadow;
     font-size: 20px;
 }
 
+.button.stretch{
+    width: 100%;
+    font-size: 20px;
+}
+
 .button.small{
     max-width: 300px;
     width: 100%;
