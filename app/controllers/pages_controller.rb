@@ -9,6 +9,8 @@ class PagesController < ApplicationController
 
     if user_signed_in?
 
+      @hide_footer = true
+      
       if current_user.default_dashboard
 
         @default_dashboard = true
