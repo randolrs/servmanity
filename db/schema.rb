@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227201104) do
+ActiveRecord::Schema.define(version: 20170227201719) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170227201104) do
     t.datetime "updated_at",             null: false
     t.string   "time_of_day"
     t.date     "scheduled_day"
+    t.integer  "tasker_id"
   end
 
   create_table "user_service_categories", force: :cascade do |t|
