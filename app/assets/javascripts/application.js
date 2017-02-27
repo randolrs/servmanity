@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require geocomplete
 //= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
 
 
-//REMOVED geocomplete event listener
-//removed require geocomplete
+//REMOVED
