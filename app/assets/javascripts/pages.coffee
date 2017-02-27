@@ -34,27 +34,4 @@ ready = ->
 			value = $(@).data("input-value")
 			$('body').find(targetId).val(value)
 
-		$('.change-time-label').click (window.event), ->
-			dt = new Date
-			hidden_input = $(@).parent().find('.form-controller-input')
-			date_label = $(@).parent().find('.time-label')
-			change_interval = $(@).data("change-interval")
-			input_date = new Date
-			input_date.setDate(hidden_input.val())
-			inputval = hidden_input.val()
-			inputval = inputval.split("-")
-			year = inputval[0]
-			month = inputval[1]
-			day = inputval[2]
-			datestring = year + "," + month + "," + day
-			dateval = new Date(datestring)
-			new_date = new Date(datestring)
-			new_date.setDate(new_date.getDate() + change_interval)
-			day = ("0" + new_date.getDate()).slice(-2)
-			month = ("0" + (new_date.getMonth() + 1)).slice(-2)
-			new_date_value = new_date.getFullYear()+"-"+(month)+"-"+(day)
-			new_date_string = new_date.toString().split(" ")
-			date_label.text(new_date_string[0] + ", " + new_date_string[1] + " " + new_date_string[2] )
-			hidden_input.val(new_date_value)
-
 $(document).on('turbolinks:load', ready)
