@@ -14,9 +14,10 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
-//= require geocomplete
 //= require_tree .
 
 $(function() {
 	$(".geocomplete-input").geocomplete();
 })
+
+//REMOVED //= require geocomplete
