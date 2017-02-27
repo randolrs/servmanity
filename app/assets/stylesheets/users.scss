@@ -4,41 +4,40 @@
 
 @import 'variables';
 
-html{
-	body{
+body{
 
-		.dashboard-header{
-			position: fixed;
-			display: block;
-			width: 100%;	
-			z-index: 999;
-			height: 50px;
+	.dashboard-header{
+		position: fixed;
+		display: block;
+		width: 100%;	
+		z-index: 999;
+		height: 50px;
+		bottom: 0px;
 
 
-			a{
-				color: #fff;
-				box-shadow: inset 0px 2px 1px rgba(200,200,200,0.5);
-    			border-right: 2px solid rgba(0,0,0,0.3);
-    			text-shadow: 0px 1px 1px rgba(0,0,0,0.4);
-    			border-radius: 2px;
-    			line-height: 30px;
-    			padding: 10px;
-   
-			}
-
-			.glyphicon{
-				line-height:26px;
-
-			}
-
-			a.active{
-				background: rgba(0,0,0,0.2);
-				box-shadow: none;
-			}
+		a{
+			color: #fff;
+			box-shadow: inset 0px 2px 1px rgba(200,200,200,0.5);
+			border-right: 2px solid rgba(0,0,0,0.3);
+			text-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+			border-radius: 2px;
+			line-height: 30px;
+			padding: 10px;
 
 		}
 
+		.glyphicon{
+			line-height:26px;
+
+		}
+
+		a.active{
+			background: rgba(0,0,0,0.2);
+			box-shadow: none;
+		}
+
 	}
+
 }
 
 
