@@ -36,7 +36,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 
 #geocomplete
-gem 'geocomplete_rails'
+#gem 'geocomplete_rails'
 
 
 gem 'possessive'
