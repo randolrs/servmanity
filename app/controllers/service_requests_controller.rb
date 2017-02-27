@@ -69,6 +69,8 @@ class ServiceRequestsController < ApplicationController
 
     @navigation_title = "Your Request"
 
+    @hide_footer = true
+
   end
 
   def request_details
