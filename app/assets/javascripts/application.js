@@ -17,8 +17,5 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
-	$(".geocomplete-input").geocomplete();
-})
 
-//REMOVED
+//REMOVED geocomplete event listener
