@@ -42,5 +42,17 @@ class UsersController < ApplicationController
     
   end
 
+  def requests
+
+    @navigation_title = "My Requests"
+
+  end
+
+  def messages
+
+    @navigation_title = "My Messages"
+
+  end
+
 
 end

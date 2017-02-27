@@ -17,7 +17,15 @@ class ServiceRequest < ActiveRecord::Base
 
 		if self.tasker_id
 
-			return "Scheduled"
+			if self.is_complete_tasker
+
+				return "Complete"
+				
+			else
+
+				return "Scheduled"
+
+			end
 		else
 
 			return "Need to Select Professional"
