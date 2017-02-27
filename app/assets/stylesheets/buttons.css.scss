@@ -49,15 +49,21 @@ $button-gradient: $material-shadow;
     font-size: 20px;
 }
 
-.button.bottom-cta{
-    width: 100%;
+.bottom-cta-container{
     display: block;
     bottom: 0px;
     position: absolute;
-    font-size: 24px;
+    padding: 15px;
     left: 0px;
     right:0px;
     z-index: 99999;
+
+    .button.bottom-cta{
+        
+        font-size: 24px;
+        
+    }
+
 }
 
 
