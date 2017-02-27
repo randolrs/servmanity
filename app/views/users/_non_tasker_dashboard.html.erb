@@ -12,7 +12,7 @@
 
 			<div class="content-column-container">
 				
-				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all} %>
+				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
 
 			</div>
 

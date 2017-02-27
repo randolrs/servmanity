@@ -5,7 +5,7 @@
 
 	<% if @default_dashboard %>
 
-		<section class="content-section material-box-shadow white-background">
+		<section class="content-section card">
 
 			<header class="centered">How to Get Hired</header>
 
@@ -43,39 +43,13 @@
 
 		</section>
 
-		<section class="content-section material-box-shadow white-background">
+		<section class="content-section card">
 
 			<header class="centered">Can You Perform Any of These Services?</header>
 
 			<div class="content-column-container">
-				
-				<% ServiceCategory.last(3).each do |category| %>
 
-					<%= link_to add_service_to_user_path(:category => category.url_name) do %>
-
-						<div class="content-column spread-box">
-							
-							<div class="spread-box">
-
-								<div class="image-container">
-
-									<div class="image-overlay">
-
-										<h2><%= category.name%></h2>
-
-									</div>
-
-									<%= image_tag category.image.url(:medium), class:"material-box-shadow" %>
-
-								</div>
-
-							</div>
-
-						</div>
-
-					<%end%>
-
-				<%end%>
+					<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
 
 				<p class="centered">See More Services</p>
 
