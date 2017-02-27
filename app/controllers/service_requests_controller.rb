@@ -47,7 +47,9 @@ class ServiceRequestsController < ApplicationController
 
   def pay_and_confirm
 
+    @service_request = ServiceRequest.find(params[:service_request_id])
 
+    @navigation_title = @service_request.service_category.name + " Request"
 
   end
 
