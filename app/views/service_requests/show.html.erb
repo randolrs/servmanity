@@ -6,7 +6,7 @@
 
     <p class="right-corner"><%= @service_request.time_of_day %> of <%= @service_request.scheduled_day.strftime("%B %d") %></p>
 
-    <p>616 N. 7th St. (St. Louis.)</p>
+    <p><%= @service_request.address %></p>
 
     <p>Status:</p>
 
@@ -15,7 +15,7 @@
 
    <p>Additional Notes:<i> <%= @service_request.additional_information.first(20) %><% if @service_request.additional_information.length > 20 %>...<%end%></i></p>
 
-    <ul class="horizontal spread button-list "><li><a class="button dark-blue-background">Details</a></li><li><a class="button yellow-background">Edit</a></li><li><a class="button dark-red-background">Cancel</a></li></ul>
+    <ul class="horizontal spread button-list two"><li><a class="button yellow-background">Modify</a></li><li><a class="button dark-red-background">Cancel</a></li></ul>
 
   </div>
 
