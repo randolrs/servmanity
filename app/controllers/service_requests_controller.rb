@@ -25,6 +25,10 @@ class ServiceRequestsController < ApplicationController
 
         tasker = User.find(params[:tasker_id])
 
+        @service_request = ServiceRequest.find(params[:service_request_id])
+
+        @service_request.update(:tasker_id => tasker.id)
+
         redirect_to pay_and_confirm_path(params[:service_request_id])
       else
 

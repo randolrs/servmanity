@@ -12,4 +12,18 @@ class ServiceRequest < ActiveRecord::Base
 		
 		return taskers_for_this_category
 	end
+
+	def status
+
+		if self.tasker_id
+
+			return "Scheduled"
+		else
+
+			return "Need to Select Professional"
+
+		end
+
+
+	end
 end
