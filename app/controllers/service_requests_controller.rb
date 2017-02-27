@@ -53,6 +53,16 @@ class ServiceRequestsController < ApplicationController
 
   end
 
+  def confirm_payment
+
+    redirect_to service_request_submission_confirmation_path
+  end
+
+  def confirmation
+
+
+  end
+
   # GET /service_requests/1
   # GET /service_requests/1.json
   def show

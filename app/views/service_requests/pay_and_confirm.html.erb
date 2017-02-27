@@ -10,16 +10,31 @@
 
     <div class="content medium">
 
-      <h2>Payment Information</h2>
+      <%= form_tag confirm_payment_for_service_request_path(@service_request.id) do %>
 
-      <div>
+        <h2>Payment Information</h2>
+
+        <div>
+            
+            <input type="radio" name="payment_option" value="saved"  checked="checked" id="saved_card_option"> <%= "Your " + " ending 1234" %><br>
+            
+            <input type="radio" name="payment_option" value="new" id="new_card_option">A different credit card
+
+        </div>
           
-          <input type="radio" name="payment_option" value="saved"  checked="checked" id="saved_card_option"> <%= "Your " + " ending 1234" %><br>
+        <div class="centered">
+
+          <button class="button medium brand-blue-background hide-on-mobile-device">Confirm & Book</button>
           
-          <input type="radio" name="payment_option" value="new" id="new_card_option">A different credit card
-          
-      </div>
-        <%# f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
+          <div class="bottom-cta-container">
+
+            <button class="button medium brand-blue-background bottom-cta">Confirm & Book</button>
+
+          </div>
+
+        </div>
+
+      <%end%>
 
     </div>
 

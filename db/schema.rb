@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227201719) do
+ActiveRecord::Schema.define(version: 20170227203901) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20170227201719) do
     t.string   "time_of_day"
     t.date     "scheduled_day"
     t.integer  "tasker_id"
+    t.boolean  "is_complete_tasker"
+    t.boolean  "is_complete_user"
   end
 
   create_table "user_service_categories", force: :cascade do |t|
