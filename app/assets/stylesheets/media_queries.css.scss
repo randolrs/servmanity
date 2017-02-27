@@ -39,7 +39,16 @@
 	html {
 
 		body {
-			
+
+			.top-of-page-message, .flash-prompt{
+
+				padding: 25px 10px;
+
+				p{
+					font-size: 30px;
+					line-height: 30px;
+				}
+			}
 
 			.home-about{
 
