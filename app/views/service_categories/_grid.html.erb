@@ -3,8 +3,25 @@
 	<% service_categories.each do |category| %>
 
 		<li>
-		    <a class="rig-cell" href="<%= initiate_service_request_path(category.url_name) %>">
-		        
+			
+			<% if user_signed_in? %>
+
+				<% if current_user.is_tasker %>
+
+					<a class="rig-cell" href="<%= add_service_to_user_with_category_path(category.url_name) %>">
+
+				<%else%>
+
+					<a class="rig-cell" href="<%= initiate_service_request_path(category.url_name) %>">
+
+				<%end%>
+
+			<%else%>
+
+				<a class="rig-cell" href="<%= initiate_service_request_path(category.url_name) %>">
+
+			<%end%>
+
 		        <%= image_tag category.image(:medium), class:"rig-img" %>
 		        <span class="rig-overlay"></span>
 		        <span class="rig-text"><%= category.name %></span>

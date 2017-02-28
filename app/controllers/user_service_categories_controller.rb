@@ -16,9 +16,9 @@ class UserServiceCategoriesController < ApplicationController
   def new
     @user_service_category = UserServiceCategory.new
 
-    if params[:category]
+    if params[:category_url]
 
-      @service_category = ServiceCategory.where(:url_name => params[:category]).last
+      @service_category = ServiceCategory.where(:url_name => params[:category_url]).last
       @navigation_title = "Add Services"
     end
 

@@ -33,7 +33,10 @@ body{
 		}
 
 		a.active{
-			background: rgba(0,0,0,0.2);
+			background: $brand-yellow;
+			color: #111;
+			text-shadow: none;
+			font-weight: 600;
 			box-shadow: none;
 		}
 

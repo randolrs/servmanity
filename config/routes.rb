@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   post 'service_request/:service_request_id/confirm_payment' => 'service_requests#confirm_payment', as: 'confirm_payment_for_service_request'
 
   get 'service_request/:service_request_id/confirmation' => 'service_requests#confirmation', as: 'service_request_submission_confirmation'
+  
   get 'service_request/:service_request_id/pay_and_confirm' => 'service_requests#pay_and_confirm', as: 'pay_and_confirm'
 
   get 's/service_requests/initiate/:service_category_url' => 'service_requests#request_details', as: 'initiate_service_request'
@@ -50,6 +51,8 @@ Rails.application.routes.draw do
   get '/services/:category_url' => 'service_categories#tasker_index', as: 'service_category_home'
 
   get '/user/add_services' => 'user_service_categories#new', as: 'add_service_to_user'
+
+  get '/user/add_services/:category_url' => 'user_service_categories#new', as: 'add_service_to_user_with_category'
 
   get '/user/profile/:id' => 'users#profile', as: 'user_profile'
 
