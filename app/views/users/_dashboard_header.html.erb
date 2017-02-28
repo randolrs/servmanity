@@ -9,8 +9,8 @@
 				<li><a class="click-to-reveal clickable active" data-reveal-panel-id="home">Home</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="my-tasks">My Tasks</a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="balance">Balance</a></li>
 			
 			<%else%>
-
-				<li><a class="click-to-reveal clickable active" data-reveal-panel-id="home" href="<%= root_path %>"><span class="">Home</span></a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="my-requests" href="<%= requests_path %>"><span class="">Requests</span></a></li><li><a class="click-to-reveal clickable" data-reveal-panel-id="messages" href="<%= messages_path %>"></span><span class="">Messages</span></a></li>
+				
+				<li><%= link_to "Home", root_path, class: cp(root_path) %></li><li><%= link_to "Requests", requests_path, class: cp(requests_path) %></li><li><%= link_to "Messages", messages_path, class: cp(messages_path) %></li>
 
 
 			<%end%>

@@ -91,47 +91,6 @@
 			</section>
 
 		</div>
-		
-		<div class="reveal-panel" id="my-requests" style="display: none;">
-			
-			<section class="content-section">
-
-				<header>My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
-
-				<% current_user.service_requests.each do |request| %>
-					
-					<%= link_to show_service_request_path(request.id) do %>
-						
-						<div class="service-request-index card">
-							
-							<h3><%= request.service_category.name %> Request</h3>
-
-							<p class="right-corner"><%= request.time_of_day %> of <%= request.scheduled_day.strftime("%B %d") %></p>
-
-							<p><%= request.address %></p>
-
-							<p>Status: <%= request.status %></p>
-
-						</div>
-
-					<%end%>
-
-				<%end%>
-
-			</section>
-
-		</div>
-
-		<div class="reveal-panel" id="messages" style="display: none;">
-			
-			<section class="content-section">
-
-				<header>Messages</header>
-				</header>
-
-			</section>
-
-		</div>
 
 	<%end%>
 
