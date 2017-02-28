@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
 
 		if self.is_tasker
 
-			if self.service_requests.count > 0
+			if self.requests_assigned_to_me.count > 0
 				
 				return false
 			
@@ -71,6 +71,12 @@ class User < ActiveRecord::Base
 			end
 
 		end
+
+	end
+
+	def requests_assigned_to_me
+
+		return ServiceRequest.where(:tasker_id => self.id)
 
 	end
 

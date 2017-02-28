@@ -4,9 +4,10 @@
 		
 	<section class="content-section">
 
-		<header>My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span></header>
 
-		<% current_user.service_requests.each do |request| %>
+		<header><% if current_user.is_tasker %>My Tasks<%else%>My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span><%end%></header>
+
+		<% @service_requests.each do |request| %>
 			
 			<%= link_to show_service_request_path(request.id) do %>
 				

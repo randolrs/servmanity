@@ -46,6 +46,24 @@ class UsersController < ApplicationController
 
     @navigation_title = "My Requests"
 
+    if user_signed_in?
+
+      if current_user.is_tasker
+
+        @service_requests = current_user.requests_assigned_to_me
+
+      else
+
+        @service_requests = current_user.service_requests
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
   end
 
   def messages

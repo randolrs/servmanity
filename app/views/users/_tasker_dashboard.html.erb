@@ -1,9 +1,9 @@
 
 <%= render 'users/dashboard_header' %>
 
-<div class="content">
+<div class="content with-fixed-header">
 
-	<% if @default_dashboard %>
+	<%# if @default_dashboard %>
 
 		<section class="content-section card">
 
@@ -57,39 +57,10 @@
 
 		</section>
 
-	<% else %>
-
-		<div class="reveal-panel" id="home">
-
-			<section class="content-section">
+	<%# else %>
 
 
-			</section>
 
-		</div>
-
-		<div class="reveal-panel" id="my-tasks" style="display: none;">
-			
-			<section class="content-section">
-
-				<header>My Tasks</header>
-				</header>
-
-			</section>
-
-		</div>
-
-		<div class="reveal-panel" id="balance" style="display: none;">
-			
-			<section class="content-section">
-
-				<header>Balance</header>
-				</header>
-
-			</section>
-			
-		</div>
-
-	<%end%>
+	<%#end%>
 
 </div>
