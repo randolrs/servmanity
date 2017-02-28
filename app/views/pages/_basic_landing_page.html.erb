@@ -16,6 +16,24 @@
 
 </section>
 
+<section class="home-about brand-blue-background">
+
+	<div class="home-about-content">
+
+		<header class="section-header white-text">Introducing Servmanity</header>
+
+		<div class="content no-padding">
+
+			<div class="videoWrapper">
+			    <!-- Copy & Pasted from YouTube -->
+			    <iframe width="560" height="349" src="http://www.youtube.com/embed/n_dZNLr2cME?rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+		</div>
+
+	</div>
+
+</section>
 
 <section class="home-about">
 
@@ -27,7 +45,7 @@
 
 			<div class="content-column-container">
 				
-				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all} %>
+				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
 
 			</div>
 
@@ -43,7 +61,7 @@
 
 	<div class="home-about-content">
 		
-		<header class="section-header">How it Works</header>
+		<header class="section-header white-text">How it Works</header>
 
 		<section>
 
