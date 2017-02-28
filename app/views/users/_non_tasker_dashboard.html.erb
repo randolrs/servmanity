@@ -2,96 +2,57 @@
 
 <%= render 'users/dashboard_header' %>
 
-<div class="content with-fixed-header">
+<div class="full-screen-container">
 
-	<% if @default_dashboard %>
+	<div class="full-screen-content">
 
-		<h2 class="centered">How Can We Help You Today?</h2>
+		<div class="content with-fixed-header">
 
-		<section class="content-section material-box-shadow white-background">
+			<h2 class="centered">How Can We Help You Today?</h2>
 
-			<div class="content-column-container">
-				
-				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
+			<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
 
-			</div>
+			<% if @default_dashboard %>
 
-		</section>
+				<h2 class="centered">Get Started</h2>
 
-
-		<section class="content-section material-box-shadow white-background">
-
-			<header class="centered">How to Get Started</header>
-
-			<div class="content-column-container">
-				<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">1</span></div>
-				<div class="content-column">
-					<h3>Pick a Service</h3>
-					<p>Choose from our list of popular chores and errands below or <a href="#">see a list of all available services</a> (link).</p>
-				</div>
-			</div>
-
-			<div class="content-column-container">
-				
-				<div class="content-column">
-					<span class="number-badge material-box-shadow yellow-background black-text">2</span>
-				</div>
-				
-				<div class="content-column">
-					<h3>Get Matched</h3>
-					<p>Some kind of service or something.</p>
+				<div class="content-column-container">
+					<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">1</span></div>
+					<div class="content-column">
+						<h3>Pick a Service</h3>
+						<p>Choose from our list of popular chores and errands below or <a href="#">see a list of all available services</a> (link).</p>
+					</div>
 				</div>
 
-			</div>
-
-			<div class="content-column-container">
-				
-				<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">3</span></div>
-				
-				<div class="content-column">
-					<h3>Get it Done</h3>
-					<p>Some kind of service or something.</p>
-				</div>
-
-			</div>
-
-		</section>
-
-	<%else%>
-
-		<div class="reveal-panel" id="home">
-			
-			<section class="content-section">
-
-				<h1 class="centered">How Can We Help You Today?</h1>
-
-				<div class="content-column-container<%# mobile-only %>" style="display: none;">
+				<div class="content-column-container">
 					
-					<% ServiceCategory.last(3).each do |category| %>
-
-						<%= link_to initiate_service_request_path(category.url_name) do %>
-
-							<div class="card yellow-background">
-								<h4 style="display: inline-block;"><%= category.name %></h4>
-								<span class="glyphicon glyphicon-chevron-right" aria-hidden=true style="float:right;"></span>
-							</div>
-
-						<%end%>
-
-					<%end%>
-
-				</div>
-
-				<div class="content-column-container <%# full-screen-only %>">
+					<div class="content-column">
+						<span class="number-badge material-box-shadow yellow-background black-text">2</span>
+					</div>
 					
-					<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all} %>
+					<div class="content-column">
+						<h3>Get Matched</h3>
+						<p>Some kind of service or something.</p>
+					</div>
 
 				</div>
 
-			</section>
+				<div class="content-column-container">
+					
+					<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">3</span></div>
+					
+					<div class="content-column">
+						<h3>Get it Done</h3>
+						<p>Some kind of service or something.</p>
+					</div>
+
+				</div>
+
+
+			<%end%>
 
 		</div>
 
-	<%end%>
+	</div>
 
 </div>
