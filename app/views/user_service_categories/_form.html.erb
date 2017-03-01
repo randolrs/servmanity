@@ -1,4 +1,4 @@
-<div class="form-container medium card">
+<div class="form-container medium card clear-on-mobile-device">
 
   <h3>Add <% if @service_category %><%= @service_category.name%> <%end%> to Profile</h3>
 
@@ -42,7 +42,15 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Update Profile", class: 'button medium dark-red-background' %>
+      
+      <%= f.submit "Update Profile", class:"button medium dark-red-background hide-on-mobile-device" %>
+
+      <div class="bottom-cta-container">
+
+        <%= f.submit "Update Profile", class:"button medium dark-red-background bottom-cta"%>
+
+      </div>
+
     </div>
   <% end %>
 
