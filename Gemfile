@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,6 +37,8 @@ gem 'jquery-turbolinks'
 
 #geocomplete
 gem 'geocomplete_rails'
+
+gem 'geocoder'
 
 
 gem 'possessive'
