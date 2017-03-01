@@ -7,7 +7,7 @@
 
 		<div class="content with-fixed-header">
 
-			<h2 class="centered">How Can We Help You Today, <%= @city %>?</h2>
+			<h2 class="centered">How Can We Help You Today?</h2>
 
 			<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
 
