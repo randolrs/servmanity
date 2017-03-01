@@ -1,14 +1,22 @@
-<ul class="" id="rig">
+<div class="centered">
 
-	<% service_categories.each do |category| %>
+	<ul class="" id="rig">
 
-		<li>
-			
-			<% if user_signed_in? %>
+		<% service_categories.each do |category| %>
 
-				<% if current_user.is_tasker %>
+			<li>
+				
+				<% if user_signed_in? %>
 
-					<a class="rig-cell" href="<%= add_service_to_user_with_category_path(category.url_name) %>">
+					<% if current_user.is_tasker %>
+
+						<a class="rig-cell" href="<%= add_service_to_user_with_category_path(category.url_name) %>">
+
+					<%else%>
+
+						<a class="rig-cell" href="<%= initiate_service_request_path(category.url_name) %>">
+
+					<%end%>
 
 				<%else%>
 
@@ -16,18 +24,14 @@
 
 				<%end%>
 
-			<%else%>
+			        <%= image_tag category.image(:medium), class:"rig-img" %>
+			        <span class="rig-overlay"></span>
+			        <span class="rig-text"><%= category.name %></span>
+			    </a>
+			</li>
 
-				<a class="rig-cell" href="<%= initiate_service_request_path(category.url_name) %>">
+		<%end%>
 
-			<%end%>
+	</ul>
 
-		        <%= image_tag category.image(:medium), class:"rig-img" %>
-		        <span class="rig-overlay"></span>
-		        <span class="rig-text"><%= category.name %></span>
-		    </a>
-		</li>
-
-	<%end%>
-
-</ul>
+</div>
