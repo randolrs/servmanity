@@ -7,13 +7,13 @@
 
 		<div class="content with-fixed-header">
 
-			<h2 class="centered">How Can We Help You Today?</h2>
+			<h2 class="centered dashboard">How Can We Help You Today?</h2>
 
 			<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
 
 			<% if @default_dashboard %>
 
-				<h2 class="centered">Get Started</h2>
+				<h2 class="centered dashboard-header">Get Started</h2>
 
 				<div class="content-column-container">
 					<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">1</span></div>
