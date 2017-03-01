@@ -450,20 +450,27 @@ span.number-badge{
 	.card-content-column{
 		display: block;
 		vertical-align: top;
-		text-align: center;
+		
 	}
 
 	.card-content-column.side{
 		
 		margin: 0 auto;
-		
+		text-align: center;		
 	}
 	.card-content-column.main{
+
+		border-top: 1px solid #ccc;
+    	padding: 10px;
 
 		p{
 			text-align: justify;
 		}
 		
+	}
+
+	h2{
+		font-size: 2.5em;
 	}
 
 	h3{
