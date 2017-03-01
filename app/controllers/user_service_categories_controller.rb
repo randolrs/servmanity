@@ -43,7 +43,7 @@ class UserServiceCategoriesController < ApplicationController
 
           @user_service_category.update(:user_id => current_user.id)
           
-          format.html { redirect_to @user_service_category, notice: 'User service category was successfully created.' }
+          format.html { redirect_to root_path, notice: 'User service category was successfully created.' }
           format.json { render :show, status: :created, location: @user_service_category }
         else
           format.html { render :new }

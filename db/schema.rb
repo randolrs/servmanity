@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227203901) do
+ActiveRecord::Schema.define(version: 20170301211833) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170227203901) do
     t.integer  "tasker_id"
     t.boolean  "is_complete_tasker"
     t.boolean  "is_complete_user"
+    t.string   "city"
   end
 
   create_table "user_service_categories", force: :cascade do |t|
@@ -82,6 +83,10 @@ ActiveRecord::Schema.define(version: 20170227203901) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.datetime "last_seen_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
+    t.string   "address"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

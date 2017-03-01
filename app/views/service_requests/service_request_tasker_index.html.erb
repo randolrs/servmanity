@@ -12,28 +12,38 @@
 
 <div class="content">
 
-	<% @service_request.recommended_taskers.each do |tasker| %>
+	<% if @service_request.recommended_taskers.count > 0 %>
 
+		<% @service_request.recommended_taskers.each do |tasker| %>
+
+			<div class="card">
+				<div class="card-content-column side">
+					<%= image_tag tasker.image.url(:medium), class:"small-image rounded" %>
+					<br>
+					<h3><%= tasker.public_display_name %></h3>
+					<br>
+					<h4>4.5/5 Rating</h4>
+				</div>
+
+				<div class="card-content-column main">
+					<h3>My Qualifications:</h3>
+					<p><%= tasker.qualifications_for_category(@service_request.service_category_id) %></p>
+					<br>
+					<%= form_tag add_tasker_to_service_request_path(@service_request.id, tasker.id) do %>
+						<button class="button stretch green-background">Hire Me for <%= number_to_currency(tasker.hourly_rate_for_category(@service_request.service_category_id), precision: 0) %>/hour</button>
+					<%end%>
+				</div>
+
+			</div>
+
+		<%end%>
+
+	<%else%>
 		<div class="card">
-			<div class="card-content-column side">
-				<%= image_tag tasker.image.url(:medium), class:"small-image rounded" %>
-				<br>
-				<h3><%= tasker.public_display_name %></h3>
-				<br>
-				<h4>4.5/5 Rating</h4>
-			</div>
-
-			<div class="card-content-column main">
-				<h3>My Qualifications:</h3>
-				<p><%= tasker.qualifications_for_category(@service_request.service_category_id) %></p>
-				<br>
-				<%= form_tag add_tasker_to_service_request_path(@service_request.id, tasker.id) do %>
-					<button class="button stretch green-background">Hire Me for <%= number_to_currency(tasker.hourly_rate_for_category(@service_request.service_category_id), precision: 0) %>/hour</button>
-				<%end%>
-			</div>
-
+			<h3 class="centered">Sorry no matches</h3>
 		</div>
 
+		
 	<%end%>
 
 </div>

@@ -1,6 +1,27 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  
+  geocoded_by :address
+
+	after_validation :geocode, :if => :address_changed?
+
+	
+	reverse_geocoded_by :latitude, :longitude do |obj, results|
+
+		if geo = results.first
+
+			obj.city = geo.city
+
+		end
+
+	end
+
+	after_validation :reverse_geocode
+	
+
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
