@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
     @hide_return_to_home = true
     
-    @city = request.location.city
+    #@city = request.location.city
 
     @fixed_bottom_cta = true
 
