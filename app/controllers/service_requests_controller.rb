@@ -63,7 +63,7 @@ class ServiceRequestsController < ApplicationController
     @service_request = ServiceRequest.find(params[:service_request_id])
 
     @navigation_title = @service_request.service_category.name + " Request"
-    
+
   end
 
   # GET /service_requests/1
@@ -131,6 +131,16 @@ class ServiceRequestsController < ApplicationController
         if @service_request.save
 
           @service_request.update(:user_id => current_user.id)
+          
+          unless current_user.address
+
+            if @service_request.address
+
+              current_user.update(:address => @service_request.address)
+
+            end
+
+          end
 
           format.html { redirect_to service_request_tasker_index_path(@service_request.id), notice: 'Service request was successfully created.' }
           format.json { render :show, status: :created, location: @service_request }

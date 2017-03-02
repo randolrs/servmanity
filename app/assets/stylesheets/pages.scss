@@ -540,9 +540,14 @@ span.number-badge{
 	
 	h2.dashboard{
 		font-size: 2em;
-		margin-bottom: 0.75em;
+		margin-bottom: 0.5em;
 	}
 }
+
+.full-screen-content.with-fixed-header{
+	padding-top:50px;
+}
+
 .full-screen-container{
 	width: 100%;
 	display: block;

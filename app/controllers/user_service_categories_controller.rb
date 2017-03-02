@@ -15,7 +15,8 @@ class UserServiceCategoriesController < ApplicationController
   # GET /user_service_categories/new
   def new
     @user_service_category = UserServiceCategory.new
-
+    @hide_footer = true
+    
     if params[:category_url]
 
       @service_category = ServiceCategory.where(:url_name => params[:category_url]).last
