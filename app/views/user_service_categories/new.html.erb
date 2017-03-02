@@ -1,5 +1,15 @@
-<div class="content">
+<div class="full-screen-container reveal-panel">
 
-	<%= render 'form' %>
+	<div class="top-of-page-message notice brand-yellow-background">
+
+		<p>Add <% if @service_category %><%= @service_category.name%> <%end%> to Your Profile</p>
+
+	</div>
+
+  	<div class="content medium">
+
+		<%= render 'form' %>
+
+	</div>
 
 </div>
