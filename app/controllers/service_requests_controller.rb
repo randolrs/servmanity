@@ -60,7 +60,10 @@ class ServiceRequestsController < ApplicationController
 
   def confirmation
 
+    @service_request = ServiceRequest.find(params[:service_request_id])
 
+    @navigation_title = @service_request.service_category.name + " Request"
+    
   end
 
   # GET /service_requests/1
