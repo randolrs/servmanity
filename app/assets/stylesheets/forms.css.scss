@@ -295,4 +295,33 @@ form{
 
 }
 
+.credit-card-form{
+	padding: 20px;
+	border: 1px solid #ccc;
+
+	.input-container{
+		position: relative;
+    	margin-bottom: 25px;
+    	clear: both;
+	}
+
+	.input-group{
+		display: inline-block;
+		float: left;
+		margin-bottom: 25px;
+		padding-right: 10px;
+
+		input.cvc{
+			height: 50px;
+			width: 100px;
+		}
+
+		select.exp-select{
+			height: 50px;
+			width: 100px;
+		}
+  
+	}
+}
+
 

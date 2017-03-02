@@ -1,4 +1,4 @@
-<div class="full-screen-container reveal-panel" data-reveal-panel-id="when">
+<div class="full-screen-container">
 
   <div class="top-of-page-message notice brand-yellow-background">
 
@@ -6,42 +6,101 @@
 
   </div>
 
-  <div class="full-screen-content">
+  <div class="content medium">
 
-    <div class="content medium">
+    <%= form_tag confirm_payment_for_service_request_path(@service_request.id) do %>
 
-      <%= form_tag confirm_payment_for_service_request_path(@service_request.id) do %>
+      <h2>Payment Information</h2>
 
-        <h2>Payment Information</h2>
+      <br>
 
-        <div>
-            
-            <input type="radio" name="payment_option" value="saved"  checked="checked" id="saved_card_option"> <%= "Your " + " ending 1234" %><br>
-            
-            <input type="radio" name="payment_option" value="new" id="new_card_option">A different credit card
-
-        </div>
-        
-        <br><br>
-        
-        <div class="centered">
-
-          <button class="button medium brand-blue-background hide-on-mobile-device">Confirm & Book</button>
+      <div>
           
-          <div class="bottom-cta-container">
+          <input class="click-to-reveal" type="radio" name="payment_option" value="saved"  checked="checked" id="saved_card_option"> <%= "Your Visa ending 1234" %><br>
+          
+          <input class="click-to-reveal" type="radio" name="payment_option" value="new" id="new_card_option" data-reveal-panel-id="new-credit-card-form">A different credit card
 
-            <button class="button medium brand-blue-background bottom-cta">Confirm & Book</button>
+          <br>
+
+          <div class="reveal-panel" id="new-credit-card-form" style="display: none;">
+
+            <div class="credit-card-form">
+
+              <div class="input-container">
+                <label>Credit Card Number</label>
+                <input type="text"></input>
+              </div>
+
+              <div class="input-group exp">
+                
+                <label>Expiration Date</label>
+                
+                <ul class="horizontal">
+
+                  <li><select class="exp-select" name='expMonth' id='expireMM' required>
+                    <option value=''>Month</option>
+                    <option value='01'>01</option>
+                    <option value='02'>02</option>
+                    <option value='03'>03</option>
+                    <option value='04'>04</option>
+                    <option value='05'>05</option>
+                    <option value='06'>06</option>
+                    <option value='07'>07</option>
+                    <option value='08'>08</option>
+                    <option value='09'>09</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                  </select></li>
+                  <li><select class="exp-select" name='expYear' id='expireYY'>
+                    <option value=''>Year</option>
+                    <option value='16'>2016</option>
+                    <option value='17'>2017</option>
+                    <option value='18'>2018</option>
+                    <option value='18'>2019</option>
+                    <option value='18'>2020</option>
+                    <option value='18'>2021</option>
+                    <option value='18'>2022</option>
+                  </select></li>
+
+                </ul>
+
+              </div>
+
+              <div class="input-group">
+                <label>CVC</label>
+                <input type="text" class="cvc"></input>
+              </div>
+
+
+              <div class="input-container">
+                <label>Name on Card</label>
+                <input type="text"></input>
+              </div>
+
+
+            </div>
 
           </div>
 
+      </div>
+      
+      <br><br>
+      
+      <div class="centered">
+
+        <button class="button medium brand-blue-background hide-on-mobile-device">Confirm & Book</button>
+        
+        <div class="bottom-cta-container">
+
+          <button class="button medium brand-blue-background bottom-cta">Confirm & Book</button>
+
         </div>
 
-      <%end%>
+      </div>
 
-    </div>
+    <%end%>
 
   </div>
-
-
 
 </div>

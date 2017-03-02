@@ -15,7 +15,7 @@
 
 .content.medium{
 		max-width: 500px;
-		
+		padding: 20px
 }
 
 
@@ -450,6 +450,7 @@ span.number-badge{
 	.card-content-column{
 		display: block;
 		vertical-align: top;
+		padding: 10px;
 		
 	}
 
@@ -461,7 +462,7 @@ span.number-badge{
 	.card-content-column.main{
 
 		border-top: 1px solid #ccc;
-    	padding: 10px;
+    	
 
 		p{
 			text-align: justify;
