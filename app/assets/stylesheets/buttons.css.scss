@@ -29,6 +29,8 @@ $button-gradient: $material-shadow;
 
     font-weight: 500;
 
+    border-radius: 30px;
+
 }
 
 .button.dark-red-background{
@@ -40,7 +42,7 @@ $button-gradient: $material-shadow;
 .button.medium{
     max-width: 500px;
     width: 100%;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .button.stretch{
