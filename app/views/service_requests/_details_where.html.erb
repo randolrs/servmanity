@@ -11,14 +11,22 @@
 
 		<h2>Where?</h2>
 
-		<% if current_user.address %>
-		
-			<%= f.text_field :address, value:current_user.address, class:"geocomplete-input" %>
-		
-		<%else%>
-			
-			<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
+		<% if user_signed_in? %>
 
+			<% if current_user.address %>
+			
+				<%= f.text_field :address, value:current_user.address, class:"geocomplete-input" %>
+			
+			<%else%>
+				
+				<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
+
+			<%end%>
+
+		<%else%>
+
+			<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
+			
 		<%end%>
 
 		<br><br>
