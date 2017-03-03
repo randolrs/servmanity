@@ -345,6 +345,8 @@ ul.horizontal.button-list{
 	background-image: url(city-dusk.jpg);
 	background-image: asset-url("city-dusk.jpg");
 	background-attachment: fixed;
+	background-image: none;
+	background: #000;
 
 	.home-hero-overlay{
 
@@ -359,7 +361,7 @@ ul.horizontal.button-list{
 	}
 
 	header{
-		color: #fff;
+		color: $brand-yellow;
 		font-size: 3.5em;
 		text-shadow: 0px 2px 1px rgba(0,0,0,.8);
 	}
