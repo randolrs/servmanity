@@ -54,6 +54,9 @@ body{
 
 }
 
+#my_map{
+	height: 200px;
+}
 .background-overlay{
 	position: fixed;
 	padding: 50px;

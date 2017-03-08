@@ -40,7 +40,6 @@ gem 'geocomplete_rails'
 
 gem 'geocoder'
 
-
 gem 'possessive'
 
 gem 'paperclip', '~> 4.2'

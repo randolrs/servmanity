@@ -17,5 +17,9 @@
 //= require turbolinks
 //= require_tree .
 
+$(function() {
+	$(".geocomplete-input").geocomplete({
+  		map: "#my_map"
+	});
+});
 
-//REMOVED
