@@ -44,6 +44,8 @@ gem 'possessive'
 
 gem 'paperclip', '~> 4.2'
 
+gem 'bootstrap-sass'
+
 
 gem 'aws-sdk', '< 2.0'
 

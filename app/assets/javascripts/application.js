@@ -14,12 +14,9 @@
 //= require jquery_ujs
 //= require geocomplete
 //= require jquery.turbolinks
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
-$(function() {
-	$(".geocomplete-input").geocomplete({
-  		map: "#my_map"
-	});
-});
+
 
