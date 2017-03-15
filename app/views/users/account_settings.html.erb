@@ -15,12 +15,14 @@
 	<div class="row">
 
 		<div class="col-xs-12 col-sm-3">
+			
 			<ul>
 				<li><a class="click-to-reveal active" data-reveal-panel-id="profile">Profile</a></li>
 				<li><a class="click-to-reveal" data-reveal-panel-id="login">Login</a></li>
 				<li><a class="click-to-reveal" data-reveal-panel-id="payments">Payments</a></li>
 
 			</ul>
+
 		</div>
 
 		<div class="col-xs-12 col-sm-9">
@@ -84,14 +86,6 @@
 
 							</div>
 
-							<div class="actions centered">
-								
-								<br>
-								
-								<%= f.submit "Update", class: "button medium dark-red-background" %>
-						
-							</div>
-
 						</div>
 
 					</div>
@@ -115,14 +109,8 @@
 								
 								<label>Password</label><br>
 
-							  	<%= f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
+							  	<%# f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
 
-							</div>
-
-							<div class="actions centered">
-								<br>
-								<%= f.submit "Update", class: "button medium dark-red-background" %>
-							
 							</div>
 
 						</div>
@@ -151,14 +139,16 @@
 
 							</div>
 
-							<div class="actions centered">
-								<br>
-								<%= f.submit "Update", class: "button medium dark-red-background" %>
-							
-							</div>
-
 						</div>
 
+					</div>
+
+					<div class="actions centered">
+								
+						<br>
+								
+						<%= f.submit "Update", class: "button medium dark-red-background" %>
+						
 					</div>
 
 				<%end%>
