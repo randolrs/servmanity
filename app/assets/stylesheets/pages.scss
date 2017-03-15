@@ -8,6 +8,30 @@
 	padding: 0px;	
 }
 
+.calendar-day{
+	text-align: center;
+	margin-bottom:10px;
+	box-shadow: 0px 2px 1px rgba(0,0,0,0.3);
+
+	a{
+		color: #fff;
+		display: block;
+	}
+
+	a.title{
+		font-size: 20px;
+		background: #111;
+	}
+
+	a.available{
+		background: $brand-green;
+	}
+
+	a.unavailable{
+		background: $brand-dark-red;
+	}
+}
+
 .content.with-fixed-header{
 	padding-top: 0px;
 	padding-bottom: 50px;
