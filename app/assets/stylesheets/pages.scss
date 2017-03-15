@@ -477,6 +477,12 @@ span.number-badge{
 	margin-bottom: -1px;
 	padding: 15px;
 
+	.card-alert{
+		float: right;
+		font-size: 20px;
+		color: $brand-red;
+	}
+
 	.card-content-column{
 		display: block;
 		vertical-align: top;
