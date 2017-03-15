@@ -74,7 +74,7 @@ body{
 	.profile-header-nav{
 		width: 100%;
 		display: block;
-		background: $brand-blue;
+		background: $servmanity-green;
 
 		.profile-header-nav-content{
 			max-width: 825px;
@@ -87,16 +87,21 @@ body{
 
 					width: 33.3%;
     				max-width: 250px;
+    				border-right: 2px solid rgba(0,0,0,0.3);
 
 					a{
-
+						color: #fff;
 					}
 
 					a.active{
-						background: $brand-yellow;
+						background: $servmanity-yellow;
 						color: #111;
 						font-weight: 600;
 					}
+				}
+
+				li:first-child{
+					border-left: 2px solid rgba(0,0,0,0.3);
 				}
 			}
 		}
