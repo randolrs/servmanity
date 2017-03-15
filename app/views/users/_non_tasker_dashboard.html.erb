@@ -7,25 +7,22 @@
 
 		<div class="content with-fixed-header">
 
-			<h2 class="centered dashboard">How Can We Help You Today?</h2>
-
-			<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
-
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-4">
-					XX
+				<div class="col-xs-12 col-sm-8">
+					<h2>Main</h2>
 				</div>
 
 				<div class="col-xs-12 col-sm-4">
-					yy
-				</div>
-
-				<div class="col-xs-12 col-sm-4">
-					zz
+					<h2>Popular Categories</h2>
 				</div>
 
 			</div>
+
+
+			<h2 class="centered dashboard">How Can We Help You Today?</h2>
+
+			<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
 
 
 			<% if @default_dashboard %>

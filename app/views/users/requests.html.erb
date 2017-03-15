@@ -4,22 +4,52 @@
 		
 	<section class="content-section">
 
+		<div class="section-header">
+			
+			<header><% if current_user.is_tasker %>My Tasks<%else%>My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button brand-blue-background full-screen-only content-header-cta" %></span><%end%></header>
 
-		<header><% if current_user.is_tasker %>My Tasks<%else%>My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button green-background full-screen-only medium" %></span><%end%></header>
+		</div>
 
 		<% @service_requests.each do |request| %>
 			
 			<%= link_to show_service_request_path(request.id) do %>
 				
 				<div class="service-request-index card">
+
+					<div class="row">
+
+						<div class="col-xs-12 col-sm-6">
+
+							<h3><%= request.service_category.name %> Request</h3>
+
+						</div>
+
+						<div class="col-xs-12 col-sm-6">
+
+							<p>Status: <%= request.status %></p>
+
+						</div>
+
+					</div>	
+
+					<div class="row">
+
+						<div class="col-xs-12 col-sm-10">
+
+							<h3><%= request.service_category.name %> Request</h3>
+
+						</div>
+
+						<div class="col-xs-12 col-sm-2">
+
+							<p>Status: <%= request.status %></p>
+							
+						</div>
+
+
+
+					</div>
 					
-					<h3><%= request.service_category.name %> Request</h3>
-
-					<p class="right-corner"><%= request.time_of_day %> of <%= request.scheduled_day.strftime("%B %d") %></p>
-
-					<p><%= request.address %></p>
-
-					<p>Status: <%= request.status %></p>
 
 				</div>
 

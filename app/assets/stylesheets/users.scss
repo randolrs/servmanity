@@ -14,11 +14,8 @@ body{
 		height: 50px;
 		bottom: 0px;
 		background: $brand-grey;
-		background: #2980b9; /* fallback for old browsers */
-		background: -webkit-linear-gradient(to left, #2980b9 , #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to left, #2980b9 , #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background: $servmanity-green;
     
-
 
 		a{
 			color: #fff;
@@ -30,13 +27,21 @@ body{
 
 		}
 
+		a:hover{
+			background: rgba(0,0,0,0.2);
+		}
+
 		.glyphicon{
 			line-height:26px;
 
 		}
 
+		li{
+			border-right: 2px solid rgba(0,0,0,0.3);
+		}
+
 		a.active{
-			background: $brand-yellow;
+			background: $servmanity-yellow;
 			color: #111;
 			text-shadow: none;
 			font-weight: 600;

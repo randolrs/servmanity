@@ -35,6 +35,21 @@
  		margin-bottom: 3rem;
  		padding: 0em 0em;
 
+ 		div.section-header{
+ 			
+ 			border-bottom: 1px solid #aaa;
+ 			
+ 			margin-bottom: 2em;
+
+ 			.content-header-cta{
+ 				font-size: 20px;
+ 				padding: 10px 50px;
+ 				line-height:15px;
+ 				border-radius: 2px;
+ 				margin: 12px;
+ 			}
+ 		}
+
  		h1{
  			padding: 15px 0px;
  			font-size: 2em;
@@ -43,8 +58,9 @@
  		}
 
  		header{
- 			margin-bottom: 1.0em;
- 			font-size: 2.0rem;
+ 			line-height: 60px;
+ 			font-size: 1.5em;
+    		color: #333;
  			
  			
  		}
@@ -235,7 +251,7 @@
 		header{
 	 		font-size: 2rem;
 	    	line-height: 1.2;
-	    	margin-bottom: 2rem;
+	    	
 	    	border-bottom: 1px solid #ccc;
     		padding-bottom: 10px;
     		font-weight: 500;
