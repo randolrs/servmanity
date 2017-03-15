@@ -1,12 +1,30 @@
 <%= render 'users/dashboard_header' %>
 
 <div class="content with-fixed-header">
+
+	
+
 		
 	<section class="content-section">
 
 		<div class="section-header">
 			
-			<header><% if current_user.is_tasker %>My Tasks<%else%>My Requests <span class="full-screen-only" style="float: right; display: inline-block;"><%= link_to "Hire Someone", service_category_formatted_index_path, class: "button brand-blue-background full-screen-only content-header-cta" %></span><%end%></header>
+			<header>
+				<% if current_user.is_tasker %>
+					My Tasks
+				<%else%>
+					My Requests 
+					<span class="full-screen-only" style="float: right; display: inline-block;">
+						<div class="btn-group" style="float: right; display: inline-block;">
+							<button type="button" class="btn btn-primary">All</button>
+							<button type="button" class="btn btn-primary">Upcoming</button>
+							<button type="button" class="btn btn-primary">Completed</button>
+						</div>
+					</span>
+				<%end%>
+			</header>
+
+			
 
 		</div>
 

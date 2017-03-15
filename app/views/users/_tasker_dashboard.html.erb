@@ -1,72 +1,92 @@
 
 <%= render 'users/dashboard_header' %>
 
-<div>
 
-	<div class="full-screen-content">
 
-		<div class="content with-fixed-header">
+<div class="full-screen-content">
 
-			<%# if @default_dashboard %>
+	<div class="content with-fixed-header">
 
-				<section class="content-section clear-on-mobile-device">
+		<header>Update your profile before getting started</header>
 
-					<h2 class="centered dashboard">Get Hired Today</h2>
+		<div class="row">
 
-					<div class="content-column-container">
-						<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">1</span></div>
-						<div class="content-column">
-							<h3>Add a Photo</h3>
-							<p>Choose from our list of popular chores and errands below or <a href="#">see a list of all available services</a> (link).</p>
+			<div class="col-xs-12 col-sm-6">
+
+				<div class="card">
+
+					<div class="field">
+
+						<label>Upload a Photo of Yourself</label><br>
+
+						<div class="image-field-container">
+
+							<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+
+								<%= image_tag current_user.image.url(:small), class:"small-image rounded" %>
+
+								<%= f.file_field :image, class: "small-image-overlay-input" %><br><br>
+
+
+
+							<%end%>
+
 						</div>
-					</div>
 
-					<div class="content-column-container">
-						
-						<div class="content-column">
-							<span class="number-badge material-box-shadow yellow-background black-text">2</span>
-						</div>
-						
-						<div class="content-column">
-							<h3>Add Services to Your Profile</h3>
-							<p>Browse our full list of services and add relevant services to your profile so that customers can find you.</p>
-						</div>
-
-					</div>
-
-					<div class="content-column-container">
-						
-						<div class="content-column"><span class="number-badge material-box-shadow yellow-background black-text">3</span></div>
-						
-						<div class="content-column">
-							<h3>Match with Customers</h3>
-							<p>Some kind of service or something.</p>
-						</div>
+						<a class="button orange-background stretch" style="margin-top: 0.5em;">Upload Photo</a>
 
 					</div>
 
-				</section>
+				</div>
 
-				<section class="content-section clear-on-mobile-device">
+			</div>
 
-					<h2 class="centered dashboard">Can You Perform Any of These Services?</h2>
+			<div class="col-xs-12 col-sm-6">
 
-					<div class="content-column-container">
+				<div class="card">
 
-							<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
+					<label>Add Services to Your Profile</label>
 
-						<p class="centered">See More Services</p>
+					<br>
 
-					</div>
+					<%= link_to "Add Services", add_service_to_user_path, class:"button orange-background stretch"%>
 
-				</section>
+				</div>
 
-			<%# else %>
+			</div>
 
 
+			<div class="col-xs-12 col-sm-12">
 
-			<%#end%>
+				<div class="card">
+
+					<form>
+						  	
+					  	<label>Update Your Address</label><br>
+
+					  	<div class="row">
+
+							<div class="col-xs-12 col-sm-8">
+
+							  	<input type="text" placeholder="Update Address" class:"geocomplete-input"></input>
+
+							</div>
+
+							<div class="col-xs-12 col-sm-4">
+								<a class="button orange-background stretch" style="margin-top: 0.5em;">Update</a>
+
+							</div>
+
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
 
 		</div>
+
 	</div>
+
 </div>
