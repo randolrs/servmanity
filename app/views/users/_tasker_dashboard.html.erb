@@ -124,13 +124,15 @@
 					
 					<div class="row">
 
-						<div class="col-xs-6 col-sm-12">
+						<div class="col-xs-12 col-sm-12">
 
 							<div class="card">
 
-								<h3 class="centered"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-left: 5px;"></span> My Location</h3>
+								<h3 class="centered"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 5px;"></span> My Location</h3>
 
 								<p><%= current_user.address %></p>
+
+								<br>
 
 								<%= link_to "Update Location", root_path, class:"button orange-background stretch" %>
 
@@ -139,11 +141,11 @@
 						</div>
 
 
-						<div class="col-xs-6 col-sm-12">
+						<div class="col-xs-12 col-sm-12">
 
 							<div class="card">
 
-								<h3>My Availablity</h3>
+								<h3><span class="glyphicon glyphicon-calendar" aria-hidden="true" style="margin-right: 5px;"></span> My Availablity</h3>
 
 								<div class="row">
 									
@@ -165,6 +167,8 @@
 
 								</div>
 
+								<br>
+								
 								<%= link_to "Update Schedule", root_path, class:"button orange-background stretch" %>
 
 							</div>

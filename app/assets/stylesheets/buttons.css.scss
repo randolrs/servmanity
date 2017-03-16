@@ -88,6 +88,11 @@ $button-gradient: $material-shadow;
     color: #fff;
 }
 
+.button.dark-red-background{
+    background: $brand-dark-red url(button-glass.png) repeat-x 0 0;
+    color: #fff;
+}
+
 .button.grey-background{
     background: $brand-grey url(button-glass.png) repeat-x 0 0;
     color: #666;
