@@ -110,3 +110,27 @@ body{
 
 }
 
+.small-section-header{
+	font-weight: 600;
+	font-size: 24px;
+}
+
+.big-balance{
+	font-size: 60px;
+	color: $brand-green;
+	font-weight: 600;
+	line-height: 60px;
+}
+
+.big-date{
+	font-size: 60px;
+	color: $brand-blue;
+	font-weight: 600;
+	line-height: 60px;
+}
+
+.payee-information{
+	font-size: 18px;
+	line-height: 30px;
+}
+

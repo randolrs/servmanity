@@ -6,7 +6,7 @@
 
 			<% if current_user.is_tasker %>
 
-				<li><%= link_to "Live", root_path, class: cp(root_path) %></li><li><%= link_to "Tasks", requests_path, class: cp(requests_path) %></li><li><%= link_to "Balance", about_path, class: cp(about_path) %></li>
+				<li><%= link_to "Live", root_path, class: cp(root_path) %></li><li><%= link_to "Tasks", requests_path, class: cp(requests_path) %></li><li><%= link_to "Balance", balance_path, class: cp(balance_path) %></li>
 			
 			<%else%>
 				

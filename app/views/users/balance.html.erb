@@ -1,0 +1,74 @@
+<%= render 'users/dashboard_header' %>
+
+<div class="content with-fixed-header">
+	
+	<header>Balance</header>
+	
+	<div class="row">
+
+		<div class="col-xs-12 col-sm-4">
+
+			<div class="card centered">
+
+				<h4 class="centered small-section-header">Available Balance</h4>
+
+				<br>
+
+				<span class="big-balance">$59.00</span>
+
+				<br><br>
+
+				<%= link_to "Balance History", root_path, class:"button orange-background stretch" %>
+			</div>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-4">
+			
+			<div class="card centered">
+				
+				<h4 class="centered small-section-header">Next Payment Date</h4>
+
+				<br>
+
+				<span class="big-date"><%= Date.today.strftime("%b %e")%></span>
+
+				<br><br>
+
+				<%= link_to "Payment Schedule", root_path, class:"button orange-background stretch" %>
+				
+			</div>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-4">
+
+			<div class="card centered">
+
+				<h4 class="centered small-section-header">Payee Information</h4>
+
+				<br>
+
+				<span class="payee-information"><%= current_user.first_name %></span>
+				
+				<br>
+
+				<span class="payee-information">Account Ending 6882</span>
+
+				<br><br>
+
+				<%= link_to "Edit Payee", root_path, class:"button orange-background stretch" %>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	<section class="content-section">
+
+		
+
+	</section>
+
+</div>
