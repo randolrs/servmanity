@@ -46,7 +46,7 @@
 .content{
  	margin: 0 auto;
  	display: block;
- 	max-width: 875px;
+ 	max-width: 992px;
  	padding: 0px;
 
 
@@ -555,6 +555,11 @@ span.number-badge{
 
 		span.glyphicon{
 			line-height: 30px;
+		}
+
+		.glyphicon-exclamation-sign{
+			color: $brand-red;
+			margin-right: 5px;
 		}
 	}
 
