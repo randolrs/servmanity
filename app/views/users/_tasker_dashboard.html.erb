@@ -80,11 +80,11 @@
 
 		<%else%>
 
+			<header>Summary</header>
+
 			<div class="row">
 
 				<div class="col-xs-12 col-sm-8">
-
-					<header>Summary</header>
 
 					<%= link_to root_path do %>
 						
@@ -149,9 +149,9 @@
 									
 									<%#(Date.today..Date.tomorrow + 5).each do |date| %>
 										
-										<div class="col-xs-6 col-sm-12">
+										<div class="col-xs-12 col-sm-6">
 											<div class="calendar-day">
-												<a class="title"><%= Date.today.strftime("%a, %b %e")%></a>
+												<a class="title"><%= Date.today.strftime("%b")%><br><%= Date.today.strftime("%e")%></a>
 												
 												<a class="unavailable">Morning</a>
 												
