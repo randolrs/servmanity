@@ -1,0 +1,30 @@
+
+<div class="card centered">
+
+	<h3><span class="glyphicon glyphicon-calendar" aria-hidden="true" style="margin-right: 5px;"></span> My Availablity</h3>
+
+	<div class="row">
+		
+		<% (Date.today..Date.tomorrow + 5).each do |date| %>
+			
+			<div class="col-xs-12 col-sm-6">
+				<div class="calendar-day">
+					<a class="title"><%= date.strftime("%b %e")%></a>
+					
+					<a class="unavailable date-toggle" data-date="<%= date %>" data-time-of-day="Morning">Morning</a>
+					
+					<a class="available date-toggle" data-date="<%= date %>" data-time-of-day="Afternoon">Afternoon</a>
+					
+					<a class="unavailable date-toggle" data-date="<%= date %>" data-time-of-day="Evening">Evening</a>
+				</div>
+			</div>
+
+		<% end%>
+
+	</div>
+
+	<br>
+
+	<%= link_to "Full Schedule", root_path, class:"button brand-blue-background stretch" %>
+
+</div>

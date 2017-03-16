@@ -16,6 +16,7 @@
 	a{
 		color: #fff;
 		display: block;
+		cursor: pointer;
 	}
 
 	a.title{
@@ -25,10 +26,18 @@
 
 	a.available{
 		background: $brand-green;
+		padding: 5px 0px;
+		font-size: 16px;
 	}
 
 	a.unavailable{
 		background: $brand-dark-red;
+		padding: 5px 0px;
+		font-size: 16px;
+	}
+
+	a:hover{
+		color:#fff;
 	}
 }
 
@@ -588,7 +597,21 @@ span.number-badge{
 
 		.glyphicon-exclamation-sign{
 			color: $brand-red;
-			margin-right: 5px;
+			margin-right: 20px;
+		}
+
+		.glyphicon-time{
+			color: $brand-orange;
+			margin-right: 20px;
+		}
+
+		.glyphicon-usd{
+			color: $money-green;
+			margin-right: 20px;
+		}
+
+		.glyphicon-chevron-left{
+
 		}
 	}
 
@@ -601,6 +624,7 @@ span.number-badge{
 .card.small{
 	max-width: 500px;
 }
+
 
 .small-number-badge{
 	border: 1px solid rgba(0,0,0,0.3);

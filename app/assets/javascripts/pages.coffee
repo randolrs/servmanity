@@ -14,6 +14,19 @@ ready = ->
 			$('body').addClass('no-scroll')
 			$('.menu-content').animate({width:'show'},350);
 
+		$(".clear-on-focus").click (window.event), ->
+			$(@).val('')
+
+		$(".date-toggle").click (window.event), ->
+			me = $(@)
+			available = me.data("available")
+			if me.hasClass("available")
+				me.addClass("unavailable")
+				me.removeClass("available")
+			else
+				me.addClass("available")
+				me.removeClass("unavailable")
+
 		$(".modal-container").click (window.event), ->
 			$(@).hide()
 			$('body').removeClass('no-scroll')
