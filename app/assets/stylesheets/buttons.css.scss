@@ -18,6 +18,8 @@ $button-gradient: $material-shadow;
     border: none;
     cursor: pointer;
 
+    background: #ea4c89 url(button-glass.png) repeat-x 0 0;
+
     box-shadow: $button-gradient;
     -webkit-box-shadow: $button-gradient;
     -moz-box-shadow: $button-gradient;
@@ -32,7 +34,7 @@ $button-gradient: $material-shadow;
 }
 
 .button.dark-red-background{
-	background: $brand-dark-red;
+	background: $brand-dark-red url(button-glass.png) repeat-x 0 0;
 	color: #fff;
 
 }
@@ -45,7 +47,7 @@ $button-gradient: $material-shadow;
 
 .button.stretch{
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .button.small{
@@ -71,19 +73,23 @@ $button-gradient: $material-shadow;
 
 }
 
+.button.orange-background{
+    background: $brand-orange url(button-glass.png) repeat-x 0 0;
+    color: #fff;
+}
 
 .button.green-background{
-    background: $brand-green;
+    background: $brand-green url(button-glass.png) repeat-x 0 0;
     color: #fff;
 }
 
 .button.purple-background{
-    background: $brand-dark-blue;
+    background: $brand-dark-blue url(button-glass.png) repeat-x 0 0;
     color: #fff;
 }
 
 .button.grey-background{
-    background: $brand-grey;
+    background: $brand-grey url(button-glass.png) repeat-x 0 0;
     color: #666;
     text-shadow: none;
 }

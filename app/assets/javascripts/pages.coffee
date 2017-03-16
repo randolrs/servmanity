@@ -6,7 +6,7 @@ ready = ->
 		
 	jQuery ->
 
-		$(".geocomplete-input").geocomplete({map: "#my_map"})
+		$(".geocomplete-input").geocomplete()
 
 		$(".modal-cta").click (window.event), ->
 			targetId = "#" + $(@).data("modal-id")

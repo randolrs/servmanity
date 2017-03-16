@@ -489,12 +489,15 @@ span.number-badge{
 	}
 }
 
+.card.index{
+	margin-bottom: -1px;
+}
 
 .card{
 	box-shadow: none;
 	background: #fff;
 	border-radius: 0px;
-	border: 1px solid #bbb;
+	border: 1px solid #ccc;
 	z-index: 8888;
 	
 	margin: 0 auto;
@@ -546,9 +549,13 @@ span.number-badge{
 
 	p{
 		color: #777;
-		line-height: 2;
+		line-height: 30px;
 		padding: 0px 10px;
 		font-size: 1.2em;
+
+		span.glyphicon{
+			line-height: 30px;
+		}
 	}
 
 }

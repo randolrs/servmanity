@@ -11,6 +11,22 @@ class PagesController < ApplicationController
 
     if user_signed_in?
 
+      if current_user.is_tasker
+
+        @service_requests = current_user.requests_assigned_to_me
+
+      else
+
+        @service_requests = current_user.service_requests
+
+      end
+
+    end
+
+
+
+    if user_signed_in?
+
       
       if current_user.default_dashboard
 
