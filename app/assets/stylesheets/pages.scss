@@ -43,6 +43,34 @@
 }
 
 
+
+.content.document{
+	margin: 30px auto;
+	padding:25px;
+	background: #fff;
+	box-shadow: $material-shadow;
+	border: 1px solid #ccc;
+
+	h1{
+		margin-top: 0px;
+		font-weight: 600;
+	}
+
+	h3{
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+
+	h4{
+		font-weight: 600;
+		margin-bottom: 15px;
+	}
+
+	p{
+		margin-bottom: 10px;
+	}
+}
+
 .content{
  	margin: 0 auto;
  	display: block;
@@ -671,7 +699,7 @@ span.number-badge{
 
 .right-corner-price{
 	float: right;
-	color: $brand-green;
+	color: $money-green;
 	font-size:20px;
 	font-weight: 600;
 }

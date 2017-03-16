@@ -39,6 +39,12 @@ $button-gradient: $material-shadow;
 
 }
 
+.button.brand-blue-background{
+    background: $brand-blue url(button-glass.png) repeat-x 0 0;
+    color: #fff;
+
+}
+
 .button.medium{
     max-width: 500px;
     width: 100%;

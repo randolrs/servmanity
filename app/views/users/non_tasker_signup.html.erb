@@ -9,7 +9,7 @@
 <%end%>
 
 
-<h1 class="centered dark-text-shadow"><span class="brand-blue">SERV</span><span class="brand-yellow">MANITY</span></h1>
+<h1 class="centered dark-text-shadow"><span class="servmanity-green">SERV</span><span class="servmanity-yellow">MANITY</span></h1>
 
 <div class="form-container medium clear">
 
@@ -39,6 +39,8 @@
 		<div class="actions">
 		  <%= f.submit "Signup", class: "button medium dark-red-background" %>
 		</div>
+
+		<div>By signing up you agree to our <%= link_to "Terms of Service", terms_of_service_path,  target: :_blank %> and <%= link_to "Privacy Policy", privacy_policy_path,  target: :_blank %>.</div>
 
 	<% end %>
 
