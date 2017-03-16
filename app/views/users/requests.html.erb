@@ -16,17 +16,25 @@
 						
 						<div class="service-request-index card index">
 
+							<h3><%= request.service_category.name %> Job</h3>
+
+							<span class="right-corner-price">$24</span>
+
 							<div class="row">
 
 								<div class="col-xs-12 col-sm-6">
 
-									<h3><%= request.service_category.name %> Request</h3>
+									<%= request_time_and_date(request) %>
+									<br>
+									<%= request.address %>
+									<br>
+									<%= task_status_tag(request) %>
 
 								</div>
 
 								<div class="col-xs-12 col-sm-6">
 
-									<p>Status: <%= request.status %></p>
+									
 
 								</div>
 
@@ -41,6 +49,18 @@
 			</div>
 
 			<div class="col-xs-12 col-sm-4">
+
+				<div class="card">
+
+					<h3 class="centered">Earn More Money</h3>
+
+					<ul>
+						<li>Add More Services</li>
+						<li>Increase Your Availability</li>
+						<li>Third Tip</li>
+					</ul>
+
+				</div>
 
 			</div>
 

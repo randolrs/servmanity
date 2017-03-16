@@ -2,75 +2,56 @@
 <%= render 'users/dashboard_header' %>
 
 
+<div class="content with-fixed-header">
 
-<div class="full-screen-content">
+	<% unless current_user.has_tasker_basics %>
+	
+		<header>Update your profile before getting started</header>
 
-	<div class="content with-fixed-header">
+		<div class="row">
 
-		<% unless current_user.has_tasker_basics %>
-		
-			<header>Update your profile before getting started</header>
+			<div class="col-xs-12 col-sm-12">
 
-			<div class="row">
+				<div class="card">
 
-				<div class="col-xs-12 col-sm-12">
+					<span class="glyphicon glyphicon-exclamation-sign card-alert" aria-hidden="true"></span>
 
-					<div class="card">
+					<form>
+						  	
+					  	<label>Update Your Address</label><br>
 
-						<span class="glyphicon glyphicon-exclamation-sign card-alert" aria-hidden="true"></span>
+					  	<div class="row">
 
-						<form>
-							  	
-						  	<label>Update Your Address</label><br>
+							<div class="col-xs-12 col-sm-8">
 
-						  	<div class="row">
-
-								<div class="col-xs-12 col-sm-8">
-
-								  	<input type="text" placeholder="Update Address" class:"geocomplete-input"></input>
-
-								</div>
-
-								<div class="col-xs-12 col-sm-4">
-									<a class="button orange-background stretch" style="margin-top: 0.5em;">Update</a>
-
-								</div>
+							  	<input type="text" placeholder="Update Address" class:"geocomplete-input"></input>
 
 							</div>
 
-						</form>
+							<div class="col-xs-12 col-sm-4">
+								<a class="button orange-background stretch" style="margin-top: 0.5em;">Update</a>
 
-					</div>
-
-				</div>
-
-				<div class="col-xs-12 col-sm-6">
-
-					<div class="card">
-
-						<span class="glyphicon glyphicon-exclamation-sign card-alert" aria-hidden="true"></span>
-
-						<div class="field">
-
-							<label>Upload a Photo of Yourself</label><br>
-
-							<a class="button orange-background stretch">Upload Photo</a>
+							</div>
 
 						</div>
 
-					</div>
+					</form>
 
 				</div>
 
-				<div class="col-xs-12 col-sm-6">
+			</div>
 
-					<div class="card">
+			<div class="col-xs-12 col-sm-6">
 
-						<span class="glyphicon glyphicon-exclamation-sign card-alert" aria-hidden="true"></span>
+				<div class="card">
 
-						<label>Add Services to Your Profile</label>
+					<span class="glyphicon glyphicon-exclamation-sign card-alert" aria-hidden="true"></span>
 
-						<%= link_to "Add Services", add_service_to_user_path, class:"button orange-background stretch"%>
+					<div class="field">
+
+						<label>Upload a Photo of Yourself</label><br>
+
+						<a class="button orange-background stretch">Upload Photo</a>
 
 					</div>
 
@@ -78,102 +59,116 @@
 
 			</div>
 
-		<%else%>
+			<div class="col-xs-12 col-sm-6">
 
-			<header>Summary</header>
+				<div class="card">
 
-			<div class="row">
+					<span class="glyphicon glyphicon-exclamation-sign card-alert" aria-hidden="true"></span>
 
-				<div class="col-xs-12 col-sm-8">
+					<label>Add Services to Your Profile</label>
 
-					<%= link_to root_path do %>
-						
-						<div class="card index">
-							
-							<p><span class="glyphicon glyphicon-exclamation-sign"></span>You have 1 New Task <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
-							
-						</div>
+					<%= link_to "Add Services", add_service_to_user_path, class:"button orange-background stretch"%>
 
-					<%end%>
-
-					<%= link_to root_path do %>
-						
-						<div class="card index">
-							
-							<p>You have 3 Tasks in the next 24 hours <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
-							
-						</div>
-
-					<%end%>
-
-					<%= link_to root_path do %>
-						
-						<div class="card index">
-							
-							<p>You have a balance of $99.00 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
-
-						</div>
-
-					<%end%>
-
-					<br>
-					
 				</div>
 
-				<div class="col-xs-12 col-sm-4">
+			</div>
+
+		</div>
+
+	<%else%>
+
+		<header>Summary</header>
+
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-8">
+
+				<%= link_to root_path do %>
 					
-					<div class="row">
+					<div class="card index">
+						
+						<p><span class="glyphicon glyphicon-exclamation-sign"></span>You have 1 New Task <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+						
+					</div>
 
-						<div class="col-xs-12 col-sm-12">
+				<%end%>
 
-							<div class="card">
+				<%= link_to root_path do %>
+					
+					<div class="card index">
+						
+						<p>You have 3 Tasks in the next 24 hours <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+						
+					</div>
 
-								<h3 class="centered"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 5px;"></span> My Location</h3>
+				<%end%>
 
-								<p><%= current_user.address %></p>
+				<%= link_to root_path do %>
+					
+					<div class="card index">
+						
+						<p>You have a balance of $99.00 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
 
-								<br>
+					</div>
 
-								<%= link_to "Update Location", root_path, class:"button orange-background stretch" %>
+				<%end%>
+
+				<br>
+				
+			</div>
+
+			<div class="col-xs-12 col-sm-4">
+				
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12">
+
+						<div class="card centered">
+
+							<h3 class="centered"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 5px;"></span> My Location</h3>
+
+							<p><%= current_user.address %></p>
+
+							<br>
+
+							<%= link_to "Update Location", root_path, class:"button orange-background stretch" %>
+
+						</div>
+
+						<br>
+
+					</div>
+
+
+					<div class="col-xs-12 col-sm-12">
+
+						<div class="card centered">
+
+							<h3><span class="glyphicon glyphicon-calendar" aria-hidden="true" style="margin-right: 5px;"></span> My Availablity</h3>
+
+							<div class="row">
+								
+								<%#(Date.today..Date.tomorrow + 5).each do |date| %>
+									
+									<div class="col-xs-12 col-sm-6">
+										<div class="calendar-day">
+											<a class="title"><%= Date.today.strftime("%b")%><br><%= Date.today.strftime("%e")%></a>
+											
+											<a class="unavailable">Morning</a>
+											
+											<a class="available">Afternoon</a>
+											
+											<a class="unavailable">Evening</a>
+										</div>
+									</div>
+
+								<%#end%>
 
 							</div>
 
 							<br>
 
-						</div>
-
-
-						<div class="col-xs-12 col-sm-12">
-
-							<div class="card">
-
-								<h3><span class="glyphicon glyphicon-calendar" aria-hidden="true" style="margin-right: 5px;"></span> My Availablity</h3>
-
-								<div class="row">
-									
-									<%#(Date.today..Date.tomorrow + 5).each do |date| %>
-										
-										<div class="col-xs-12 col-sm-6">
-											<div class="calendar-day">
-												<a class="title"><%= Date.today.strftime("%b")%><br><%= Date.today.strftime("%e")%></a>
-												
-												<a class="unavailable">Morning</a>
-												
-												<a class="available">Afternoon</a>
-												
-												<a class="unavailable">Evening</a>
-											</div>
-										</div>
-
-									<%#end%>
-
-								</div>
-
-								<br>
-
-								<%= link_to "Update Schedule", root_path, class:"button orange-background stretch" %>
-
-							</div>
+							<%= link_to "Update Schedule", root_path, class:"button orange-background stretch" %>
 
 						</div>
 
@@ -181,13 +176,13 @@
 
 				</div>
 
-				
-
 			</div>
 
+			
 
-		<%end%>
+		</div>
 
-	</div>
+
+	<%end%>
 
 </div>

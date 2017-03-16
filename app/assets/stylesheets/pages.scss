@@ -548,7 +548,7 @@ span.number-badge{
 	}
 
 	p{
-		color: #777;
+		color: #666;
 		line-height: 30px;
 		padding: 0px 10px;
 		font-size: 1.2em;
@@ -667,4 +667,11 @@ span.number-badge{
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
     color: #fff;
     font-size: 48px;
+}
+
+.right-corner-price{
+	float: right;
+	color: $brand-green;
+	font-size:20px;
+	font-weight: 600;
 }
