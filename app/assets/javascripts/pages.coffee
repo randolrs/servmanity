@@ -17,6 +17,12 @@ ready = ->
 		$(".clear-on-focus").click (window.event), ->
 			$(@).val('')
 
+		$(".make-live").click (window.event), ->
+			$("input#is_live").val("true")
+
+		$(".make-not-live").click (window.event), ->
+			$("input#is_live").val("false")
+
 		$(".date-toggle").click (window.event), ->
 			me = $(@)
 			available = me.data("available")

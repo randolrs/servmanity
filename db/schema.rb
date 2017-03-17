@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301211833) do
+ActiveRecord::Schema.define(version: 20170317005237) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170301211833) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "tasker_id"
+    t.integer  "parent_category_id"
   end
 
   create_table "service_requests", force: :cascade do |t|
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170301211833) do
     t.boolean  "is_complete_tasker"
     t.boolean  "is_complete_user"
     t.string   "city"
+    t.boolean  "is_live"
   end
 
   create_table "user_service_categories", force: :cascade do |t|

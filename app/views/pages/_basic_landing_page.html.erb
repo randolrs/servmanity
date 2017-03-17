@@ -45,7 +45,7 @@
 
 			<div class="content-column-container">
 				
-				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
+				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.where(:parent_category_id => nil).take(4)} %>
 
 			</div>
 

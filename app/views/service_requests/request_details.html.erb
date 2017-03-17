@@ -2,6 +2,7 @@
 <%= form_for(@service_request) do |f| %>
 	
 	<%= render 'service_requests/details_category', f: f %>
+	<%= render 'service_requests/details_live', f: f %>
 	<%= render 'service_requests/details_when', f: f %>
 	<%= render 'service_requests/details_where', f: f %>
 	<%= render 'service_requests/details_additional', f: f %>

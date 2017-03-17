@@ -142,8 +142,20 @@ class ServiceRequestsController < ApplicationController
 
           end
 
-          format.html { redirect_to service_request_tasker_index_path(@service_request.id), notice: 'Service request was successfully created.' }
-          format.json { render :show, status: :created, location: @service_request }
+          unless @service_request.is_live
+
+            format.html { redirect_to service_request_tasker_index_path(@service_request.id), notice: 'Service request was successfully created.' }
+            format.json { render :show, status: :created, location: @service_request }
+
+          else
+
+            ##CONFIRMATION
+
+            format.html { redirect_to service_request_submission_confirmation_path(@service_request.id), notice: 'Service request was successfully created.' }
+            format.json { render :show, status: :created, location: @service_request }
+          end
+
+          
         else
           format.html { render :new }
           format.json { render json: @service_request.errors, status: :unprocessable_entity }
@@ -208,6 +220,6 @@ class ServiceRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_request_params
-      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city)
+      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city, :is_live)
     end
 end

@@ -81,6 +81,6 @@ class ServiceCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_category_params
-      params.require(:service_category).permit(:name, :description, :url_name, :image)
+      params.require(:service_category).permit(:name, :description, :url_name, :image, :parent_category_id)
     end
 end

@@ -19,6 +19,13 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <div class="field">
+    <label>Parent Category</label><br>
+    
+    <%= collection_select(:service_category, :parent_category_id, ServiceCategory.all, :id, :name, prompt: "Select a Parent Category") %>
+  </div>
+
   <div class="field">
     <%= f.label :url_name %><br>
     <%= f.text_field :url_name %>

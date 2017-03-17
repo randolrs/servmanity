@@ -1,5 +1,5 @@
 
-<div class="full-screen-container reveal-panel" data-reveal-panel-id="when">
+<div class="full-screen-container reveal-panel" id="when" style="display: none;">
 
 	<div class="top-of-page-message notice brand-yellow-background">
 
@@ -12,6 +12,7 @@
 		<div class="content medium">
 
 			<div class="form-controller centered">
+
 				<span class="glyphicon glyphicon-chevron-left padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="-1"></span><a class="time-label" data-label-time="<%= Date.tomorrow %>"><span class="full-screen-only"><%= Date.tomorrow.strftime("%A")%>, </span><%= Date.tomorrow.strftime("%b %d")%></a><span class="glyphicon glyphicon-chevron-right padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="1"></span>
 
 				<%= f.hidden_field :scheduled_day, :value => Date.tomorrow, :id => "scheduled_day", class: "form-controller-input" %>

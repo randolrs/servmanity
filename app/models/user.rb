@@ -62,6 +62,14 @@ class User < ActiveRecord::Base
 
 	end
 
+	def outstanding_live_requests
+
+
+		return self.service_requests.where(:is_live => true)
+		
+	end
+
+
 	def has_tasker_basics
 
 		return self.address.present?

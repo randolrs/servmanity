@@ -78,13 +78,35 @@
 
 		<%else%>
 
-			<header>How Can We Help Today?</header>
-
 			<div class="row">
 
 				<div class="col-xs-12 col-sm-7">
 
-					<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.take(4)} %>
+					<% if current_user.outstanding_live_requests %>
+
+						<header>Oustanding Service Requests</header>
+
+						<% current_user.outstanding_live_requests.each do |request| %>
+						
+							<%= link_to root_path do %>
+								
+								<div class="card index">
+									
+									<p><span class="glyphicon glyphicon-exclamation-sign"></span>3 Live Requests for You<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+									
+								</div>
+
+							<%end%>
+
+						<%end%>
+
+						<br><br>
+						
+					<%end%>
+
+					<header>How Can We Help Today?</header>
+
+					<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.where(:parent_category_id => nil).take(4)} %>
 
 
 				</div>
