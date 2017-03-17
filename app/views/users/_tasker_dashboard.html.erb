@@ -84,17 +84,17 @@
 
 				<div class="col-xs-12 col-sm-7">
 
-					<%= link_to root_path do %>
+					<%= link_to live_path do %>
 						
 						<div class="card index">
 							
-							<p><span class="glyphicon glyphicon-exclamation-sign"></span>3 Live Requests for You<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+							<p><span class="glyphicon glyphicon-exclamation-sign"></span><%= current_user.live_requests_for_tasker.count %> Live Requests for You<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
 							
 						</div>
 
 					<%end%>
 
-					<%= link_to root_path do %>
+					<%= link_to requests_path do %>
 						
 						<div class="card index">
 							

@@ -1,0 +1,64 @@
+<%= render 'users/dashboard_header' %>
+
+<div class="content with-fixed-header">
+
+	<div class="row">
+
+		<div class="col-xs-12 col-sm-8">
+
+			<header>Service Requests Right Now</header>
+
+			<% @service_requests.each do |request| %>
+				
+				<%= link_to show_service_request_path(request.id) do %>
+					
+					<div class="service-request-index card index">
+
+						<h3><%= request.service_category.name %> Job</h3>
+
+						<span class="right-corner-price">$24</span>
+
+						<div class="row">
+
+							<div class="col-xs-12 col-sm-6">
+
+								<%= request_time_and_date(request) %>
+								<br>
+								<%= request.address %>
+								<br>
+								<%= task_status_tag(request) %>
+
+							</div>
+
+							<div class="col-xs-12 col-sm-6">
+
+								
+
+							</div>
+
+						</div>	
+
+					</div>
+
+				<%end%>
+
+			<%end%>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-4">
+
+			<div class="card">
+
+				<h3 class="centered">Summarize Something</h3>
+
+				<p>Example Text</p>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+</div>

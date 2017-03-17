@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
 
+  get 'live' => 'users#live'
+
   get 'requests' => 'users#requests'
 
   get 'messages' => 'users#messages'

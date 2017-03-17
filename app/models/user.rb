@@ -62,6 +62,16 @@ class User < ActiveRecord::Base
 
 	end
 
+	
+
+	def live_requests_for_tasker
+
+		return ServiceRequest.all.where(:is_live => true)
+
+	end
+
+
+
 	def outstanding_live_requests
 
 

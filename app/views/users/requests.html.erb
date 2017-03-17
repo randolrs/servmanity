@@ -2,7 +2,15 @@
 
 <div class="content with-fixed-header">
 
-	<header>My Tasks</header>
+	<% if current_user.is_tasker %>
+
+		<header>My Tasks</header>
+
+	<%else%>
+
+		<header>My Requests</header>
+
+	<%end%>
 		
 	<section class="content-section">
 

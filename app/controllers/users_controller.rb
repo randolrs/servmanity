@@ -72,5 +72,14 @@ class UsersController < ApplicationController
 
   end
 
+  def live
+
+    @navigation_title = "Live"
+
+    @service_requests = current_user.live_requests_for_tasker
+
+
+  end
+
 
 end

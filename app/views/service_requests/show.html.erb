@@ -15,7 +15,15 @@
 
    <p>Additional Notes:<i> <%= @service_request.additional_information.first(20) %><% if @service_request.additional_information.length > 20 %>...<%end%></i></p>
 
-    <ul class="horizontal spread button-list two"><li><a class="button yellow-background">Modify</a></li><li><a class="button dark-red-background">Cancel</a></li></ul>
+   <% unless current_user.is_tasker %>
+    	
+    	<ul class="horizontal spread button-list two"><li><a class="button yellow-background">Modify</a></li><li><a class="button dark-red-background">Cancel</a></li></ul>
+    
+    <% else %>
+
+    	<a class="button green-background medium">Accept Job</a>
+
+    <% end %>
 
   </div>
 

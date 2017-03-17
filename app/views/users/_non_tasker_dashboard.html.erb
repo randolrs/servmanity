@@ -88,11 +88,11 @@
 
 						<% current_user.outstanding_live_requests.each do |request| %>
 						
-							<%= link_to root_path do %>
+							<%= link_to request do %>
 								
 								<div class="card index">
 									
-									<p><span class="glyphicon glyphicon-exclamation-sign"></span>3 Live Requests for You<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+									<p><span class="glyphicon glyphicon-exclamation-sign"></span>Your <%= request.service_category.name %> Request <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
 									
 								</div>
 
