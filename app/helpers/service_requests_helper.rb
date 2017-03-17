@@ -12,8 +12,17 @@ module ServiceRequestsHelper
 
 	def request_time_and_date(request)
   		
-  		request.time_of_day + " of " + request.scheduled_day.strftime("%a, %B %d")
+      if request.time_of_day && request.scheduled_day.strftime("%a, %B %d")
 
+        request.time_of_day + " of " + request.scheduled_day.strftime("%a, %B %d")
+
+      else
+
+
+      end
+
+
+  		
 	end
 
 

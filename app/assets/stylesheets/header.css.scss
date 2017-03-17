@@ -17,6 +17,7 @@
 
 
 nav.header-container{
+	
 	position: fixed;
 	
 	background: #111;
@@ -83,6 +84,10 @@ nav.header-container{
 			font-size: 20px;
 			text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
 			letter-spacing: -1px;
+
+			img{
+				height: 28px;
+			}
     		
 		}
 

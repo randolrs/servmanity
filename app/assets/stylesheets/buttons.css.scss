@@ -45,6 +45,12 @@ $button-gradient: $material-shadow;
 
 }
 
+.button.money-green-background{
+    background: $money-green url(button-glass.png) repeat-x 0 0;
+    color: #fff;
+
+}
+
 .button.medium{
     max-width: 500px;
     width: 100%;
@@ -54,6 +60,7 @@ $button-gradient: $material-shadow;
 .button.stretch{
     width: 100%;
     font-size: 18px;
+    padding: 10px 20px;
 }
 
 .button.small{

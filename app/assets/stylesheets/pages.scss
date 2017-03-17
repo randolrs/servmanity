@@ -51,7 +51,10 @@
 		padding: 20px
 }
 
-
+.simple-list{
+	padding:10px;
+	list-style: none;
+}
 
 .content.document{
 	margin: 30px 10px;
@@ -431,14 +434,16 @@ ul.horizontal.button-list{
 .home-hero{
 
 	background-image: url(city-dusk.jpg);
+	background-image: url("lady_smiles.jpg");
 	background-image: asset-url("city-dusk.jpg");
-	background-attachment: fixed;
-	background-image: none;
-	background: #000;
+	background-image: asset-url("lady_smiles.jpg");
+	background-size: cover;
+	
+	
 
 	.home-hero-overlay{
 
-		background: rgba(0,0,0,.75);
+		background: rgba(0,0,0,.4);
 	}
 	.home-hero-content{
 		width: 100%;
@@ -449,7 +454,7 @@ ul.horizontal.button-list{
 	}
 
 	header{
-		color: $brand-yellow;
+		color: #fff;
 		font-size: 3.5em;
 		text-shadow: 0px 2px 1px rgba(0,0,0,.8);
 	}

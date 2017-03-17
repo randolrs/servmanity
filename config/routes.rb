@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'login' => 'pages#login'
 
+  get 'professionals' => 'pages#tasker_home', as: 'tasker_home'
+
   get 'how_it_works' => 'pages#how_it_works'
 
   get 'privacy_policy' => 'pages#privacy_policy'

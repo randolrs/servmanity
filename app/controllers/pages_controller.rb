@@ -7,6 +7,12 @@ class PagesController < ApplicationController
     
     #@city = request.location.city
 
+    if params[:professional]
+
+      @tasker_view = true
+
+    end
+
     @fixed_bottom_cta = true
 
     if user_signed_in?
@@ -62,12 +68,14 @@ class PagesController < ApplicationController
 
   def privacy_policy
 
+    @navigation_title = "Privacy Policy"
 
   end
 
 
   def terms_of_service
 
+    @navigation_title = "Terms of Service"
 
   end
 
@@ -77,6 +85,10 @@ class PagesController < ApplicationController
 
   end
 
+  def tasker_home
+
+
+  end
 
   
   def our_team
