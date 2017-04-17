@@ -3,7 +3,7 @@
 
 <div class="full-screen-content">
 
-	<div class="content with-fixed-header">
+	<div class="content">
 
 		<% unless current_user.service_requests.count > 0 %>
 		
@@ -53,29 +53,29 @@
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-7">
+				<div class="col-xs-12 col-md-7">
 
-					<% if current_user.outstanding_live_requests %>
+<!-- 					<%# if current_user.outstanding_live_requests %>
 
 						<header>Oustanding Service Requests</header>
 
-						<% current_user.outstanding_live_requests.each do |request| %>
+						<%# current_user.outstanding_live_requests.each do |request| %>
 						
-							<%= link_to request do %>
+							<%# link_to request do %>
 								
 								<div class="card index">
 									
-									<p><span class="glyphicon glyphicon-exclamation-sign"></span>Your <%= request.service_category.name %> Request <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+									<p><span class="glyphicon glyphicon-exclamation-sign"></span>Your <%# request.service_category.name %> Request <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
 									
 								</div>
 
-							<%end%>
+							<%#end%>
 
-						<%end%>
+						<%#end%>
 
 						<br><br>
 						
-					<%end%>
+					<%#end%> -->
 
 					<header>How Can We Help Today?</header>
 
@@ -84,9 +84,9 @@
 
 				</div>
 
-				<br>
+				<br><br>
 
-				<div class="col-xs-12 col-sm-5">
+				<div class="col-xs-12 col-md-5">
 					
 					<div class="row">
 
