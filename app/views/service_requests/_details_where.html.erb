@@ -11,12 +11,16 @@
 
 		<h2>Where?</h2>
 
-		<div id="my_map"></div>
-
 		<% if user_signed_in? %>
 
 			<% if current_user.address %>
-			
+				
+				<div>
+
+					<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
+
+				</div>
+
 				<%= f.text_field :address, value:current_user.address, class:"geocomplete-input" %>
 			
 			<%else%>

@@ -138,9 +138,17 @@
 
 								<h3 class="centered"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 5px;"></span> My Location</h3>
 
+								<div>
+
+									<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
+
+								</div>
+
+								<br><br>
+
 								<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
-									<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input clear-on-focus" %>
+									<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input clear-on-focus address_input_for_embed" %>
 									
 									<br>
 
