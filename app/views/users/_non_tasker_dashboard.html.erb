@@ -7,7 +7,7 @@
 	<div class="top-of-page-message brand-blue-background centered">
 		<header><%= @top_of_page_message %></header>
 		<br><br>
-		<p>Save time for the things you love by hiring a local mobile professional to complete your tasks. Select what you want done below to get started.</p>
+		<p>Save time for the things you love by instantly hiring a mobile professional in <% if session[:city].blank? %>your area<%else%><%= session[:city] %><%end%> to complete your tasks. Select what you want done below to get started.</p>
 	</div>
 
 	<div class="content">

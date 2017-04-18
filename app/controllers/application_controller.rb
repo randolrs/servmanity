@@ -8,6 +8,38 @@ class ApplicationController < ActionController::Base
 
 	before_action :set_last_seen_at, if: proc { user_signed_in? }
 
+	before_action :check_for_location
+
+	def check_for_location
+
+	    if session[:location].blank?
+
+	      if request
+
+	        if request.location
+	        
+	          if session[:city].blank?
+	            
+	            session[:city] = request.location.city
+	              
+	          end
+
+	          location = request.location
+
+	          session[:location] = location
+
+	          session[:latitude] = location.data["latitude"]
+
+	          session[:longitude] = location.data["longitude"]
+	        
+	        end
+
+	      end
+
+	    end
+
+	  end
+
 
 	def after_sign_in_path_for(user)
 
