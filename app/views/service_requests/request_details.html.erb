@@ -7,11 +7,23 @@
 	
 	<% if current_user.address %>
 		
+		<%= form_for(@service_request) do |f| %>
+			
+			<%= f.text_field :address, value:current_user.address, class:"geocomplete-input address_input_for_embed" %>
+
+		<%end%>
+
 		<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
 	
 	<%else%>
 
 		<% unless session[:city].blank? %>
+
+			<%= form_for(@service_request) do |f| %>
+			
+				<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+			<%end%>
 
 			<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
 
@@ -23,6 +35,12 @@
 <%else%>
 
 	<% unless session[:city].blank? %>
+
+		<%= form_for(@service_request) do |f| %>
+			
+			<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+		<%end%>
 
 		<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
 
