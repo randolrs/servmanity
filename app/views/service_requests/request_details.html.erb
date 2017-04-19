@@ -1,74 +1,38 @@
-<div class="content medium">
-	
-	<header>Confirm Your Address</header>
+<div class="full-screen-container">
 
-	<% if user_signed_in? %>
+	<div class="notice-header notice brand-yellow-background">
+
+		<p>Service Request</p>
+
+	</div>
+
+	<div class="content medium">
 		
-		<% if current_user.address %>
+		<%= form_for(@service_request) do |f| %>
 			
-			<%= form_for(@service_request) do |f| %>
-				
-				<%= f.text_field :address, value:current_user.address, class:"geocomplete-input address_input_for_embed" %>
+			<%= render 'service_requests/details_where', f: f %>
 
-			<%end%>
+			<%= render 'service_requests/details_payment', f: f %>
 
-			<br><br>
+			<%= render 'service_requests/details_additional', f: f %>
 
-			<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
-		
-		<%else%>
-
-			<% unless session[:city].blank? %>
-
-				<%= form_for(@service_request) do |f| %>
-				
-					<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
-
-				<%end%>
-
-				<br><br>
-
-				<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
-
-			<%end%>
-
+			<%= f.hidden_field :is_live, :value => true, :id => "is_live" %>
 
 		<%end%>
 
-	<%else%>
-
-		<% unless session[:city].blank? %>
-
-			<%= form_for(@service_request) do |f| %>
-				
-				<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
-
-			<%end%>
-
-			<br><br>
-
-			<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
-
-		<%end%>
-
-	<%end%>
-
-</div>
-
-<div class="fixed-bottom-cta">
-
-	<a class="button brand-blue-background medium click-to-reveal make-not-live" data-reveal-panel-id="when">Book & Confirm</a>
+	</div>
 
 </div>
 
 
 
-<%= form_for(@service_request) do |f| %>
+
+<%# form_for(@service_request) do |f| %>
 	
-	<%= render 'service_requests/details_category', f: f %>
-	<%= render 'service_requests/details_live', f: f %>
-	<%= render 'service_requests/details_when', f: f %>
-	<%= render 'service_requests/details_where', f: f %>
-	<%= render 'service_requests/details_additional', f: f %>
+	<%# render 'service_requests/details_category', f: f %>
+	<%# render 'service_requests/details_live', f: f %>
+	<%# render 'service_requests/details_when', f: f %>
+	<%# render 'service_requests/details_where', f: f %>
+	<%# render 'service_requests/details_additional', f: f %>
 
-<%end%>
+<%#end%>

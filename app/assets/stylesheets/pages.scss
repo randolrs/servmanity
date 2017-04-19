@@ -57,6 +57,8 @@
 	padding: 10px;
 	background: #fff;
 	bottom: 0px;
+	left: 0px;
+	right: 0px;
 	text-align: center;
 }
 
@@ -546,6 +548,30 @@ span.number-badge{
 		font-size: 20px;
 		line-height: 1.5;
 		text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+	}
+}
+
+.notice-header{
+
+	padding: 15px 10px;
+	border: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 2em;
+
+	header{
+		font-size: 48px;
+		font-weight: 800;
+		max-width: 900px;
+		margin: 0 auto;
+		text-shadow: 0px 2px 1px rgba(0,0,0,0.4);
+	}
+
+	p{
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 20px;
+		line-height: 1.5;
+		text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 	}
 }
 

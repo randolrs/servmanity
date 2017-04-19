@@ -46,7 +46,7 @@ ready = ->
 			$('div.reveal-panel').hide()
 			$(@).addClass('active')
 			targetId = "#" + $(@).data("reveal-panel-id")
-			$('body').find(targetId).slideDown()
+			$('body').find(targetId).fadeIn()
 
 		$(".fill-input").click (window.event), ->
 			$(@).parent().parent().find('.fill-input').removeClass('active')

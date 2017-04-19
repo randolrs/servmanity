@@ -1,49 +1,61 @@
+<div class="reveal-panel" id="where">
 
-<div class="full-screen-container reveal-panel" id="where" style="display: none;">
+	<div class="card">
 
-	<div class="top-of-page-message notice brand-yellow-background">
-
-		<p>Please Enter Your Location</p>
-
-	</div>
-
-	<div class="content medium">
+		<header>Confirm Your Address</header>
 
 		<% if user_signed_in? %>
-
+			
 			<% if current_user.address %>
-				
-				<div>
+					
+				<%= f.text_field :address, value:current_user.address, class:"geocomplete-input address_input_for_embed" %>
 
-					<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
+				<br><br>
 
-				</div>
-
-				<%= f.text_field :address, value:current_user.address, class:"geocomplete-input" %>
+				<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
 			
 			<%else%>
-				
-				<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
+
+				<% unless session[:city].blank? %>
+					
+					<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+					<br><br>
+
+					<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
+
+				<%else%>
+						
+					<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+				<%end%>
+
 
 			<%end%>
 
 		<%else%>
 
-			<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
-			
+			<% unless session[:city].blank? %>
+					
+				<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+				<br><br>
+
+				<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
+
+			<%end%>
+
 		<%end%>
 
-		<br><br>
+		<br>
+		<a class="button brand-blue-background medium click-to-reveal make-not-live full-screen-only" data-reveal-panel-id="payment">Continue</a>
 
-		<a class="button brand-blue-background medium click-to-reveal hide-on-mobile-device" data-reveal-panel-id="details">Next</a>
+	</div>
 
-		<div class="bottom-cta-container">
+	<div class="fixed-bottom-cta mobile-only">
 
-			<a class="button brand-blue-background medium click-to-reveal bottom-cta" data-reveal-panel-id="details">Next</a>
-
-		</div>
+		<a class="button brand-blue-background medium click-to-reveal make-not-live" data-reveal-panel-id="payment">Continue</a>
 
 	</div>
 
 </div>
-

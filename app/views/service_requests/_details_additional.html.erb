@@ -1,31 +1,21 @@
 
-<div class="full-screen-container reveal-panel" id="details" style="display: none;">
+<div class="reveal-panel" id="additional" style="display: none;">
 
-	<div class="top-of-page-message notice brand-yellow-background">
+	<div class="card">
 
-		<p>Please Provide Any Additional Details</p>
+		<header>Provide any Additional Details</header>
+		
+		<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
+
+		<br>
+
+		<%= f.submit "Hire Someone Now", class: "button brand-blue-background medium full-screen-only" %>
 
 	</div>
 
-	<div class="content medium">
+	<div class="fixed-bottom-cta mobile-only">
 
-		<h2>Additional Details</h2>
-
-		<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
-
-		<br><br>
-
-		<div class="centered">
-			
-			<%= f.submit "Next", class:"button medium brand-blue-background hide-on-mobile-device"%>
-			
-			<div class="bottom-cta-container">
-
-				<%= f.submit "Next", class:"button medium brand-blue-background bottom-cta"%>
-
-			</div>
-
-		</div>
+		<%= f.submit "Hire Someone Now", class: "button brand-blue-background medium" %>
 
 	</div>
 

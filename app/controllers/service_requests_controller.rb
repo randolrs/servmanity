@@ -144,14 +144,14 @@ class ServiceRequestsController < ApplicationController
 
           unless @service_request.is_live
 
-            format.html { redirect_to service_request_tasker_index_path(@service_request.id), notice: 'Service request was successfully created.' }
+            format.html { redirect_to service_request_live_search_path(@service_request.id), notice: 'Service request was successfully created.' }
             format.json { render :show, status: :created, location: @service_request }
 
           else
 
             ##CONFIRMATION
 
-            format.html { redirect_to service_request_submission_confirmation_path(@service_request.id), notice: 'Service request was successfully created.' }
+            format.html { redirect_to service_request_live_search_path(@service_request.id), notice: 'Service request was successfully created.' }
             format.json { render :show, status: :created, location: @service_request }
           end
 
@@ -169,6 +169,17 @@ class ServiceRequestsController < ApplicationController
     end
 
   end
+
+
+
+
+  def live_search
+
+    @hide_footer = true
+
+  end
+
+
 
   def service_request_tasker_index
 
