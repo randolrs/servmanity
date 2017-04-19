@@ -51,6 +51,15 @@
 		padding: 20px
 }
 
+.fixed-bottom-cta{
+	position: fixed;
+	width: 100%;
+	padding: 10px;
+	background: #fff;
+	bottom: 0px;
+	text-align: center;
+}
+
 .simple-list{
 	padding:10px;
 	list-style: none;
