@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content medium">
 	
 	<header>Where</header>
 
@@ -12,6 +12,8 @@
 
 			<%end%>
 
+			<br><br>
+
 			<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
 		
 		<%else%>
@@ -23,6 +25,8 @@
 					<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
 
 				<%end%>
+
+				<br><br>
 
 				<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
 
@@ -40,6 +44,8 @@
 				<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
 
 			<%end%>
+
+			<br><br>
 
 			<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
 
