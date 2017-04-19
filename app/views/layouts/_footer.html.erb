@@ -2,74 +2,91 @@
 
 	<div class="footer-content">
 
-		<section class="footer-section">
+		<div class="row">
 
-			<header class="footer-header">MY ACCOUNT</header>
+			<div class="col-xs-12 col-sm-4">
 
-			<ul>
+				<section class="footer-section">
 
-				<% unless user_signed_in? %>
-					
-					<li><%= link_to "Signup", non_tasker_signup_path %></li>
+					<header class="footer-header">MY ACCOUNT</header>
 
-					<li><%= link_to "Login", login_path %></li>
+					<ul>
 
-					<li><%= link_to "Become a Mobile Professional", tasker_signup_path %></li>
+						<% unless user_signed_in? %>
+							
+							<li><%= link_to "Signup", non_tasker_signup_path %></li>
 
-					<li><%= link_to "How it Works", root_path %></li>
+							<li><%= link_to "Login", login_path %></li>
 
-				<%else%>
+							<li><%= link_to "Become a Mobile Professional", tasker_signup_path %></li>
 
-					<li><%= link_to "Account Settings", account_settings_path %></li>
+							<li><%= link_to "How it Works", root_path %></li>
 
-					<% if current_user.is_tasker %>
+						<%else%>
 
-						<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li>
+							<li><%= link_to "Account Settings", account_settings_path %></li>
+
+							<% if current_user.is_tasker %>
+
+								<li><%= link_to "My Profile", user_profile_path(current_user.id) %></li>
+								
+							<%end%>
+
+							<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+						<%end%>
+
 						
-					<%end%>
 
-					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+					</ul>
 
-				<%end%>
+				</section>
 
-				
+			</div>
 
-			</ul>
+			<div class="col-xs-12 col-sm-4">
 
-		</section>
+				<section class="footer-section">
 
-		<section class="footer-section">
+					<header class="footer-header">COMPANY</header>
 
-			<header class="footer-header">COMPANY</header>
+					<ul>
 
-			<ul>
+						<li><%= link_to "About", about_path %></li>
 
-				<li><%= link_to "About", about_path %></li>
+						<li><%= link_to "Contact Us", root_path %></li>
 
-				<li><%= link_to "Contact Us", root_path %></li>
+						<li><%= link_to "Our Team", our_team_path %></li>
 
-				<li><%= link_to "Our Team", our_team_path %></li>
+					</ul>
 
-			</ul>
+				</section>
 
-		</section>
+			</div>
 
-		<section class="footer-section">
+			<div class="col-xs-12 col-sm-4">
 
-			<header class="footer-header">SOCIAL MEDIA</header>
+				<section class="footer-section">
 
-			<ul>
+					<header class="footer-header">SOCIAL MEDIA</header>
 
-				<li><a href="https://twitter.com/_servmanity">Twitter</a></li>
+					<ul>
 
-				<li><a href="https://www.facebook.com/servmanity/">Facebook</a></li>
+						<li><a href="https://twitter.com/_servmanity">Twitter</a></li>
 
-				<li><a href="https://www.instagram.com/servmanity/">Instagram</a></li>
+						<li><a href="https://www.facebook.com/servmanity/">Facebook</a></li>
 
-			</ul>
+						<li><a href="https://www.instagram.com/servmanity/">Instagram</a></li>
 
-		</section>
+					</ul>
 
+				</section>
+
+
+			</div>
+
+		</div>
+		
 	</div>
 
 	<br><br><br>
