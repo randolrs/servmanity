@@ -41,6 +41,8 @@ Rails.application.routes.draw do
 
   get 'account_settings' => 'users#account_settings', as: 'account_settings'
 
+  get '/service_request/check_for_acceptance/:requestID', :to => 'service_requests#check_for_acceptance'
+
   get 's/service_requests/initiate/' => 'service_requests#request_details', as: 'initiate_service_request_no_category'
 
   get '/service_request/:id/' => 'service_requests#show', as: 'show_service_request'

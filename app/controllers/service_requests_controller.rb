@@ -62,7 +62,7 @@ class ServiceRequestsController < ApplicationController
 
     @service_request = ServiceRequest.find(params[:service_request_id])
 
-    @navigation_title = @service_request.service_category.name + " Request"
+    #@navigation_title = @service_request.service_category.name + " Request"
 
   end
 
@@ -176,6 +176,18 @@ class ServiceRequestsController < ApplicationController
   def live_search
 
     @hide_footer = true
+
+  end
+
+  def check_for_acceptance
+
+    @service_request = ServiceRequest.find(params[:requestID])
+
+    if @service_request
+        
+      render json: { :result => "success", :accepted => !(@service_request.tasker_id.nil?), :redirect_to_url => service_request_submission_confirmation_path(@service_request.id), content_type: 'text/json' }
+      
+    end
 
   end
 

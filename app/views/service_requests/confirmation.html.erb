@@ -14,15 +14,15 @@
 		
 		<% unless @service_request.is_live %>
 		
-			<p>Your <%= @service_request.service_category.name %> service request for <%= request_time_and_date(@service_request) %></p>
+			<p>Your <%# @service_request.service_category.name %> service request for <%= request_time_and_date(@service_request) %></p>
 		
 		<%else%>
 
-			<p>We are searching our network of mobile professionals to match your <%= @service_request.service_category.name %> service request with the best provider as soon as possible.</p>
+			<p>We are searching our network of mobile professionals to match your <%# @service_request.service_category.name %> service request with the best provider as soon as possible.</p>
 
 		<%end%>
 
-		<p>If you have any questions in the mean time, feel free to contact us at info@servmanity.com</p>
+		<p>If you have any questions in the mean time, feel free to contact us at support@servmanity.com</p>
 
 		<br>
 

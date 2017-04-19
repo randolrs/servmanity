@@ -48,6 +48,15 @@ ready = ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).fadeIn()
 
+		@checkForRequestAcceptance = (requestID) ->
+			$.ajax
+				url: "/service_request/check_for_acceptance/#{requestID}", format: 'js'
+				type: "GET"
+				success: (data) ->
+		  			console.log(data)
+		  			if data.accepted
+		  				window.location.href = data.redirect_to_url
+
 		$(".fill-input").click (window.event), ->
 			$(@).parent().parent().find('.fill-input').removeClass('active')
 			$(@).addClass('active')
