@@ -4,7 +4,11 @@
               
     <h3><%= @service_request.service_category.name %> Request</h3>
 
-    <p class="right-corner"><%= @service_request.time_of_day %> of <%= @service_request.scheduled_day.strftime("%B %d") %></p>
+    <% unless @service_request.is_live %>
+      
+      <p class="right-corner"><%= @service_request.time_of_day %> of <%= @service_request.scheduled_day.strftime("%B %d") %></p>
+
+    <%end%>
 
     <p><%= @service_request.address %></p>
 
