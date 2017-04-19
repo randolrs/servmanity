@@ -25,7 +25,13 @@
     
     <% else %>
 
-    	<a class="button green-background medium">Accept Job</a>
+      <%= form_tag add_tasker_to_service_request_path(@service_request.id, current_user.id) do %>
+        
+        <button class="button green-background medium">Accept Job %></button>
+      
+      <%end%>
+
+      <%# link_to "Accept Job", root_path, class: "button green-background medium"%>
 
     <% end %>
 

@@ -19,26 +19,39 @@ class ServiceRequestsController < ApplicationController
 
   def add_tasker
 
-    if params[:tasker_id] && params[:service_request_id]
+    if user_signed_in?
 
-      if User.where(:id => params[:tasker_id]).exists?
+      if params[:tasker_id] && params[:service_request_id]
 
-        tasker = User.find(params[:tasker_id])
+        if User.where(:id => params[:tasker_id]).exists?
 
-        @service_request = ServiceRequest.find(params[:service_request_id])
+          tasker = User.find(params[:tasker_id])
 
-        @service_request.update(:tasker_id => tasker.id)
+          @service_request = ServiceRequest.find(params[:service_request_id])
 
-        redirect_to pay_and_confirm_path(params[:service_request_id])
+          @service_request.update(:tasker_id => tasker.id)
+
+          if current_user.is_tasker
+
+            redirect_to root_path
+
+          else
+
+            redirect_to pay_and_confirm_path(params[:service_request_id])
+
+          end
+          
+        else
+
+          redirect_to root_path
+
+        end
+
       else
 
         redirect_to root_path
 
       end
-
-    else
-
-      redirect_to root_path
 
     end
 
