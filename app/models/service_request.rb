@@ -41,6 +41,22 @@ class ServiceRequest < ActiveRecord::Base
 		return nearby_array
 	end
 
+	def tasker
+
+		if self.tasker_id
+
+
+			if User.find(self.tasker_id)
+
+				return User.find(self.tasker_id)
+
+			end
+
+		end
+
+
+	end
+
 	def status
 
 		if self.tasker_id
