@@ -86,7 +86,7 @@
 					
 					<div class="card index">
 						
-						<p><span class="glyphicon glyphicon-exclamation-sign"></span><%= current_user.live_requests_for_tasker.count %> Live Requests for You<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+						<p><span class="glyphicon glyphicon-exclamation-sign"></span><%= current_user.live_requests_for_tasker.count %> Requests You Can Accept Right Now<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
 						
 					</div>
 
@@ -97,7 +97,7 @@
 					
 					<div class="card index">
 						
-						<p><span class="glyphicon glyphicon-map-marker"></span> My Location: 122<span style="float: right">Update</span></p>
+						<p><span class="glyphicon glyphicon-map-marker"></span> <b>My Location:</b> <%= current_user.address.first(30) + "..." %><span style="float: right">Update</span></p>
 						
 					</div>
 
