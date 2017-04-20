@@ -91,17 +91,18 @@
 					</div>
 
 				<%end%>
-				<span class="mobile-only">
 				
-				<%= link_to live_path do %>
+				<span class="mobile-only">
 					
-					<div class="card index">
+					<div class="card index click-to-reveal" data-reveal-panel-id="my-location-container">
 						
 						<p><span class="glyphicon glyphicon-map-marker"></span> <b>My Location:</b> <%= current_user.address.first(30) + "..." %><span style="float: right">Update</span></p>
+
+						<div class="reveal-panel" id="my-location-container" style="display: none;">
+							XXYYZZ
+						</div>
 						
 					</div>
-
-				<%end%>
 
 				</span>
 
