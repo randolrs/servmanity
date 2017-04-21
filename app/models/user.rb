@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
 		@begin_time = Time.now - 30.minutes
 		@end_time = Time.now
 
-		@current_requests =  ServiceRequest.all.where(:is_live => true, :created_at => @begin_time..@end_time)
+		@current_requests =  ServiceRequest.all.where(:is_live => true, :created_at => @begin_time..@end_time, :tasker_id => nil)
 
 		requests = []
 		@current_requests.all.each { |request| requests << request if self.distance_to_destination(request.latitude, request.longitude) }
