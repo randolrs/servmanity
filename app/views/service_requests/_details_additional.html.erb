@@ -3,6 +3,18 @@
 
 	<div class="card">
 
+		<h3>Describe Your Task</h3>
+		
+		<%= f.text_field :description, placeholder: "Brief Description of Task"  %>
+
+		<br>
+
+		<%= f.submit "Hire Someone Now", class: "button brand-blue-background medium full-screen-only" %>
+
+	</div>
+
+	<div class="card">
+
 		<h3>Provide any Additional Details</h3>
 		
 		<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317005237) do
+ActiveRecord::Schema.define(version: 20170421124727) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170317005237) do
     t.boolean  "is_complete_user"
     t.string   "city"
     t.boolean  "is_live"
+    t.text     "description"
   end
 
   create_table "user_service_categories", force: :cascade do |t|

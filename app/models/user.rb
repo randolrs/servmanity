@@ -2,11 +2,11 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
-  geocoded_by :address
+	geocoded_by :address
 
 	after_validation :geocode, :if => :address_changed?
 
-	
+
 	reverse_geocoded_by :latitude, :longitude do |obj, results|
 
 		if geo = results.first
@@ -62,7 +62,34 @@ class User < ActiveRecord::Base
 
 	end
 
-	
+	def distance_to_destination(destination_latitude, destination_longitude)
+
+		my_latitude = self.latitude
+		my_longtidue = self.longitude
+
+		r = 6378137
+
+		dLat = (destination_latitude - my_latitude)* Math::PI / 180
+		dLong = (destination_longitude - my_longtidue)* Math::PI / 180
+
+		a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+		    Math.cos(my_latitude * Math::PI / 180) * Math.cos(destination_latitude * Math::PI / 180) *
+		    Math.sin(dLong / 2) * Math.sin(dLong / 2);
+
+
+		c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+		d = r * c
+
+		d = d * 0.000621371192 #convert to miles
+
+		return d
+
+	end
+
+
+
+
 
 	def live_requests_for_tasker
 
