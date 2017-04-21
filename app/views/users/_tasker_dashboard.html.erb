@@ -94,14 +94,34 @@
 				
 				<span class="mobile-only">
 					
-					<div class="card index click-to-reveal" data-reveal-panel-id="my-location-container">
+					<div class="card index click-to-reveal clickable" data-reveal-panel-id="my-location-container">
 						
 						<p><span class="glyphicon glyphicon-map-marker"></span> <b>My Location:</b> <%= current_user.address.first(30) + "..." %><span style="float: right">Update</span></p>
-
-						<div class="reveal-panel" id="my-location-container" style="display: none;">
-							XXYYZZ
-						</div>
 						
+					</div>
+
+					<div class="reveal-panel" id="my-location-container" style="display: none;">
+						<br>
+						<div>
+
+							<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
+
+						</div>
+
+						<br><br>
+
+						<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+
+							<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input clear-on-focus address_input_for_embed" %>
+							
+							<br>
+
+							<%= f.submit "Update Location", class: "button stretch brand-blue-background" %>
+
+						<%end%>
+
+						<br>
+
 					</div>
 
 				</span>
