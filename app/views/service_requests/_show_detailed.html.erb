@@ -1,5 +1,5 @@
 
-<div class="service-request-index card">
+<div class="service-request-index card clear-on-mobile-device">
 
 	<div class="row">
 
@@ -29,6 +29,7 @@
 			<%= current_user.distance_to_destination(request.latitude, request.longitude).round(1).to_s + " miles away" %>
 			<%end%>
 
+			<span class="mobile-only"><br></span>
 		</div>
 
 		<div class="col-xs-12 col-sm-6" style="text-align: right;">
