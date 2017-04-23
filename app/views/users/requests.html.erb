@@ -14,40 +14,13 @@
 		
 	<section class="content-section">
 
-		<div class="row">
+		<% @service_requests.each do |request| %>
+				
+			<%= render :partial => 'service_requests/index_show', :locals => {:request => request , :active => false} %>
 
-			<div class="col-xs-12 col-sm-8">
+		<%end%>
 
-				<% @service_requests.each do |request| %>
-						
-					<%= render :partial => 'service_requests/index_show', :locals => {:request => request , :active => false} %>
-
-				<%end%>
-
-			</div>
-
-			<div class="hidden-xs col-sm-4">
-
-				<div class="card">
-
-					<h3 class="centered">Earn More Money</h3>
-
-					<%= link_to "Add More Services", add_service_to_user_path, class:"button money-green-background stretch"%>
-
-					<br><br>
-
-					<%= link_to "Increase Your Availability", add_service_to_user_path, class:"button money-green-background stretch"%>
-
-					<br><br>
-
-					<%= link_to "Try Servmanity Live", add_service_to_user_path, class:"button money-green-background stretch" %>
-
-				</div>
-
-			</div>
-
-
-		</div>
+		<%# link_to "Add More Services", add_service_to_user_path, class:"button money-green-background stretch"%>
 
 	</section>
 
