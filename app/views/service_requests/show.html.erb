@@ -2,7 +2,7 @@
 
   <div class="content">
 
-    <%= render :partial => 'service_requests/index_show', :locals => {:request => current_user.active_task_for_tasker, :active => true} %>
+    <%= render :partial => 'service_requests/index_show', :locals => {:request => @service_request, :active => true} %>
 
   </div>
 
