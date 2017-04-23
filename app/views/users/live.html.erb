@@ -10,7 +10,7 @@
 
 			<% @service_requests.each do |request| %>
 						
-				<%= render :partial => 'service_requests/index_show', :locals => {:request => request} %>
+				<%= render :partial => 'service_requests/index_show', :locals => {:request => request, :active => false} %>
 
 			<%end%>
 
