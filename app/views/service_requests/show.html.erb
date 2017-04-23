@@ -1,8 +1,43 @@
 <div class="full-screen-container">
 
-  <div class="content">
+  <div class="content medium">
 
-    <%= render :partial => 'service_requests/show_detailed', :locals => {:request => @service_request, :active => false} %>
+    <div class="service-request-index card clear-on-mobile-device">
+                
+      <h3><%= @service_request.service_category.name %> Request</h3>
+
+      <% unless @service_request.is_live %>
+        
+        <p class="right-corner"><%= @service_request.time_of_day %> of <%= @service_request.scheduled_day.strftime("%B %d") %></p>
+
+      <%end%>
+
+      <p><%= @service_request.address %></p>
+
+      <p>Status: <%= @service_request.status %></p>
+
+      <p>Submitted <%= time_ago_in_words(@service_request.created_at) %> ago</p>
+
+
+     <p>Additional Notes:<i> <%= @service_request.additional_information.first(20) %><% if @service_request.additional_information.length > 20 %>...<%end%></i></p>
+
+     <% unless current_user.is_tasker %>
+      	
+      	<ul class="horizontal spread button-list two"><li><a class="button yellow-background">Modify</a></li><li><a class="button dark-red-background">Cancel</a></li></ul>
+      
+      <% else %>
+
+        <%= form_tag add_tasker_to_service_request_path(@service_request.id, current_user.id) do %>
+          
+          <button class="button green-background medium">Accept Job</button>
+        
+        <%end%>
+
+        <%# link_to "Accept Job", root_path, class: "button green-background medium"%>
+
+      <% end %>
+
+    </div>
 
   </div>
 

@@ -36,17 +36,47 @@
 
 			<div class="row">
 
-				<div class="col-xs-6 col-sm-12">
+				<% if request.tasker_id == current_user.id %>
 
-					<a class="button small red-background">This Task is Complete</a>
+					<div class="col-xs-6 col-sm-12">
 
-				</div>
+						<a class="button small red-background">This Task is Complete</a>
 
-				<div class="col-xs-6 col-sm-12">
+					</div>
 
-					<a class="button small red-background">Cancel</a>
+					<div class="col-xs-6 col-sm-12">
 
-				</div>
+						<a class="button small red-background">Cancel</a>
+
+					</div>
+
+				<%else%>
+
+					<% unless current_user.is_tasker %>
+      	
+				      	<div class="col-xs-6 col-sm-12">
+
+							<a class="button small red-background">Modify</a>
+
+						</div>
+
+						<div class="col-xs-6 col-sm-12">
+
+							<a class="button small red-background">Cancel</a>
+
+						</div>
+				      
+				    <% else %>
+
+				        <%= form_tag add_tasker_to_service_request_path(request.id, current_user.id) do %>
+				          
+				          <button class="button green-background medium">Accept Job</button>
+				        
+				        <%end%>
+					
+					<% end %>
+
+				<%end%>
 
 			</div>
 		
