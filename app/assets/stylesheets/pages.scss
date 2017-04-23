@@ -583,6 +583,10 @@ span.number-badge{
 	background: #fafafa;
 }
 
+.card.active{
+	border: 1px solid $servmanity-green;	
+}
+
 .card{
 	box-shadow: none;
 	background: #fff;

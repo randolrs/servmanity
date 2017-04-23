@@ -106,6 +106,11 @@ class User < ActiveRecord::Base
 
 	end
 
+	def active_task_for_tasker
+
+		return ServiceRequest.all.where(:is_complete_tasker => nil, :tasker_id => self.id).last
+
+	end
 
 
 	def outstanding_live_requests

@@ -256,6 +256,6 @@ class ServiceRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_request_params
-      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city, :is_live, :description)
+      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city, :is_live, :description, :price)
     end
 end

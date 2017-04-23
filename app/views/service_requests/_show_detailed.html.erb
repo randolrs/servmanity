@@ -1,0 +1,58 @@
+
+<div class="service-request-index card <% if active %>active<% end %>">
+
+	<div class="row">
+
+		<div class="col-xs-12 col-sm-6">
+
+			<h3><%= request.description %></h3>
+
+			<br>
+
+			<%= request.service_category.name %> task
+			<br>
+
+			<% if request.tasker_id == current_user.id %>
+				
+				Address: <%= request.address %>
+				<br>
+				
+			<% end %>
+
+			Submitted <%= time_ago_in_words(request.created_at) + " ago" %>
+			<%# request.address %>
+			<br>
+			Additional Details: "<%= request.additional_information %>"
+			<%# task_status_tag(request) %>
+			<br>
+
+			<% if request.latitude && request.longitude %>
+			<%= current_user.distance_to_destination(request.latitude, request.longitude).round(1).to_s + " miles away" %>
+			<%end%>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-6" style="text-align: right;">
+
+			<div class="row">
+
+				<div class="col-xs-6 col-sm-12">
+
+					<a class="button small red-background">This Task is Complete</a>
+
+				</div>
+
+				<div class="col-xs-6 col-sm-12">
+
+					<a class="button small red-background">Cancel</a>
+
+				</div>
+
+			</div>
+		
+		</div>
+
+	</div>	
+
+</div>
+
