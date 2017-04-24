@@ -2,20 +2,32 @@
 
 <div class="content">
 
-	<div class="row">
+	<header>Live Request Feed</header>
 
-		<header>Live Request Feed</header>
+	<% if @service_requests.count > 0 %>
+		
+		<% @service_requests.each do |request| %>
+					
+			<%= render :partial => 'service_requests/index_show', :locals => {:request => request, :active => false} %>
 
-		<div class="col-xs-12">
+		<%end%>
 
-			<% @service_requests.each do |request| %>
-						
-				<%= render :partial => 'service_requests/index_show', :locals => {:request => request, :active => false} %>
+	<%else%>
 
-			<%end%>
+		<div class="empty-collection-container">
+
+			<div class="empty-collection">
+
+				<h3>There are no requests in your area right now. Please check back again later.</h3>
+				<br><br>
+				<%= link_to "Return to Dashboard", root_path, class: "button brand-blue-background medium" %>
+				
+
+			</div>
 
 		</div>
 
-	</div>
+
+	<%end%>
 
 </div>

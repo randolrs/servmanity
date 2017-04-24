@@ -1,50 +1,24 @@
-<% unless @default_dashboard %>
 
-	<div class="dashboard-header material-box-shadow">
+<div class="dashboard-header material-box-shadow">
 
-		<ul class="horizontal spread-on-mobile">
+	<ul class="horizontal spread-on-mobile">
 
-			<% if current_user.is_tasker %>
+		<% if current_user.is_tasker %>
 
-				<li><%= link_to "Home", root_path, class: cp(root_path) %></li><li><%= link_to "Live", live_path, class: cp(live_path) %></li><li><%= link_to "Tasks", requests_path, class: cp(requests_path) %></li>
+			<li><%= link_to "Home", root_path, class: cp(root_path) %></li><li><%= link_to "Live", live_path, class: cp(live_path) %></li><li><%= link_to "Tasks", requests_path, class: cp(requests_path) %></li>
+		
+		<%else%>
 			
-			<%else%>
-				
-				<li><%= link_to "Home", root_path, class: cp(root_path) %></li><li><%= link_to "Requests", requests_path, class: cp(requests_path) %></li><li><%= link_to "Messages", messages_path, class: cp(messages_path) %></li>
+			<li><%= link_to "Home", root_path, class: cp(root_path) %></li><li><%= link_to "Requests", requests_path, class: cp(requests_path) %></li><li><%= link_to "Messages", messages_path, class: cp(messages_path) %></li>
 
 
-			<%end%>
+		<%end%>
 
-		</ul>
-		
-	</div>
+	</ul>
+	
+</div>
 
-	<div class="dashboard-header-offset">
-
-
-	</div>
-
-<% else %>
-
-	<% if flash[:error_prompt] %>
-
-		<div class="flash-prompt notice dark-red-background">
-
-			<p><%= flash[:error_prompt] %></p>
-
-		</div>
-
-	<%else%>
-
-		<%#if @top_of_page_message %>
-		
-			<!-- <div class="top-of-page-message brand-blue-background">
-				<p><%# @top_of_page_message %></p>
-			</div> -->
-
-		<%#end%>
-
-	<% end %>
+<div class="dashboard-header-offset">
 
 
-<% end %>
+</div>

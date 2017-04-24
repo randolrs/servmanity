@@ -103,7 +103,7 @@
 
 
  	header{
- 		display: none;
+ 		
  	}
 
  	section.content-section{
@@ -788,4 +788,16 @@ span.number-badge{
 	color: $money-green;
 	font-size:20px;
 	font-weight: 600;
+}
+
+.empty-collection-container{
+	padding: 40px;
+	background: #fff;
+	border: 1px solid #ddd;
+
+	.empty-collection{
+		border: 2px #bbb dashed;
+		padding: 40px;
+		text-align: center;
+	}
 }

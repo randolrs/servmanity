@@ -41,6 +41,9 @@ ready = ->
 		$(".menu-content").click (window.event), ->
 			window.event.stopPropagation()
 
+		$(".button").click (window.event), ->
+			window.event.stopPropagation()
+
 		$(".click-to-reveal").click (window.event), ->
 			$('a.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()

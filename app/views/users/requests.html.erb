@@ -11,17 +11,31 @@
 		<header>My Requests</header>
 
 	<%end%>
-		
-	<section class="content-section">
 
+	<% if @service_requests.count > 0 %>
+		
 		<% @service_requests.each do |request| %>
 				
 			<%= render :partial => 'service_requests/index_show', :locals => {:request => request , :active => false} %>
 
 		<%end%>
 
-		<%# link_to "Add More Services", add_service_to_user_path, class:"button money-green-background stretch"%>
+	<%else%>
 
-	</section>
+		<div class="empty-collection-container">
+
+			<div class="empty-collection">
+
+				<h3>You Have Not Accepted Any Tasks Yet</h3>
+				<br><br>
+				<%= link_to "Go To Live Request Feed", live_path, class: "button brand-blue-background medium" %>
+
+			</div>
+
+		</div>
+
+	<%end%>
+
+		<%# link_to "Add More Services", add_service_to_user_path, class:"button money-green-background stretch"%>
 
 </div>
