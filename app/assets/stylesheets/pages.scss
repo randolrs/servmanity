@@ -580,7 +580,11 @@ span.number-badge{
 }
 
 .card.index:hover{
-	background: #fafafa;
+	background: #fdfdfd;
+
+	a:hover{
+		color: #000;
+	}
 }
 
 .card.active{
@@ -785,6 +789,12 @@ span.number-badge{
 
 .black-text{
 	color: #000;
+}
+
+.request-price{
+	color: $money-green;
+	font-size:20px;
+	font-weight: 600;
 }
 
 .right-corner-price{

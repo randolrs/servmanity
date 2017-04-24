@@ -10,11 +10,12 @@
 		
 		<%= form_for(@service_request) do |f| %>
 			
+			<%= render 'service_requests/details_additional', f: f %>
+
 			<%= render 'service_requests/details_where', f: f %>
 
 			<%= render 'service_requests/details_payment', f: f %>
 
-			<%= render 'service_requests/details_additional', f: f %>
 
 			<%= f.hidden_field :is_live, :value => true, :id => "is_live" %>
 
