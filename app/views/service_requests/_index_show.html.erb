@@ -14,8 +14,12 @@
 
 				<br>
 
-				<%= request.service_category.name %> task
-				<br>
+				<% if request.service_category %>
+
+					<%= request.service_category.name %> task
+					<br>
+					
+				<%end%>
 				
 				<% if request.tasker_id == current_user.id %>
 				
