@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423153723) do
+ActiveRecord::Schema.define(version: 20170425115733) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -91,6 +91,9 @@ ActiveRecord::Schema.define(version: 20170423153723) do
     t.float    "longitude"
     t.string   "city"
     t.string   "address"
+    t.string   "stripe_account_id"
+    t.string   "stripe_secret_key"
+    t.string   "stripe_publishable_key"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

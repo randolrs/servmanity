@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
 
 	before_action :check_for_location
 
+	#before_action :check_for_stripe_account, if: :user_signed_in?
+
 	if Rails.env == "production"
 
 		Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
@@ -73,6 +75,35 @@ class ApplicationController < ActionController::Base
 		root_path
 
 	end
+
+
+
+	def check_for_stripe_account
+  
+	    if current_user.is_tasker
+
+	      unless current_user.stripe_account_id
+
+	        account = Stripe::Account.create({:country => "US", :managed => true})
+
+	        current_user.update(:stripe_account_id => account.id, :stripe_secret_key => account.keys.secret, :stripe_publishable_key => account.key.publishable)
+
+	        account.tos_acceptance.date = Time.now.to_i
+
+	        account.tos_acceptance.ip = request.remote_ip
+
+	        account.legal_entity.type = "individual"
+
+	        account.save
+
+	      end
+
+	    end
+      
+
+  end
+
+
 
 
 	def configure_permitted_parameters
