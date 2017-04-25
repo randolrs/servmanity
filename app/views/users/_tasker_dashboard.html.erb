@@ -95,7 +95,7 @@
 
 		<% if current_user.active_task_for_tasker %>
 
-			<header>Active Task</header>
+			<header>Task Active Right Now</header>
 
 			<%= render :partial => 'service_requests/index_show', :locals => {:request => current_user.active_task_for_tasker, :active => true} %>
 

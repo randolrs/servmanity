@@ -27,6 +27,17 @@
 
 	<div class="content">
 
+		<% if current_user.active_task_for_non_tasker %>
+
+			<header>Task Active Right Now</header>
+
+			<%= render :partial => 'service_requests/index_show', :locals => {:request => current_user.active_task_for_non_tasker, :active => true} %>
+
+			<br>
+			<br>
+
+		<%end%>
+
 		<div class="row">
 
 			<div class="col-xs-12 col-md-7">
