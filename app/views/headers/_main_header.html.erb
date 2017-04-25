@@ -29,7 +29,7 @@
 				</span>
 
 				<span class="full-screen-only">
-					<li><a class="logo" href="<%= root_path %>"><%= image_tag("logo_vector.png") %><span>SERVMANITY</span></a></li>
+					<li><a class="logo" href="<%= root_path %>"><%= image_tag("logo_vector.png") %><span>SERVMANITY</span><%= Rails.env %><%= Stripe.api_key %></a></li>
 					
 				</span>
 

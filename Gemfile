@@ -46,6 +46,8 @@ gem 'paperclip', '~> 4.2'
 
 gem 'bootstrap-sass'
 
+gem 'figaro'
+
 gem 'stripe', :git => 'http://github.com/stripe/stripe-ruby'
 
 
