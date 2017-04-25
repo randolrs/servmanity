@@ -544,18 +544,21 @@ span.number-badge{
     text-align: center;
 }
 
+.top-of-page-message-overlay{
+	
+	padding: 25px;
+	background: rgba(0,100,100,0.7);
+}
 
 .top-of-page-message, .flash-prompt{
 
-	padding: 15px 10px;
-	border: 1px solid rgba(0,0,0,0.1);
 	color: #fff;
 
-	background: url(https://www.toptal.com/designers/subtlepatterns/patterns/footer_lodyas.png) center center/cover no-repeat rgba(200,100,100,0.5);
+	background: url(https://www.toptal.com/designers/subtlepatterns/patterns/pow-star.png);
 
 
 	header{
-		font-size: 48px;
+		font-size: 30px;
 		font-weight: 800;
 		max-width: 900px;
 		margin: 0 auto;
@@ -621,7 +624,7 @@ span.number-badge{
 	
 	margin: 0 auto;
 	margin-bottom: -1px;
-	padding: 15px;
+	padding: 25px;
 
 	.card-alert{
 		float: right;

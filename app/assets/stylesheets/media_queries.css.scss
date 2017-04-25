@@ -79,9 +79,14 @@
 				}
 			}
 
-			.top-of-page-message, .flash-prompt{
 
-				padding: 50px 10px;
+			.top-of-page-message-overlay{
+
+				padding: 75px 10px;
+
+				header{
+					font-size: 48px;
+				}
 
 				p{
 					font-size: 24px;

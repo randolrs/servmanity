@@ -2,14 +2,18 @@
 
 <% unless current_user.has_tasker_basics %>
 	
-	<div class="top-of-page-message brand-blue-background centered">
-
-		<header>Welcome to Servmanity, <%= current_user.first_name %>.</header>
-
-		<br><br>
+	<div class="top-of-page-message centered">
 		
-		<p>Please provide your address and a photo to get started.</p>
-	
+		<div class="top-of-page-message-overlay">
+
+			<header>Welcome to Servmanity, <%= current_user.first_name %>.</header>
+
+			<br><br>
+			
+			<p>Please provide your address and a photo to get started.</p>
+
+		</div>
+		
 	</div>
 
 	<div class="content">
@@ -86,7 +90,7 @@
 <%else%>
 
 	<%= render 'users/dashboard_header' %>
-	
+
 	<div class="content">
 
 		<% if current_user.active_task_for_tasker %>

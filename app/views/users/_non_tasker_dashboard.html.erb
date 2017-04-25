@@ -3,10 +3,17 @@
 <% unless current_user.service_requests.count > 0 %>
 	
 	<div class="top-of-page-message centered">
-		<header><%= @top_of_page_message %></header>
-		<br><br>
-		<p>Save time for the things you love by instantly hiring a mobile professional in <% if session[:city].blank? %>your area<%else%><%= session[:city] %><%end%> to complete your tasks. Select what you want done below to get started.</p>
+		
+		<div class="top-of-page-message-overlay">
+
+			<header><%= @top_of_page_message %></header>
+			<br><br>
+			<p>Save time for the things you love by instantly hiring a mobile professional in <% if session[:city].blank? %>your area<%else%><%= session[:city] %><%end%> to complete your tasks. Select what you want done below to get started.</p>
+
+		</div>
+		
 	</div>
+
 
 	<div class="content">
 
