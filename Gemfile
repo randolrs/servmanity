@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -45,6 +45,8 @@ gem 'possessive'
 gem 'paperclip', '~> 4.2'
 
 gem 'bootstrap-sass'
+
+gem 'stripe', :git => 'http://github.com/stripe/stripe-ruby'
 
 
 gem 'aws-sdk', '< 2.0'

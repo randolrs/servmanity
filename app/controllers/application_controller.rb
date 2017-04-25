@@ -10,6 +10,16 @@ class ApplicationController < ActionController::Base
 
 	before_action :check_for_location
 
+	if Rails.env == "production"
+
+		Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
+
+	else
+
+		Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
+
+	end
+
 	def check_for_location
 
 	    if session[:location].blank?
