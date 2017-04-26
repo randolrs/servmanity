@@ -612,14 +612,14 @@ span.number-badge{
 }
 
 .card.active{
-	border: 1px solid $servmanity-green;	
+	border: 2px solid #2980b9;	
 }
 
 .card{
 	box-shadow: none;
 	background: #fff;
 	border-radius: 0px;
-	border: 1px solid #ccc;
+	border: 1px solid #aaa;
 	z-index: 8888;
 	
 	margin: 0 auto;

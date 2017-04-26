@@ -50,11 +50,11 @@ class UsersController < ApplicationController
 
       if current_user.is_tasker
 
-        @service_requests = current_user.requests_assigned_to_me
+        @service_requests = current_user.requests_assigned_to_me.sort_by(&:created_at).reverse
 
       else
 
-        @service_requests = current_user.service_requests
+        @service_requests = current_user.service_requests.sort_by(&:created_at).reverse
 
       end
 
