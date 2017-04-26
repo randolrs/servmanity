@@ -33,7 +33,7 @@ class ServiceRequestsController < ApplicationController
 
           if current_user.is_tasker
 
-            redirect_to root_path
+            redirect_to service_request_submission_confirmation_path(@service_request.id)
 
           else
 
