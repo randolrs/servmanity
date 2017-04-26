@@ -35,14 +35,15 @@
 
 			<br>
 			<br>
+			<br>
 
 		<%end%>
 
 		<div class="row">
 
-			<div class="col-xs-12 col-sm-12">
+			<header>Hire Someone Now</header>
 
-				<header>Hire Someone Now</header>
+			<div class="col-xs-12 col-sm-12">
 
 				<%= render :partial => 'service_categories/grid', :locals => {:service_categories => ServiceCategory.all.where(:parent_category_id => nil).take(6)} %>
 

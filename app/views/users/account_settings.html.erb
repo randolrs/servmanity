@@ -113,26 +113,9 @@
 
 				<div class="reveal-panel" id="payments" style="display: none;">
 
-					<header>Payments</header>
+					<header>Payment Information</header>
 
-					<div class="option-content-box">
-
-						<div class="field">
-
-							<label>First Name</label><br>
-
-						  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
-						
-						</div>
-
-
-						<div class="field">
-
-							<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
-
-						</div>
-
-					</div>
+					<%= render 'charges/credit_card_form' %>
 
 				</div>
 
