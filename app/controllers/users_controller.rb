@@ -41,6 +41,14 @@ class UsersController < ApplicationController
     @navigation_title = "Account Settings"
     
   end
+  
+
+  def tasker_needs_image
+
+
+  end
+
+
 
   def requests
 

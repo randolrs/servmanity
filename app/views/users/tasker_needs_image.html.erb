@@ -1,0 +1,21 @@
+
+<div class="content">
+
+	<div class="centered">
+
+		<header>Add a Photo to Complete Your Profile</header>
+
+		<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+			
+
+			<%= f.file_field :image %>
+			
+			<br><br>
+
+			<%= f.submit "Upload Photo", class: "button small brand-blue-background" %>
+
+		<%end%>
+
+	</div>
+
+</div>

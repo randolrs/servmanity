@@ -19,7 +19,17 @@ class PagesController < ApplicationController
 
       if current_user.is_tasker
 
-        @service_requests = current_user.requests_assigned_to_me
+        unless current_user.image.present?
+
+          redirect_to add_profile_photo_path
+
+        else
+
+          @service_requests = current_user.requests_assigned_to_me
+
+        end
+
+        
 
       else
 

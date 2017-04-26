@@ -13,7 +13,9 @@
 		<br><br>
 		
 		<% if @service_request.is_live %>
-		
+			
+			<%= image_tag @service_request.tasker.image.url(:medium), class:"medium-image rounded" %>
+
 			<p>Great news! <b><%= @service_request.tasker.public_display_name %></b> has accepted your task.  They will arrive in about 30 minutes to help with your <%= @service_request.service_category.name %> project.</p>
 		
 		<%else%>
