@@ -23,6 +23,7 @@ body{
 		
 		bottom: 0px;
 		background: $servmanity-green url(button-glass.png) repeat-x 0 0;
+		border-bottom: 1px solid rgba(0,0,0,0.5);
     
 
 		a{
@@ -45,12 +46,14 @@ body{
 		}
 
 		li{
-			border-right: 2px solid rgba(0,0,0,0.3);
+			border-right: 1px solid rgba(0,0,0,0.5);
 		}
 
 		a.active{
 			background: $servmanity-yellow;
 			color: #111;
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+    		padding: 10px 40px 9px 40px;
 			text-shadow: none;
 			font-weight: 600;
 			box-shadow: none;
