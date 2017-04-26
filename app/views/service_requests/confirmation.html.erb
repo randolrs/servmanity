@@ -30,14 +30,13 @@
 
 			<% if @service_request.is_live %>
 
-				<p>You accepted  <b><%= @service_request.user.public_display_name %></b> task.  Please arrive within 30 minutes to help with their <%= @service_request.service_category.name %> project.</p>
+				<p>You accepted  <b><%= @service_request.user.first_name %></b> task.  Please arrive within 30 minutes to help with their <%= @service_request.service_category.name %> project.</p>
 
 				<br>				
 
 				<p><b>Details: </b></p>
-				<p><b>Price: </b><span class="request-price"><%= number_to_currency(request.price) %></span></p>
-				<p><b>Address: </b>Address: <%= request.address %></p>
-				<p><b>Requester Name:</b></p>
+				<p><b>Price: </b><span class="request-price"><%= number_to_currency(@service_request.price) %></span></p>
+				<p><b>Address: </b>Address: <%= @service_request.address %></p>
 			
 			<%else%>
 
