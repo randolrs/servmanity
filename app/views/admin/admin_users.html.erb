@@ -3,29 +3,35 @@
 	<header><%= link_to "Admin Home", admin_home_path %> > Users</header>
 
 	<% User.all.sort_by(&:created_at).reverse.each do |user| %>
-		<div class="card index">
-			<div class="row">
-				<div class="col-xs-12 col-sm-3">
-					<%= image_tag user.image.url(:small), class:"small-image rounded" %>
-				</div>
+		
+		<%= link_to admin_edit_user_path(user.id) do %>
+		
+			<div class="card index">
+				<div class="row">
+					<div class="col-xs-12 col-sm-3">
+						<%= image_tag user.image.url(:small), class:"small-image rounded" %>
+					</div>
 
-				<div class="col-xs-12 col-sm-9">
-					<p>Name: <%= user.first_name %> <%= user.last_name %></p>
-					<p>User ID: <%= user.id %></p>
-					<p><% if user.is_tasker %>Mobile Professional<%else%>Customer<%end%></p>
-					<%if user.last_seen_at %>
-						<p>Last Online: <%= time_ago_in_words(user.last_seen_at) %> ago</p>
-					<%end%>
-					<%if user.is_tasker %>
-						<p>Total Requests Accepted: <%= user.requests_assigned_to_me.count %></p>
-					<%else%>
-						<p>Total Service Requests: <%= user.service_requests.count %></p>
-					<%end%>
-				</div>
+					<div class="col-xs-12 col-sm-9">
+						<p>Name: <%= user.first_name %> <%= user.last_name %></p>
+						<p>User ID: <%= user.id %></p>
+						<p>Email: <%= user.email %></p>
+						<p><% if user.is_tasker %>Mobile Professional<%else%>Customer<%end%></p>
+						<%if user.last_seen_at %>
+							<p>Last Online: <%= time_ago_in_words(user.last_seen_at) %> ago</p>
+						<%end%>
+						<%if user.is_tasker %>
+							<p>Total Requests Accepted: <%= user.requests_assigned_to_me.count %></p>
+						<%else%>
+							<p>Total Service Requests: <%= user.service_requests.count %></p>
+						<%end%>
+					</div>
 
+				</div>
+				
 			</div>
 
-			
-		</div>
+		<%end%>
+
 	<%end%>
 </div>

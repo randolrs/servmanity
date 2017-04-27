@@ -42,7 +42,9 @@ Rails.application.routes.draw do
   get 'admin/users' => 'admin#admin_users', as: 'admin_users'
 
   get 'admin/service_requests' => 'admin#admin_service_requests', as: 'admin_service_requests'
-  
+
+  get 'admin/user/edit/:id' => 'admin#edit_user', as: 'admin_edit_user'
+
   get 'admin/charges' => 'admin#admin_charges', as: 'admin_charges'
 
   get 'signup/user' => 'users#non_tasker_signup', as: 'non_tasker_signup'
