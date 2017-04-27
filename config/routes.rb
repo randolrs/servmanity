@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin/admin_home'
+
   resources :service_requests
   resources :user_service_categories
   resources :service_categories
@@ -36,6 +38,12 @@ Rails.application.routes.draw do
   get 'balance' => 'users#balance'
 
   get 'admin/home' => 'admin#admin_home', as: 'admin_home'
+  
+  get 'admin/users' => 'admin#admin_users', as: 'admin_users'
+
+  get 'admin/service_requests' => 'admin#admin_service_requests', as: 'admin_service_requests'
+  
+  get 'admin/charges' => 'admin#admin_charges', as: 'admin_charges'
 
   get 'signup/user' => 'users#non_tasker_signup', as: 'non_tasker_signup'
 

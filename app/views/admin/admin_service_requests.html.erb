@@ -1,0 +1,23 @@
+<div class="content">
+
+	<div class="content medium">
+
+		<header><%= link_to "Admin Home", admin_home_path %> > Service Requests</header>
+
+		<% ServiceRequest.all.sort_by(&:created_at).reverse.each do |request| %>
+			
+			<div class="card index">
+				<p>Description: <%= request.description %></p>
+				<p>Additional Information: <%= request.additional_information %></p>
+				<p>Submitted <%= time_ago_in_words(request.created_at) + " ago" %></p>
+				<% if request.user_id %><p>Requested by User #<%= request.user_id%></p><%end%>
+				<% if request.tasker_id %><p>Assigned to Mobile Professional #<%= request.tasker_id%></p><%end%>
+				<p>Customer Confirmed Completion? <%if request.is_complete_user %>Yes<%else%>No<%end%></p>
+				<p>Mobile Professional Confirmed Completion? <%if request.is_complete_tasker %>Yes<%else%>No<%end%></p>
+			</div>
+
+		<%end%>
+
+	</div>
+
+</div>

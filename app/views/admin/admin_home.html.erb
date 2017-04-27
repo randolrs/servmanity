@@ -1,1 +1,43 @@
-admin home
+<div class="content">
+
+	<header>Admin Home</header>
+
+	<div class="content">
+
+		<div class="row"%>
+
+			<div class="col-xs-12 col-sm-4">
+
+				<%= link_to admin_users_path do %>
+					<div class="card index">
+						<p>Users<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+					</div>
+				<%end%>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-4">
+
+				<%= link_to admin_service_requests_path do %>
+					<div class="card index">
+						<p>Service Requests<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+					</div>
+				<%end%>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-4">
+
+				<%= link_to admin_charges_path do %>
+					<div class="card index">
+						<p>Charges<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+					</div>
+				<%end%>
+
+			</div>
+		
+		</div>
+
+	</div>
+
+</div>
