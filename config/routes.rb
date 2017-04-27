@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
   get 'balance' => 'users#balance'
 
+  get 'admin/home' => 'admin#admin_home', as: 'admin_home'
+
   get 'signup/user' => 'users#non_tasker_signup', as: 'non_tasker_signup'
 
   get 'signup/tasker' => 'users#tasker_signup', as: 'tasker_signup'

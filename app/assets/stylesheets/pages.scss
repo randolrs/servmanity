@@ -841,3 +841,26 @@ span.number-badge{
 		text-align: center;
 	}
 }
+
+.filter-option-container{
+	margin-bottom: 10px;	
+	text-align: center;
+}
+
+.filter-option{
+	font-size: 24px;
+	margin-right: 10px;
+	background: #ccc;
+	border-radius: 24px;
+	padding: 5px 20px;
+}
+
+.filter-option.active{
+	font-weight: 600;
+	background: $servmanity-yellow;
+	color: #000;
+}
+
+.filter-option:last-child{
+	margin: 0px;
+}

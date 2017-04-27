@@ -45,7 +45,7 @@ ready = ->
 			window.event.stopPropagation()
 
 		$(".click-to-reveal").click (window.event), ->
-			$('a.click-to-reveal').removeClass('active')
+			$('.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()
 			$(@).addClass('active')
 			targetId = "#" + $(@).data("reveal-panel-id")

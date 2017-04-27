@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425115733) do
+ActiveRecord::Schema.define(version: 20170427002936) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20170425115733) do
     t.string   "stripe_account_id"
     t.string   "stripe_secret_key"
     t.string   "stripe_publishable_key"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
