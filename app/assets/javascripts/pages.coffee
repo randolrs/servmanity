@@ -39,10 +39,10 @@ ready = ->
 			$('.menu-content').animate({width:'hide'},350);
 
 		$(".menu-content").click (e) ->
-			window.event.stopPropagation()
+			e.stopPropagation()
 
 		$(".button").click (e) ->
-			window.event.stopPropagation()
+			e.stopPropagation()
 
 		$(".click-to-reveal").click (e) ->
 			$('.click-to-reveal').removeClass('active')
