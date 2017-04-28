@@ -12,7 +12,7 @@
 
 				<br><br>
 
-				<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
+				<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
 			
 			<%else%>
 
@@ -22,7 +22,7 @@
 
 					<br><br>
 
-					<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
+					<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
 
 				<%else%>
 						
@@ -41,7 +41,7 @@
 
 				<br><br>
 
-				<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
+				<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
 
 			<%end%>
 
