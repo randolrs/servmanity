@@ -8,22 +8,22 @@ ready = ->
 
 		$(".geocomplete-input").geocomplete()
 
-		$(".modal-cta").click (event), ->
+		$(".modal-cta").click (e) ->
 			targetId = "#" + $(@).data("modal-id")
 			$('body').find(targetId).show()
 			$('body').addClass('no-scroll')
 			$('.menu-content').animate({width:'show'},350);
 
-		$(".clear-on-focus").click (event), ->
+		$(".clear-on-focus").click (e) ->
 			$(@).val('')
 
-		$(".make-live").click (event), ->
+		$(".make-live").click (e) ->
 			$("input#is_live").val("true")
 
-		$(".make-not-live").click (event), ->
+		$(".make-not-live").click (e) ->
 			$("input#is_live").val("false")
 
-		$(".date-toggle").click (event), ->
+		$(".date-toggle").click (e) ->
 			me = $(@)
 			available = me.data("available")
 			if me.hasClass("available")
@@ -33,18 +33,18 @@ ready = ->
 				me.addClass("available")
 				me.removeClass("unavailable")
 
-		$(".modal-container").click (event), ->
+		$(".modal-container").click (e) ->
 			$(@).hide()
 			$('body').removeClass('no-scroll')
 			$('.menu-content').animate({width:'hide'},350);
 
-		$(".menu-content").click (event), ->
-			event.stopPropagation()
+		$(".menu-content").click (e) ->
+			window.event.stopPropagation()
 
-		$(".button").click (event), ->
-			event.stopPropagation()
+		$(".button").click (e) ->
+			window.event.stopPropagation()
 
-		$(".click-to-reveal").click (event), ->
+		$(".click-to-reveal").click (e) ->
 			$('.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()
 			$(@).addClass('active')
@@ -60,14 +60,14 @@ ready = ->
 		  			if data.accepted
 		  				window.location.href = data.redirect_to_url
 
-		$(".fill-input").click (event), ->
+		$(".fill-input").click (e) ->
 			$(@).parent().parent().find('.fill-input').removeClass('active')
 			$(@).addClass('active')
 			targetId = "#" + $(@).data("input-id")
 			value = $(@).data("input-value")
 			$('body').find(targetId).val(value)
 
-		$('.change-time-label').click (event), ->
+		$('.change-time-label').click (e) ->
 			dt = new Date
 			hidden_input = $(@).parent().find('.form-controller-input')
 			date_label = $(@).parent().find('.time-label')
