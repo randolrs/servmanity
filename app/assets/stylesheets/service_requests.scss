@@ -2,8 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
+
 .service-request-index{
 	
+}
+
+a.back-button{
+    
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 20px;
+
+    .glyphicon{
+        
+        background: #111;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+        margin-right: 10px;
+    }
+
+}
+
+.task-nav-header{
+    
+    margin-bottom: 15px;
+
+    a{
+        margin: 10px;
+        background: #111;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    }   
+
+    a:hover{
+        color: #fff;
+    }
+
+    a.active{
+        border: 1px solid #000;
+        background: $servmanity-yellow;
+        color: #111;
+        box-shadow: none;
+        font-weight: 800;
+    }
+}
+
+a.back-button:hover{
+    color: #111;
 }
 
 .ajax-loading{

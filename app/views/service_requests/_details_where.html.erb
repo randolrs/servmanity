@@ -4,51 +4,56 @@
 
 		<h3>Confirm Your Address</h3>
 
-		<% if user_signed_in? %>
-			
-			<% if current_user.address %>
-					
-				<%= f.text_field :address, value:current_user.address, class:"geocomplete-input address_input_for_embed" %>
+		<div class="card-content">
 
-				<br><br>
+			<label>Address</label><br>
 
-				<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
-			
+			<% if user_signed_in? %>
+				
+				<% if current_user.address %>
+						
+					<%= f.text_field :address, value:current_user.address, class:"geocomplete-input address_input_for_embed" %>
+
+					<br><br>
+
+					<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
+				
+				<%else%>
+
+					<% unless session[:city].blank? %>
+						
+						<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+						<br><br>
+
+						<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
+
+					<%else%>
+							
+						<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+					<%end%>
+
+
+				<%end%>
+
 			<%else%>
 
 				<% unless session[:city].blank? %>
-					
+						
 					<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
 
 					<br><br>
 
 					<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
 
-				<%else%>
-						
-					<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
-
 				<%end%>
 
-
 			<%end%>
 
-		<%else%>
+			<a class="button brand-blue-background medium click-to-reveal full-screen-only" data-reveal-panel-id="payment">Continue</a>
 
-			<% unless session[:city].blank? %>
-					
-				<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
-
-				<br><br>
-
-				<%# render :partial => 'maps/embed_map', :locals => {:latitude_input => session[:latitude], :longitude_input => session[:longitude]} %>
-
-			<%end%>
-
-		<%end%>
-
-		<br>
-		<a class="button brand-blue-background medium click-to-reveal full-screen-only" data-reveal-panel-id="payment">Continue</a>
+		</div>
 
 	</div>
 

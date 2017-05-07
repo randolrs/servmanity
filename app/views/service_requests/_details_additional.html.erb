@@ -1,35 +1,34 @@
 
 <div class="reveal-panel" id="additional">
 
-	<div class="card clear-on-mobile-device">
-
-		<h3>Describe Your Task</h3>
-		
-		<%= f.text_field :description, placeholder: "Brief Description of Task"  %>
-
-	</div>
-
-	<br>
+	<!-- <a class="back-button click-to-reveal" data-reveal-panel-id="where"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Address</a> -->
 
 	<div class="card clear-on-mobile-device">
 
-		<h3>Provide any Additional Details</h3>
-		
-		<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
+		<h3>Task Details</h3>
+
+		<div class="card-content">
+			
+			<label>Description</label><br>
+			<%= f.text_field :description, placeholder: "Brief Description of Task"  %>
+
+			<br><br>
+
+			<label>Any Relevant Details</label><br>
+			<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
+
+			<br><br>
+
+			<label>Set a Budget</label><br>
+			<%= f.number_field :price, class: "centered price" %>
+
+			<br>
+
+			<a class="button brand-blue-background medium click-to-reveal full-screen-only" data-reveal-panel-id="where">Continue</a>
+
+		</div>
 
 	</div>
-
-	<div class="card clear-on-mobile-device">
-
-		<h3>How Much Do You Want To Pay?</h3>
-		
-		<%= f.number_field :price, class: "centered price"  %>
-
-	</div>
-
-	<br>
-
-	<a class="button brand-blue-background medium click-to-reveal full-screen-only" data-reveal-panel-id="where">Continue</a>
 
 
 	<div class="fixed-bottom-cta mobile-only">

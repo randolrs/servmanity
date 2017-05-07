@@ -619,12 +619,12 @@ span.number-badge{
 	box-shadow: none;
 	background: #fff;
 	border-radius: 0px;
-	border: 1px solid #aaa;
+	border: 1px solid #ccc;
 	z-index: 8888;
 	
 	margin: 0 auto;
 	margin-bottom: -1px;
-	padding: 25px;
+	padding: 0px;
 
 	.card-alert{
 		float: right;
@@ -660,9 +660,15 @@ span.number-badge{
 	}
 
 	h3{
-		margin-bottom: 20px;
+		padding: 25px;
 		font-size: 1.75em;
-		display: inline-block;
+		font-weight: 800;
+		display: block;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.card-content{
+		padding: 25px;
 	}
 
 	.right-corner{

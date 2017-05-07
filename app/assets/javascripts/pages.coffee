@@ -14,6 +14,9 @@ ready = ->
 			$('body').addClass('no-scroll')
 			$('.menu-content').animate({width:'show'},350);
 
+		$(".modal-content").click (e) ->
+			e.stopPropagation()
+
 		$(".clear-on-focus").click (e) ->
 			$(@).val('')
 
