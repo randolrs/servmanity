@@ -53,6 +53,9 @@ ready = ->
 			$(@).addClass('active')
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).fadeIn()
+			$('.click-to-reveal').each (index, element) =>
+				if $(element).data("reveal-panel-id") == $(@).data("reveal-panel-id")
+					$(element).addClass('active')
 
 		@checkForRequestAcceptance = (requestID) ->
 			$.ajax

@@ -18,7 +18,7 @@
 
 		<%= form_for(@service_request) do |f| %>
 			
-			<%= render 'service_requests/details_additional', f: f %>
+			<%= render 'service_requests/details_additional', next_step: "when", f: f %>
 
 			<%= render 'service_requests/details_when', f: f %>
 
@@ -26,8 +26,7 @@
 
 			<%= render 'service_requests/details_payment', f: f %>
 
-
-			<%= f.hidden_field :is_live, :value => true, :id => "is_live" %>
+			<%= f.hidden_field :is_live, :value => false, :id => "is_live" %>
 
 			<%= f.hidden_field :service_category_id, :value => @service_category.id %>
 			
