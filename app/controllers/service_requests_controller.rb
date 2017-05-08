@@ -122,6 +122,73 @@ class ServiceRequestsController < ApplicationController
 
   end
 
+  def live_request_details
+
+    @navigation_title = "Service Request"
+
+    flash[:message_at_top] = "Enter Service Request Details"
+
+    @service_request = ServiceRequest.new
+
+    @hide_footer = true
+
+    if params[:service_category_url]
+      
+      @service_cat_url_string = params[:service_category_url]
+      
+      if @service_cat_url_string.length > 2
+
+        @service_category = ServiceCategory.where(:url_name => params[:service_category_url]).last
+        @navigation_title = @service_category.name + " Request"
+        flash[:message_at_top] = "Enter Details for Your " + @service_category.name + " Request"
+      else
+
+        @service_category = nil
+      end
+
+    else
+
+        @service_category = nil
+    end
+
+    @additional_information_example_text = "EXAMPLE: I need help"
+
+  end
+
+
+  def scheduled_request_details
+
+    @navigation_title = "Service Request"
+
+    flash[:message_at_top] = "Enter Service Request Details"
+
+    @service_request = ServiceRequest.new
+
+    @hide_footer = true
+
+    if params[:service_category_url]
+      
+      @service_cat_url_string = params[:service_category_url]
+      
+      if @service_cat_url_string.length > 2
+
+        @service_category = ServiceCategory.where(:url_name => params[:service_category_url]).last
+        @navigation_title = @service_category.name + " Request"
+        flash[:message_at_top] = "Enter Details for Your " + @service_category.name + " Request"
+      else
+
+        @service_category = nil
+      end
+
+    else
+
+        @service_category = nil
+    end
+
+    @additional_information_example_text = "EXAMPLE: I need help"
+
+  end
+
 
   # GET /service_requests/new
   def new

@@ -71,6 +71,10 @@ Rails.application.routes.draw do
 
   get 's/service_requests/initiate/:service_category_url' => 'service_requests#request_details', as: 'initiate_service_request'
 
+  get 's/service_requests/initiate/:service_category_url/live' => 'service_requests#live_request_details', as: 'initiate_live_service_request'
+
+  get 's/service_requests/initiate/:service_category_url/scheduled' => 'service_requests#scheduled_request_details', as: 'initiate_scheduled_service_request'
+
 
   get 'service_requests/choose_professional/:id' => 'service_requests#service_request_tasker_index', as: 'service_request_tasker_index'
 

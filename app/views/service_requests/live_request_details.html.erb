@@ -10,15 +10,17 @@
 		
 		<div class="centered task-nav-header">
 
-			<a class="click-to-reveal active" data-reveal-panel-id="additional">1. Task Details</a><a class="click-to-reveal" data-reveal-panel-id="where">2. Address</a><a class="click-to-reveal" data-reveal-panel-id="payment">3. Payment</a>
+			<a class="click-to-reveal active" data-reveal-panel-id="additional">1. Task Details</a><a class="click-to-reveal" data-reveal-panel-id="when">2. When</a><a class="click-to-reveal" data-reveal-panel-id="where">3. Address</a><a class="click-to-reveal" data-reveal-panel-id="payment">4. Payment</a>
 
 		</div>
 
 		<br>
 
 		<%= form_for(@service_request) do |f| %>
-			
+
 			<%= render 'service_requests/details_additional', f: f %>
+
+			<%= render 'service_requests/details_when', f: f, visible: true %>
 
 			<%= render 'service_requests/details_where', f: f %>
 

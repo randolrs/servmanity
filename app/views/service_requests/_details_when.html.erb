@@ -1,23 +1,16 @@
 
-<div class="full-screen-container reveal-panel" id="when" style="display: none;">
+<div class="reveal-panel" id="when" style="display: none;">
 
-	<div class="top-of-page-message notice brand-yellow-background">
+	<!-- <a class="back-button click-to-reveal" data-reveal-panel-id="where"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Address</a> -->
 
-		<p>Please Select a Day and Time</p>
+	<div class="card clear-on-mobile-device">
+		<h3>When?</h3>
+		
+		<div class="form-controller centered card-content">
 
-	</div>
+			<span class="glyphicon glyphicon-chevron-left padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="-1"></span><a class="time-label" data-label-time="<%= Date.tomorrow %>"><span class="full-screen-only"><%= Date.tomorrow.strftime("%A")%>, </span><%= Date.tomorrow.strftime("%b %d")%></a><span class="glyphicon glyphicon-chevron-right padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="1"></span>
 
-	<div class="full-screen-content">
-
-		<div class="content medium">
-
-			<div class="form-controller centered">
-
-				<span class="glyphicon glyphicon-chevron-left padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="-1"></span><a class="time-label" data-label-time="<%= Date.tomorrow %>"><span class="full-screen-only"><%= Date.tomorrow.strftime("%A")%>, </span><%= Date.tomorrow.strftime("%b %d")%></a><span class="glyphicon glyphicon-chevron-right padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="1"></span>
-
-				<%= f.hidden_field :scheduled_day, :value => Date.tomorrow, :id => "scheduled_day", class: "form-controller-input" %>
-
-			</div>
+			<%= f.hidden_field :scheduled_day, :value => Date.tomorrow, :id => "scheduled_day", class: "form-controller-input" %>
 
 			<br><br>
 			
@@ -25,7 +18,7 @@
 
 			<%= f.hidden_field :time_of_day, :value => "Afternoon", :id => "time_of_day" %>
 
-			<br><br><br>
+			<br>
 
 			<a class="button brand-blue-background medium click-to-reveal hide-on-mobile-device" data-reveal-panel-id="where">Next</a>
 
