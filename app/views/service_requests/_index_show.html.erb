@@ -2,77 +2,79 @@
 
 	<div class="service-request-index card index <% if active %>active<% end %>">
 
-		<div class="row">
+		<div class="card-content">
 
-			<div class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
 
-				<h3><%= request.description %></h3>
+				<div class="col-xs-12 col-sm-8 col-md-9">
 
-				<br>
+					<h4><%= request.description %></h4>
 
-				<span class="request-price"><%= number_to_currency(request.price) %></span>
+					<span class="request-price"><%= number_to_currency(request.price) %></span>
 
-				<br>
-
-				<% if request.service_category %>
-
-					<%= request.service_category.name %> task
 					<br>
+
+					<% if request.service_category %>
+
+						<%= request.service_category.name %> task
+						<br>
+						
+					<%end%>
 					
-				<%end%>
-				
-				<% if request.tasker_id == current_user.id %>
-				
-					Address: <%= request.address %>
+					<% if request.tasker_id == current_user.id %>
+					
+						Address: <%= request.address %>
+						<br>
+					
+					<% end %>
+					
+					Submitted <%= time_ago_in_words(request.created_at) + " ago" %>
+					<%# request.address %>
 					<br>
-				
-				<% end %>
-				
-				Submitted <%= time_ago_in_words(request.created_at) + " ago" %>
-				<%# request.address %>
-				<br>
-				Additional Details: "<%= request.additional_information %>"
-				<%# task_status_tag(request) %>
-				<br>
+					Additional Details: "<%= request.additional_information %>"
+					<%# task_status_tag(request) %>
+					<br>
 
-				<% if request.latitude && request.longitude %>
-					
-					<%= current_user.distance_to_destination(request.latitude, request.longitude).round(1).to_s + " miles away" %>
+					<% if request.latitude && request.longitude %>
+						
+						<%= current_user.distance_to_destination(request.latitude, request.longitude).round(1).to_s + " miles away" %>
 
-				<%end%>
+					<%end%>
 
-				<span class="mobile-only"><br></span>
-
-			</div>
-
-			<% if request.tasker_id == current_user.id %>
-
-			<div class="col-xs-12 col-sm-4 col-md-3" style="text-align: right;">
-
-				<div class="row">
-
-					<div class="col-xs-12 col-sm-12 centered">
-
-						<a class="button small green-background">I Completed this Task</a>
-
-						<br><br>
-
-					</div>
-
-					<div class="col-xs-12 col-sm-12 centered">
-
-						<a class="button small dark-red-background">Cancel</a>
-
-					</div>
+					<span class="mobile-only"><br></span>
 
 				</div>
-			
+
+				<% if request.tasker_id == current_user.id %>
+
+					<div class="col-xs-12 col-sm-4 col-md-3" style="text-align: right;">
+
+						<div class="row">
+
+							<div class="col-xs-12 col-sm-12 centered">
+
+								<a class="button small green-background">I Completed this Task</a>
+
+								<br><br>
+
+							</div>
+
+							<div class="col-xs-12 col-sm-12 centered">
+
+								<a class="button small dark-red-background">Cancel</a>
+
+							</div>
+
+						</div>
+					
+					</div>
+
+				<%else%>
+				
+				<%end%>
+					
 			</div>
 
-			<%else%>
-			
-			<%end%>
-				
 		</div>	
 
 	</div>

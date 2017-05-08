@@ -1,0 +1,50 @@
+<div>
+
+	<div class="notice-header notice brand-yellow-background full-screen-only">
+
+		<p><%= @navigation_title %></p>
+
+	</div>
+
+	<div class="content medium">
+		
+		<div class="centered task-nav-header">
+
+			<a class="click-to-reveal active" data-reveal-panel-id="additional">1. Task Details</a><a class="click-to-reveal" data-reveal-panel-id="where">2. Address</a><a class="click-to-reveal" data-reveal-panel-id="payment">3. Payment</a>
+
+		</div>
+
+		<br>
+
+		<%= form_for(@service_request) do |f| %>
+			
+			<%= render 'service_requests/details_additional', f: f %>
+
+			<%= render 'service_requests/details_where', f: f %>
+
+			<%= render 'service_requests/details_payment', f: f %>
+
+
+			<%= f.hidden_field :is_live, :value => true, :id => "is_live" %>
+
+			<%= f.hidden_field :service_category_id, :value => @service_category.id %>
+			
+
+		<%end%>
+
+	</div>
+
+</div>
+
+
+
+
+<%# form_for(@service_request) do |f| %>
+	
+	<%# render 'service_requests/details_category', f: f %>
+	<%# render 'service_requests/details_live', f: f %>
+	<%# render 'service_requests/details_when', f: f %>
+	<%# render 'service_requests/details_where', f: f %>
+	<%# render 'service_requests/details_additional', f: f %>
+
+<%#end%>
