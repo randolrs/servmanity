@@ -1,0 +1,68 @@
+<div class="top-of-page-message notice brand-yellow-background">
+
+    <p>Confirmation</p>
+
+</div>
+
+<div class="content medium">
+
+	<div class="card centered">
+
+		<div class="card-content">
+		
+			<span class="glyphicon glyphicon-ok big-check-mark" aria-hidden=true></span>
+			
+			<br><br>
+
+			<% unless current_user.is_tasker %>
+			
+				<% if @service_request.is_live %>
+					
+					<%= image_tag @service_request.tasker.image.url(:medium), class:"medium-image rounded" %>
+
+					<p>Great news! <b><%= @service_request.tasker.public_display_name %></b> has accepted your task.  They will arrive in about 30 minutes to help with your <%= @service_request.service_category.name %> project.</p>
+				
+				<%else%>
+
+					<p>We are searching our network of mobile professionals to match your <%# @service_request.service_category.name %> service request with the best provider as soon as possible.</p>
+
+				<%end%>
+
+			<%else%>
+
+				<% if @service_request.is_live %>
+
+					<p>You accepted  <b><%= @service_request.user.first_name %></b> task.  Please arrive within 30 minutes to help with their <%= @service_request.service_category.name %> project.</p>
+
+					<br>				
+
+					<p><b>Details: </b></p>
+					<p><b>Price: </b><span class="request-price"><%= number_to_currency(@service_request.price) %></span></p>
+					<p><b>Address: </b>Address: <%= @service_request.address %></p>
+				
+				<%else%>
+
+					<p>We are searching our network of mobile professionals to match your <%# @service_request.service_category.name %> service request with the best provider as soon as possible.</p>
+
+				<%end%>
+
+
+			<%end%>
+
+			<br>
+
+			<p>If you have any questions in the mean time, feel free to contact us at support@servmanity.com</p>
+
+			<br>
+
+			<div class="centered">
+				<%= link_to "Back to Dashboard", root_path, class: "button medium dark-red-background"%>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+

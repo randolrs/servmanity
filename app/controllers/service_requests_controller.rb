@@ -122,6 +122,9 @@ class ServiceRequestsController < ApplicationController
 
   end
 
+
+
+
   def live_request_details
 
     @navigation_title = "Service Request"
@@ -154,6 +157,8 @@ class ServiceRequestsController < ApplicationController
     @additional_information_example_text = "EXAMPLE: I need help"
 
   end
+
+
 
 
   def scheduled_request_details
@@ -208,11 +213,14 @@ class ServiceRequestsController < ApplicationController
       @service_request = ServiceRequest.new(service_request_params)
 
       respond_to do |format|
+
         if @service_request.save
 
+          
           @service_request.update(:user_id => current_user.id)
           
-          unless current_user.address
+          
+          unless current_user.address #SAVE ADDRESS IF USER DOES NOT HAVE ONE
 
             if @service_request.address
 
@@ -222,14 +230,50 @@ class ServiceRequestsController < ApplicationController
 
           end
 
-          unless @service_request.is_live
+          #CREATE STRIPE CARD TOKEN
+
+            token = Stripe::Token.create(
+
+              :card => {
+                :number => params[:creditCardNumber],
+                :exp_month => params[:expMonth],
+                :exp_year => params[:expYear],
+                :cvc => params[:cvc]
+
+              },
+            )
+
+            customer = current_user.stripe_customer_object
+            
+            unless customer #does user have stripe customer?
+
+              customer = Stripe::Customer.create(
+              
+                :card  => token.id
+
+              )
+
+              UserStripeCustomer.create(:user_id => current_user.id, :stripe_customer_id => customer.id)
+            
+            else
+
+              customer.sources.create(source: token.id)
+
+
+            end
+
+            @service_request.update(:stripe_customer_id => customer.id)
+
+          #END STRIPE TOKEN CREATE
+
+
+          if @service_request.is_live #if this is a ASAP request
 
             format.html { redirect_to service_request_live_search_path(@service_request.id), notice: 'Service request was successfully created.' }
             format.json { render :show, status: :created, location: @service_request }
 
-          else
+          else #if this is a scheduled request
 
-            ##CONFIRMATION
 
             format.html { redirect_to service_request_live_search_path(@service_request.id), notice: 'Service request was successfully created.' }
             format.json { render :show, status: :created, location: @service_request }
@@ -248,9 +292,72 @@ class ServiceRequestsController < ApplicationController
 
     end
 
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    #redirect_to root_path(@service_request.id) and return
+    redirect_to root_path and return
   end
 
 
+  def mark_as_complete
+
+    if params[:service_request_id]
+
+      @service_request = ServiceRequest.where(:id => params[:service_request_id]).last
+
+      if @service_request
+
+        if current_user.is_tasker
+          
+          @service_request.update(:is_complete_tasker => true)
+
+        else
+
+          @service_request.update(:is_complete_user => true)
+          
+        end
+
+        redirect_to service_request_confirm_complete_path(@service_request.id)
+
+      else
+
+        root_path
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+
+  end
+
+  def service_request_confirm_complete
+
+    if params[:service_request_id]
+
+      @service_request = ServiceRequest.where(:id => params[:service_request_id]).last
+
+      if @service_request
+
+      else
+
+        redirect_to root_path
+
+      end
+
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+  end
 
 
   def live_search

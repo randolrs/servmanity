@@ -107,73 +107,90 @@
 
 					<h3>Payment Information</h3>
 
+
 					<div class="card-content row">
 
-						<div class="col-xs-12 col-sm-12 cc-form-row">
+						<% if @user_stripe_cards %>
+						
+							<select class="saved-payment-methods" name='savedPaymentMethods' id='savedPaymentMethods'>
 
-							<%= label_tag 'name-on-card', "Name on Card" %>
-							<%= text_field_tag 'name-on-card' %>
+							    <% @user_stripe_cards.each do |card|%>
 
-						</div>
-						<br>
+							    	 <option value=<%= card.id %>><%= card.brand + " •••• •••• •••• " + card.last4 %></option>
 
-						<div class="col-xs-12 col-sm-12 cc-form-row">
+							    <%end%>
 
-							<%= label_tag 'credit-card-number', "Credit Card Number" %>
-							<%= text_field_tag 'credit-card-number' %>
+							     <option value="add_new_card">Add a New Card</option>
 
-						</div>
+							</select>
 
-						<div class="col-xs-6 cc-form-row">
+						<%else%>
 
-							<%= label_tag 'expiration-date', "Expiration Date" %>
-							
-							<ul class="horizontal">
+							<div class="col-xs-12 col-sm-12 cc-form-row">
 
-								<li><select class="cc-select" name='expMonth' id='expireMM'>
-							    <option value=''>Month</option>
-							    <option value='01'>01</option>
-							    <option value='02'>02</option>
-							    <option value='03'>03</option>
-							    <option value='04'>04</option>
-							    <option value='05'>05</option>
-							    <option value='06'>06</option>
-							    <option value='07'>07</option>
-							    <option value='08'>08</option>
-							    <option value='09'>09</option>
-							    <option value='10'>10</option>
-							    <option value='11'>11</option>
-							    <option value='12'>12</option>
-								</select></li>
-								<li><select class="cc-select" name='expYear' id='expireYY'>
-							    <option value=''>Year</option>
-							    <option value='16'>2016</option>
-							    <option value='17'>2017</option>
-							    <option value='18'>2018</option>
-							    <option value='18'>2019</option>
-							    <option value='18'>2020</option>
-							    <option value='18'>2021</option>
-							    <option value='18'>2022</option>
-								</select></li>
+								<%= label_tag 'name-on-card', "Name on Card" %>
+								<%= text_field_tag 'name-on-card' %>
 
-							</ul>
+							</div>
+							<br>
 
-						</div>
+							<div class="col-xs-12 col-sm-12 cc-form-row">
 
-						<div class="col-xs-6 cc-form-row">
+								<%= label_tag 'credit-card-number', "Credit Card Number" %>
+								<%= text_field_tag 'credit-card-number' %>
 
-							<%= label_tag 'cvc', "CVC" %>
-							<%= text_field_tag 'cvc' %>
+							</div>
 
-						</div>
+							<div class="col-xs-6 cc-form-row">
+
+								<%= label_tag 'expiration-date', "Expiration Date" %>
+								
+								<ul class="horizontal">
+
+									<li><select class="cc-select" name='expMonth' id='expireMM'>
+								    <option value=''>Month</option>
+								    <option value='01'>01</option>
+								    <option value='02'>02</option>
+								    <option value='03'>03</option>
+								    <option value='04'>04</option>
+								    <option value='05'>05</option>
+								    <option value='06'>06</option>
+								    <option value='07'>07</option>
+								    <option value='08'>08</option>
+								    <option value='09'>09</option>
+								    <option value='10'>10</option>
+								    <option value='11'>11</option>
+								    <option value='12'>12</option>
+									</select></li>
+									<li><select class="cc-select" name='expYear' id='expireYY'>
+								    <option value=''>Year</option>
+								    <option value='16'>2016</option>
+								    <option value='17'>2017</option>
+								    <option value='18'>2018</option>
+								    <option value='18'>2019</option>
+								    <option value='18'>2020</option>
+								    <option value='18'>2021</option>
+								    <option value='18'>2022</option>
+									</select></li>
+
+								</ul>
+
+							</div>
+
+							<div class="col-xs-6 cc-form-row">
+
+								<%= label_tag 'cvc', "CVC" %>
+								<%= text_field_tag 'cvc' %>
+
+							</div>
+
+						<%end%>
 
 					</div>
 
 				</div>
 
 				<div class="actions centered">
-							
-					<br>
 							
 					<%= f.submit "Update", class: "button medium brand-blue-background" %>
 					

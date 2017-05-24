@@ -9,10 +9,12 @@
 		
 		<%else%>
 			
-			<li><%= link_to "Home", root_path, class: cp(root_path) %></li><li><%= link_to "Requests", requests_path, class: cp(requests_path) %></li><li><%= link_to "Messages", messages_path, class: cp(messages_path) %></li>
+			<li><%= link_to "Home", root_path, class: cp(root_path) %></li><li><%= link_to "Requests", requests_path, class: cp(requests_path) %></li><li><a class="click-to-reveal cta" data-reveal-panel-id="service-request-when">Hire Someone</a></li>
 
 
 		<%end%>
+
+		<%= render 'modals/service_request_when' %>
 
 	</ul>
 	

@@ -39,6 +39,15 @@ class UsersController < ApplicationController
   def account_settings
 
     @navigation_title = "Account Settings"
+
+    @stripe_customer_object = current_user.stripe_customer_object
+
+    if @stripe_customer_object 
+
+      @user_stripe_cards = Stripe::Customer.retrieve(@stripe_customer_object.id).sources.all(:object => "card")
+    
+    end
+
     
   end
   

@@ -4,11 +4,12 @@
 	<!-- <a class="back-button click-to-reveal" data-reveal-panel-id="where"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Address</a> -->
 
 	<div class="card clear-on-mobile-device">
+		
 		<h3>When?</h3>
 		
 		<div class="form-controller centered card-content">
 
-			<span class="glyphicon glyphicon-chevron-left padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="-1"></span><a class="time-label" data-label-time="<%= Date.tomorrow %>"><span class="full-screen-only"><%= Date.tomorrow.strftime("%A")%>, </span><%= Date.tomorrow.strftime("%b %d")%></a><span class="glyphicon glyphicon-chevron-right padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="1"></span>
+			<span class="glyphicon glyphicon-chevron-left padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="-1"></span><a class="time-label" data-label-time="<%= Date.tomorrow %>"><span class="full-screen-only"><%= Date.tomorrow.strftime("%a")%>, </span><%= Date.tomorrow.strftime("%b %d")%></a><span class="glyphicon glyphicon-chevron-right padded-arrow change-time-label clickable" aria-hidden="true" data-change-interval="1"></span>
 
 			<%= f.hidden_field :scheduled_day, :value => Date.tomorrow, :id => "scheduled_day", class: "form-controller-input" %>
 

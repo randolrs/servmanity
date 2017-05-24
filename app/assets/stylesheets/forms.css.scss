@@ -31,6 +31,10 @@
 		
 	}
 
+	.field:last-child{
+		margin-bottom: 0px;
+	}
+
 	input, textarea {
 		width:100%;
 		display: block;
@@ -351,5 +355,9 @@ form{
 
 .cc-select, #cvc{
 	width: 100px;
+}
+
+.actions{
+	padding: 20px;
 }
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427002936) do
+ActiveRecord::Schema.define(version: 20170524142440) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170427002936) do
     t.boolean  "is_live"
     t.text     "description"
     t.decimal  "price"
+    t.string   "stripe_customer_id"
   end
 
   create_table "user_service_categories", force: :cascade do |t|
@@ -62,6 +63,15 @@ ActiveRecord::Schema.define(version: 20170427002936) do
     t.decimal  "hourly_rate"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "user_stripe_customers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "stripe_customer_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.boolean  "default_payment"
+    t.boolean  "hidden_from_user"
   end
 
   create_table "users", force: :cascade do |t|

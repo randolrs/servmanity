@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  
+  	
+  	has_many :user_stripe_customers
+
 	geocoded_by :address
 
 	after_validation :geocode, :if => :address_changed?
@@ -108,7 +110,7 @@ class User < ActiveRecord::Base
 
 	def active_task_for_tasker
 
-		return ServiceRequest.all.where(:is_complete_user => nil, :tasker_id => self.id, :is_live => true).last
+		return ServiceRequest.all.where(:is_complete_tasker => nil, :tasker_id => self.id, :is_live => true).last
 
 	end
 
@@ -187,5 +189,24 @@ class User < ActiveRecord::Base
 		return record.description
 
 	end
+
+
+
+	def stripe_customer_object
+
+	    if UserStripeCustomer.exists?(:user_id => self.id)
+	    
+	      stripe_customer_id = UserStripeCustomer.where(:user_id => self.id).last.stripe_customer_id
+
+	      return Stripe::Customer.retrieve(stripe_customer_id)
+
+	    else
+
+	      return nil
+
+	    end 
+
+	  end
+
 
 end
