@@ -57,6 +57,9 @@ ready = ->
 				if $(element).data("reveal-panel-id") == $(@).data("reveal-panel-id")
 					$(element).addClass('active')
 
+		$(".add-a-card").click (e) ->
+			$('#cc-form').fadeIn()
+
 		@checkForRequestAcceptance = (requestID) ->
 			$.ajax
 				url: "/service_request/check_for_acceptance/#{requestID}", format: 'js'

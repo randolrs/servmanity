@@ -1,204 +1,207 @@
-<div class="content">
+<div class="content medium">
 
-	<header class="full-screen-only">Account Settings</header>
+	<div class="options-content card clear-on-mobile-device">
 
-	<div class="content medium">
+		<h3>Account Settings</h3>
 
 		<div class="centered task-nav-header">
 
-			<a class="click-to-reveal active" data-reveal-panel-id="profile">Profile</a><a class="click-to-reveal" data-reveal-panel-id="login">Login</a><a class="click-to-reveal" data-reveal-panel-id="payment">Payment</a>
+			<a class="click-to-reveal active" data-reveal-panel-id="profile">Profile</a><a class="click-to-reveal" data-reveal-panel-id="login">Login</a><a class="click-to-reveal" data-reveal-panel-id="payment">Payments</a>
 
 		</div>
 
-		<br>
+		<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
 
-		<div class="options-content card clear-on-mobile-device">
+			<div class="reveal-panel" id="profile">
 
-			<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
+				<div class="card-content">
 
-				<div class="reveal-panel" id="profile">
+					<div class="field">
 
-					<h3>Profile</h3>
+				      <label>Profile Photo</label><br>
 
-					<div class="card-content">
+				      <div class="image-field-container">
+				        
+				        <%= image_tag current_user.image.url(:small), class:"small-image rounded" %>
 
-						<div class="field">
+				        <%= f.file_field :image, class: "small-image-overlay-input" %><br>
 
-					      <label>Profile Photo</label><br>
+				      </div>
 
-					      <div class="image-field-container">
-					        
-					        <%= image_tag current_user.image.url(:small), class:"small-image rounded" %>
+				    </div>
 
-					        <%= f.file_field :image, class: "small-image-overlay-input" %><br>
 
-					      </div>
+					<div class="field">
 
-					    </div>
+						<label>First Name</label><br>
 
-
-						<div class="field">
-
-							<label>First Name</label><br>
-
-						  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
-						
-						</div>
-
-
-						<div class="field">
-
-							<label>Last Name</label><br>
-
-							<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
-
-						</div>
-
-						<div class="field">
-		  					
-		  					<label>Phone Number</label><br>
-
-						  	<%= f.text_field :phone_number, placeholder: "Phone Number", :required => true %>
-
-						</div>
-
-
-						<div class="field">
-						  	
-						  	<label>Address</label><br>
-
-							<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
-
-						</div>
-
-					</div>
-
-				</div>
-
-
-				<div class="reveal-panel" id="login" style="display: none;">
-
-					<h3>Login</h3>
-
-					<div class="card-content">
-
-						<div class="field">
-		  					
-		  					<label>Email</label><br>
-
-						  	<%= f.email_field :email, placeholder: "Email", :required => true %>
-
-						</div>
-
-						<div class="field">
-							
-							<label>Password</label><br>
-
-						  	<%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
-
-						</div>
-
-					</div>
-
-				</div>
-
-
-				<div class="reveal-panel" id="payment" style="display: none;">
-
-					<h3>Payment Information</h3>
-
-
-					<div class="card-content row">
-
-						<% if @user_stripe_cards %>
-						
-							<select class="saved-payment-methods" name='savedPaymentMethods' id='savedPaymentMethods'>
-
-							    <% @user_stripe_cards.each do |card|%>
-
-							    	 <option value=<%= card.id %>><%= card.brand + " •••• •••• •••• " + card.last4 %></option>
-
-							    <%end%>
-
-							     <option value="add_new_card">Add a New Card</option>
-
-							</select>
-
-						<%else%>
-
-							<div class="col-xs-12 col-sm-12 cc-form-row">
-
-								<%= label_tag 'name-on-card', "Name on Card" %>
-								<%= text_field_tag 'name-on-card' %>
-
-							</div>
-							<br>
-
-							<div class="col-xs-12 col-sm-12 cc-form-row">
-
-								<%= label_tag 'credit-card-number', "Credit Card Number" %>
-								<%= text_field_tag 'credit-card-number' %>
-
-							</div>
-
-							<div class="col-xs-6 cc-form-row">
-
-								<%= label_tag 'expiration-date', "Expiration Date" %>
-								
-								<ul class="horizontal">
-
-									<li><select class="cc-select" name='expMonth' id='expireMM'>
-								    <option value=''>Month</option>
-								    <option value='01'>01</option>
-								    <option value='02'>02</option>
-								    <option value='03'>03</option>
-								    <option value='04'>04</option>
-								    <option value='05'>05</option>
-								    <option value='06'>06</option>
-								    <option value='07'>07</option>
-								    <option value='08'>08</option>
-								    <option value='09'>09</option>
-								    <option value='10'>10</option>
-								    <option value='11'>11</option>
-								    <option value='12'>12</option>
-									</select></li>
-									<li><select class="cc-select" name='expYear' id='expireYY'>
-								    <option value=''>Year</option>
-								    <option value='16'>2016</option>
-								    <option value='17'>2017</option>
-								    <option value='18'>2018</option>
-								    <option value='18'>2019</option>
-								    <option value='18'>2020</option>
-								    <option value='18'>2021</option>
-								    <option value='18'>2022</option>
-									</select></li>
-
-								</ul>
-
-							</div>
-
-							<div class="col-xs-6 cc-form-row">
-
-								<%= label_tag 'cvc', "CVC" %>
-								<%= text_field_tag 'cvc' %>
-
-							</div>
-
-						<%end%>
-
-					</div>
-
-				</div>
-
-				<div class="actions centered">
-							
-					<%= f.submit "Update", class: "button medium brand-blue-background" %>
+					  	<%= f.text_field :first_name, placeholder: "First Name", :required => true %>
 					
+					</div>
+
+
+					<div class="field">
+
+						<label>Last Name</label><br>
+
+						<%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+
+					</div>
+
+					<div class="field">
+	  					
+	  					<label>Phone Number</label><br>
+
+					  	<%= f.text_field :phone_number, placeholder: "Phone Number", :required => true %>
+
+					</div>
+
+
+					<div class="field">
+					  	
+					  	<label>Address</label><br>
+
+						<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input" %>
+
+					</div>
+
 				</div>
 
-			<%end%>
+			</div>
 
-		</div>
+
+			<div class="reveal-panel" id="login" style="display: none;">
+
+				<div class="card-content">
+
+					<div class="field">
+	  					
+	  					<label>Email</label><br>
+
+					  	<%= f.email_field :email, placeholder: "Email", :required => true %>
+
+					</div>
+
+					<div class="field">
+						
+						<label>Password</label><br>
+
+					  	<%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<div class="reveal-panel" id="payment" style="display: none;">
+
+				<div class="card-content row">
+
+					<% if @user_stripe_cards %>
+						
+						<table class="cards-table">
+
+							<tr>
+								<th>Description</th>
+								<th>EXP</th>
+								<th></th>
+							</tr>
+
+							<% @user_stripe_cards.each do |card|%>
+
+								<tr>
+									<td><%= card.brand + " ending in " + card.last4 %></td>
+									<td><%= card.exp_month.to_s + "/" + card.exp_year.to_s %></td>
+									<td>
+
+										<% if @stripe_customer_object.default_source == card.id %><a class="button green-background right-margin"><span class="glyphicon glyphicon-ok" style="margin-right: 5px;"></span>Default</a><%else%><a class="button bright-blue-background right-margin" href='<%# new_default_card_path(card.id) %>'>Make Default</a><%end%>
+
+									</td>
+								</tr>
+
+							<%end%>
+
+						</table>
+
+						<br>
+
+						</div>
+
+					<%else%>
+
+						<div class="col-xs-12 col-sm-12 cc-form-row">
+
+							<%= label_tag 'name-on-card', "Name on Card" %>
+							<%= text_field_tag 'name-on-card' %>
+
+						</div>
+						<br>
+
+						<div class="col-xs-12 col-sm-12 cc-form-row">
+
+							<%= label_tag 'credit-card-number', "Credit Card Number" %>
+							<%= text_field_tag 'credit-card-number' %>
+
+						</div>
+
+						<div class="col-xs-6 cc-form-row">
+
+							<%= label_tag 'expiration-date', "Expiration Date" %>
+							
+							<ul class="horizontal">
+
+								<li><select class="cc-select" name='expMonth' id='expireMM'>
+							    <option value=''>Month</option>
+							    <option value='01'>01</option>
+							    <option value='02'>02</option>
+							    <option value='03'>03</option>
+							    <option value='04'>04</option>
+							    <option value='05'>05</option>
+							    <option value='06'>06</option>
+							    <option value='07'>07</option>
+							    <option value='08'>08</option>
+							    <option value='09'>09</option>
+							    <option value='10'>10</option>
+							    <option value='11'>11</option>
+							    <option value='12'>12</option>
+								</select></li>
+								<li><select class="cc-select" name='expYear' id='expireYY'>
+							    <option value=''>Year</option>
+							    <option value='16'>2016</option>
+							    <option value='17'>2017</option>
+							    <option value='18'>2018</option>
+							    <option value='18'>2019</option>
+							    <option value='18'>2020</option>
+							    <option value='18'>2021</option>
+							    <option value='18'>2022</option>
+								</select></li>
+
+							</ul>
+
+						</div>
+
+						<div class="col-xs-6 cc-form-row">
+
+							<%= label_tag 'cvc', "CVC" %>
+							<%= text_field_tag 'cvc' %>
+
+						</div>
+
+					<%end%>
+
+				</div>
+
+			</div>
+
+			<div class="actions centered">
+						
+				<%= f.submit "Update", class: "button medium brand-blue-background" %>
+				
+			</div>
+
+		<%end%>
 
 	</div>
 
