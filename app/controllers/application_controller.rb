@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
+	before_action :check_for_stripe_account, if: :user_signed_in?
+
 	before_action :set_last_seen_at, if: proc { user_signed_in? }
 
 	before_action :check_for_location
@@ -86,7 +88,7 @@ class ApplicationController < ActionController::Base
 
 	        account = Stripe::Account.create({:country => "US", :managed => true})
 
-	        current_user.update(:stripe_account_id => account.id, :stripe_secret_key => account.keys.secret, :stripe_publishable_key => account.key.publishable)
+	        current_user.update(:stripe_account_id => account.id, :stripe_secret_key => account.keys.secret, :stripe_publishable_key => account.keys.publishable)
 
 	        account.tos_acceptance.date = Time.now.to_i
 

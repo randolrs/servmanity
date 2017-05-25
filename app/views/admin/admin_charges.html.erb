@@ -2,5 +2,54 @@
 
 	<header><%= link_to "Admin Home", admin_home_path %> > Charges</header>
 
-	XXYYZZ
+	<table class="formatted-table">
+
+		<thead>
+			
+			<tr>
+
+				<th>Request Time</th>
+
+				<th>Completion Time</th>
+
+				<th>Time Elapsed</th>
+
+				<th>Price</th>
+
+				<th>Service Fee</th>
+
+				<th colspan="2"></th>
+
+			</tr>
+
+		</thead>
+
+		<tbody>
+			
+			<% ServiceRequest.has_pending_charge.each do |request| %>
+
+				<tr>
+
+					<td><% if request.created_at %><%= request.created_at.strftime("%m/%e/%y %H:%M") %><% end %></td>
+
+					<td><% if request.tasker_completion_time %><%= request.tasker_completion_time.strftime("%m/%e/%y %H:%M") %><% end %></td>
+
+					<td><%= request.time_between_request_and_completion %></td>
+
+					<td><%= number_to_currency(request.price) %></td>
+
+					<td><%=  request.service_fee %></td>
+
+					<td><%= link_to "Process Payment", service_request_process_payment_path(request.id) %></td>
+
+				</tr>
+
+			<%end%>
+
+		</tbody>
+
+
+	</table>
+
+
 </div>

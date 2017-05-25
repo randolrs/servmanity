@@ -205,8 +205,40 @@ class User < ActiveRecord::Base
 	      return nil
 
 	    end 
+	
+	end
 
-	  end
+	
+
+    def stripe_balance
+
+      if self.stripe_secret_key
+
+        Stripe.api_key = self.stripe_secret_key
+
+        balance_object = Stripe::Balance.retrieve()
+
+        @user_stripe_balance = (balance_object.available[0]['amount'] + balance_object.pending[0]['amount']) / 100
+
+        if Rails.env == "production"
+
+			Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
+
+		else
+
+			Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
+
+		end
+
+        return @user_stripe_balance
+
+      else
+
+        return 0
+
+      end
+
+  end
 
 
 end

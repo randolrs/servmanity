@@ -8,15 +8,18 @@
 
 			<div class="card centered">
 
-				<h4 class="centered small-section-header">Available Balance</h4>
+				<h3 class="centered small-section-header">Available Balance</h3>
 
-				<br>
+				<div class="card-content">
 
-				<span class="big-balance">$59.00</span>
+					<span class="big-balance"><%= number_to_currency(current_user.stripe_balance) %></span>
 
-				<br><br>
+					<br><br>
 
-				<%= link_to "Balance History", root_path, class:"button orange-background stretch" %>
+					<%= link_to "Balance History", root_path, class:"button orange-background stretch" %>
+
+				</div>
+				
 			</div>
 
 		</div>
@@ -25,15 +28,17 @@
 			
 			<div class="card centered">
 				
-				<h4 class="centered small-section-header">Next Payment Date</h4>
+				<h3 class="centered small-section-header">Next Payment Date</h3>
 
-				<br>
+				<div class="card-content">
 
-				<span class="big-date"><%= Date.today.strftime("%b %e")%></span>
+					<span class="big-date"><%= Date.today.strftime("%b %e")%></span>
 
-				<br><br>
+					<br><br>
 
-				<%= link_to "Payment Schedule", root_path, class:"button orange-background stretch" %>
+					<%= link_to "Payment Schedule", root_path, class:"button orange-background stretch" %> 
+
+				</div>
 				
 			</div>
 
@@ -43,19 +48,21 @@
 
 			<div class="card centered">
 
-				<h4 class="centered small-section-header">Payee Information</h4>
+				<h3 class="centered small-section-header">Payee Information</h3>
 
-				<br>
+				<div class="card-content">
 
-				<span class="payee-information"><%= current_user.first_name %></span>
-				
-				<br>
+					<span class="payee-information"><%= current_user.first_name %></span>
+					
+					<br>
 
-				<span class="payee-information">Account Ending 6882</span>
+					<span class="payee-information">Account Ending 6882</span>
 
-				<br><br>
+					<br><br>
 
-				<%= link_to "Edit Payee", root_path, class:"button orange-background stretch" %>
+					<%= link_to "Edit Payee", root_path, class:"button orange-background stretch" %>
+
+				</div>
 				
 			</div>
 

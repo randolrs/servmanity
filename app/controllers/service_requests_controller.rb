@@ -309,12 +309,12 @@ class ServiceRequestsController < ApplicationController
 
         if current_user.is_tasker
           
-          @service_request.update(:is_complete_tasker => true)
+          @service_request.update(:is_complete_tasker => true, :tasker_completion_time => Time.now)
 
         else
 
           @service_request.update(:is_complete_user => true)
-          
+
         end
 
         redirect_to service_request_confirm_complete_path(@service_request.id)
@@ -349,6 +349,64 @@ class ServiceRequestsController < ApplicationController
 
       end
 
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+  end
+
+  def admin_process_payment
+
+    if user_signed_in?
+
+      if current_user.is_admin
+
+        if params[:service_request_id]
+
+          service_request = ServiceRequest.where(:id => params[:service_request_id]).last
+
+            if service_request
+
+
+              price = (service_request.price * 100).to_i
+
+              platform_fee = (service_request.service_fee * 100).to_i
+
+              charge = Stripe::Charge.create(
+                :customer    => service_request.stripe_customer_id,
+                :amount      => price,
+                :description => 'Rails Stripe customer',
+                :currency    => 'usd',
+                :destination => service_request.tasker.stripe_account_id,
+                :application_fee => platform_fee
+              )
+
+              service_request.update(:charge_approved => true)
+
+              redirect_to :back
+
+
+            else
+
+              redirect_to :back
+
+            end
+
+        else
+
+          redirect_to root_path
+
+        end
+
+      else
+
+        redirect_to root_path
+
+      end
 
     else
 

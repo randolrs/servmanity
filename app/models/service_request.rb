@@ -45,17 +45,26 @@ class ServiceRequest < ActiveRecord::Base
 
 		if self.tasker_id
 
+			tasker = User.where(:id => self.tasker_id).last
 
-			if User.find(self.tasker_id)
+			if tasker
 
-				return User.find(self.tasker_id)
+				return tasker
+
+			else
+
+				return nil
 
 			end
 
+		else
+
+			return nil
+
 		end
 
-
 	end
+
 
 	def status
 
@@ -77,5 +86,47 @@ class ServiceRequest < ActiveRecord::Base
 		end
 
 
+	end
+
+	def self.has_pending_charge
+
+		return ServiceRequest.where(:is_complete_tasker => true, :charge_approved => nil).where.not(:stripe_customer_id => nil)
+
+	end
+
+	def time_between_request_and_completion
+
+		if self.tasker_completion_time
+			
+			raw_difference = (self.tasker_completion_time - self.created_at).to_i
+
+			hours = raw_difference / 3600
+			raw_difference -= hours * 3600
+
+			minutes = raw_difference / 60
+			raw_difference -= minutes * 60
+
+			seconds = raw_difference
+
+			return hours.to_s + " hours, " + minutes.to_s + " minutes"
+
+		else
+
+			return nil
+
+		end
+		
+	end
+
+	def service_fee
+
+		if self.price
+			
+
+			service_fee_raw = self.price * 0.08
+
+			return service_fee_raw
+
+		end
 	end
 end
