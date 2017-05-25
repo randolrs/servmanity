@@ -89,6 +89,26 @@ class ServiceRequestsController < ApplicationController
 
   end
 
+  def review_details
+
+    if params[:service_request_id]
+
+      @service_request = ServiceRequest.where(:id => params[:service_request_id]).last
+
+      unless @service_request
+
+        redirect_to :back
+
+      end
+
+    else
+
+      redirect_to :back
+
+    end
+
+  end
+
   def request_details
 
     @navigation_title = "Service Request"
@@ -384,6 +404,8 @@ class ServiceRequestsController < ApplicationController
                 :destination => service_request.tasker.stripe_account_id,
                 :application_fee => platform_fee
               )
+
+              Charge.create(:user_id => service_request.user_id, :tasker_id => service_request.tasker_id, :stripe_customer_id => service_request.stripe_customer_id, :destination_stripe_account_id => service_request.tasker.stripe_account_id, :amount => price, :service_fee => platform_fee)
 
               service_request.update(:charge_approved => true)
 

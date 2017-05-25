@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525033844) do
+ActiveRecord::Schema.define(version: 20170525140458) do
+
+  create_table "charges", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "tasker_id"
+    t.decimal  "amount"
+    t.string   "stripe_customer_id"
+    t.string   "destination_stripe_account_id"
+    t.decimal  "service_fee"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
 
   create_table "markets", force: :cascade do |t|
     t.string   "display_name"

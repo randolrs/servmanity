@@ -1,37 +1,68 @@
-<div class="content medium">
+<div class="content">
 
 	<header><%= link_to "Admin Home", admin_home_path %> > Users</header>
 
-	<% User.all.sort_by(&:created_at).reverse.each do |user| %>
-		
-		<%= link_to admin_edit_user_path(user.id) do %>
-		
-			<div class="card index">
-				<div class="row">
-					<div class="col-xs-12 col-sm-3">
-						<%= image_tag user.image.url(:small), class:"small-image rounded" %>
-					</div>
+	<table class="formatted-table">
 
-					<div class="col-xs-12 col-sm-9">
-						<p>Name: <%= user.first_name %> <%= user.last_name %></p>
-						<p>User ID: <%= user.id %></p>
-						<p>Email: <%= user.email %></p>
-						<p><% if user.is_tasker %>Mobile Professional<%else%>Customer<%end%></p>
+		<thead>
+			
+			<tr>
+
+				<th>ID</th>
+
+				<th colspan="2">Name</th>
+
+				<th>Email</th>
+
+				<th>User Type</th>
+
+				<th>Total Requests</th>
+
+				<th>Last Online</th>
+
+				<th></th>
+
+			</tr>
+
+		</thead>
+
+		<tbody>
+			
+			<% User.all.sort_by(&:created_at).reverse.each do |user| %>
+
+				<tr>
+
+					<td><%= user.id %></td>
+
+					<td><%= image_tag user.image.url(:small), class:"small-image rounded" %></td>
+					
+					<td><%= user.first_name %> <%= user.last_name %></td>
+
+					<td><%= user.email %></td>
+
+					<td><% if user.is_tasker %>Mobile Professional<%else%>Customer<%end%></td>
+
+					<td>
 						<%if user.last_seen_at %>
-							<p>Last Online: <%= time_ago_in_words(user.last_seen_at) %> ago</p>
+							Last Online: <%= time_ago_in_words(user.last_seen_at) %> ago
 						<%end%>
+					</td>
+
+					<td>
 						<%if user.is_tasker %>
-							<p>Total Requests Accepted: <%= user.requests_assigned_to_me.count %></p>
+							Requests Accepted: <%= user.requests_assigned_to_me.count %>
 						<%else%>
-							<p>Total Service Requests: <%= user.service_requests.count %></p>
+							Requests Made: <%= user.service_requests.count %>
 						<%end%>
-					</div>
+					</td>
 
-				</div>
-				
-			</div>
+				</tr>
 
-		<%end%>
+			<%end%>
 
-	<%end%>
+		</tbody>
+
+
+	</table>
+
 </div>

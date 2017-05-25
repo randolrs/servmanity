@@ -1,0 +1,57 @@
+
+<div class="content medium">
+
+	<div class="card">
+
+		<h3>Edit Request Details</h3>
+
+		<div class="card-content">
+
+			<%= form_for(@service_request) do |f| %>
+				
+				<section id="description">
+
+					<label>Description</label><br>
+					<%= f.text_field :description, placeholder: "Brief Description of Task"  %>
+
+					<br><br>
+
+					<label>Any Relevant Details</label><br>
+					<%= f.text_area :additional_information, placeholder: @additional_information_example_text  %>
+
+					<br><br>
+
+					<label>Set a Budget</label><br>
+					
+					<% if @service_request.tasker_id %>
+						<%= number_to_currency(@service_request.price).to_s + " (Task Accepted, Cannot Change Budget)" %>
+					<%else%>
+
+						<%= f.number_field :price, class: "centered price" %>
+
+					<%end%>
+
+				</section>
+
+				<br><br>
+
+				<section id="address">
+
+					<label>Address</label><br>
+
+					<%= f.text_field :address, class:"geocomplete-input address_input_for_embed" %>
+
+				</section>
+
+				<br><br>
+				
+				<%= f.submit "Update Request", class: "button brand-blue-background medium" %>
+
+			<%end%>
+
+		</div>
+
+	</div>
+
+</div>
+

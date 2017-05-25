@@ -8,17 +8,15 @@
 			
 			<tr>
 
-				<th>Request Time</th>
+				<th>Date/Time</th>
 
-				<th>Completion Time</th>
-
-				<th>Time Elapsed</th>
-
-				<th>Price</th>
+				<th>Amount</th>
 
 				<th>Service Fee</th>
 
-				<th colspan="2"></th>
+				<th>Customer Email</th>
+
+				<th>Tasker Email</th>
 
 			</tr>
 
@@ -26,21 +24,19 @@
 
 		<tbody>
 			
-			<% ServiceRequest.has_pending_charge.each do |request| %>
+			<% Charge.all.each do |charge| %>
 
 				<tr>
 
-					<td><% if request.created_at %><%= request.created_at.strftime("%m/%e/%y %H:%M") %><% end %></td>
+					<td><%= charge.created_at.strftime("%m/%e/%y %H:%M") %></td>
 
-					<td><% if request.tasker_completion_time %><%= request.tasker_completion_time.strftime("%m/%e/%y %H:%M") %><% end %></td>
+					<td><%= number_to_currency(charge.amount/100) %></td>
 
-					<td><%= request.time_between_request_and_completion %></td>
+					<td><%= number_to_currency(charge.service_fee/100) %></td>
 
-					<td><%= number_to_currency(request.price) %></td>
+					<td><%= User.find(charge.user_id).email %></td>
 
-					<td><%=  request.service_fee %></td>
-
-					<td><%= link_to "Process Payment", service_request_process_payment_path(request.id) %></td>
+					<td><%= User.find(charge.tasker_id).email %></td>
 
 				</tr>
 

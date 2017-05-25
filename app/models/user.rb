@@ -116,7 +116,7 @@ class User < ActiveRecord::Base
 
 	def active_task_for_non_tasker
 
-		return ServiceRequest.all.where(:is_complete_user => nil, :user_id => self.id, :is_live => true).last
+		return ServiceRequest.all.where(:is_complete_tasker => nil, :user_id => self.id, :is_live => true).last
 
 	end
 
@@ -208,7 +208,7 @@ class User < ActiveRecord::Base
 	
 	end
 
-	
+
 
     def stripe_balance
 

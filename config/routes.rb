@@ -59,6 +59,8 @@ Rails.application.routes.draw do
 
   get 's/service_requests/initiate/' => 'service_requests#request_details', as: 'initiate_service_request_no_category'
 
+  get 's/service_request/:service_request_id/review_details' => 'service_requests#review_details', as: 'review_service_request_details'
+
   get '/service_request/:id/' => 'service_requests#show', as: 'show_service_request'
 
   post 'service_request/:service_request_id/add_professional/:tasker_id' => 'service_requests#add_tasker', as: 'add_tasker_to_service_request'
