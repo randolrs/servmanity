@@ -25,6 +25,8 @@
 	
 	<%= render 'users/dashboard_header' %>
 
+	<%= flash[:error] %>
+	
 	<div class="content">
 		
 		<% if current_user.active_tasks_for_non_tasker %>

@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
 	if Rails.env == "production"
 
-		Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
+		Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY'] #NEED TO SWITCH TO LIVE ON LAUNCH
 
 	else
 
