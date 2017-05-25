@@ -52,7 +52,7 @@
 
 					<% unless request.is_complete_tasker %>
 
-						<div class="col-xs-12 col-sm-4" style="text-align: right;">
+						<div class="col-xs-12 col-sm-4 centered">
 
 							<%if request.is_live %>
 							
@@ -73,12 +73,8 @@
 						</div>
 
 					<%else%>
-						
-						<div class="col-xs-12 col-sm-4" style="text-align: right;">
 
-							<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
-						
-						</div>
+						<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
 
 					<%end%>
 					
@@ -91,7 +87,7 @@
 
 							<% unless request.is_complete_tasker %>
 
-								<div class="col-xs-12 col-sm-4" style="text-align: right;">
+								<div class="col-xs-12 col-sm-4 centered">
 
 									<%= link_to "Modify", review_service_request_details_path(request.id), class:"button small green-background" %>
 
@@ -103,22 +99,14 @@
 
 							<%else%>
 								
-								<div class="col-xs-12 col-sm-4" style="text-align: right;">
-
-									<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
-								
-								</div>
+								<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
 
 							<%end%>
 
 						<%else%>
 
-							<div class="col-xs-12 col-sm-4" style="text-align: right;">
-
-									<span class="card-right-corner"><span class="glyphicon glyphicon-remove"></span>Cancelled</span>
+							<span class="card-right-corner"><span class="glyphicon glyphicon-remove"></span>Cancelled</span>
 								
-							</div>
-
 						<%end%>
 
 					<%end%>

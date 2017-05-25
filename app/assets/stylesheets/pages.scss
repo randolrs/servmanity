@@ -621,7 +621,7 @@ span.number-badge{
 	border-radius: 0px;
 	border: 1px solid #aaa;
 	z-index: 8888;
-	
+	position: relative;
 	margin: 0 auto;
 	margin-bottom: -1px;
 	padding: 0px;
@@ -678,6 +678,7 @@ span.number-badge{
 
 	.card-content{
 		padding: 25px;
+		position: relative;
 	}
 
 	.right-corner{
@@ -686,6 +687,7 @@ span.number-badge{
 
 	.card-right-corner{
 		display: inline-block;
+		padding: 25px;
 	    position: absolute;
 	    right: 0px;
 	    top: 0px;
