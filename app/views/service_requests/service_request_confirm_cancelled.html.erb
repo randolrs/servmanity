@@ -9,9 +9,16 @@
 	<div class="card centered">
 
 		<div class="card-content">
-		
-			<p>Your request has been cancelled.</p> <!-- Need to add cancellation fee conditional -->
 			
+			<% unless current_user.is_tasker %>
+			
+				<p>You successfully cancelled your request.</p> <!-- Need to add cancellation fee conditional -->
+			
+			<%else%>
+				
+				<p>You successfully cancelled your acceptance of this request.</p> <!-- Need to add cancellation fee conditional -->
+
+			<%end%>
 
 			<br>
 

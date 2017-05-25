@@ -390,14 +390,25 @@ class ServiceRequestsController < ApplicationController
 
         else
 
-          redirect_to root_path
+          if @service_request.tasker_id == current_user.id
+
+            @service_request.update(:tasker_id => nil)
+
+            redirect_to service_request_confirm_cancelled_path(@service_request.id)
+
+          else
+
+            redirect_to root_path
+
+          end
+
         end
 
 
       else
 
         redirect_to root_path
-        
+
       end
 
 
