@@ -31,17 +31,13 @@ class ServiceRequestsController < ApplicationController
 
           @service_request.update(:tasker_id => tasker.id)
 
-          @service_request.update(:tasker_hourly_rate => @service_request.tasker.hourly_rate_for_category(@service_request.service_category_id))
-
-          if current_user.is_tasker
-
-            redirect_to service_request_submission_confirmation_path(@service_request.id)
-
-          else
-
-            redirect_to service_request_submission_confirmation_path(@service_request.id)
+          unless @service_request.is_live
+            
+            @service_request.update(:tasker_hourly_rate => @service_request.tasker.hourly_rate_for_category(@service_request.service_category_id))
 
           end
+          
+          redirect_to service_request_submission_confirmation_path(@service_request.id)
           
         else
 
