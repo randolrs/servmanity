@@ -108,6 +108,18 @@
 							<span class="card-right-corner"><span class="glyphicon glyphicon-remove"></span>Cancelled</span>
 								
 						<%end%>
+					
+					<% elsif current_user.is_tasker %>
+						
+						<div class="col-xs-12 col-sm-4 centered">
+							
+							<%= form_tag add_tasker_to_service_request_path(request.id, current_user.id) do %>
+					          
+					          <button class="button green-background small">Accept This Job</button>
+
+					        <%end%>
+
+				      	</div>
 
 					<%end%>
 				

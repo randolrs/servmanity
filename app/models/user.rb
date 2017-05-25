@@ -95,16 +95,24 @@ class User < ActiveRecord::Base
 
 	def live_requests_for_tasker
 
+		requests = Array.new
+
 		@begin_time = Time.now - 30.minutes
 		@end_time = Time.now
 
 		@current_requests =  ServiceRequest.all.where(:is_live => true, :created_at => @begin_time..@end_time, :tasker_id => nil)
 
-		requests = []
-		@current_requests.all.each { |request| requests << request if self.distance_to_destination(request.latitude, request.longitude) < 35 }
+		nearby_tasks =  @current_requests.near(self.address, 30, :order => "distance")
+		#requests = []
+		#@current_requests.all.each { |request| requests << request if self.distance_to_destination(request.latitude, request.longitude) < 35 }
 
+		nearby_tasks.each do |task|
 
+			requests << task
 
+		end
+
+		return requests
 
 	end
 

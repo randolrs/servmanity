@@ -40,13 +40,18 @@
 
 				<% if @service_request.is_live %>
 
-					<p>You accepted  <b><%= @service_request.user.first_name %></b> task.  Please arrive within 30 minutes to help with their <%= @service_request.service_category.name %> project.</p>
+					<p>You accepted  <b><%= @service_request.user.first_name.possessive %></b> task.  Please try arrive within 45 minutes to help with their <%= @service_request.service_category.name %> project.</p>
 
-					<br>				
+					<br>	
 
-					<p><b>Details: </b></p>
+					<p>Location: <b><%= @service_request.address %></b></p>
+
+					<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => @service_request.latitude, :longitude_input => @service_request.longitude} %>
+
+					<br>
+					
 					<p><b>Price: </b><span class="request-price"><%= number_to_currency(@service_request.price) %></span></p>
-					<p><b>Address: </b><%= @service_request.address %></p>
+
 					<p><b>Contact Phone: </b><%= @service_request.contact_phone_number %></p>
 				
 				<%else%>
