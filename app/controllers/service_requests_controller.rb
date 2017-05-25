@@ -371,7 +371,64 @@ class ServiceRequestsController < ApplicationController
 
     end
 
+  end
 
+
+  def mark_as_cancelled
+
+    if params[:service_request_id]
+
+      @service_request = ServiceRequest.where(:id => params[:service_request_id]).last
+
+      if @service_request
+
+        if @service_request.user_id == current_user.id || current_user.is_admin
+
+          @service_request.update(:is_cancelled => true)
+
+          redirect_to service_request_confirm_cancelled_path(@service_request.id)
+
+        else
+
+          redirect_to root_path
+        end
+
+
+      else
+
+        redirect_to root_path
+        
+      end
+
+
+    else
+
+      redirect_to root_path
+
+    end
+
+  end
+
+  def service_request_confirm_cancelled
+
+    if params[:service_request_id]
+
+      @service_request = ServiceRequest.where(:id => params[:service_request_id]).last
+
+      if @service_request
+
+      else
+
+        redirect_to root_path
+
+      end
+
+
+    else
+
+      redirect_to root_path
+
+    end
 
   end
 

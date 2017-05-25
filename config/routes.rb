@@ -82,8 +82,12 @@ Rails.application.routes.draw do
 
   get 's/service_request/:service_request_id/mark_as_complete/complete' => 'service_requests#mark_as_complete', as: 'mark_as_complete'
 
+  get 's/service_request/:service_request_id/mark_as_cancelled/cancel' => 'service_requests#mark_as_cancelled', as: 'mark_as_cancelled'
+
 
   get 's/service_request/:service_request_id/complete/confirmation' => 'service_requests#service_request_confirm_complete', as: 'service_request_confirm_complete'
+
+  get 's/service_request/:service_request_id/complete/cancelled' => 'service_requests#service_request_confirm_cancelled', as: 'service_request_confirm_cancelled'
 
   get 's/service_request/:service_request_id/admin/complete/process_payment' => 'service_requests#admin_process_payment', as: 'service_request_process_payment'
 

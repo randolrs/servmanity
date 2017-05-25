@@ -110,13 +110,13 @@ class User < ActiveRecord::Base
 
 	def active_task_for_tasker
 
-		return ServiceRequest.all.where(:is_complete_tasker => nil, :tasker_id => self.id, :is_live => true).last
+		return ServiceRequest.all.where(:is_complete_tasker => nil, :tasker_id => self.id, :is_live => true, :is_cancelled => nil).last
 
 	end
 
 	def active_tasks_for_non_tasker
 
-		return ServiceRequest.all.where(:is_complete_tasker => nil, :user_id => self.id, :is_live => true, :created_at => Time.now - 3600 .. Time.now)
+		return ServiceRequest.all.where(:is_complete_tasker => nil, :user_id => self.id, :is_live => true, :created_at => Time.now - 3600 .. Time.now, :is_cancelled => nil)
 
 	end
 

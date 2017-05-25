@@ -68,7 +68,7 @@
 
 							<br><br>
 
-							<a class="button small dark-red-background">Cancel</a>
+							<%= link_to "Cancel", mark_as_cancelled_path(request.id), class:"button small dark-red-background" %>
 						
 						</div>
 
@@ -87,24 +87,36 @@
 
 					<% if request.user_id == current_user.id %>
 
-						<% unless request.is_complete_tasker %>
+						<% unless request.is_cancelled %>
 
-							<div class="col-xs-12 col-sm-4" style="text-align: right;">
+							<% unless request.is_complete_tasker %>
 
-								<%= link_to "Modify", review_service_request_details_path(request.id), class:"button small green-background" %>
+								<div class="col-xs-12 col-sm-4" style="text-align: right;">
 
-								<br><br>
+									<%= link_to "Modify", review_service_request_details_path(request.id), class:"button small green-background" %>
 
-								<a class="button small dark-red-background">Cancel</a>
-							
-							</div>
+									<br><br>
+
+									<%= link_to "Cancel", mark_as_cancelled_path(request.id), class:"button small dark-red-background" %>
+								
+								</div>
+
+							<%else%>
+								
+								<div class="col-xs-12 col-sm-4" style="text-align: right;">
+
+									<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
+								
+								</div>
+
+							<%end%>
 
 						<%else%>
-							
+
 							<div class="col-xs-12 col-sm-4" style="text-align: right;">
 
-								<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
-							
+									<span class="card-right-corner"><span class="glyphicon glyphicon-remove"></span>Cancelled</span>
+								
 							</div>
 
 						<%end%>

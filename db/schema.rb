@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525163852) do
+ActiveRecord::Schema.define(version: 20170525213632) do
 
   create_table "charges", force: :cascade do |t|
     t.integer  "user_id"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170525163852) do
     t.string   "contact_phone_number"
     t.decimal  "tasker_hourly_rate"
     t.decimal  "hours_reported_by_tasker"
+    t.boolean  "is_cancelled"
   end
 
   create_table "user_service_categories", force: :cascade do |t|
