@@ -20,11 +20,19 @@
 					
 					<%= image_tag @service_request.tasker.image.url(:medium), class:"medium-image rounded" %>
 
-					<p>Great news! <b><%= @service_request.tasker.public_display_name %></b> has accepted your task.  They will arrive in about 30 minutes to help with your <%= @service_request.service_category.name %> project.</p>
+					<p>Great news! <b><%= @service_request.tasker.public_display_name %></b> has accepted your task.  They will arrive in about 60 minutes to help with your <%= @service_request.service_category.name %> project.</p>
 				
 				<%else%>
 
-					<p>We are searching our network of mobile professionals to match your <%# @service_request.service_category.name %> service request with the best provider as soon as possible.</p>
+					<%= image_tag @service_request.tasker.image.url(:medium), class:"medium-image rounded" %>
+
+					<br><br>
+
+					<p>You selected <b><%= @service_request.tasker.public_display_name %></b> to help with your <%= @service_request.service_category.name %> project for <b><%= number_to_currency(@service_request.tasker_hourly_rate) %>/hour</b>.</p>
+
+					<br>
+
+					<p>They will arrive the <%= @service_request.scheduled_day.strftime("%A")%> <%= @service_request.time_of_day %> (<%= @service_request.scheduled_day.strftime("%b %e") %>)</p>
 
 				<%end%>
 

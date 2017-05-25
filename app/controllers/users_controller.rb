@@ -57,6 +57,14 @@ class UsersController < ApplicationController
 
   end
 
+  def balance
+
+    account = current_user.stripe_account_object
+
+    @bank_accounts = account.external_accounts.all(:object => "bank_account", :limit => 5)
+
+
+  end
 
 
   def requests

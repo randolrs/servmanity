@@ -19,10 +19,17 @@
 
 			<br><br>
 
-			<label>Set a Budget</label><br>
-			<%= f.number_field :price, class: "centered price" %>
+			<% if is_live %>
+				
+				<label>Set a Budget</label><br>
 
-			<br><br>
+				<%= f.number_field :price, class: "centered price" %>
+				
+				<br><br>
+
+			<%end%>
+
+			
 
 			<label>Contact Phone Number</label><br>
 

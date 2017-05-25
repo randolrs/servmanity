@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525142728) do
+ActiveRecord::Schema.define(version: 20170525163852) do
 
   create_table "charges", force: :cascade do |t|
     t.integer  "user_id"
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20170525142728) do
     t.float    "latitude"
     t.text     "additional_information"
     t.datetime "scheduled_date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "time_of_day"
     t.date     "scheduled_day"
     t.integer  "tasker_id"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 20170525142728) do
     t.boolean  "charge_approved"
     t.datetime "tasker_completion_time"
     t.string   "contact_phone_number"
+    t.decimal  "tasker_hourly_rate"
+    t.decimal  "hours_reported_by_tasker"
   end
 
   create_table "user_service_categories", force: :cascade do |t|

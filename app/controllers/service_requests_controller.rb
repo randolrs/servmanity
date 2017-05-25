@@ -31,13 +31,15 @@ class ServiceRequestsController < ApplicationController
 
           @service_request.update(:tasker_id => tasker.id)
 
+          @service_request.update(:tasker_hourly_rate => @service_request.tasker.hourly_rate_for_category(@service_request.service_category_id))
+
           if current_user.is_tasker
 
             redirect_to service_request_submission_confirmation_path(@service_request.id)
 
           else
 
-            redirect_to pay_and_confirm_path(params[:service_request_id])
+            redirect_to service_request_submission_confirmation_path(@service_request.id)
 
           end
           
@@ -305,7 +307,7 @@ class ServiceRequestsController < ApplicationController
           else #if this is a scheduled request
 
 
-            format.html { redirect_to service_request_live_search_path(@service_request.id), notice: 'Service request was successfully created.' }
+            format.html { redirect_to service_request_tasker_index_path(@service_request.id), notice: 'Service request was successfully created.' }
             format.json { render :show, status: :created, location: @service_request }
           end
 
@@ -523,6 +525,6 @@ class ServiceRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_request_params
-      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city, :is_live, :description, :price, :contact_phone_number)
+      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city, :is_live, :description, :price, :contact_phone_number, :hours_reported_by_tasker)
     end
 end

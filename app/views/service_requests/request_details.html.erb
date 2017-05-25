@@ -18,7 +18,7 @@
 
 		<%= form_for(@service_request) do |f| %>
 			
-			<%= render 'service_requests/details_additional', f: f %>
+			<%= render 'service_requests/details_additional', f: f, is_live: false %>
 
 			<%= render 'service_requests/details_where', f: f %>
 

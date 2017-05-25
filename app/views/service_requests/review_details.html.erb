@@ -21,17 +21,42 @@
 
 					<br><br>
 
-					<label>Set a Budget</label><br>
-					
-					<% if @service_request.tasker_id %>
-						<%= number_to_currency(@service_request.price).to_s + " (Task Accepted, Cannot Change Budget)" %>
-					<%else%>
+					<% unless @service_request.is_live %>
 
-						<%= f.number_field :price, class: "centered price" %>
+						<label>Set a Budget</label><br>
+						
+						<% if @service_request.tasker_id %>
+							
+							<% unless current_user.is_admin %>
+							
+								<%= number_to_currency(@service_request.price).to_s + " (Task Accepted, Cannot Change Budget)" %>
+
+							<%else%>
+
+								<%= f.number_field :price, class: "centered price" %>
+
+							<%end%>
+
+						<%else%>
+
+							<%= f.number_field :price, class: "centered price" %>
+
+						<%end%>
+
+						<br><br>
 
 					<%end%>
+					
+					<% if current_user.is_admin%>
 
-					<br></br>
+						<label>Hours Reported by Provider</label><br>
+						
+
+						<%= f.number_field :hours_reported_by_tasker, :step => 0.5, class: "centered price" %>
+
+						<br></br>
+
+					<%end%>
 
 					<label>Contact Phone Number</label><br>
 				

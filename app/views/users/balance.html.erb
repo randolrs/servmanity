@@ -12,7 +12,7 @@
 
 				<div class="card-content">
 
-					<span class="big-balance"><%= number_to_currency(current_user.stripe_balance) %></span>
+					<span class="big-balance"><%= number_to_currency(current_user.stripe_balance, precision: 0) %></span>
 
 					<br><br>
 
@@ -52,16 +52,29 @@
 
 				<div class="card-content">
 
-					<span class="payee-information"><%= current_user.first_name %></span>
+					<% if @bank_accounts.count > 0 %>
+						
+						<% @bank_accounts.each do |account| %>
+							
+							<span class="payee-information"><%= current_user.first_name %></span>
+							
+							<br>
+
+							<span class="payee-information">Account Ending <%= account.last_4 %></span>
+
+						<%end%>
+
+						<br><br>
+
+						<%= link_to "Edit Payee", root_path, class:"button orange-background stretch" %>
 					
-					<br>
+					<% else %>
 
-					<span class="payee-information">Account Ending 6882</span>
+						<%= link_to "Add a Bank Account", root_path, class:"button dark-red-background stretch" %>
 
-					<br><br>
 
-					<%= link_to "Edit Payee", root_path, class:"button orange-background stretch" %>
-
+					<% end %>
+					
 				</div>
 				
 			</div>

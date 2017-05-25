@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
   get 'messages' => 'users#messages'
 
+  get 'update_availability' => 'users#update_availability'
+
   get 'balance' => 'users#balance'
 
   get 'admin/home' => 'admin#admin_home', as: 'admin_home'

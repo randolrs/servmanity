@@ -36,6 +36,7 @@ class ServiceRequest < ActiveRecord::Base
 		nearby_taskers.each do |tasker|
 
 			nearby_array << tasker
+			
 		end
 
 		return nearby_array
@@ -138,4 +139,6 @@ class ServiceRequest < ActiveRecord::Base
 
 		end
 	end
+
+
 end

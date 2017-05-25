@@ -208,19 +208,32 @@ class User < ActiveRecord::Base
 	
 	end
 
+	def stripe_account_object
+
+	    if self.stripe_account_id
+
+	      return Stripe::Account.retrieve(self.stripe_account_id)
+
+	    else
+
+	      return nil
+
+    	end
+
+    end
 
 
-    def stripe_balance
+	def stripe_balance
 
-      if self.stripe_secret_key
+	  if self.stripe_secret_key
 
-        Stripe.api_key = self.stripe_secret_key
+	    Stripe.api_key = self.stripe_secret_key
 
-        balance_object = Stripe::Balance.retrieve()
+	    balance_object = Stripe::Balance.retrieve()
 
-        @user_stripe_balance = (balance_object.available[0]['amount'] + balance_object.pending[0]['amount']) / 100
+	    @user_stripe_balance = (balance_object.available[0]['amount'] + balance_object.pending[0]['amount']) / 100
 
-        if Rails.env == "production"
+	    if Rails.env == "production"
 
 			Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
 
@@ -230,15 +243,43 @@ class User < ActiveRecord::Base
 
 		end
 
-        return @user_stripe_balance
+	    return @user_stripe_balance
 
-      else
+	  else
 
-        return 0
+	    return 0
 
-      end
+	  end
 
-  end
+	end
+
+
+	# def hourly_rate_for_category(service_category_id)
+
+	# 	category = ServiceCategory.find(service_category_id)
+
+	# 	if category
+
+
+	# 		user_service_category = UserServiceCategory.where(:user_id => self.id, :service_category_id => service_category_id).last
+
+	# 		if user_service_category
+
+	# 			return user_service_category.hourly_rate
+	# 		else
+
+	# 			return nil
+	# 		end
+	# 	else
+
+	# 		return nil
+
+	# 	end
+
+
+		
+
+	# end
 
 
 end
