@@ -415,6 +415,9 @@ class ServiceRequestsController < ApplicationController
     end
 
 
+ rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to :back
   end
 
 
