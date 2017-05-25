@@ -81,7 +81,17 @@ class ApplicationController < ActionController::Base
 
 
 	def check_for_stripe_account
-  
+  		
+  		if Rails.env == "production"
+
+			Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY'] #NEED TO SWITCH TO LIVE ON LAUNCH
+
+		else
+
+			Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
+
+		end
+	
 	    if current_user.is_tasker
 
 	      unless current_user.stripe_account_id
