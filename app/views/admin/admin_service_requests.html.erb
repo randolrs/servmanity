@@ -71,22 +71,18 @@
 					</td>
 
 					<td>
-						<% if request.is_live %>
-							<%= number_to_currency(request.price) %>
-						<%else%>
 							
-							<% if request.calculated_price_for_scheduled %>
-								<%= number_to_currency(request.calculated_price_for_scheduled) %>
-							<%end%>
-						
+						<% if request.calculated_price %>
+							<%= number_to_currency(request.calculated_price) %>
 						<%end%>
+
 					</td>
 
 				
 					<td>
-						<% if request.has_pending_charge %>
+						<% if request.has_pending_charge && request.calculated_price %>
 							
-							<%= link_to "Process Payment", service_request_process_payment_path(request.id), class:"button green-background" %>
+							<%= link_to "Charge " + number_to_currency(request.calculated_price, precision: 0).to_s, service_request_process_payment_path(request.id), class:"button green-background" %>
 						
 						<%else%>
 

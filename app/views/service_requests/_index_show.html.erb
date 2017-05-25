@@ -1,4 +1,4 @@
-<%= link_to show_service_request_path(request.id) do %>
+<%# link_to show_service_request_path(request.id) do %>
 
 	<div class="service-request-index card index <% if active %>active<% end %>">
 
@@ -6,7 +6,7 @@
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-8 col-md-9">
+				<div class="col-xs-12 col-sm-8">
 
 					<h4><%= request.description %></h4>
 
@@ -37,7 +37,8 @@
 					<%# task_status_tag(request) %>
 					<br>
 
-					<% if request.latitude && request.longitude %>
+
+					<% if request.latitude && request.longitude && current_user.is_tasker %>
 						
 						<%= current_user.distance_to_destination(request.latitude, request.longitude).round(1).to_s + " miles away" %>
 
@@ -51,7 +52,7 @@
 
 					<% unless request.is_complete_tasker %>
 
-						<div class="col-xs-12 col-sm-4 col-md-3" style="text-align: right;">
+						<div class="col-xs-12 col-sm-4" style="text-align: right;">
 
 							<div class="row">
 
@@ -85,7 +86,7 @@
 
 					<%else%>
 						
-						<div class="col-xs-12 col-sm-4 col-md-3" style="text-align: right;">
+						<div class="col-xs-12 col-sm-4" style="text-align: right;">
 
 							<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
 						
@@ -100,7 +101,7 @@
 
 						<% unless request.is_complete_tasker %>
 
-							<div class="col-xs-12 col-sm-4 col-md-3" style="text-align: right;">
+							<div class="col-xs-12 col-sm-4" style="text-align: right;">
 
 								<div class="row">
 
@@ -124,7 +125,7 @@
 
 						<%else%>
 							
-							<div class="col-xs-12 col-sm-4 col-md-3" style="text-align: right;">
+							<div class="col-xs-12 col-sm-4" style="text-align: right;">
 
 								<span class="card-right-corner green-background"><span class="glyphicon glyphicon-ok"></span>Complete</span>
 							
@@ -142,5 +143,5 @@
 
 	</div>
 
-<%end%>
+<%#end%>
 

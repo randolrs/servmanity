@@ -36,12 +36,15 @@
 	<body>
 
 		<% unless @hide_header %>
+			
 			<%= render 'headers/main_header' %>
 			<%# render 'modals/main_menu' %>
 		<%end%>
 
 		<div class="content-container">
 			
+			<%= render 'modals/service_request_when' %>
+
 			<%= yield %>
 
 		</div>

@@ -43,7 +43,7 @@ class ServiceRequest < ActiveRecord::Base
 	end
 
 
-	def calculated_price_for_scheduled
+	def calculated_price
 
 		unless self.is_live
 
@@ -61,12 +61,13 @@ class ServiceRequest < ActiveRecord::Base
 
 		else
 
-			return nil
+			return self.price
 
 		end
 
 
 	end
+
 
 	def tasker
 
