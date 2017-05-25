@@ -36,10 +36,36 @@ class ServiceRequest < ActiveRecord::Base
 		nearby_taskers.each do |tasker|
 
 			nearby_array << tasker
-			
+
 		end
 
 		return nearby_array
+	end
+
+
+	def calculated_price_for_scheduled
+
+		unless self.is_live
+
+			if self.hours_reported_by_tasker && self.tasker_hourly_rate
+
+				price = self.hours_reported_by_tasker * self.tasker_hourly_rate
+
+				return price
+
+			else
+
+				return nil
+
+			end
+
+		else
+
+			return nil
+
+		end
+
+
 	end
 
 	def tasker

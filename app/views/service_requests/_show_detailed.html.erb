@@ -46,7 +46,17 @@
 
 					<div class="col-xs-6 col-sm-12">
 
-						<%= link_to "Mark as Complete", mark_as_complete_path(request.id), class:"button small green-background" %>
+						<%if request.is_live %>
+									
+							<%= link_to "Mark as Complete", mark_as_complete_path(request.id), class:"button small green-background" %>
+									
+						<%else%>
+
+							<a class="click-to-reveal button small green-background" data-reveal-panel-id="activeTaskCompletionHours">Mark as Complete</a>
+
+							<%= render 'service_requests/active_task_completion_hours', request: request %>
+
+						<%end%>
 
 					</div>
 

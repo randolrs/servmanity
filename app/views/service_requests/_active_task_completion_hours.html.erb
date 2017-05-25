@@ -1,0 +1,23 @@
+<div class="modal-container default-off" id="activeTaskCompletionHours">
+
+	<span class="glyphicon glyphicon-remove dismiss-modal" aria-hidden="true"></span>
+
+	<div class="modal-content centered">
+		
+		<header>How many hours did the task take?</header>
+		
+		<%= form_for(request) do |f| %>
+
+			<%= f.number_field :hours_reported_by_tasker, :step => 0.5, class: "centered price" %>
+
+			<br>
+
+			<%= f.submit "Complete Task", class: "button brand-blue-background medium" %>
+
+		<%end%>
+
+
+
+	</div>
+
+</div>

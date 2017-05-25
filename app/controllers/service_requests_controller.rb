@@ -403,10 +403,17 @@ class ServiceRequestsController < ApplicationController
 
             if service_request
 
+              if service_request.is_live
 
-              price = (service_request.price * 100).to_i
+                price = (service_request.price * 100).to_i
 
-              platform_fee = (service_request.service_fee * 100).to_i
+              else
+
+                price = (service_request.calculated_price_for_scheduled * 100).to_i
+
+              end
+
+              platform_fee = (price * 0.08).to_i
 
               charge = Stripe::Charge.create(
                 :customer    => service_request.stripe_customer_id,

@@ -10,21 +10,21 @@
 			
 			<tr>
 
-				<th>ID</th>
-
 				<th>Description</th>
 
-				<th>Budget</th>
+				<th>Type</th>
 
-				<th>Customer ID</th>
+				<th>Time Initiated</th>
 
-				<th>Tasker ID</th>
-
-				<th>Initiated</th>
-
-				<th>Confirmed Completion</th>
+				<th>Time Completed</th>
 
 				<th>Time Elapsed</th>
+
+				<th>Hours Reported</th>
+
+				<th>Hourly Rate</th>
+
+				<th>Total Price</th>
 
 				<th></th>
 
@@ -38,21 +38,9 @@
 
 				<tr>
 
-					<td><%= request.id %></td>
-
 					<td><%= request.description %></td>
 
-					<td><%= number_to_currency(request.price) %></td>
-
-					<td><%= request.user_id%></td>
-
-					<td>
-						<% if request.tasker_id %>
-							<%= request.tasker_id%>
-						<%else%>
-							Not Accepted
-						<%end%>
-					</td>
+					<td><% if request.is_live%> Real-time <% else %> Scheduled <%end%></td>
 
 					<td>
 						<%= request.created_at.strftime("%m/%e/%y")%><br>
@@ -73,8 +61,42 @@
 					</td>
 
 					<td>
+						<% if request.hours_reported_by_tasker%>
+							<%= request.hours_reported_by_tasker %> hours 
+						<%end%>
+					</td>
+
+					<td>
+						<% if request.tasker_hourly_rate %><%= number_to_currency(request.tasker_hourly_rate, precision: 0) %>  / hr<%end%>
+					</td>
+
+					<td>
+						<% if request.is_live %>
+							<%= number_to_currency(request.price) %>
+						<%else%>
+							
+							<% if request.calculated_price_for_scheduled %>
+								<%= number_to_currency(request.calculated_price_for_scheduled) %>
+							<%end%>
+						
+						<%end%>
+					</td>
+
+				
+					<td>
 						<% if request.has_pending_charge %>
+							
 							<%= link_to "Process Payment", service_request_process_payment_path(request.id), class:"button green-background" %>
+						
+						<%else%>
+
+							<% if request.charge_approved %>
+
+								Charge Complete
+								
+							<%end%>
+
+
 						<%end%>
 					</td>
 
