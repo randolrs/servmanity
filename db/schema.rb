@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525140458) do
+ActiveRecord::Schema.define(version: 20170525142728) do
 
   create_table "charges", force: :cascade do |t|
     t.integer  "user_id"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20170525140458) do
     t.string   "stripe_customer_id"
     t.boolean  "charge_approved"
     t.datetime "tasker_completion_time"
+    t.string   "contact_phone_number"
   end
 
   create_table "user_service_categories", force: :cascade do |t|
@@ -118,6 +119,7 @@ ActiveRecord::Schema.define(version: 20170525140458) do
     t.string   "stripe_secret_key"
     t.string   "stripe_publishable_key"
     t.boolean  "is_admin"
+    t.string   "contact_phone_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

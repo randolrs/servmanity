@@ -1,4 +1,4 @@
-<div class="top-of-page-message notice brand-yellow-background">
+<div class="notice-header notice brand-yellow-background">
 
     <p>Confirmation</p>
 
@@ -38,7 +38,8 @@
 
 					<p><b>Details: </b></p>
 					<p><b>Price: </b><span class="request-price"><%= number_to_currency(@service_request.price) %></span></p>
-					<p><b>Address: </b>Address: <%= @service_request.address %></p>
+					<p><b>Address: </b><%= @service_request.address %></p>
+					<p><b>Contact Phone: </b><%= @service_request.contact_phone_number %></p>
 				
 				<%else%>
 

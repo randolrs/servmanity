@@ -250,6 +250,16 @@ class ServiceRequestsController < ApplicationController
 
           end
 
+          unless current_user.contact_phone_number #SAVE PHONE NUMBER IF USER DOES NOT HAVE ONE
+
+            if @service_request.contact_phone_number
+
+              current_user.update(:contact_phone_number => @service_request.contact_phone_number)
+
+            end
+
+          end
+
           #CREATE STRIPE CARD TOKEN
 
             token = Stripe::Token.create(
@@ -513,6 +523,6 @@ class ServiceRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_request_params
-      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city, :is_live, :description, :price)
+      params.require(:service_request).permit(:user_id, :service_category_id, :address, :longitude, :latitude, :additional_information, :scheduled_date, :time_of_day, :scheduled_day, :city, :is_live, :description, :price, :contact_phone_number)
     end
 end

@@ -22,7 +22,21 @@
 			<label>Set a Budget</label><br>
 			<%= f.number_field :price, class: "centered price" %>
 
-			<br>
+			<br><br>
+
+			<label>Contact Phone Number</label><br>
+
+			<% if current_user.contact_phone_number %>
+				
+				<%= f.text_field :contact_phone_number, value: current_user.contact_phone_number, placeholder: "514 555 5555"  %>
+			
+			<%else%>
+
+				<%= f.text_field :contact_phone_number, placeholder: "514 555 5555"  %>
+
+			<%end%>
+
+			<br><br>
 
 			<a class="button brand-blue-background medium click-to-reveal full-screen-only" data-reveal-panel-id="<%= next_step %>">Continue</a>
 

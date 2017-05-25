@@ -110,7 +110,7 @@ class ApplicationController < ActionController::Base
 
 	def configure_permitted_parameters
 
-		registration_params = [:email, :password, :first_name, :last_name, :zip_code, :phone_number, :is_tasker, :image, :longitude, :latitude, :address, :city, :is_admin]
+		registration_params = [:email, :password, :first_name, :last_name, :zip_code, :phone_number, :is_tasker, :image, :longitude, :latitude, :address, :city, :is_admin, :contact_phone_number]
 		devise_parameter_sanitizer.permit(:sign_up, keys: registration_params)
 		devise_parameter_sanitizer.permit(:sign_in, keys: registration_params)
 		devise_parameter_sanitizer.permit(:account_update, keys: registration_params)

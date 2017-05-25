@@ -2,6 +2,8 @@
 
 	<header><%= link_to "Admin Home", admin_home_path %> > Charges</header>
 
+	<span class="mobile-only soft-warning">Notice: This admin page looks best on a larger screen!</span>
+	
 	<table class="formatted-table">
 
 		<thead>
@@ -24,7 +26,7 @@
 
 		<tbody>
 			
-			<% Charge.all.each do |charge| %>
+			<% Charge.all.sort_by(&:created_at).reverse	.each do |charge| %>
 
 				<tr>
 
