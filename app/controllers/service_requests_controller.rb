@@ -238,10 +238,8 @@ class ServiceRequestsController < ApplicationController
 
         if @service_request.save
 
-          
           @service_request.update(:user_id => current_user.id)
-          
-          
+                    
           unless current_user.address #SAVE ADDRESS IF USER DOES NOT HAVE ONE
 
             if @service_request.address
@@ -262,7 +260,16 @@ class ServiceRequestsController < ApplicationController
 
           end
 
-          #CREATE STRIPE CARD TOKEN
+          
+          #see if saved payments selected
+
+          if params[:payment_option] == "saved"
+                      
+            customer = current_user.stripe_customer_object
+            
+          else
+
+            #CREATE STRIPE CARD TOKEN
 
             token = Stripe::Token.create(
 
@@ -276,7 +283,7 @@ class ServiceRequestsController < ApplicationController
             )
 
             customer = current_user.stripe_customer_object
-            
+
             unless customer #does user have stripe customer?
 
               customer = Stripe::Customer.create(
@@ -291,10 +298,11 @@ class ServiceRequestsController < ApplicationController
 
               customer.sources.create(source: token.id)
 
-
             end
 
-            @service_request.update(:stripe_customer_id => customer.id)
+          end
+
+          @service_request.update(:stripe_customer_id => customer.id)
 
           #END STRIPE TOKEN CREATE
 

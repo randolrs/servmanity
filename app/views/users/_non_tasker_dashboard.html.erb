@@ -27,11 +27,15 @@
 
 	<div class="content">
 		
-		<% if current_user.active_task_for_non_tasker %>
+		<% if current_user.active_tasks_for_non_tasker %>
 
 			<header>Your Active Requests</header>
 
-			<%= render :partial => 'service_requests/index_show', :locals => {:request => current_user.active_task_for_non_tasker, :active => true} %>
+			<% current_user.active_tasks_for_non_tasker.sort_by(&:created_at).reverse.each do |request| %>
+			
+				<%= render :partial => 'service_requests/index_show', :locals => {:request => request, :active => true} %>
+			
+			<%end%>
 
 			<br>
 			<br>

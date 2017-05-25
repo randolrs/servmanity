@@ -57,6 +57,12 @@ ready = ->
 				if $(element).data("reveal-panel-id") == $(@).data("reveal-panel-id")
 					$(element).addClass('active')
 
+		$(".hide-cc-form").click (e) ->
+			$('#newCCForm').slideUp()
+
+		$(".show-cc-form").click (e) ->
+			$('#newCCForm').slideDown()
+
 		$(".add-a-card").click (e) ->
 			$('#cc-form').fadeIn()
 

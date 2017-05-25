@@ -114,9 +114,9 @@ class User < ActiveRecord::Base
 
 	end
 
-	def active_task_for_non_tasker
+	def active_tasks_for_non_tasker
 
-		return ServiceRequest.all.where(:is_complete_tasker => nil, :user_id => self.id, :is_live => true).last
+		return ServiceRequest.all.where(:is_complete_tasker => nil, :user_id => self.id, :is_live => true, :created_at => Time.now - 3600 .. Time.now)
 
 	end
 
@@ -219,6 +219,32 @@ class User < ActiveRecord::Base
 	      return nil
 
     	end
+
+    end
+
+    def default_payment_method_object
+
+    	customer = self.stripe_customer_object
+
+    	if customer
+
+    		card = customer.sources.retrieve(customer.default_source)
+
+			if card
+
+				return card
+
+			else
+
+				return nil
+
+			end
+
+    	else
+
+    		return nil
+    	end
+
 
     end
 

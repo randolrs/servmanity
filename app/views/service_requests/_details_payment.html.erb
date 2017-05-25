@@ -6,7 +6,25 @@
 
 		<div class="card-content">
 
-			<%= render 'charges/credit_card_form' %>
+			<% if current_user.default_payment_method_object %>
+				
+				<input class="hide-cc-form" type="radio" name="payment_option" value="saved"  checked="checked" id="saved_card_option"> <%= "Your " + current_user.default_payment_method_object.brand + " ending " + current_user.default_payment_method_object.last4 %><br>
+
+          		<input class="show-cc-form" type="radio" name="payment_option" value="new" id="new_card_option" data-reveal-panel-id="new-credit-card-form">A different credit card
+
+          		<br><br>
+
+          		<div id="newCCForm" class="default-off">
+					
+					<%= render 'charges/credit_card_form_optional' %>
+
+				</div>
+
+          	<% else %>
+
+          		<%= render 'charges/credit_card_form' %>
+
+          	<% end %>
 
 			<br>
 			

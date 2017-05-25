@@ -124,7 +124,7 @@ class ServiceRequest < ActiveRecord::Base
 
 	def has_pending_charge
 
-		if (self.is_complete_tasker && !self.charge_approved && self.stripe_customer_id)
+		if (self.is_complete_tasker && self.tasker_completion_time && !self.charge_approved && self.stripe_customer_id)
 			return true
 		else
 			return false
