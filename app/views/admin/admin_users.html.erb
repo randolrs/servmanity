@@ -45,7 +45,7 @@
 					<td><% if user.is_tasker %>Mobile Professional<%else%>Customer<%end%></td>
 
 					<td>
-						<%if user.stripe_customer_id %>
+						<%if user.stripe_customer_object %>
 							
 							Yes
 
@@ -57,7 +57,7 @@
 					</td>
 
 					<td>
-						<%if user.stripe_account_id %>
+						<%if user.stripe_account_object %>
 							
 							Yes
 
