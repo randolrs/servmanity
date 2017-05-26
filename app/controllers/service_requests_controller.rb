@@ -36,7 +36,7 @@ class ServiceRequestsController < ApplicationController
             @service_request.update(:tasker_hourly_rate => @service_request.tasker.hourly_rate_for_category(@service_request.service_category_id))
 
           end
-          
+
           redirect_to service_request_submission_confirmation_path(@service_request.id)
           
         else
@@ -487,18 +487,45 @@ class ServiceRequestsController < ApplicationController
 
               platform_fee = (price * 0.08).to_i
 
+              #CREATE TASKER ACCOUNT IF NECESSARY
+              tasker = service_request.tasker
+
+              if tasker
+
+                unless current_user.stripe_account_id
+
+                  account = Stripe::Account.create({:country => "US", :managed => true})
+
+                  tasker.update(:stripe_account_id => account.id, :stripe_secret_key => account.keys.secret, :stripe_publishable_key => account.keys.publishable)
+
+                  account.tos_acceptance.date = Time.now.to_i
+
+                  account.tos_acceptance.ip = request.remote_ip
+
+                  account.legal_entity.type = "individual"
+
+                  account.save
+
+                end
+
+              end
+
+              Stripe.api_key = tasker.stripe_secret_key
+
               charge = Stripe::Charge.create(
                 :customer    => service_request.stripe_customer_id,
                 :amount      => price,
                 :description => 'Rails Stripe customer',
                 :currency    => 'usd',
-                :destination => service_request.tasker.stripe_account_id,
+                :destination => tasker.stripe_account_id,
                 :application_fee => platform_fee
               )
 
               Charge.create(:user_id => service_request.user_id, :tasker_id => service_request.tasker_id, :stripe_customer_id => service_request.stripe_customer_id, :destination_stripe_account_id => service_request.tasker.stripe_account_id, :amount => price, :service_fee => platform_fee)
 
               service_request.update(:charge_approved => true)
+
+              Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
 
               redirect_to :back
 
