@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
-	before_action :check_for_stripe_account, if: :user_signed_in?
+	#before_action :check_for_stripe_account, if: :user_signed_in?
 
 	before_action :set_last_seen_at, if: proc { user_signed_in? }
 
@@ -91,7 +91,7 @@ class ApplicationController < ActionController::Base
 			Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
 
 		end
-	
+
 	    if current_user.is_tasker
 
 	      unless current_user.stripe_account_id
