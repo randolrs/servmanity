@@ -494,7 +494,7 @@ class ServiceRequestsController < ApplicationController
 
                 unless current_user.stripe_account_id
 
-                  account = Stripe::Account.create({:country => "US", :managed => true})
+                  account = Stripe::Account.create({:country => "US", :type => "custom"})
 
                   tasker.update(:stripe_account_id => account.id, :stripe_secret_key => account.keys.secret, :stripe_publishable_key => account.keys.publishable)
 
@@ -510,7 +510,7 @@ class ServiceRequestsController < ApplicationController
 
               end
 
-              Stripe.api_key = tasker.stripe_secret_key
+              #Stripe.api_key = tasker.stripe_secret_key
 
               charge = Stripe::Charge.create(
                 :customer    => service_request.stripe_customer_id,
