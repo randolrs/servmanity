@@ -18,9 +18,9 @@
 
 				<th>User Type</th>
 
-				<th>Total Requests</th>
+				<th>Payment Info?</th>
 
-				<th>Last Online</th>
+				<th>Stripe Connect?</th>
 
 				<th></th>
 
@@ -45,16 +45,26 @@
 					<td><% if user.is_tasker %>Mobile Professional<%else%>Customer<%end%></td>
 
 					<td>
-						<%if user.last_seen_at %>
-							Last Online: <%= time_ago_in_words(user.last_seen_at) %> ago
+						<%if user.stripe_customer_id %>
+							
+							Yes
+
+						<%else%>
+
+							No
+
 						<%end%>
 					</td>
 
 					<td>
-						<%if user.is_tasker %>
-							Requests Accepted: <%= user.requests_assigned_to_me.count %>
+						<%if user.stripe_account_id %>
+							
+							Yes
+
 						<%else%>
-							Requests Made: <%= user.service_requests.count %>
+
+							No
+
 						<%end%>
 					</td>
 
