@@ -492,7 +492,7 @@ class ServiceRequestsController < ApplicationController
 
               if tasker
 
-                unless current_user.stripe_account_id
+                unless tasker.stripe_account_id
 
                   account = Stripe::Account.create({:country => "US", :type => "custom"})
 
