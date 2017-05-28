@@ -31,17 +31,21 @@
 		
 		<% if current_user.active_tasks_for_non_tasker %>
 
-			<header>Your Active Requests</header>
+			<% if current_user.active_tasks_for_non_tasker.count > 0 %>
 
-			<% current_user.active_tasks_for_non_tasker.sort_by(&:created_at).reverse.each do |request| %>
-			
-				<%= render :partial => 'service_requests/index_show', :locals => {:request => request, :active => true} %>
+				<header>Your Active Requests</header>
+
+				<% current_user.active_tasks_for_non_tasker.sort_by(&:created_at).reverse.each do |request| %>
+				
+					<%= render :partial => 'service_requests/index_show', :locals => {:request => request, :active => true} %>
+				
+				<%end%>
+
+				<br>
+				<br>
+				<br>
 			
 			<%end%>
-
-			<br>
-			<br>
-			<br>
 
 		<%end%>
 
