@@ -206,7 +206,17 @@ class User < ActiveRecord::Base
 	    
 	      stripe_customer_id = UserStripeCustomer.where(:user_id => self.id).last.stripe_customer_id
 
-	      return Stripe::Customer.retrieve(stripe_customer_id)
+	      customer = Stripe::Customer.retrieve(stripe_customer_id)
+
+	      if customer
+
+	      	return customer
+
+	      else
+
+	      	return nil
+
+	      end
 
 	    else
 
@@ -220,7 +230,17 @@ class User < ActiveRecord::Base
 
 	    if self.stripe_account_id
 
-	      return Stripe::Account.retrieve(self.stripe_account_id)
+	      account =  Stripe::Account.retrieve(self.stripe_account_id)
+
+	      if account
+
+	      	return account
+
+	      else
+
+	      	return nil
+	      	
+	      end
 
 	    else
 
