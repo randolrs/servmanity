@@ -35,11 +35,13 @@
 					<br>
 					Additional Details: "<%= request.additional_information %>"
 					<%# task_status_tag(request) %>
-					<br>
+					
+
+					<% if current_user.is_admin %><br>Record ID: <%= request.id %><%end%>
 
 
 					<% if request.latitude && request.longitude && current_user.is_tasker %>
-						
+						<br>
 						<%= current_user.distance_to_destination(request.latitude, request.longitude).round(1).to_s + " miles away" %>
 
 					<%end%>
