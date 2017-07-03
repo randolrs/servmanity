@@ -91,7 +91,9 @@
 
 	<%= render 'users/dashboard_header' %>
 
-	<%= flash[:error] %>
+	<% if flash[:error] %>
+		<%= flash[:error] %>
+	<%end%>
 
 	<div class="content">
 
@@ -128,26 +130,6 @@
 				<%end%>
 				
 
-<!-- 					<%# link_to requests_path do %>
-					
-					<div class="card index">
-						
-						<p><span class="glyphicon glyphicon-exclamation-sign"></span>You have 1 New Scheduled Task <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
-						
-					</div>
-
-				<%#end%>
-
-				<%# link_to requests_path do %>
-					
-					<div class="card index">
-						
-						<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span>You have 3 Tasks in the next 24 hours <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
-						
-					</div>
-
-				<%#end%> -->
-
 				<%= link_to balance_path do %>
 					
 					<div class="card index">
@@ -165,34 +147,6 @@
 				<br>
 				
 			</div>
-
-			<div class="col-xs-12 col-sm-5">
-
-				<div class="card centered">
-
-					<h3 class="centered"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 5px;"></span> My Location</h3>
-
-					<div class="card-content">
-
-						<%= render :partial => 'maps/embed_map', :locals => {:latitude_input => current_user.latitude, :longitude_input => current_user.longitude} %>
-
-						<br><br>
-
-						<%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class:"" }) do |f| %>
-
-							<%= f.text_field :address, placeholder:"Enter Your Address", class:"geocomplete-input clear-on-focus address_input_for_embed" %>
-							
-							<br>
-
-							<%= f.submit "Update Location", class: "button stretch brand-blue-background" %>
-
-						<%end%>
-
-					</div>
-
-				</div>
-
-				<br>
 
 
 					<!-- <div class="col-xs-12 col-sm-12">

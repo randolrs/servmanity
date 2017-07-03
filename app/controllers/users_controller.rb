@@ -106,5 +106,12 @@ class UsersController < ApplicationController
 
   end
 
+  def update_availability
+
+    @navigation_title = "My Availability"
+
+
+  end
+
 
 end

@@ -20,12 +20,10 @@ nav.header-container{
 	
 	position: fixed;
 	
-	background: #111;
+	background: #222;
     
-
-	box-shadow: inset 0px 1px 1px #333, 0 2px 5px rgba(0,0,0,.26);
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
 	border: none;
-	box-shadow: none;
 	width: 100%;
 	display: block;
 	top: 0px;
@@ -57,8 +55,10 @@ nav.header-container{
 			padding-right: 0px;
 		}
 
-		a.big-glyph{
-			font-size: 24px;
+		a.return-to-home{
+			.glyphicon{
+				font-size: 24px;
+			}
 		}
 
 		a.cheeseburger-container{
