@@ -111,51 +111,34 @@
 
 		<header>Dashboard</header>
 
-		<div class="row">
-
-			<div class="col-xs-12 col-sm-7">
-
-				<%= link_to live_path do %>
-					
-					<div class="card index">
-						
-						<div class="card-content">
-
-							<p><span class="glyphicon glyphicon-exclamation-sign"></span><%= current_user.live_requests_for_tasker.count %> Requests You Can Accept Right Now<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
-
-						</div>
-						
-					</div>
-
-				<%end%>
+			<%= link_to live_path do %>
 				
-
-				<%= link_to balance_path do %>
+				<div class="card index">
 					
-					<div class="card index">
-						
-						<div class="card-content">
-						
-							<p><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> You have a balance of <%= number_to_currency(current_user.stripe_balance)%> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+					<div class="card-content">
 
-						</div>
+						<p><span class="glyphicon glyphicon-exclamation-sign"></span><%= current_user.live_requests_for_tasker.count %> Requests You Can Accept Right Now<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
+
+					</div>
+					
+				</div>
+
+			<%end%>
+			
+
+			<%= link_to balance_path do %>
+				
+				<div class="card index">
+					
+					<div class="card-content">
+					
+						<p><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> You have a balance of <%= number_to_currency(current_user.stripe_balance)%> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float: right"></span></p>
 
 					</div>
 
-				<%end%>
+				</div>
 
-				<br>
-				
-			</div>
-
-
-					<!-- <div class="col-xs-12 col-sm-12">
-
-						<%# render 'users/schedule_card' %>
-
-					</div> -->
-
-			</div>
+			<%end%>
 
 		</div>
 
