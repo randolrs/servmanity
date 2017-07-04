@@ -33,13 +33,17 @@
 
 			<label>Contact Phone Number</label><br>
 
-			<% if current_user.contact_phone_number %>
+			<% if user_signed_in? %>
 				
-				<%= f.text_field :contact_phone_number, value: current_user.contact_phone_number, placeholder: "514 555 5555"  %>
-			
-			<%else%>
+				<% if current_user.contact_phone_number %>
+					
+					<%= f.text_field :contact_phone_number, value: current_user.contact_phone_number, placeholder: "514 555 5555"  %>
+				
+				<%else%>
 
-				<%= f.text_field :contact_phone_number, placeholder: "514 555 5555"  %>
+					<%= f.text_field :contact_phone_number, placeholder: "514 555 5555"  %>
+
+				<%end%>
 
 			<%end%>
 

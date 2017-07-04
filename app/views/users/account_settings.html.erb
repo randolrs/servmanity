@@ -16,19 +16,23 @@
 
 				<div class="card-content">
 
-					<div class="field">
+					<% if current_user.is_tasker %>
+						
+						<div class="field">
 
-				      <label>Profile Photo</label><br>
+					      <label>Profile Photo</label><br>
 
-				      <div class="image-field-container">
-				        
-				        <%= image_tag current_user.image.url(:small), class:"small-image rounded" %>
+					      <div class="image-field-container">
+					        
+					        <%= image_tag current_user.image.url(:small), class:"small-image rounded" %>
 
-				        <%= f.file_field :image, class: "small-image-overlay-input" %><br>
+					        <%= f.file_field :image, class: "small-image-overlay-input" %><br>
 
-				      </div>
+					      </div>
 
-				    </div>
+					    </div>
+
+				    <%end%>
 
 
 					<div class="field">
