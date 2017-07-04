@@ -6,11 +6,11 @@
 		
 		<header class="centered">When do you need help?</header>
 		
-		<a href="<% if user_signed_in? %><%= initiate_live_service_request_path("cleaning") %><%else%><%= non_tasker_signup %><%end%>" class="modal-link brand-blue-background"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>Within the Next 60 Minutes</a>
+		<a href="<% if user_signed_in? %><%= initiate_live_service_request_path("cleaning") %><%else%><%= non_tasker_signup_path %><%end%>" class="modal-link brand-blue-background"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>Within the Next 60 Minutes</a>
 
 		<br>
 		
-		<a href="<% if user_signed_in? %><%= initiate_scheduled_service_request_path("cleaning") %><%else%><%= non_tasker_signup %><%end%>" class="modal-link dark-red-background"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Schedule for Later</a>
+		<a href="<% if user_signed_in? %><%= initiate_scheduled_service_request_path("cleaning") %><%else%><%= non_tasker_signup_path %><%end%>" class="modal-link dark-red-background"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Schedule for Later</a>
 
 	</div>
 
