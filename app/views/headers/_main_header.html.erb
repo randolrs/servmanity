@@ -71,7 +71,7 @@
 							<li><%= link_to "Admin", admin_home_path %></li>
 						<%end%>
 						<% if current_user.is_tasker %>
-							<li><a class="header-profile-cta" href="<%= user_profile_path(current_user.id) %>"><%= image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li>
+							<!-- <li><a class="header-profile-cta" href="<%# user_profile_path(current_user.id) %>"><%# image_tag current_user.image.url(:small), class:"header-profile-image" %></a></li> -->
 						<%else%>
 
 							<!-- <li class="shrink-screen-only inline"><a class="header-cta" href="<%# service_category_formatted_index_path %>"><span class="button green-background">Hire Someone</span></a></li> -->
