@@ -65,6 +65,10 @@ body{
 			box-shadow: none;
 		}
 
+		a.active:hover{
+			background: none;
+		}
+
 		a.active.cta{
 			border-bottom: none;
 			font-weight: 500;
