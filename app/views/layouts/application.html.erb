@@ -49,12 +49,22 @@
 		<% unless @hide_header %>
 			
 			<%= render 'headers/main_header' %>
+			<% if flash[:notice] %>
+				
+				<div class="flash-notice">
+			
+					<%= flash[:notice] %>
+			
+				</div>
+			
+			<%end%>
 			<%# render 'modals/main_menu' %>
 		<%end%>
 
+		<%= render 'charges/bank_account_form_modal' %>
+		<%= render 'modals/service_request_when' %>
+
 		<div class="content-container">
-			
-			<%= render 'modals/service_request_when' %>
 
 			<%= yield %>
 

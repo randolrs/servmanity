@@ -6,37 +6,44 @@
 
 	</div>
 
+	<div class="message-at-top-offset">
+
+	</div>
+
 <%end%>
 
+<div class="content">
 
-<div class="centered">
-	<%= image_tag("logo_vector.png") %>
+	<div class="centered">
+		<%= image_tag("logo_vector.png") %>
+	</div>
+
+	<h1 class="centered black-text"><b>SERVMANITY</b></h1>
+
+	<div class="form-container medium clear">
+
+		<%= form_for(:user, :url => session_path(:user)) do |f| %>
+
+			<div class="field">
+			  <label>Email</label>
+			  <br>
+			  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
+			</div>
+
+			<div class="field">
+			  <label>Password</label>
+			  <br>
+			  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
+			</div>
+
+			<div class="actions">
+			  <%= f.submit "Login", class: "button medium brand-blue-background" %>
+			</div>
+
+		<% end %>
+
+	</div>
+
+	<p class="centered"><%= link_to "Signup", signup_path %></p>
+
 </div>
-
-<h1 class="centered black-text"><b>SERVMANITY</b></h1>
-
-<div class="form-container medium clear">
-
-	<%= form_for(:user, :url => session_path(:user)) do |f| %>
-
-		<div class="field">
-		  <label>Email</label>
-		  <br>
-		  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
-		</div>
-
-		<div class="field">
-		  <label>Password</label>
-		  <br>
-		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
-		</div>
-
-		<div class="actions">
-		  <%= f.submit "Login", class: "button medium brand-blue-background" %>
-		</div>
-
-	<% end %>
-
-</div>
-
-<p class="centered"><%= link_to "Signup", signup_path %></p>

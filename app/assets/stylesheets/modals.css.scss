@@ -6,7 +6,7 @@
 	background: rgba(0,0,0,.85);
 	padding: 10px;
 	position: fixed;
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
 	z-index: 999999999;
 	top: 0px;
@@ -21,7 +21,7 @@
 
 .modal-content{
 	
-	top: 150px;
+	top: 100px;
 	max-width: 100%;
 	width: 600px;
 	margin: 0 auto;
@@ -99,12 +99,14 @@
 }
 
 span.dismiss-modal{
-	float: right;
+	
     font-weight: 800;
-    position: relative;
-    right: -40px;
-    top: -15px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .fixed-bottom-modal{

@@ -113,5 +113,13 @@ class UsersController < ApplicationController
 
   end
 
+  def add_bank_account
+
+    flash[:notice] = "Account Created"
+    redirect_to balance_path
+
+
+  end
+
 
 end

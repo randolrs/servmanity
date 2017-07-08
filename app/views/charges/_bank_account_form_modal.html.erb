@@ -1,0 +1,42 @@
+<div class="modal-container default-off" id="bank-account-form-modal">
+
+	<div class="modal-content">
+		
+		<header class="centered">Update Bank Account</header>
+
+		<span class="glyphicon glyphicon-remove dismiss-modal" aria-hidden="true"></span>
+		
+		<%= form_tag add_bank_account_path do %>
+
+			<div class="row">
+
+				<div class="col-xs-12 col-sm-12 cc-form-row">
+
+					<%= label_tag 'account_holder_name', "Full Name on Account" %>
+					<%= text_field_tag 'account_holder_name' %>
+
+				</div>
+
+				<div class="col-xs-12 col-sm-12 cc-form-row">
+
+					<%= label_tag 'routing_number', "Routing Number" %>
+					<%= text_field_tag 'routing_number' %>
+
+				</div>
+
+				<div class="col-xs-12 col-sm-12 cc-form-row">
+
+					<%= label_tag 'account_number', "Account Number" %>
+					<%= text_field_tag 'account_number' %>
+
+				</div>
+
+			</div>
+
+			<%= submit_tag 'Confirm', class:'button orange-background stretch' %>
+
+		<%end%>
+
+	</div>
+
+</div>

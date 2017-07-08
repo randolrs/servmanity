@@ -1,19 +1,22 @@
+<div class="content">
 
-<div class="centered">
-	<%= image_tag("logo_vector.png") %>
+	<div class="centered">
+		<%= image_tag("logo_vector.png") %>
+	</div>
+
+	<h1 class="centered black-text"><b>SERVMANITY</b></h1>
+
+
+	<div class="form-container medium clear centered">
+
+		<%= link_to "I Want To Hire Someone", non_tasker_signup_path, class:"button medium brand-blue-background" %>
+
+		<br><br>
+
+		<%= link_to "I Want To be Hired", tasker_signup_path, class:"button medium purple-frame" %>
+
+	</div>
+
+	<p class="centered"><%= link_to "I Already Have an Account (go to Login).", login_path %></p>
+
 </div>
-
-<h1 class="centered black-text"><b>SERVMANITY</b></h1>
-
-
-<div class="form-container medium clear centered">
-
-	<%= link_to "I Want To Hire Someone", non_tasker_signup_path, class:"button medium brand-blue-background" %>
-
-	<br><br>
-
-	<%= link_to "I Want To be Hired", tasker_signup_path, class:"button medium purple-frame" %>
-
-</div>
-
-<p class="centered"><%= link_to "I Already Have an Account (go to Login).", login_path %></p>

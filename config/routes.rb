@@ -106,6 +106,8 @@ Rails.application.routes.draw do
 
   get '/user/profile/:id' => 'users#profile', as: 'user_profile'
 
+  post 'user/profile/bank_account/add' => 'users#add_bank_account', as: 'add_bank_account'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

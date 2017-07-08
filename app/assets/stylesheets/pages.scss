@@ -806,16 +806,22 @@ span.number-badge{
 	position: fixed;
 	top: 0px;
 	width: 100%;
-	padding: 10px;
+	height: 50px;
+
 	z-index: 999999999;
 
 	p{
 		max-width: 900px;
 		margin: 0 auto;
-		
+		line-height: 30px;
+		padding: 10px;
 		text-align: center;
 		font-size: 1.25em;
 	}
+}
+
+.message-at-top-offset{
+	height: 50px;
 }
 
 .shrink-screen-only{

@@ -10,9 +10,13 @@ ready = ->
 
 		$(".modal-cta").click (e) ->
 			targetId = "#" + $(@).data("modal-id")
-			$('body').find(targetId).show()
+			$('body').find(targetId).fadeIn()
 			$('body').addClass('no-scroll')
 			$('.menu-content').animate({width:'show'},350);
+
+		$(".dismiss-modal").click (e) ->
+			$('body').removeClass('no-scroll')
+			$('.modal-container').fadeOut()
 
 		$(".modal-content").click (e) ->
 			e.stopPropagation()
@@ -37,7 +41,7 @@ ready = ->
 				me.removeClass("unavailable")
 
 		$(".modal-container").click (e) ->
-			$(@).hide()
+			$(@).fadeOut()
 			$('body').removeClass('no-scroll')
 			$('.menu-content').animate({width:'hide'},350);
 

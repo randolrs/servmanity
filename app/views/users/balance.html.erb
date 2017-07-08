@@ -14,9 +14,9 @@
 
 					<span class="big-balance"><%= number_to_currency(current_user.stripe_balance, precision: 0) %></span>
 
-					<br><br>
+					<!-- <br><br> -->
 
-					<%= link_to "Balance History", root_path, class:"button orange-background stretch" %>
+					<%# link_to "Balance History", root_path, class:"button orange-background stretch" %>
 
 				</div>
 				
@@ -34,9 +34,9 @@
 
 					<span class="big-date"><%= Date.today.strftime("%b %e")%></span>
 
-					<br><br>
+					<!-- <br><br> -->
 
-					<%= link_to "Payment Schedule", root_path, class:"button orange-background stretch" %> 
+					<%# link_to "Payment Schedule", root_path, class:"button orange-background stretch" %> 
 
 				</div>
 				
@@ -48,7 +48,7 @@
 
 			<div class="card centered">
 
-				<h3 class="centered small-section-header">Payee Information</h3>
+				<h3 class="centered small-section-header">Bank Account Information</h3>
 
 				<div class="card-content">
 
@@ -66,11 +66,15 @@
 
 						<br><br>
 
-						<%= link_to "Edit Payee", root_path, class:"button orange-background stretch" %>
+						<a class="click-to-reveal button orange-background" data-reveal-panel-id="bank-account-form-modal">Update Bank Account</a>
 					
 					<% else %>
 
-						<%= link_to "Add a Bank Account", root_path, class:"button dark-red-background stretch" %>
+						<span class="big-date">N/A</span>
+
+						<br><br>
+
+						<a class="modal-cta button orange-background stretch" data-modal-id="bank-account-form-modal">Add a Bank Account</a>
 
 
 					<% end %>
@@ -83,10 +87,5 @@
 
 	</div>
 
-	<section class="content-section">
-
-		
-
-	</section>
-
 </div>
+

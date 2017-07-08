@@ -6,55 +6,62 @@
 
 	</div>
 
+	<div class="message-at-top-offset">
+
+	</div>
+
 <%end%>
 
+<div class="content">
 
-<div class="centered">
-	<%= image_tag("logo_vector.png") %>
+	<div class="centered">
+		<%= image_tag("logo_vector.png") %>
+	</div>
+
+	<h1 class="centered black-text"><b>SERVMANITY</b></h1>
+
+
+	<div class="form-container medium clear">
+
+		<%= form_for(:user, :url => registration_path(:user)) do |f| %>
+
+			<div class="field">
+			  
+			  <%= f.text_field :first_name, placeholder: "First Name", :required => true %>
+
+			  
+			  <%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+			  
+			  <%= f.email_field :email, placeholder: "Email", :required => true %>
+
+			  
+			  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
+
+			  
+			  <%= f.text_field :contact_phone_number, placeholder: "Phone Number", :required => true %>
+
+			  
+			  <%# f.text_field :zip_code, placeholder: "Zip Code", :required => true %>
+
+			  <%= f.text_field :address, placeholder:"Address", class:"geocomplete-input" %>
+
+			</div>
+
+			<%= f.hidden_field :is_tasker, :value => true %>
+
+			<div class="actions">
+			  <%= f.submit "Start Registration", class: "button medium brand-blue-background" %>
+			</div>
+
+			<br>
+			
+			<div>By signing up you agree to our <%= link_to "Terms of Service", terms_of_service_path,  target: :_blank %> and <%= link_to "Privacy Policy", privacy_policy_path,  target: :_blank %>.</div>
+
+		<% end %>
+
+	</div>
+
+	<p class="centered"><%= link_to "Already have an account? Login", login_path %></p>
+
 </div>
-
-<h1 class="centered black-text"><b>SERVMANITY</b></h1>
-
-
-<div class="form-container medium clear">
-
-	<%= form_for(:user, :url => registration_path(:user)) do |f| %>
-
-		<div class="field">
-		  
-		  <%= f.text_field :first_name, placeholder: "First Name", :required => true %>
-
-		  
-		  <%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
-		  
-		  <%= f.email_field :email, placeholder: "Email", :required => true %>
-
-		  
-		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :required => true %>
-
-		  
-		  <%= f.text_field :contact_phone_number, placeholder: "Phone Number", :required => true %>
-
-		  
-		  <%# f.text_field :zip_code, placeholder: "Zip Code", :required => true %>
-
-		  <%= f.text_field :address, placeholder:"Address", class:"geocomplete-input" %>
-
-		</div>
-
-		<%= f.hidden_field :is_tasker, :value => true %>
-
-		<div class="actions">
-		  <%= f.submit "Start Registration", class: "button medium brand-blue-background" %>
-		</div>
-
-		<br>
-		
-		<div>By signing up you agree to our <%= link_to "Terms of Service", terms_of_service_path,  target: :_blank %> and <%= link_to "Privacy Policy", privacy_policy_path,  target: :_blank %>.</div>
-
-	<% end %>
-
-</div>
-
-<p class="centered"><%= link_to "Already have an account? Login", login_path %></p>
 

@@ -89,7 +89,7 @@ p{
 }
 
 .content-container{
- 	padding: 70px 0px 30px 0px;
+ 	padding-bottom: 30px;
  	margin-bottom: -30px;
  	position: relative;
  	
@@ -102,7 +102,14 @@ p{
  	background: #fff;
  }
 
-
+.flash-notice{
+	padding: 20px;
+	text-align: center;
+	background: #ccf;
+	color: #33d;
+	font-size: 18px;
+	border: 1px solid #66f;
+}
 
 .mobile-only{
 	display: inherit !important;
