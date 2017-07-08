@@ -135,24 +135,22 @@ class UsersController < ApplicationController
         account.external_accounts.create(external_account: account_token.id) 
 
         flash[:notice] = "Account Created"
-        redirect_to balance_path
+        redirect_to balance_path and return
 
       else
 
         flash[:notice] = "Your account is not yet verified."
-        redirect_to balance_path
+        redirect_to balance_path and return
 
 
       end
 
     end
 
-    
-
-
-    
-
-
+  rescue Stripe::StripeError => e
+    flash[:error] = e.message
+    #redirect_to root_path(@service_request.id) and return
+    redirect_to balance_path and return
   end
 
 

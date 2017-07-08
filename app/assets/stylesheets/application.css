@@ -111,6 +111,12 @@ p{
 	border: 1px solid #66f;
 }
 
+.flash-notice.error{
+	background: #fcc;
+	color: #d33;
+	border: 1px solid #f66;
+}
+
 .mobile-only{
 	display: inherit !important;
 }
