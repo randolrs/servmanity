@@ -115,8 +115,42 @@ class UsersController < ApplicationController
 
   def add_bank_account
 
-    flash[:notice] = "Account Created"
-    redirect_to balance_path
+    account_token = Stripe::Token.create(
+      :bank_account => {
+        :country => "US",
+        :currency => "usd",
+        :account_holder_name => params[:account_holder_name],
+        :account_holder_type => "individual",
+        :routing_number => params[:routing_number],
+        :account_number => params[:account_number],
+      },
+    )
+
+    if user_signed_in?
+
+      if current_user.stripe_account_id && current_user.stripe_secret_key
+
+        account = Stripe::Account.retrieve(current_user.stripe_account_id)
+
+        account.external_accounts.create(external_account: account_token.id) 
+
+        flash[:notice] = "Account Created"
+        redirect_to balance_path
+
+      else
+
+        flash[:notice] = "Your account is not yet verified."
+        redirect_to balance_path
+
+
+      end
+
+    end
+
+    
+
+
+    
 
 
   end

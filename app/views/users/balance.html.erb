@@ -54,19 +54,23 @@
 
 					<% if @bank_accounts.count > 0 %>
 						
-						<% @bank_accounts.each do |account| %>
+						<% @bank_accounts.each do |bank_account| %>
 							
-							<span class="payee-information"><%= current_user.first_name %></span>
+							<span class="payee-information"><%= bank_account.account_holder_name %></span>
 							
 							<br>
 
-							<span class="payee-information">Account Ending <%= account.last_4 %></span>
+							<span class="payee-information"><%= bank_account.bank_name %></span>
+							
+							<br>
+
+							<span class="payee-information">Account Ending <%= bank_account.last4 %></span>
 
 						<%end%>
 
 						<br><br>
 
-						<a class="click-to-reveal button orange-background" data-reveal-panel-id="bank-account-form-modal">Update Bank Account</a>
+						<a class="click-to-reveal button orange-background stretch" data-reveal-panel-id="bank-account-form-modal">Update Bank Account</a>
 					
 					<% else %>
 
