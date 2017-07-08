@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
 	before_action :check_for_location
 
-	#before_action :check_for_stripe_account, if: :user_signed_in?
+	before_action :check_for_stripe_account, if: :user_signed_in?
 
 	if Rails.env == "production"
 
