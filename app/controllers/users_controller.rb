@@ -137,7 +137,7 @@ class UsersController < ApplicationController
 
         account.external_accounts.create(external_account: account_token.id) 
 
-        flash[:notice] = "Account Created"
+        flash[:notice] = "Bank account successfully updated."
         redirect_to balance_path and return
 
       else
