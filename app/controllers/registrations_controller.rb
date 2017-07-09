@@ -34,14 +34,38 @@ class RegistrationsController < Devise::RegistrationsController
         sign_up(resource_name, resource)
         respond_with resource, location: after_sign_up_path_for(resource)
       else
+
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
         expire_data_after_sign_in!
         respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
     else
+
       clean_up_passwords resource
       set_minimum_password_length
-      respond_with resource
+
+      resource_text = ""
+
+      resource.errors.full_messages.each do |message|
+
+        resource_text = resource_text + message + " , "
+
+      end
+
+      
+
+      flash[:error] = resource_text[0,(resource_text.length - 3)]
+
+      if resource.is_tasker
+        
+        redirect_to tasker_signup_path
+        
+      else
+
+        redirect_to non_tasker_signup_path
+
+      end
+      #respond_with resource
     end
   end
 

@@ -12,6 +12,24 @@
 
 <%end%>
 
+<%if flash[:error] %>
+	
+	<div class="flash-notice error">
+
+		<%= flash[:error] %>
+
+	</div>
+
+<% elsif flash[:notice] %>
+				
+	<div class="flash-notice">
+
+		<%= flash[:notice] %>
+
+	</div>
+			
+<%end%>
+
 <div class="content">
 
 	<div class="centered">
@@ -30,14 +48,14 @@
 			  <label>First Name</label>
 			  <br>
 
-			  <%= f.text_field :first_name, placeholder: "First Name", :required => true %>
+			  <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", :required => true %>
 
 			</div>
 
 			<div class="field">
 			  <label>Email</label>
 			  <br>
-			  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
+			  <%= f.email_field :email, placeholder: "Email", :required => true %>
 			</div>
 
 			<div class="field">
